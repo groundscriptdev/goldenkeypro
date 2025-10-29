@@ -5,24 +5,23 @@ const withNextIntl = createNextIntlPlugin("./src/i18n.ts");
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // 👇 genera un sitio estático compatible con Cloudflare Pages
-  output: 'export',
-
-  // 👇 desactiva optimización de imágenes (porque Cloudflare sirve los assets)
+  // Configuración para SSR (no estático)
+  output: undefined, // Elimina cualquier referencia a modo estático
+  
   images: {
-    unoptimized: true,
+    // Para Railway, es mejor mantener la optimización activa
+    unoptimized: false,
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'api.panamagoldenkey.com', // cambia esto por tu backend real
+        hostname: 'api.panamagoldenkey.com',
         pathname: '/media/**',
       },
     ],
   },
 
-  // 👇 opcional: si usas rutas base (subdominios o staging)
-  assetPrefix: '',
-  trailingSlash: true,
+  // Asegura que las rutas funcionen correctamente
+  trailingSlash: false,
 };
 
 module.exports = withNextIntl(nextConfig);

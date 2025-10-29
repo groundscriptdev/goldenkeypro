@@ -40,8 +40,8 @@ export const useProperties = (
   const [error, setError] = useState<string | null>(null);
   const [pagination, setPagination] = useState<PropertyPagination>({
     count: 0,
-    next: null,
-    previous: null,
+    next: undefined,
+    previous: undefined,
     page_size: pageSize,
     current_page: 1,
     total_pages: 0,

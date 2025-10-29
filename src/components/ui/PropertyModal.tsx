@@ -97,9 +97,12 @@ export default function PropertyModal({
   const handleShareProperty = () => {
     // Aquí iría la lógica para compartir propiedad
     if (navigator.share && property) {
+      const address = property.location?.address_full || property.location?.full_address || 'Dirección no disponible';
+      const city = property.location?.district || property.location?.province || 'Ubicación no disponible';
+      
       navigator.share({
-        title: property.street_address,
-        text: `Mira esta propiedad en ${property.city}: ${property.street_address}`,
+        title: address,
+        text: `Mira esta propiedad en ${city}: ${address}`,
         url: window.location.href,
       });
     }
@@ -123,11 +126,11 @@ export default function PropertyModal({
         <div className="flex items-center justify-between p-6 border-b border-gray-200">
           <div>
             <h2 className="text-2xl font-bold text-jade-green">
-              {property.street_address}
+              {property.location?.address_full || property.location?.full_address || 'Dirección no disponible'}
             </h2>
             <div className="flex items-center text-gray-600 mt-1">
               <MapPin className="w-4 h-4 mr-1" />
-              <span>{property.location}</span>
+              <span>{property.location?.district || property.location?.province || 'Ubicación no disponible'}</span>
             </div>
           </div>
           <Button
@@ -145,10 +148,10 @@ export default function PropertyModal({
           <div className="grid md:grid-cols-2 gap-6">
             {/* Property Image */}
             <div className="relative h-64 md:h-96 rounded-lg overflow-hidden bg-gradient-to-br from-jade-green/10 to-gold/10">
-              {property.primary_image ? (
+              {property.media?.image_cover ? (
                 <Image
-                  src={property.primary_image}
-                  alt={property.street_address}
+                  src={property.media.image_cover}
+                  alt={property.location?.address_full || property.location?.full_address || 'Propiedad'}
                   fill
                   className="object-cover"
                   onError={() => setImageError(true)}
@@ -182,28 +185,28 @@ export default function PropertyModal({
             {/* Property Details */}
             <div className="space-y-4">
               <div className="text-3xl font-bold text-jade-green">
-                {formatPrice(property.price)}
+                {property.financials?.price ? formatPrice(property.financials.price.toString()) : 'Precio no disponible'}
               </div>
 
               <div className="grid grid-cols-2 gap-4">
                 <div className="flex items-center gap-2">
                   <Bed className="w-5 h-5 text-jade-green" />
                   <span className="font-medium">
-                    {property.beds} Habitaciones
+                    {property.bedrooms} Habitaciones
                   </span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Bath className="w-5 h-5 text-jade-green" />
-                  <span className="font-medium">{property.baths} Baños</span>
+                  <span className="font-medium">{property.bathrooms} Baños</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Square className="w-5 h-5 text-jade-green" />
-                  <span className="font-medium">{property.sqft} m²</span>
+                  <span className="font-medium">{property.area_built} m²</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  {getPropertyTypeIcon(property.property_type)}
+                  {getPropertyTypeIcon(property.type)}
                   <span className="font-medium">
-                    {getPropertyTypeLabel(property.property_type)}
+                    {getPropertyTypeLabel(property.type)}
                   </span>
                 </div>
               </div>
@@ -225,7 +228,7 @@ export default function PropertyModal({
                 <ul className="space-y-2 text-gray-600">
                   <li className="flex items-center gap-2">
                     <div className="w-2 h-2 bg-jade-green rounded-full"></div>
-                    Excelente ubicación en {property.city}
+                    Excelente ubicación en {property.location?.district || property.location?.province || 'Panamá'}
                   </li>
                   <li className="flex items-center gap-2">
                     <div className="w-2 h-2 bg-jade-green rounded-full"></div>

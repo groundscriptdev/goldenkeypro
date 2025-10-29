@@ -14,7 +14,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html suppressHydrationWarning>
       <head>
         {/* React Grab for element selection in development */}
         {process.env.NODE_ENV === "development" && (
@@ -26,7 +26,7 @@ export default function RootLayout({
           />
         )}
       </head>
-      <body>
+      <body suppressHydrationWarning>
         <ReactGrabIntegration />
         {children}
       </body>

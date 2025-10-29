@@ -8,8 +8,8 @@ export default createMiddleware({
   // Used when no locale matches
   defaultLocale,
 
-  // Optional: Configure path prefix behavior
-  localePrefix: "always",
+  // Para SSR, es mejor usar "as-needed" en lugar de "always"
+  localePrefix: "as-needed",
 
   // Optional: Configure locale detection
   localeDetection: true,

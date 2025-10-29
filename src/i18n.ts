@@ -10,7 +10,10 @@ export default getRequestConfig(async ({ requestLocale }) => {
   let locale = await requestLocale;
 
   // Validate that the incoming `locale` parameter is valid
-  if (!locales.find((l) => l === locale)) notFound();
+  if (!locales.find((l) => l === locale)) {
+    // En lugar de notFound(), devuelve el locale por defecto
+    locale = defaultLocale;
+  }
 
   return {
     locale,
