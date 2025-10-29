@@ -20,16 +20,6 @@
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/[locale]/homepage/page.js"
-    ],
-    "/[locale]/(pages)/properties/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/[locale]/(pages)/properties/page.js"
-    ],
-    "/[locale]/(pages)/about-panama/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/[locale]/(pages)/about-panama/page.js"
     ]
   }
 }
