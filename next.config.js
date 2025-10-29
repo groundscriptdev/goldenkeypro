@@ -6,7 +6,7 @@ const withNextIntl = createNextIntlPlugin("./src/i18n.ts");
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   // Configuración para SSR (no estático)
-  output: undefined, // Elimina cualquier referencia a modo estático
+  output: 'standalone', // Elimina cualquier referencia a modo estático
   
   images: {
     // Para Railway, es mejor mantener la optimización activa
