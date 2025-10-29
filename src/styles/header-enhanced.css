@@ -1,0 +1,286 @@
+/* Enhanced Header Styles */
+/* Add this to your existing CSS file or import it in your globals.css */
+
+/* Header animations and transitions */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromTop {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Header container */
+.header-enhanced {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+}
+
+.header-enhanced--scrolled {
+  backdrop-filter: blur(16px);
+  background-color: hsl(var(--background) / 0.95);
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1);
+}
+
+.header-enhanced--hidden {
+  transform: translateY(-100%) translateZ(0);
+}
+
+/* Navigation links */
+.nav-link {
+  position: relative;
+  transition: color 0.2s ease-out;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: hsl(var(--jade-green));
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+/* Dropdown menus */
+.dropdown-menu {
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: opacity, transform;
+}
+
+.dropdown-menu--active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.dropdown-menu-enter {
+  animation: slideInFromTop 0.3s ease-out forwards;
+}
+
+.dropdown-menu-exit {
+  animation: slideInFromTop 0.3s ease-out reverse;
+}
+
+/* Submenu */
+.submenu {
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: opacity, transform;
+}
+
+.submenu--active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.submenu-enter {
+  animation: slideInFromLeft 0.3s ease-out forwards;
+}
+
+.submenu-exit {
+  animation: slideInFromLeft 0.3s ease-out reverse;
+}
+
+/* Dropdown items */
+.dropdown-item {
+  transition: all 0.2s ease-out;
+}
+
+.dropdown-item:hover {
+  background-color: hsl(var(--jade-green) / 0.05);
+  color: hsl(var(--jade-green));
+}
+
+/* Mobile menu */
+.mobile-menu-panel {
+  transform: translateX(100%);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+}
+
+.mobile-menu-panel--open {
+  transform: translateX(0);
+}
+
+.mobile-menu-backdrop {
+  opacity: 0;
+  transition: opacity 0.3s ease-out;
+}
+
+.mobile-menu-backdrop--open {
+  opacity: 1;
+}
+
+/* Mobile menu items */
+.mobile-menu-item {
+  transition: all 0.2s ease-out;
+}
+
+.mobile-menu-item:hover {
+  background-color: hsl(var(--jade-green) / 0.05);
+  color: hsl(var(--jade-green));
+}
+
+/* CTA Button */
+.cta-button {
+  transition: all 0.2s ease-out;
+  will-change: transform, box-shadow;
+}
+
+.cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+}
+
+/* Logo */
+.logo-container {
+  transition: transform 0.2s ease-out;
+  will-change: transform;
+}
+
+.logo-container:hover {
+  transform: scale(1.05);
+}
+
+/* Focus styles */
+.focus-visible:focus {
+  outline: 2px solid hsl(var(--jade-green) / 0.5);
+  outline-offset: 2px;
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  .header-enhanced,
+  .dropdown-menu,
+  .submenu,
+  .mobile-menu-panel,
+  .mobile-menu-backdrop,
+  .nav-link,
+  .dropdown-item,
+  .mobile-menu-item,
+  .cta-button,
+  .logo-container {
+    transition: none !important;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .header-enhanced {
+    border-bottom: 2px solid;
+  }
+  
+  .nav-link {
+    text-decoration: underline;
+  }
+  
+  .dropdown-menu {
+    border: 2px solid;
+  }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+  .dropdown-menu {
+    /* Increase touch target size on mobile */
+    min-height: 44px;
+  }
+  
+  .dropdown-item {
+    /* Add more space between touch targets */
+    padding: 12px 16px;
+  }
+}
+
+/* Small screen optimizations */
+@media (max-width: 768px) {
+  .header-enhanced {
+    /* Reduce header height on small screens */
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+  
+  .nav-link {
+    /* Increase touch target size */
+    padding: 0.75rem 1rem;
+  }
+}
+
+/* Large screen optimizations */
+@media (min-width: 1200px) {
+  .dropdown-menu {
+    /* Wider dropdowns on large screens */
+    min-width: 280px;
+  }
+  
+  .submenu {
+    /* Wider submenus on large screens */
+    min-width: 250px;
+  }
+}
+
+/* Print styles */
+@media print {
+  .header-enhanced {
+    position: static;
+    box-shadow: none;
+    border-bottom: 1px solid #000;
+  }
+  
+  .dropdown-menu,
+  .mobile-menu-panel,
+  .mobile-menu-backdrop {
+    display: none !important;
+  }
+}

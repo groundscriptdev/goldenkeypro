@@ -1,0 +1,406 @@
+/* Enhanced Text Visibility and Contrast */
+/* Import this file in your globals.css */
+
+/* CSS Custom Properties for Enhanced Visibility */
+:root {
+  /* Enhanced Color Contrast Variables */
+  --contrast-ratio-aa: 4.5;      /* WCAG AA standard */
+  --contrast-ratio-aaa: 7;      /* WCAG AAA standard */
+  
+  /* High Contrast Colors */
+  --text-on-jade-green: #ffffff;
+  --text-on-gold: #1a1a1a;
+  --text-on-white: #1a1a1a;
+  --text-on-black: #ffffff;
+  --text-on-gray: #1a1a1a;
+  
+  /* Background Overlays for Text */
+  --overlay-light: rgba(255, 255, 255, 0.8);
+  --overlay-medium: rgba(255, 255, 255, 0.6);
+  --overlay-dark: rgba(0, 0, 0, 0.7);
+  --overlay-darker: rgba(0, 0, 0, 0.85);
+  
+  /* Enhanced Jade Green Variations */
+  --jade-green-50: #f0fdf4;
+  --jade-green-100: #dcfce7;
+  --jade-green-200: #bbf7d0;
+  --jade-green-300: #86efac;
+  --jade-green-400: #4ade80;
+  --jade-green-500: #22c55e;
+  --jade-green-600: #16a34a;
+  --jade-green-700: #15803d;
+  --jade-green-800: #166534;
+  --jade-green-900: #14532d;
+  
+  /* Enhanced Gold Variations */
+  --gold-50: #fffbeb;
+  --gold-100: #fef3c7;
+  --gold-200: #fde68a;
+  --gold-300: #fcd34d;
+  --gold-400: #fbbf24;
+  --gold-500: #f59e0b;
+  --gold-600: #d97706;
+  --gold-700: #b45309;
+  --gold-800: #92400e;
+  --gold-900: #78350f;
+}
+
+/* Enhanced Text Visibility Classes */
+.text-visible-on-jade-green {
+  color: var(--text-on-jade-green);
+}
+
+.text-visible-on-gold {
+  color: var(--text-on-gold);
+}
+
+.text-visible-on-white {
+  color: var(--text-on-white);
+}
+
+.text-visible-on-black {
+  color: var(--text-on-black);
+}
+
+.text-visible-on-gray {
+  color: var(--text-on-gray);
+}
+
+/* Background Overlay Classes for Text */
+.bg-overlay-light {
+  background-color: var(--overlay-light);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+}
+
+.bg-overlay-medium {
+  background-color: var(--overlay-medium);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.bg-overlay-dark {
+  background-color: var(--overlay-dark);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.bg-overlay-darker {
+  background-color: var(--overlay-darker);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+/* Gradient Overlays for Text */
+.bg-gradient-overlay-light {
+  background: linear-gradient(to bottom, var(--overlay-light), transparent);
+}
+
+.bg-gradient-overlay-medium {
+  background: linear-gradient(to bottom, var(--overlay-medium), transparent);
+}
+
+.bg-gradient-overlay-dark {
+  background: linear-gradient(to bottom, var(--overlay-dark), transparent);
+}
+
+.bg-gradient-overlay-darker {
+  background: linear-gradient(to bottom, var(--overlay-darker), transparent);
+}
+
+/* Enhanced Text Shadows for Better Visibility */
+.text-shadow-enhanced-light {
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.text-shadow-enhanced-medium {
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4), 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.text-shadow-enhanced-heavy {
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.5), 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.text-shadow-on-jade-green {
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.text-shadow-on-gold {
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.3);
+}
+
+.text-shadow-on-light {
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.text-shadow-on-dark {
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.2);
+}
+
+/* Enhanced Contrast Classes */
+.contrast-high {
+  color: #000;
+  background-color: #fff;
+}
+
+.contrast-high-inverted {
+  color: #fff;
+  background-color: #000;
+}
+
+.contrast-enhanced-jade-green {
+  color: var(--jade-green-900);
+  background-color: var(--jade-green-50);
+}
+
+.contrast-enhanced-gold {
+  color: var(--gold-900);
+  background-color: var(--gold-50);
+}
+
+/* Enhanced Header Text Visibility */
+.header-text-enhanced {
+  color: var(--text-primary);
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.1);
+}
+
+.header-text-scrolled {
+  color: var(--text-primary);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Enhanced Navigation Text Visibility */
+.nav-text-enhanced {
+  color: var(--text-secondary);
+  transition: color 0.2s ease;
+}
+
+.nav-text-enhanced:hover {
+  color: var(--text-jade-green);
+}
+
+.nav-text-enhanced:focus {
+  color: var(--text-jade-green);
+  outline: 2px solid var(--jade-green-400);
+  outline-offset: 2px;
+}
+
+/* Enhanced Dropdown Text Visibility */
+.dropdown-text-enhanced {
+  color: var(--text-jade-green);
+  background-color: #fff;
+  font-weight: 600; /* Increased from font-medium */
+  transition: all 0.2s ease;
+}
+
+.dropdown-text-enhanced:hover {
+  color: var(--text-jade-green);
+  background-color: var(--jade-green-50);
+}
+
+.dropdown-text-enhanced:focus {
+  color: var(--text-jade-green);
+  background-color: var(--jade-green-50);
+  outline: 2px solid var(--jade-green-400);
+  outline-offset: -2px;
+}
+
+/* Enhanced Mobile Menu Text Visibility */
+.mobile-menu-text-enhanced {
+  color: var(--text-secondary);
+  transition: all 0.2s ease;
+}
+
+.mobile-menu-text-enhanced:hover {
+  color: var(--text-jade-green);
+  background-color: var(--jade-green-50);
+}
+
+.mobile-menu-text-enhanced:focus {
+  color: var(--text-jade-green);
+  background-color: var(--jade-green-50);
+  outline: 2px solid var(--jade-green-400);
+  outline-offset: -2px;
+}
+
+/* Enhanced CTA Button Text Visibility */
+.cta-text-enhanced {
+  color: #fff;
+  background-color: var(--jade-green-700);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s ease;
+}
+
+.cta-text-enhanced:hover {
+  background-color: var(--jade-green-800);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.cta-text-enhanced:focus {
+  outline: 2px solid var(--jade-green-400);
+  outline-offset: 2px;
+}
+
+/* Enhanced Link Text Visibility */
+.link-text-enhanced {
+  color: var(--jade-green-700);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+  transition: all 0.2s ease;
+}
+
+.link-text-enhanced:hover {
+  color: var(--jade-green-800);
+  text-decoration-thickness: 2px;
+}
+
+.link-text-enhanced:focus {
+  color: var(--jade-green-800);
+  outline: 2px solid var(--jade-green-400);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* Enhanced Text on Images */
+.text-on-image-enhanced {
+  color: #fff;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5), 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.text-on-image-enhanced-light {
+  color: #000;
+  text-shadow: 0 2px 4px rgba(255, 255, 255, 0.5), 0 1px 2px rgba(255, 255, 255, 0.3);
+}
+
+/* Enhanced Text in Cards */
+.card-text-enhanced {
+  color: var(--text-secondary);
+  background-color: #fff;
+}
+
+.card-text-enhanced-dark {
+  color: #fff;
+  background-color: var(--jade-green-700);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+  :root {
+    --text-primary: #000;
+    --text-secondary: #000;
+    --text-tertiary: #000;
+    --text-quaternary: #000;
+    --text-inverse: #fff;
+    --text-jade-green: #000;
+    --text-gold: #000;
+  }
+  
+  .text-visible-on-jade-green {
+    color: #000;
+  }
+  
+  .text-visible-on-gold {
+    color: #000;
+  }
+  
+  .text-visible-on-white {
+    color: #000;
+  }
+  
+  .text-visible-on-black {
+    color: #fff;
+  }
+  
+  .text-visible-on-gray {
+    color: #000;
+  }
+  
+  .nav-text-enhanced:hover,
+  .nav-text-enhanced:focus,
+  .dropdown-text-enhanced:hover,
+  .dropdown-text-enhanced:focus,
+  .mobile-menu-text-enhanced:hover,
+  .mobile-menu-text-enhanced:focus {
+    background-color: #fff;
+    color: #000;
+    border: 2px solid #000;
+  }
+  
+  .cta-text-enhanced,
+  .cta-text-enhanced:hover,
+  .cta-text-enhanced:focus {
+    background-color: #000;
+    color: #fff;
+    border: 2px solid #fff;
+  }
+  
+  .link-text-enhanced,
+  .link-text-enhanced:hover,
+  .link-text-enhanced:focus {
+    color: #000;
+    text-decoration: underline;
+    text-decoration-style: double;
+  }
+}
+
+/* Reduced Transparency Support */
+@media (prefers-reduced-transparency: reduce) {
+  .bg-overlay-light {
+    background-color: #fff;
+  }
+  
+  .bg-overlay-medium {
+    background-color: #f8f8f8;
+  }
+  
+  .bg-overlay-dark {
+    background-color: #333;
+  }
+  
+  .bg-overlay-darker {
+    background-color: #000;
+  }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text-on-jade-green: #ffffff;
+    --text-on-gold: #ffffff;
+    --text-on-white: #1a1a1a;
+    --text-on-black: #ffffff;
+    --text-on-gray: #ffffff;
+  }
+  
+  .header-text-enhanced {
+    color: #fff;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  }
+  
+  .card-text-enhanced {
+    color: #ddd;
+    background-color: #333;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .text-shadow-enhanced-light,
+  .text-shadow-enhanced-medium,
+  .text-shadow-enhanced-heavy,
+  .text-shadow-on-jade-green,
+  .text-shadow-on-gold,
+  .text-shadow-on-light,
+  .text-shadow-on-dark {
+    text-shadow: none;
+  }
+  
+  .bg-overlay-light,
+  .bg-overlay-medium,
+  .bg-overlay-dark,
+  .bg-overlay-darker {
+    background: transparent;
+  }
+}

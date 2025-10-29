@@ -1,0 +1,552 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Import Minimal Design System */
+@import "../styles/minimal-design-system.css";
+
+/* Import Enhanced Header Styles */
+@import "../styles/header-enhanced.css";
+
+/* Import Enhanced Typography Styles */
+@import "../styles/typography-enhanced.css";
+
+/* Import Enhanced Visibility Styles */
+@import "../styles/visibility-enhanced.css";
+
+/* Import Enhanced Dropdown Styles */
+@import "../styles/dropdown-enhanced.css";
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 27 20% 15%;
+    --card: 0 0% 100%;
+    --card-foreground: 27 20% 15%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 27 20% 15%;
+    --primary: 168 26% 18%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 43 38% 85%;
+    --secondary-foreground: 27 20% 15%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 43 38% 85%;
+    --accent-foreground: 27 20% 15%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 168 26% 18%;
+    --radius: 0.5rem;
+
+    /* Panama Golden Key brand colors */
+    --jade-green: 168 26% 18%;
+    --gold: 43 54% 64%;
+    --panama-blue: 217 91% 60%;
+    --chinese-red: 0 84% 60%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 222.2 84% 4.9%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 224.3 76.3% 94.1%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Inter", "Noto Sans SC", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Chinese font optimization */
+.zh {
+  font-family: "Noto Sans SC", "Inter", sans-serif;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Focus styles */
+.focus-visible:focus {
+  @apply outline-2 outline-offset-2 outline-ring;
+}
+
+/* Animation utilities */
+@keyframes shimmer {
+  0% {
+    background-position: -200px 0;
+  }
+  100% {
+    background-position: calc(200px + 100%) 0;
+  }
+}
+
+.shimmer {
+  animation: shimmer 2s linear infinite;
+  background: linear-gradient(
+    90deg,
+    var(--background) 0%,
+    var(--muted) 20%,
+    var(--background) 40%
+  );
+  background-size: 200px 100%;
+}
+
+/* Custom components */
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50;
+  }
+
+  .btn-primary {
+    @apply btn bg-jade-green text-white hover:bg-jade-green/90;
+  }
+
+  .btn-secondary {
+    @apply btn bg-gold text-jade-green hover:bg-gold/90;
+  }
+
+  .btn-outline {
+    @apply btn border border-jade-green bg-background hover:bg-jade-green hover:text-white;
+  }
+
+  .btn-ghost {
+    @apply btn hover:bg-gold/20 hover:text-jade-green;
+  }
+
+  .btn-destructive {
+    @apply btn bg-chinese-red text-white hover:bg-chinese-red/90;
+  }
+
+  .btn-gold {
+    @apply btn bg-gold text-jade-green hover:bg-gold/90 font-brand;
+  }
+
+  .btn-jade {
+    @apply btn bg-jade-green text-white hover:bg-jade-green/90 font-brand;
+  }
+
+  .input {
+    @apply flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50;
+  }
+
+  .card {
+    @apply rounded-lg border bg-card text-card-foreground shadow-sm;
+  }
+
+  .card-header {
+    @apply flex flex-col space-y-1.5 p-6;
+  }
+
+  .card-title {
+    @apply text-2xl font-semibold leading-none tracking-tight;
+  }
+
+  .card-description {
+    @apply text-sm text-muted-foreground;
+  }
+
+  .card-content {
+    @apply p-6 pt-0;
+  }
+
+  .card-footer {
+    @apply flex items-center p-6 pt-0;
+  }
+}
+
+/* Print styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+
+  body {
+    @apply text-black bg-white;
+  }
+
+  a {
+    @apply text-black no-underline;
+  }
+
+  a[href^="http"]:after {
+    content: " (" attr(href) ")";
+    @apply text-xs text-gray-600;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  :root {
+    --border: 0 0% 0%;
+    --ring: 0 0% 0%;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.groundscript-sss {
+  border: 1px solid #000;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.groundscript-sss .text-sm {
+  font-size: 0.8rem;
+  white-space: nowrap;
+}
+
+.ground-arena-nav-full {
+  background: #f1f1f17b;
+}
+
+.groundgrid {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  height: 100%;
+  width: 100%;
+  background: #000;
+}
+@media screen and (min-width: 0px) and (max-width: 1024px) {
+  .groundgrid {
+    margin-top: 0px;
+  }
+}
+.box-master {
+  border: 1px solid #fff;
+  background: #000;
+}
+.box-master::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  inset: 0;
+  background: #668a7d;
+  z-index: 1;
+  position: absolute;
+  mix-blend-mode: hard-light;
+}
+.box-master::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  inset: 0;
+  background: #646464;
+  z-index: 1;
+  position: absolute;
+  mix-blend-mode: soft-light;
+}
+
+.d-none {
+  display: none !important;
+}
+
+.ground-filter-100 {
+  filter: screen;
+}
+
+.ground-pad-hero-fix {
+  margin-top: 40%;
+}
+@media screen and (min-width: 0px) and (max-width: 512px) {
+  .ground-pad-hero-fix {
+    margin-top: 20%;
+  }
+}
+
+.ground-hero-master {
+  margin: 0 auto auto 0;
+  padding-top: 30px;
+}
+
+main {
+  padding-top: 140px;
+}
+
+@media screen and (max-width: 992px) {
+  main {
+    padding-top: 80px;
+  }
+}
+
+.ground-Support {
+  height: 200px;
+  width: 100%;
+}
+
+.ground-jade {
+  background: #14532d;
+}
+
+.ground-jade-full {
+  background: #1B3E37;
+}
+
+.ground-pull-up {
+  background-color: #f1f1f154 !important;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  backdrop-filter: blur(24px);
+  border-bottom: 1px solid rgb(243 244 246 / 0.5);
+  transition: background-color 0.5s ease, box-shadow 0.5s ease;
+  will-change: background-color;
+}
+/* card ground script fix */
+.ground-box-fix {
+  max-width: 400px;
+  background: #ffffff4f !important;
+  backdrop-filter: blur(20px) !important;
+  transition: all 200ms ease;
+}
+.ground-box-fix:hover{
+  background: #1b3e3735 !important;
+  backdrop-filter: blur(100px) !important;
+  transition: all 200ms ease;
+}
+.ground-box-fix:hover h3{
+  transition: all 200ms ease;
+}
+.ground-box-fix:hover p{
+  color: rgb(91, 79, 47) !important;
+}
+
+.ground-box-fix h3 {
+  max-width: 200px;
+  line-height: 1.2rem;
+  font-size: 1.4rem;
+  margin-top: 14px;
+  width: 100%;
+}
+
+.bg-gold {
+  background:  rgb(177, 152, 83)  !important;
+  cursor:  pointer!important;
+  color: #fff !important;
+  transition: all 200ms ease;
+}
+.bg-gold:hover {
+  transition:  all 200ms ease;
+  background:  rgb(227, 196, 109)  !important;
+  text-decoration: none !important;
+}
+
+@media screen and (min-width:0px) and (max-width: 992px) {
+  .ground-box-fix {
+    margin: 0 auto !important;
+    padding: 15px !important;
+    
+   
+  }
+  .grid-cards-groundscript {
+  display: grid !important;
+ grid-template-columns: auto auto !important;
+  gap: 3px !important;
+  overflow: hidden;
+  overflow-x: scroll;
+  }
+  .ground-box-fix p {
+    font-size: 0.8rem;
+    line-height: 0.7rem;
+  }
+  .ground-box-fix .feature-icon-minimal{
+    height: 3.3rem;
+    width: 3.3rem;
+  }
+  .ground-box-fix h3 {
+  max-width: 100px;
+  line-height: 1rem;
+  font-size: 1rem;
+  margin-top: 7px;
+  width: 100% !important;
+}
+  
+}
+
+
+
+/* Ocultar solo la barra superior cuando se hace scroll */
+.ground-pull-up.header-hidden > div > div:first-child {
+  opacity: 0 !important;
+  transform: translateY(-20px) !important;
+  transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+              max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+              padding 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+              margin 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none !important;
+  max-height: 0 !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* Mostrar el banner cuando el header es visible */
+.ground-pull-up:not(.header-hidden) > div > div:first-child {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+  transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+              max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+              padding 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+              margin 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  max-height: 100px !important;
+  overflow: visible !important;
+}
+.ground-text-sha {
+  text-shadow: 0px 0px 3px #fff !important;
+}
+
+.groundgrid-center {
+  display: grid;
+  grid-template-columns: auto;
+  height: 100%;
+  width: 100%;
+  background: transparent;
+  z-index: 0;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.groundmask::after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  inset: 0;
+  display: grid;
+  background: linear-gradient(to bottom, #00000000, #00000089);
+}
+
+
+.groundmask-gold::after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  inset: 0;
+  z-index: 0;
+  display: grid;
+  background: linear-gradient( to bottom , #fff,  #00000000);
+  /* backdrop-filter: blur(210px); */
+  /* background: linear-gradient(to bottom, #ffffff,#fff,#00000000,#fff ,#fff); */
+}
+
+.z-index-normal {
+z-index: 2;
+position: relative;
+}
+
+.ground-script-bg-white{
+  background: #ffffff43 !important;
+  backdrop-filter: blur(20px) !important;
+  border: 1px solid  rgb(229, 210, 159) !important;
+}
+
+.grid-process {
+  grid-template-columns: auto auto;
+  column-gap: 2rem;
+  justify-content: center;
+}
+@media screen and (min-width:0px) and (max-width:992px) {
+  .grid-process{
+    grid-template-columns: auto ;
+    row-gap: 1rem;
+    padding: 1rem !important;
+  }
+}
+
+.groundgreen-bg {
+  background: #3e341b35 !important;
+  backdrop-filter: blur(100px) !important;
+  transition: all 200ms ease;
+}
+
+.groundgreen-bg-blue {
+  background: hsl(168.5, 27.1%, 18.8%) !important;
+  backdrop-filter: blur(100px) !important;
+  transition: all 200ms ease;
+}
+.groundgreen-bg-blue h3 {
+  color: hsl(42.5, 59.5%, 66.1%);
+}
+
+
+.groundgreen-bg-blue-2 {
+  background: hsl(42.5, 59.5%, 66.1%) !important;
+  backdrop-filter: blur(100px) !important;
+  transition: all 200ms ease;
+}
+
+
+
+
+/* @media screen and (min-width: 0px) and (max-width: 1024px) {
+  .responsive-arc {
+    width: auto !important;
+    height: 400% !important;
+    transition: all 0.5s ease-in-out;
+  }
+}
+ */

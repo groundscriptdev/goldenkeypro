@@ -1,0 +1,91 @@
+/* Enhanced Dropdown Menu Styling */
+/* Import this file in your globals.css */
+
+/* Enhanced Dropdown Container */
+.dropdown-menu-enhanced {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 250px;
+  padding: 0.5rem 0;
+  margin-top: 0.25rem;
+  background-color: #fff;
+  border: 1px solid hsl(var(--jade-green) / 0.1);
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+  z-index: 50;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all 0.2s ease;
+  pointer-events: none;
+}
+
+.dropdown-menu-enhanced.active {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* Enhanced Dropdown Items */
+.dropdown-item-enhanced {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-jade-green);
+  transition: all 0.2s ease;
+}
+
+.dropdown-item-enhanced:hover {
+  background-color: hsl(var(--jade-green) / 0.05);
+}
+
+.dropdown-item-enhanced:focus {
+  background-color: hsl(var(--jade-green) / 0.05);
+  outline: 2px solid hsl(var(--jade-green) / 0.5);
+  outline-offset: -2px;
+}
+
+/* Enhanced Submenu Container */
+.submenu-enhanced {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  min-width: 220px;
+  padding: 0.5rem 0;
+  margin-left: 0.25rem;
+  background-color: #fff;
+  border: 1px solid hsl(var(--jade-green) / 0.1);
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+  z-index: 50;
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: all 0.2s ease;
+  pointer-events: none;
+}
+
+.submenu-enhanced.active {
+  opacity: 1;
+  transform: translateX(0);
+  pointer-events: auto;
+}
+
+/* Responsive Dropdown */
+@media (max-width: 768px) {
+  .dropdown-menu-enhanced {
+    min-width: 200px;
+  }
+  
+  .dropdown-item-enhanced {
+    padding: 1rem;
+    font-size: 1rem;
+  }
+  
+  .submenu-enhanced {
+    min-width: 200px;
+  }
+}
