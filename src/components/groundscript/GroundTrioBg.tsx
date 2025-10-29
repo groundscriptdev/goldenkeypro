@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "motion/react";
+import { motion, AnimatePresence, Easing } from "motion/react";
 
 // Define las imágenes para cada columna
 const leftImages = ["/images/Isquierda.jpg", "/images/4.jpg", "/images/10.jpg"];
@@ -11,7 +11,7 @@ const rightImages = ["/images/Derecha.jpg", "/images/9.jpg", "/images/12.jpg"];
 // Variables configurables para efectos
 const transitionConfig = {
   duration: 0.8,
-  ease: "easeInOut",
+  ease: "easeInOut" as Easing,
 };
 
 // Intervalos de cambio para cada columna (en milisegundos)

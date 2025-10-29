@@ -1,13 +1,13 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "motion/react";
+import { motion, AnimatePresence, Easing } from "motion/react";
 
 const images = ["/assets/Arcos.svg", "/assets/Arcos.svg", "/assets/Arcos.svg"];
 
 const transitionConfig = {
   duration: 0.8,
-  ease: "easeInOut",
+  ease: "easeInOut" as Easing,
 };
 
 const directions = {
@@ -52,7 +52,7 @@ export function GroundFooterBg() {
             transition: {
               duration: 100 - i * 10,
               repeat: Infinity,
-              ease: "linear",
+              ease: "linear" as Easing,
             },
           };
 

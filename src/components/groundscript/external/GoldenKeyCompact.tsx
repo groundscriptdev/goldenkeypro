@@ -1,6 +1,6 @@
 'use client';
 
-import { motion } from "motion/react";
+import { motion, Easing } from "motion/react";
 import { CheckCircle, Home, TrendingUp, Users, ChevronRight, Plus } from 'lucide-react';
 import { useState } from 'react';
 
@@ -40,10 +40,10 @@ export function GoldenKeyCompact() {
             x: [0, 50, 0], 
             y: [0, -50, 0] 
           }}
-          transition={{ 
-            duration: 20, 
-            repeat: Infinity, 
-            ease: "easeInOut" 
+          transition={{
+            duration: 20,
+            repeat: Infinity,
+            ease: "easeInOut" as Easing
           }}
           style={{ top: '10%', left: '10%' }}
         />
@@ -53,10 +53,10 @@ export function GoldenKeyCompact() {
             x: [0, -50, 0], 
             y: [0, 50, 0] 
           }}
-          transition={{ 
-            duration: 25, 
-            repeat: Infinity, 
-            ease: "easeInOut" 
+          transition={{
+            duration: 25,
+            repeat: Infinity,
+            ease: "easeInOut" as Easing
           }}
           style={{ bottom: '10%', right: '10%' }}
         />
@@ -92,10 +92,10 @@ export function GoldenKeyCompact() {
             className="w-12 h-12 opacity-20"
             initial={{ opacity: 0, rotate: -15 }}
             animate={{ opacity: 0.2, rotate: 0 }}
-            transition={{ 
-              duration: 1.2, 
+            transition={{
+              duration: 1.2,
               delay: 0.3,
-              ease: "easeOut"
+              ease: "easeOut" as Easing
             }}
           >
             <svg width="48" height="48" viewBox="0 0 100 100" fill="none">

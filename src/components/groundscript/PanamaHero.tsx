@@ -1,4 +1,4 @@
-import { motion } from "motion/react";
+import { motion, Easing } from "motion/react";
 
 // Animated background elements
 function Container1() {
@@ -86,7 +86,7 @@ function Arcos() {
       transition={{
         duration: 60,
         repeat: Infinity,
-        ease: "linear",
+        ease: "linear" as Easing,
       }}
     >
       <ClipPathGroup />
@@ -323,7 +323,7 @@ function StampImage() {
       transition={{
         duration: 1.2,
         delay: 0.3,
-        ease: "easeOut",
+        ease: "easeOut" as Easing,
       }}
     >
       <img
