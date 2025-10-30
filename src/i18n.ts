@@ -7,12 +7,12 @@ export const defaultLocale = "en" as const;
 
 export default getRequestConfig(async ({ requestLocale }) => {
   // Get the locale from the request
-  let locale = await requestLocale;
+  const locale = await requestLocale;
 
   // Validate that the incoming `locale` parameter is valid
-  if (!locales.find((l) => l === locale)) {
-    // En lugar de notFound(), devuelve el locale por defecto
-    locale = defaultLocale;
+  // Si no es válido, next-intl con localePrefix: "always" redirigirá automáticamente
+  if (!locales.includes(locale as any)) {
+    notFound();
   }
 
   return {

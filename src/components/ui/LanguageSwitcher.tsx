@@ -23,7 +23,18 @@ export function LanguageSwitcher() {
   const pathname = usePathname();
 
   const handleLanguageChange = (newLocale: string) => {
-    const newPath = pathname.replace(`/${locale}`, `/${newLocale}`);
+    // Extraer el path sin el locale actual
+    let pathWithoutLocale = pathname;
+    
+    // Si el pathname comienza con el locale actual, removerlo
+    if (pathname.startsWith(`/${locale}/`)) {
+      pathWithoutLocale = pathname.replace(`/${locale}`, '');
+    } else if (pathname === `/${locale}`) {
+      pathWithoutLocale = '';
+    }
+    
+    // Construir el nuevo path con el nuevo locale
+    const newPath = `/${newLocale}${pathWithoutLocale}`;
     router.push(newPath);
   };
 

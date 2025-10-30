@@ -8,8 +8,8 @@ export default createMiddleware({
   // Used when no locale matches
   defaultLocale,
 
-  // Para SSR, es mejor usar "as-needed" en lugar de "always"
-  localePrefix: "as-needed",
+  // Usar "always" para asegurar que todas las URLs tengan prefijo de idioma
+  localePrefix: "always",
 
   // Optional: Configure locale detection
   localeDetection: true,
