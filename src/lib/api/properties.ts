@@ -25,7 +25,7 @@ import {
 } from "@/types/properties";
 
 const API_BASE_URL =
-  process.env.NEXT_PUBLIC_PANAMA_API_URL || "http://localhost:8000/api";
+  process.env.NEXT_PUBLIC_PANAMA_API_URL || "https://engine.panamagoldenkey.com/api";
 
 class PropertiesAPI {
   private baseUrl: string;
