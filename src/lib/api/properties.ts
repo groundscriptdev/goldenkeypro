@@ -24,8 +24,13 @@ import {
   PropertyReportResponse,
 } from "@/types/properties";
 
-const API_BASE_URL =
-  process.env.NEXT_PUBLIC_PANAMA_API_URL || "https://engine.panamagoldenkey.com/api";
+// Determinar si estamos en desarrollo o producción
+const isDevelopment = process.env.NODE_ENV === 'development';
+
+// Usar el proxy en desarrollo para evitar CORS, usar la API directa en producción
+const API_BASE_URL = isDevelopment
+  ? "/api/proxy/properties"  // Proxy local para desarrollo
+  : (process.env.NEXT_PUBLIC_PANAMA_API_URL || "https://engine.panamagoldenkey.com/api");
 
 class PropertiesAPI {
   private baseUrl: string;
@@ -38,7 +43,15 @@ class PropertiesAPI {
     endpoint: string,
     options: RequestInit = {}
   ): Promise<T> {
-    const url = `${this.baseUrl}${endpoint}`;
+    // Construir la URL correctamente para el proxy y la API directa
+    let url: string;
+    if (isDevelopment) {
+      // En desarrollo, el endpoint ya incluye la ruta completa
+      url = `${this.baseUrl}${endpoint.startsWith('/') ? endpoint.substring(1) : endpoint}`;
+    } else {
+      // En producción, usar la API directa
+      url = `${this.baseUrl}${endpoint}`;
+    }
 
     const defaultHeaders = {
       "Content-Type": "application/json",
@@ -53,12 +66,14 @@ class PropertiesAPI {
     };
 
     try {
+      console.log(`Making ${config.method || 'GET'} request to:`, url);
       const response = await fetch(url, config);
 
       if (!response.ok) {
         const errorData = await response.json().catch(() => ({}));
         throw new Error(
-          errorData.message ||
+          errorData.error ||
+            errorData.message ||
             errorData.detail ||
             `HTTP error! status: ${response.status}`
         );
