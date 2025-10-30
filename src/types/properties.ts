@@ -25,16 +25,16 @@ export interface Property {
   furnishing?: string;
   view_type?: string;
   description: string;
-  features: string[];
-  tags: string[];
+  features?: string[];
+  tags?: string[];
   created_at: string;
   updated_at: string;
   published_at: string;
 
   // Campos de compatibilidad con frontend actual
-  price?: number;
-  location?: PropertyLocation;
-  image_url?: string;
+  price?: number | null;
+  location?: PropertyLocation | null;
+  image_url?: string | null;
   roi?: string;
 
   // Relaciones con arquitectura angelical
@@ -88,13 +88,13 @@ export interface PropertyFinancials {
 
 // Interfaz para información de ubicación
 export interface PropertyLocation {
-  id: string;
-  property: string;
-  address_full: string;
-  neighborhood: string;
-  district: string;
-  province: string;
-  country: string;
+  id?: string;
+  property?: string;
+  address_full?: string;
+  neighborhood?: string;
+  district?: string;
+  province?: string;
+  country?: string;
   latitude?: number;
   longitude?: number;
   walk_score?: number;
@@ -107,21 +107,21 @@ export interface PropertyLocation {
   flood_risk?: string;
   seismic_zone?: string;
   zoning_type?: string;
-  nearby_amenities: string[];
-  public_transportation: string[];
+  nearby_amenities?: string[];
+  public_transportation?: string[];
   description?: string;
-  created_at: string;
-  updated_at: string;
+  created_at?: string;
+  updated_at?: string;
 
   // Propiedades calculadas
-  full_address: string;
+  full_address?: string;
   coordinates?: [number, number];
-  has_coordinates: boolean;
-  walk_score_rating: string;
-  transit_score_rating: string;
-  is_prime_location: boolean;
-  is_beach_front: boolean;
-  is_city_center: boolean;
+  has_coordinates?: boolean;
+  walk_score_rating?: string;
+  transit_score_rating?: string;
+  is_prime_location?: boolean;
+  is_beach_front?: boolean;
+  is_city_center?: boolean;
 }
 
 // Interfaz para contenido multimedia

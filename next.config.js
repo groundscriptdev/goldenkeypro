@@ -17,6 +17,11 @@ const nextConfig = {
         hostname: 'api.panamagoldenkey.com',
         pathname: '/media/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'engine.panamagoldenkey.com',
+        pathname: '/media/**',
+      },
     ],
   },
 

@@ -8,6 +8,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import PropertyModal from "@/components/ui/ZillowInspiredPropertyModal";
+import { LogoSVG } from "@/components/ui/LogoSVG";
 import {
   Bed,
   Bath,
@@ -193,14 +194,22 @@ export default function PropertyCard({
             <div className="w-full h-full flex items-center justify-center">
               {imageError ? (
                 <div className="text-center p-4">
-                  <Building className="w-16 h-16 text-jade-green/30 mx-auto mb-2" />
+                  <LogoSVG
+                    width={64}
+                    height={64}
+                    className="w-16 h-16 text-jade-green/30 mx-auto mb-2"
+                  />
                   <p className="text-jade-green/60 text-sm">
                     Imagen no disponible
                   </p>
                 </div>
               ) : (
                 <div className="w-full h-full bg-jade-green/5 flex items-center justify-center">
-                  <Building className="w-16 h-16 text-jade-green/30" />
+                  <LogoSVG
+                    width={64}
+                    height={64}
+                    className="w-16 h-16 text-jade-green/30"
+                  />
                 </div>
               )}
             </div>

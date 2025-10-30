@@ -24,13 +24,62 @@ import {
   PropertyReportResponse,
 } from "@/types/properties";
 
-// Determinar si estamos en desarrollo o producción
-const isDevelopment = process.env.NODE_ENV === 'development';
+// Función para normalizar URLs de imágenes
+const normalizeImageUrl = (imageUrl: string | null): string | null => {
+  if (!imageUrl) return null;
+  
+  // Si ya es una URL completa HTTPS, devolverla tal cual
+  if (imageUrl.startsWith('https://')) {
+    return imageUrl;
+  }
+  
+  // Si es HTTP, convertir a HTTPS
+  if (imageUrl.startsWith('http://')) {
+    return imageUrl.replace('http://', 'https://');
+  }
+  
+  // Si es localhost o relativa, reemplazar con la URL de producción
+  const mediaUrl = process.env.NEXT_PUBLIC_MEDIA_URL || process.env.NEXT_PUBLIC_SITE_URL || 'https://panamagoldenkey.com';
+  
+  if (imageUrl.startsWith('http://localhost') || imageUrl.startsWith('https://localhost')) {
+    // Extraer la ruta y reemplazar el dominio
+    const url = new URL(imageUrl);
+    return `${mediaUrl}${url.pathname}`;
+  }
+  
+  if (imageUrl.startsWith('/')) {
+    return `${mediaUrl}${imageUrl}`;
+  }
+  
+  return `${mediaUrl}/${imageUrl}`;
+};
 
-// Usar el proxy en desarrollo para evitar CORS, usar la API directa en producción
-const API_BASE_URL = isDevelopment
-  ? "/api/proxy/properties"  // Proxy local para desarrollo
-  : (process.env.NEXT_PUBLIC_PANAMA_API_URL || "https://engine.panamagoldenkey.com/api");
+// Determinar si estamos en desarrollo o producción
+// Lógica mejorada para detectar correctamente el entorno
+const getApiBaseUrl = () => {
+  // En el servidor, verificar las variables de entorno
+  if (typeof window === 'undefined') {
+    // Si estamos en el servidor y es desarrollo, usar proxy
+    if (process.env.NODE_ENV === 'development') {
+      return "/api/proxy/properties";
+    }
+    // En producción en el servidor, usar API directa
+    return process.env.NEXT_PUBLIC_PANAMA_API_URL || "https://engine.panamagoldenkey.com/api";
+  }
+  
+  // En el cliente, verificar el hostname
+  const isLocalhost = window.location.hostname === 'localhost' ||
+                      window.location.hostname === '127.0.0.1' ||
+                      window.location.hostname.includes('.local');
+  
+  if (isLocalhost) {
+    return "/api/proxy/properties";
+  }
+  
+  return process.env.NEXT_PUBLIC_PANAMA_API_URL || "https://engine.panamagoldenkey.com/api";
+};
+
+const API_BASE_URL = getApiBaseUrl();
 
 class PropertiesAPI {
   private baseUrl: string;
@@ -45,7 +94,9 @@ class PropertiesAPI {
   ): Promise<T> {
     // Construir la URL correctamente para el proxy y la API directa
     let url: string;
-    if (isDevelopment) {
+    const isUsingProxy = this.baseUrl.includes('/api/proxy');
+    
+    if (isUsingProxy) {
       // En desarrollo, el endpoint ya incluye la ruta completa
       url = `${this.baseUrl}${endpoint.startsWith('/') ? endpoint.substring(1) : endpoint}`;
     } else {
@@ -70,16 +121,64 @@ class PropertiesAPI {
       const response = await fetch(url, config);
 
       if (!response.ok) {
-        const errorData = await response.json().catch(() => ({}));
-        throw new Error(
-          errorData.error ||
-            errorData.message ||
-            errorData.detail ||
-            `HTTP error! status: ${response.status}`
-        );
+        // Intentar obtener el error como JSON primero
+        let errorData: any = {};
+        try {
+          const errorText = await response.text();
+          if (errorText) {
+            try {
+              errorData = JSON.parse(errorText);
+            } catch {
+              // Si no es JSON, usar el texto como mensaje
+              errorData = { error: errorText };
+            }
+          }
+        } catch {
+          // Si no se puede leer el cuerpo, usar solo el status
+        }
+        
+        const errorMessage = (errorData as any).error ||
+          (errorData as any).message ||
+          (errorData as any).detail ||
+          `Error ${response.status}: ${response.statusText}`;
+          
+        throw new Error(errorMessage);
       }
 
-      return await response.json();
+      const data = await response.json();
+      
+      // Normalizar URLs de imágenes en la respuesta
+      if (data && typeof data === 'object') {
+        // Si es una respuesta de propiedades
+        if (data.results && Array.isArray(data.results)) {
+          data.results = data.results.map((property: any) => ({
+            ...property,
+            image_url: normalizeImageUrl(property.image_url),
+            // También normalizar URLs en media si existe
+            media: property.media ? property.media.map((mediaItem: any) => ({
+              ...mediaItem,
+              url: normalizeImageUrl(mediaItem.url),
+              thumbnail_url: normalizeImageUrl(mediaItem.thumbnail_url),
+            })) : undefined,
+          }));
+        }
+        
+        // Si es una propiedad individual
+        if (data.image_url) {
+          data.image_url = normalizeImageUrl(data.image_url);
+        }
+        
+        // Normalizar URLs en media si existe
+        if (data.media && Array.isArray(data.media)) {
+          data.media = data.media.map((mediaItem: any) => ({
+            ...mediaItem,
+            url: normalizeImageUrl(mediaItem.url),
+            thumbnail_url: normalizeImageUrl(mediaItem.thumbnail_url),
+          }));
+        }
+      }
+      
+      return data;
     } catch (error) {
       if (error instanceof Error) {
         throw error;
@@ -90,7 +189,7 @@ class PropertiesAPI {
 
   // Obtener todas las propiedades con paginación y filtros
   async getProperties(url?: string): Promise<PropertyResponse> {
-    const endpoint = url || "/properties/";
+    const endpoint = url || "";
     return this.request<PropertyResponse>(endpoint);
   }
 

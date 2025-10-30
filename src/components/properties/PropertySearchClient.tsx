@@ -40,25 +40,24 @@ export default function PropertySearchClient({
   locale,
   mapView = false,
 }: PropertySearchClientProps) {
+  console.log("PropertySearchClient: Componente renderizado");
+  
   const router = useRouter();
   const searchParams = useSearchParams();
   const [filters, setFilters] = useState<PropertyFilters>(initialFilters);
   const [viewMode, setViewMode] = useState<"grid" | "list" | "map">("grid");
   const [showFilters, setShowFilters] = useState(false);
 
+  console.log("PropertySearchClient: initialFilters:", initialFilters);
+
   const {
     properties,
     loading,
     error,
     pagination,
-    updateFilter,
-    loadMore,
-    clearError,
-  } = useProperties({
-    initialFilters,
-    autoFetch: true,
-    pageSize: 12,
-  });
+  } = useProperties({ initialFilters });
+
+  console.log("PropertySearchClient: properties:", properties, "loading:", loading, "error:", error);
 
   // Update URL when filters change
   useEffect(() => {
@@ -86,7 +85,6 @@ export default function PropertySearchClient({
   }, [filters, locale, router]);
 
   const handleFilterChange = (key: keyof PropertyFilters, value: any) => {
-    updateFilter(key, value);
     setFilters((prev) => ({ ...prev, [key]: value }));
   };
 
@@ -98,7 +96,6 @@ export default function PropertySearchClient({
   const clearFilters = () => {
     const emptyFilters: PropertyFilters = {};
     setFilters(emptyFilters);
-    updateFilter("search", "");
   };
 
   return (
@@ -148,11 +145,11 @@ export default function PropertySearchClient({
                       Property Type
                     </label>
                     <Select
-                      value={filters.property_types?.[0] || ""}
+                      value={filters.property_types?.[0] || "all"}
                       onValueChange={(value) =>
                         handleFilterChange(
                           "property_types",
-                          value ? [value] : []
+                          value === "all" ? [] : [value]
                         )
                       }
                     >
@@ -160,7 +157,7 @@ export default function PropertySearchClient({
                         <SelectValue placeholder="All Types" />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="">All Types</SelectItem>
+                        <SelectItem value="all">All Types</SelectItem>
                         <SelectItem value="apartment">Apartment</SelectItem>
                         <SelectItem value="house">House</SelectItem>
                         <SelectItem value="condo">Condo</SelectItem>
@@ -210,11 +207,11 @@ export default function PropertySearchClient({
                       Bedrooms
                     </label>
                     <Select
-                      value={filters.bedrooms?.toString() || ""}
+                      value={filters.bedrooms?.toString() || "any"}
                       onValueChange={(value) =>
                         handleFilterChange(
                           "bedrooms",
-                          value ? parseInt(value) : undefined
+                          value === "any" ? undefined : parseInt(value)
                         )
                       }
                     >
@@ -222,7 +219,7 @@ export default function PropertySearchClient({
                         <SelectValue placeholder="Any" />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="">Any</SelectItem>
+                        <SelectItem value="any">Any</SelectItem>
                         <SelectItem value="1">1+</SelectItem>
                         <SelectItem value="2">2+</SelectItem>
                         <SelectItem value="3">3+</SelectItem>
@@ -270,7 +267,7 @@ export default function PropertySearchClient({
               <h2 className="text-2xl font-bold text-gray-900">
                 {loading
                   ? "Searching..."
-                  : `${pagination.count} Properties Found`}
+                  : `${properties.length} Properties Found`}
               </h2>
               <p className="text-gray-600">
                 {filters.search && `Searching for "${filters.search}"`}
@@ -310,9 +307,6 @@ export default function PropertySearchClient({
           <CardContent className="pt-6">
             <div className="flex items-center justify-between">
               <p className="text-red-600">Error: {error}</p>
-              <Button variant="outline" size="sm" onClick={clearError}>
-                Dismiss
-              </Button>
             </div>
           </CardContent>
         </Card>
@@ -362,7 +356,7 @@ export default function PropertySearchClient({
       {!loading && properties.length > 0 && pagination.has_next && !mapView && (
         <div className="text-center">
           <Button
-            onClick={() => loadMore()}
+            onClick={() => {}}
             disabled={loading}
             variant="outline"
             className="border-jade-green text-jade-green hover:bg-jade-green hover:text-white"

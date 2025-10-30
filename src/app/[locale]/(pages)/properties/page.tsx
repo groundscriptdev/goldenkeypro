@@ -78,7 +78,7 @@ export default async function PropertiesPage({
 
   // Convert search params to filters
   const initialFilters: PropertyFilters = {
-    search: searchParams.search,
+    search: searchParams.search || undefined,
     min_price: searchParams.min_price
       ? parseInt(searchParams.min_price)
       : undefined,
@@ -94,8 +94,10 @@ export default async function PropertiesPage({
     property_types: searchParams.property_type
       ? [searchParams.property_type as any]
       : undefined,
-    city: searchParams.city,
+    city: searchParams.city || undefined,
   };
+
+  console.log("PropertiesPage: initialFilters:", initialFilters);
 
   const featuredLocations = [
     {
@@ -174,13 +176,11 @@ export default async function PropertiesPage({
 
           {/* Search Section */}
           <section className="py-12 bg-white border-b">
-            <div className="container mx-auto px-4">
-              <div className="max-w-6xl mx-auto">
-                <PropertySearchClient
-                  initialFilters={initialFilters}
-                  locale={params.locale}
-                />
-              </div>
+            <div className="w-full px-4">
+              <PropertySearchClient
+                initialFilters={initialFilters}
+                locale={params.locale}
+              />
             </div>
           </section>
 

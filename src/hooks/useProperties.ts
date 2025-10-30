@@ -35,6 +35,8 @@ export const useProperties = (
 ): UsePropertiesReturn => {
   const { initialFilters = {}, autoFetch = true, pageSize = 12 } = options;
 
+  console.log("useProperties: Hook inicializado con initialFilters:", initialFilters, "autoFetch:", autoFetch);
+
   const [properties, setProperties] = useState<Property[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
@@ -76,12 +78,15 @@ export const useProperties = (
   // Función para obtener propiedades
   const fetchProperties = useCallback(
     async (url?: string) => {
+      console.log("fetchProperties: Iniciando con url:", url);
       setLoading(true);
       setError(null);
 
       try {
         const response: PropertyResponse =
           await propertiesApi.getProperties(url);
+
+        console.log("fetchProperties: Respuesta recibida:", response);
 
         if (url) {
           // Es una carga adicional (paginación)
@@ -90,6 +95,8 @@ export const useProperties = (
           // Es una carga inicial
           setProperties(response.results);
         }
+
+        console.log("fetchProperties: Propiedades establecidas:", response.results.length);
 
         // Actualizar paginación
         if (response.pagination) {
@@ -113,39 +120,46 @@ export const useProperties = (
           setHasNext(newPagination.has_next);
         }
       } catch (err) {
+        console.error("fetchProperties: Error:", err);
         setError(
           err instanceof Error ? err.message : "Error al cargar propiedades"
         );
-        console.error("Error fetching properties:", err);
       } finally {
         setLoading(false);
       }
     },
-    [filters, pageSize]
+    [pageSize]
   );
 
-  // Cargar propiedades al cambiar los filtros
+  // Cargar propiedades iniciales al montar el componente
   useEffect(() => {
+    console.log("useProperties: useEffect ejecutado, autoFetch:", autoFetch);
     if (autoFetch) {
-      const params = new URLSearchParams();
-
-      // Agregar filtros a los parámetros
-      Object.entries(filters).forEach(([key, value]) => {
-        if (value !== undefined && value !== null && value !== "") {
-          if (Array.isArray(value)) {
-            value.forEach((v) => params.append(key, v.toString()));
-          } else {
-            params.append(key, value.toString());
-          }
-        }
+      console.log("useProperties: Iniciando carga inicial");
+      setLoading(true);
+      
+      // Llamada directa sin usar fetchProperties para evitar problemas de dependencias
+      propertiesApi.getProperties().then(response => {
+        console.log("useProperties: Respuesta directa:", response);
+        setProperties(response.results || []);
+        setPagination({
+          count: response.count || 0,
+          next: response.next,
+          previous: response.previous,
+          page_size: pageSize,
+          current_page: 1,
+          total_pages: Math.ceil((response.count || 0) / pageSize),
+          has_next: !!response.next,
+          has_previous: !!response.previous,
+        });
+        setLoading(false);
+      }).catch(err => {
+        console.error("useProperties: Error directo:", err);
+        setError(err instanceof Error ? err.message : "Error al cargar propiedades");
+        setLoading(false);
       });
-
-      const queryString = params.toString();
-      const url = queryString ? `?${queryString}` : "";
-
-      fetchProperties(url);
     }
-  }, [filters, autoFetch, fetchProperties]);
+  }, []); // Solo ejecutar al montar el componente, sin dependencias
 
   return {
     properties,
