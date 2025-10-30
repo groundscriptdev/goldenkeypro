@@ -5,7 +5,7 @@
 
 import { NextRequest, NextResponse } from 'next/server';
 
-const API_BASE_URL = process.env.NEXT_PUBLIC_PANAMA_API_URL || "https://engine.panamagoldenkey.com/api";
+const API_BASE_URL = process.env.NEXT_PUBLIC_PANAMA_API_URL?.replace('/properties', '') || "https://engine.panamagoldenkey.com/api";
 
 // Función para normalizar URLs de imágenes
 function normalizeImageUrl(url: string | null): string | null {

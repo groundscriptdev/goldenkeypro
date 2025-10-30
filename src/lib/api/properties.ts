@@ -189,7 +189,8 @@ class PropertiesAPI {
 
   // Obtener todas las propiedades con paginación y filtros
   async getProperties(url?: string): Promise<PropertyResponse> {
-    const endpoint = url || "";
+    const isUsingProxy = this.baseUrl.includes('/api/proxy');
+    const endpoint = url || (isUsingProxy ? "" : "/");
     return this.request<PropertyResponse>(endpoint);
   }
 

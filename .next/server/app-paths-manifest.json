@@ -1,7 +1,3 @@
 {
-  "/api/proxy/properties/route": "app/api/proxy/properties/route.js",
-  "/[locale]/(pages)/properties/page": "app/[locale]/(pages)/properties/page.js",
-  "/[locale]/page": "app/[locale]/page.js",
-  "/[locale]/(pages)/test-properties/page": "app/[locale]/(pages)/test-properties/page.js",
-  "/[locale]/(pages)/residency/page": "app/[locale]/(pages)/residency/page.js"
+  "/api/proxy/properties/route": "app/api/proxy/properties/route.js"
 }

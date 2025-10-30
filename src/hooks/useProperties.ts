@@ -159,7 +159,7 @@ export const useProperties = (
         setLoading(false);
       });
     }
-  }, []); // Solo ejecutar al montar el componente, sin dependencias
+  }, [autoFetch]); // Incluir autoFetch como dependencia
 
   return {
     properties,
