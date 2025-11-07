@@ -1,5 +1,4 @@
 {
-  "/_not-found/page": "app/_not-found/page.js",
-  "/api/proxy/properties/[...path]/route": "app/api/proxy/properties/[...path]/route.js",
+  "/api/proxy/properties/route": "app/api/proxy/properties/route.js",
   "/[locale]/properties/page": "app/[locale]/properties/page.js"
 }

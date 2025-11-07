@@ -31,8 +31,12 @@ const normalizeImageUrl = (imageUrl: string | null): string | null => {
   // En desarrollo, usar el proxy local para imágenes
   const isDevelopment = process.env.NODE_ENV === 'development';
   
+  // Debug log
+  console.log('normalizeImageUrl - Input:', imageUrl, 'isDevelopment:', isDevelopment);
+  
   // Si ya es una URL completa HTTPS y no es localhost, devolverla tal cual
   if (imageUrl.startsWith('https://') && !imageUrl.includes('localhost')) {
+    console.log('normalizeImageUrl - Returning HTTPS URL as-is:', imageUrl);
     return imageUrl;
   }
   
@@ -41,42 +45,96 @@ const normalizeImageUrl = (imageUrl: string | null): string | null => {
     if (isDevelopment) {
       // Extraer la ruta y usar el proxy local
       const url = new URL(imageUrl);
-      return `/api/proxy/media${url.pathname}`;
+      const result = `/api/proxy/media${url.pathname}`;
+      console.log('normalizeImageUrl - Development proxy result:', result);
+      return result;
     } else {
       // En producción, usar la URL de producción
-      const mediaUrl = process.env.NEXT_PUBLIC_MEDIA_URL || process.env.NEXT_PUBLIC_SITE_URL || 'https://panamagoldenkey.com';
+      const mediaUrl = process.env.NEXT_PUBLIC_MEDIA_URL || process.env.NEXT_PUBLIC_SITE_URL || 'https://engine.panamagoldenkey.com';
       const url = new URL(imageUrl);
-      return `${mediaUrl}${url.pathname}`;
+      const result = `${mediaUrl}${url.pathname}`;
+      console.log('normalizeImageUrl - Production URL result:', result);
+      return result;
     }
   }
   
   // Si es una ruta relativa que empieza con /media/
   if (imageUrl.startsWith('/media/')) {
     if (isDevelopment) {
-      return `/api/proxy/media${imageUrl.replace('/media', '')}`;
+      const result = `/api/proxy/media${imageUrl.replace('/media', '')}`;
+      console.log('normalizeImageUrl - Development /media/ result:', result);
+      return result;
     } else {
-      const mediaUrl = process.env.NEXT_PUBLIC_MEDIA_URL || process.env.NEXT_PUBLIC_SITE_URL || 'https://panamagoldenkey.com';
-      return `${mediaUrl}${imageUrl}`;
+      const mediaUrl = process.env.NEXT_PUBLIC_MEDIA_URL || process.env.NEXT_PUBLIC_SITE_URL || 'https://engine.panamagoldenkey.com';
+      const result = `${mediaUrl}${imageUrl}`;
+      console.log('normalizeImageUrl - Production /media/ result:', result);
+      return result;
     }
   }
   
   // Si es una ruta relativa normal
   if (imageUrl.startsWith('/')) {
     if (isDevelopment) {
-      return `/api/proxy/media${imageUrl}`;
+      const result = `/api/proxy/media${imageUrl}`;
+      console.log('normalizeImageUrl - Development relative path result:', result);
+      return result;
     } else {
-      const mediaUrl = process.env.NEXT_PUBLIC_MEDIA_URL || process.env.NEXT_PUBLIC_SITE_URL || 'https://panamagoldenkey.com';
-      return `${mediaUrl}${imageUrl}`;
+      const mediaUrl = process.env.NEXT_PUBLIC_MEDIA_URL || process.env.NEXT_PUBLIC_SITE_URL || 'https://engine.panamagoldenkey.com';
+      const result = `${mediaUrl}${imageUrl}`;
+      console.log('normalizeImageUrl - Production relative path result:', result);
+      return result;
     }
   }
   
   // Si es una ruta sin /
   if (isDevelopment) {
-    return `/api/proxy/media/${imageUrl}`;
+    const result = `/api/proxy/media/${imageUrl}`;
+    console.log('normalizeImageUrl - Development no slash result:', result);
+    return result;
   } else {
-    const mediaUrl = process.env.NEXT_PUBLIC_MEDIA_URL || process.env.NEXT_PUBLIC_SITE_URL || 'https://panamagoldenkey.com';
-    return `${mediaUrl}/${imageUrl}`;
+    const mediaUrl = process.env.NEXT_PUBLIC_MEDIA_URL || process.env.NEXT_PUBLIC_SITE_URL || 'https://engine.panamagoldenkey.com';
+    const result = `${mediaUrl}/${imageUrl}`;
+    console.log('normalizeImageUrl - Production no slash result:', result);
+    return result;
   }
+};
+
+// Función para normalizar objetos de media
+const normalizeMedia = (mediaItem: any): PropertyMedia => {
+  return {
+    id: mediaItem.id?.toString() || '1',
+    property: mediaItem.property?.toString() || '1',
+    image_cover: normalizeImageUrl(mediaItem.image_cover || mediaItem.url || mediaItem.image || '') || '',
+    gallery: Array.isArray(mediaItem.gallery) ? mediaItem.gallery.map((img: string) => normalizeImageUrl(img) || '') : [],
+    video_tour_url: mediaItem.video_tour_url || null,
+    virtual_tour_url: mediaItem.virtual_tour_url || null,
+    floor_plan_pdf: mediaItem.floor_plan_pdf || null,
+    brochure_pdf: mediaItem.brochure_pdf || null,
+    drone_shots: Array.isArray(mediaItem.drone_shots) ? mediaItem.drone_shots.map((img: string) => normalizeImageUrl(img) || '') : [],
+    night_photos: Array.isArray(mediaItem.night_photos) ? mediaItem.night_photos.map((img: string) => normalizeImageUrl(img) || '') : [],
+    interior_photos: Array.isArray(mediaItem.interior_photos) ? mediaItem.interior_photos.map((img: string) => normalizeImageUrl(img) || '') : [],
+    exterior_photos: Array.isArray(mediaItem.exterior_photos) ? mediaItem.exterior_photos.map((img: string) => normalizeImageUrl(img) || '') : [],
+    neighborhood_video: mediaItem.neighborhood_video || null,
+    drone_video: mediaItem.drone_video || null,
+    total_images: mediaItem.total_images || 0,
+    total_videos: mediaItem.total_videos || 0,
+    has_virtual_tour: mediaItem.has_virtual_tour || false,
+    has_floor_plan: mediaItem.has_floor_plan || false,
+    media_quality_score: mediaItem.media_quality_score || null,
+    last_media_update: mediaItem.last_media_update || null,
+    created_at: mediaItem.created_at || new Date().toISOString(),
+    updated_at: mediaItem.updated_at || new Date().toISOString(),
+    // Propiedades calculadas
+    all_images: Array.isArray(mediaItem.gallery) ? mediaItem.gallery.map((img: string) => ({
+      url: normalizeImageUrl(img) || '',
+      type: 'image',
+      description: mediaItem.caption || mediaItem.title || ''
+    })) : [],
+    all_videos: [],
+    has_rich_media: !!(mediaItem.video_tour_url || mediaItem.virtual_tour_url),
+    media_completeness_score: mediaItem.media_completeness_score || 0,
+    is_media_complete: mediaItem.is_media_complete || false,
+  };
 };
 
 // Determinar si estamos en desarrollo o producción
@@ -180,34 +238,41 @@ class PropertiesAPI {
       if (data && typeof data === 'object') {
         // Si es una respuesta de propiedades
         if (data.results && Array.isArray(data.results)) {
-          data.results = data.results.map((property: any) => ({
-            ...property,
-            image_url: normalizeImageUrl(property.image_url),
+          data.results = data.results.map((property: any) => {
+            const normalizedProperty = {
+              ...property,
+              image_url: normalizeImageUrl(property.image_url),
+            };
+
             // También normalizar URLs en media si existe
-            media: property.media ? {
-              ...property.media,
-              // Normalizar image_cover si existe
-              image_cover: normalizeImageUrl(property.media.image_cover),
-              // Normalizar arrays de imágenes si existen
-              gallery: property.media.gallery ?
-                property.media.gallery.map((img: string) => normalizeImageUrl(img)) : [],
-              drone_shots: property.media.drone_shots ?
-                property.media.drone_shots.map((img: string) => normalizeImageUrl(img)) : [],
-              night_photos: property.media.night_photos ?
-                property.media.night_photos.map((img: string) => normalizeImageUrl(img)) : [],
-              interior_photos: property.media.interior_photos ?
-                property.media.interior_photos.map((img: string) => normalizeImageUrl(img)) : [],
-              exterior_photos: property.media.exterior_photos ?
-                property.media.exterior_photos.map((img: string) => normalizeImageUrl(img)) : [],
-              // Normalizar URLs individuales si existen
-              video_tour_url: property.media.video_tour_url,
-              virtual_tour_url: property.media.virtual_tour_url,
-              floor_plan_pdf: property.media.floor_plan_pdf,
-              brochure_pdf: property.media.brochure_pdf,
-              neighborhood_video: property.media.neighborhood_video,
-              drone_video: property.media.drone_video,
-            } : undefined,
-          }));
+            if (property.media && typeof property.media === 'object') {
+              normalizedProperty.media = {
+                ...property.media,
+                // Normalizar image_cover si existe
+                image_cover: normalizeImageUrl(property.media.image_cover),
+                // Normalizar arrays de imágenes si existen y son arrays
+                gallery: Array.isArray(property.media.gallery) ?
+                  property.media.gallery.map((img: string) => normalizeImageUrl(img)) : [],
+                drone_shots: Array.isArray(property.media.drone_shots) ?
+                  property.media.drone_shots.map((img: string) => normalizeImageUrl(img)) : [],
+                night_photos: Array.isArray(property.media.night_photos) ?
+                  property.media.night_photos.map((img: string) => normalizeImageUrl(img)) : [],
+                interior_photos: Array.isArray(property.media.interior_photos) ?
+                  property.media.interior_photos.map((img: string) => normalizeImageUrl(img)) : [],
+                exterior_photos: Array.isArray(property.media.exterior_photos) ?
+                  property.media.exterior_photos.map((img: string) => normalizeImageUrl(img)) : [],
+                // Normalizar URLs individuales si existen
+                video_tour_url: property.media.video_tour_url,
+                virtual_tour_url: property.media.virtual_tour_url,
+                floor_plan_pdf: property.media.floor_plan_pdf,
+                brochure_pdf: property.media.brochure_pdf,
+                neighborhood_video: property.media.neighborhood_video,
+                drone_video: property.media.drone_video,
+              };
+            }
+
+            return normalizedProperty;
+          });
         }
         
         // Si es una propiedad individual
@@ -216,21 +281,21 @@ class PropertiesAPI {
         }
         
         // Normalizar URLs en media si existe
-        if (data.media) {
+        if (data.media && typeof data.media === 'object') {
           data.media = {
             ...data.media,
             // Normalizar image_cover si existe
             image_cover: normalizeImageUrl(data.media.image_cover),
-            // Normalizar arrays de imágenes si existen
-            gallery: data.media.gallery ?
+            // Normalizar arrays de imágenes si existen y son arrays
+            gallery: Array.isArray(data.media.gallery) ?
               data.media.gallery.map((img: string) => normalizeImageUrl(img)) : [],
-            drone_shots: data.media.drone_shots ?
+            drone_shots: Array.isArray(data.media.drone_shots) ?
               data.media.drone_shots.map((img: string) => normalizeImageUrl(img)) : [],
-            night_photos: data.media.night_photos ?
+            night_photos: Array.isArray(data.media.night_photos) ?
               data.media.night_photos.map((img: string) => normalizeImageUrl(img)) : [],
-            interior_photos: data.media.interior_photos ?
+            interior_photos: Array.isArray(data.media.interior_photos) ?
               data.media.interior_photos.map((img: string) => normalizeImageUrl(img)) : [],
-            exterior_photos: data.media.exterior_photos ?
+            exterior_photos: Array.isArray(data.media.exterior_photos) ?
               data.media.exterior_photos.map((img: string) => normalizeImageUrl(img)) : [],
             // Normalizar URLs individuales si existen
             video_tour_url: data.media.video_tour_url,

@@ -181,7 +181,7 @@ export default function PropertyCard({
       <CardContent className="p-0">
         {/* Image Section */}
         <div className="relative h-64 overflow-hidden bg-gradient-to-br from-jade-green/10 to-gold/10">
-          {getMainImage() ? (
+          {getMainImage() && !imageError ? (
             <Image
               src={getMainImage()!}
               alt={property.title || getFullAddress()}
@@ -192,26 +192,16 @@ export default function PropertyCard({
             />
           ) : (
             <div className="w-full h-full flex items-center justify-center">
-              {imageError ? (
-                <div className="text-center p-4">
-                  <LogoSVG
-                    width={64}
-                    height={64}
-                    className="w-16 h-16 text-jade-green/30 mx-auto mb-2"
-                  />
-                  <p className="text-jade-green/60 text-sm">
-                    Imagen no disponible
-                  </p>
-                </div>
-              ) : (
-                <div className="w-full h-full bg-jade-green/5 flex items-center justify-center">
-                  <LogoSVG
-                    width={64}
-                    height={64}
-                    className="w-16 h-16 text-jade-green/30"
-                  />
-                </div>
-              )}
+              <div className="text-center p-4">
+                <LogoSVG
+                  width={64}
+                  height={64}
+                  className="w-16 h-16 text-jade-green/30 mx-auto mb-2"
+                />
+                <p className="text-jade-green/60 text-sm">
+                  Imagen no disponible
+                </p>
+              </div>
             </div>
           )}
 
