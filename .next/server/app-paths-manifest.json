@@ -1,4 +1,7 @@
 {
   "/api/proxy/properties/route": "app/api/proxy/properties/route.js",
+  "/api/proxy/media/[...path]/route": "app/api/proxy/media/[...path]/route.js",
+  "/api/proxy/properties/[...path]/route": "app/api/proxy/properties/[...path]/route.js",
+  "/[locale]/page": "app/[locale]/page.js",
   "/[locale]/properties/page": "app/[locale]/properties/page.js"
 }
