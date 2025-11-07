@@ -7,7 +7,7 @@ import { Property } from "@/types/properties";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import PropertyModal from "@/components/ui/ZillowInspiredPropertyModal";
+import PropertyModalWithTabs from "@/components/ui/PropertyModalWithTabs";
 import { LogoSVG } from "@/components/ui/LogoSVG";
 import {
   Bed,
@@ -393,8 +393,8 @@ export default function PropertyCard({
       </CardContent>
 
       {/* Property Details Modal */}
-      <PropertyModal
-        property={property}
+      <PropertyModalWithTabs
+        propertyId={property.id}
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
         locale={locale}

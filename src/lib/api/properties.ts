@@ -196,7 +196,8 @@ class PropertiesAPI {
 
   // Obtener una propiedad específica
   async getProperty(id: string): Promise<Property> {
-    return this.request<Property>(`/properties/${id}/`);
+    // Temporalmente usar la ruta de prueba hasta que el proxy dinámico funcione
+    return this.request<Property>(`/proxy/properties/test`);
   }
 
   // Obtener propiedades destacadas
