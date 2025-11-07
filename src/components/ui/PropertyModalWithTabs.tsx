@@ -553,13 +553,20 @@ function MediaTab({ media }: { media?: Property['media'] }) {
   if (!media) {
     return (
       <div className="p-6 text-center">
-        <p className="text-gray-500">Contenido multimedia no disponible</p>
+        <div className="flex flex-col items-center gap-4">
+          <Camera className="w-16 h-16 text-gray-400" />
+          <p className="text-gray-500">Contenido multimedia no disponible</p>
+          <p className="text-gray-400 text-sm">Esta propiedad aún no tiene imágenes o videos disponibles</p>
+        </div>
       </div>
     );
   }
 
-  // Imagen principal
-  const coverImage = media.image_cover;
+  // Imagen principal - validar que sea string
+  const coverImage = typeof media.image_cover === 'string' ? media.image_cover : null;
+
+  // Galería de imágenes - validar que sea array
+  const galleryImages = Array.isArray(media.gallery) ? media.gallery : [];
 
   return (
     <div className="p-6 space-y-6">
@@ -572,6 +579,9 @@ function MediaTab({ media }: { media?: Property['media'] }) {
               src={coverImage}
               alt="Imagen principal"
               className="w-full h-full object-cover"
+              onError={(e) => {
+                e.currentTarget.src = '/placeholder-image.jpg';
+              }}
             />
           </div>
         </div>
@@ -581,11 +591,11 @@ function MediaTab({ media }: { media?: Property['media'] }) {
       <div>
         <h3 className="text-xl font-bold text-gray-900 mb-4">Galería de Imágenes</h3>
         <div className="grid grid-cols-3 gap-4">
-          {media.gallery && Array.isArray(media.gallery) && media.gallery.length > 0 ? (
-            media.gallery.map((image, index) => (
+          {galleryImages.length > 0 ? (
+            galleryImages.map((image, index) => (
               <div key={index} className="relative aspect-video bg-gray-100 rounded-lg overflow-hidden">
                 <img
-                  src={image || '/placeholder-image.jpg'}
+                  src={typeof image === 'string' ? image : '/placeholder-image.jpg'}
                   alt={`Imagen ${index + 1}`}
                   className="w-full h-full object-cover"
                   onError={(e) => {
@@ -604,7 +614,7 @@ function MediaTab({ media }: { media?: Property['media'] }) {
       </div>
 
       {/* Video tour */}
-      {media.video_tour_url && (
+      {media.video_tour_url && typeof media.video_tour_url === 'string' && (
         <div>
           <h3 className="text-xl font-bold text-gray-900 mb-4">Video Tour</h3>
           <div className="aspect-video bg-gray-100 rounded-lg overflow-hidden">
@@ -621,7 +631,7 @@ function MediaTab({ media }: { media?: Property['media'] }) {
       )}
 
       {/* Tour virtual */}
-      {media.virtual_tour_url && (
+      {media.virtual_tour_url && typeof media.virtual_tour_url === 'string' && (
         <div>
           <h3 className="text-xl font-bold text-gray-900 mb-4">Tour Virtual 360°</h3>
           <div className="aspect-video bg-gray-100 rounded-lg overflow-hidden">
@@ -649,7 +659,7 @@ function MediaTab({ media }: { media?: Property['media'] }) {
 
       {/* Documentos adicionales */}
       <div className="grid grid-cols-2 gap-4">
-        {media.floor_plan_pdf && (
+        {media.floor_plan_pdf && typeof media.floor_plan_pdf === 'string' && (
           <div className="bg-gray-50 p-4 rounded-lg">
             <h3 className="font-semibold text-gray-900 mb-2">Plano del Piso</h3>
             <Button variant="outline" size="sm" className="w-full">
@@ -658,7 +668,7 @@ function MediaTab({ media }: { media?: Property['media'] }) {
           </div>
         )}
         
-        {media.brochure_pdf && (
+        {media.brochure_pdf && typeof media.brochure_pdf === 'string' && (
           <div className="bg-gray-50 p-4 rounded-lg">
             <h3 className="font-semibold text-gray-900 mb-2">Folleto</h3>
             <Button variant="outline" size="sm" className="w-full">
@@ -734,7 +744,7 @@ function AgentTab({ agent }: { agent?: Property['agent'] }) {
           <div className="flex flex-wrap gap-2">
             {agent.specialties.map((specialty, index) => (
               <Badge key={index} variant="outline" className="border-jade text-jade">
-                {specialty || 'Especialidad no especificada'}
+                {typeof specialty === 'string' ? specialty : 'Especialidad no especificada'}
               </Badge>
             ))}
           </div>
@@ -747,7 +757,7 @@ function AgentTab({ agent }: { agent?: Property['agent'] }) {
           <div className="flex flex-wrap gap-2">
             {agent.languages_spoken.map((language, index) => (
               <Badge key={index} variant="outline" className="border-jade text-jade">
-                {language || 'Idioma no especificado'}
+                {typeof language === 'string' ? language : 'Idioma no especificado'}
               </Badge>
             ))}
           </div>
@@ -1019,7 +1029,7 @@ function AITab({ ai }: { ai?: Property['ai'] }) {
             {ai.ai_highlights.map((highlight, index) => (
               <div key={index} className="flex items-start gap-2">
                 <div className="w-2 h-2 bg-jade rounded-full mt-2"></div>
-                <span className="text-gray-700">{highlight || 'Punto destacado sin descripción'}</span>
+                <span className="text-gray-700">{typeof highlight === 'string' ? highlight : 'Punto destacado sin descripción'}</span>
               </div>
             ))}
           </div>
@@ -1082,7 +1092,7 @@ function AITab({ ai }: { ai?: Property['ai'] }) {
           <div className="flex flex-wrap gap-2">
             {ai.ai_target_audience.map((audience, index) => (
               <Badge key={index} variant="outline" className="border-jade text-jade">
-                {audience || 'Audiencia no especificada'}
+                {typeof audience === 'string' ? audience : 'Audiencia no especificada'}
               </Badge>
             ))}
           </div>
@@ -1151,7 +1161,7 @@ function MarketingTab({ marketing }: { marketing?: Property['marketing'] }) {
           <div className="flex flex-wrap gap-2">
             {marketing.target_segments.map((segment, index) => (
               <Badge key={index} variant="outline" className="border-jade text-jade">
-                {segment || 'Segmento no especificado'}
+                {typeof segment === 'string' ? segment : 'Segmento no especificado'}
               </Badge>
             ))}
           </div>
@@ -1165,7 +1175,7 @@ function MarketingTab({ marketing }: { marketing?: Property['marketing'] }) {
             {marketing.unique_selling_points.map((point, index) => (
               <div key={index} className="flex items-start gap-2">
                 <div className="w-2 h-2 bg-jade rounded-full mt-2"></div>
-                <span className="text-gray-700">{point || 'Punto de venta no especificado'}</span>
+                <span className="text-gray-700">{typeof point === 'string' ? point : 'Punto de venta no especificado'}</span>
               </div>
             ))}
           </div>

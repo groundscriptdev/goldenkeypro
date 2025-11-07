@@ -15,7 +15,7 @@ export async function GET(
     // Reconstruir la ruta de la API externa
     const path = params.path.join('/');
     const { searchParams } = new URL(request.url);
-    const externalUrl = `${API_BASE_URL}/properties/${path}${searchParams.toString() ? '?' + searchParams.toString() : ''}`;
+    const externalUrl = `${API_BASE_URL}/${path}${searchParams.toString() ? '?' + searchParams.toString() : ''}`;
     
     console.log('Proxying GET request to:', externalUrl);
     
@@ -69,7 +69,7 @@ export async function POST(
   try {
     // Reconstruir la ruta de la API externa
     const path = params.path.join('/');
-    const externalUrl = `${API_BASE_URL}/properties/${path}`;
+    const externalUrl = `${API_BASE_URL}/${path}`;
     
     console.log('Proxying POST request to:', externalUrl);
     
@@ -128,7 +128,7 @@ export async function PATCH(
   try {
     // Reconstruir la ruta de la API externa
     const path = params.path.join('/');
-    const externalUrl = `${API_BASE_URL}/properties/${path}`;
+    const externalUrl = `${API_BASE_URL}/${path}`;
     
     console.log('Proxying PATCH request to:', externalUrl);
     
@@ -187,7 +187,7 @@ export async function DELETE(
   try {
     // Reconstruir la ruta de la API externa
     const path = params.path.join('/');
-    const externalUrl = `${API_BASE_URL}/properties/${path}`;
+    const externalUrl = `${API_BASE_URL}/${path}`;
     
     console.log('Proxying DELETE request to:', externalUrl);
     
