@@ -68,7 +68,7 @@ export default function PropertyModalWithTabs({
     
     try {
       // Validar que el propertyId no sea nulo o vacío
-      if (!propertyId || propertyId.trim() === '') {
+      if (!propertyId || String(propertyId).trim() === '') {
         throw new Error("ID de propiedad no válido");
       }
 

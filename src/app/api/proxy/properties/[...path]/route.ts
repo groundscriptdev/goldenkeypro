@@ -13,7 +13,8 @@ export async function GET(
 ) {
   try {
     // Reconstruir la ruta de la API externa
-    const path = params.path.join('/');
+    // Filtrar elementos vacíos del path para evitar dobles slashes
+    const path = params.path.filter(segment => segment !== '').join('/');
     const { searchParams } = new URL(request.url);
     const externalUrl = `${API_BASE_URL}/${path}${searchParams.toString() ? '?' + searchParams.toString() : ''}`;
     
@@ -68,7 +69,8 @@ export async function POST(
 ) {
   try {
     // Reconstruir la ruta de la API externa
-    const path = params.path.join('/');
+    // Filtrar elementos vacíos del path para evitar dobles slashes
+    const path = params.path.filter(segment => segment !== '').join('/');
     const externalUrl = `${API_BASE_URL}/${path}`;
     
     console.log('Proxying POST request to:', externalUrl);
@@ -127,7 +129,8 @@ export async function PATCH(
 ) {
   try {
     // Reconstruir la ruta de la API externa
-    const path = params.path.join('/');
+    // Filtrar elementos vacíos del path para evitar dobles slashes
+    const path = params.path.filter(segment => segment !== '').join('/');
     const externalUrl = `${API_BASE_URL}/${path}`;
     
     console.log('Proxying PATCH request to:', externalUrl);
@@ -186,7 +189,8 @@ export async function DELETE(
 ) {
   try {
     // Reconstruir la ruta de la API externa
-    const path = params.path.join('/');
+    // Filtrar elementos vacíos del path para evitar dobles slashes
+    const path = params.path.filter(segment => segment !== '').join('/');
     const externalUrl = `${API_BASE_URL}/${path}`;
     
     console.log('Proxying DELETE request to:', externalUrl);

@@ -133,14 +133,19 @@ export const useProperties = (
 
   // Cargar propiedades iniciales al montar el componente
   useEffect(() => {
-    console.log("useProperties: useEffect ejecutado, autoFetch:", autoFetch);
+    // Forzar ejecución solo en el cliente
+    if (typeof window === 'undefined') return;
+    
+    console.log("useProperties: useEffect ejecutado en cliente, autoFetch:", autoFetch);
     if (autoFetch) {
       console.log("useProperties: Iniciando carga inicial");
       setLoading(true);
       
       // Llamada directa sin usar fetchProperties para evitar problemas de dependencias
+      console.log("useProperties: Iniciando llamada directa a propertiesApi.getProperties()");
       propertiesApi.getProperties().then(response => {
-        console.log("useProperties: Respuesta directa:", response);
+        console.log("useProperties: Respuesta directa recibida:", response);
+        console.log("useProperties: Número de propiedades:", response.results?.length || 0);
         setProperties(response.results || []);
         setPagination({
           count: response.count || 0,

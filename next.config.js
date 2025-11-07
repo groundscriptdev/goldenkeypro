@@ -9,8 +9,8 @@ const nextConfig = {
   output: 'standalone', // Elimina cualquier referencia a modo estático
   
   images: {
-    // Para Railway, es mejor mantener la optimización activa
-    unoptimized: false,
+    // Deshabilitar optimización en desarrollo para evitar problemas con localhost
+    unoptimized: process.env.NODE_ENV === 'development',
     remotePatterns: [
       {
         protocol: 'https',
@@ -20,6 +20,12 @@ const nextConfig = {
       {
         protocol: 'https',
         hostname: 'engine.panamagoldenkey.com',
+        pathname: '/media/**',
+      },
+      {
+        protocol: 'http',
+        hostname: 'localhost',
+        port: '8000',
         pathname: '/media/**',
       },
     ],

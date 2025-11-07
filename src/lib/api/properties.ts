@@ -28,30 +28,55 @@ import {
 const normalizeImageUrl = (imageUrl: string | null): string | null => {
   if (!imageUrl) return null;
   
-  // Si ya es una URL completa HTTPS, devolverla tal cual
-  if (imageUrl.startsWith('https://')) {
+  // En desarrollo, usar el proxy local para imágenes
+  const isDevelopment = process.env.NODE_ENV === 'development';
+  
+  // Si ya es una URL completa HTTPS y no es localhost, devolverla tal cual
+  if (imageUrl.startsWith('https://') && !imageUrl.includes('localhost')) {
     return imageUrl;
   }
   
-  // Si es HTTP, convertir a HTTPS
-  if (imageUrl.startsWith('http://')) {
-    return imageUrl.replace('http://', 'https://');
-  }
-  
-  // Si es localhost o relativa, reemplazar con la URL de producción
-  const mediaUrl = process.env.NEXT_PUBLIC_MEDIA_URL || process.env.NEXT_PUBLIC_SITE_URL || 'https://panamagoldenkey.com';
-  
+  // Si es HTTP o localhost, reemplazar con el proxy en desarrollo
   if (imageUrl.startsWith('http://localhost') || imageUrl.startsWith('https://localhost')) {
-    // Extraer la ruta y reemplazar el dominio
-    const url = new URL(imageUrl);
-    return `${mediaUrl}${url.pathname}`;
+    if (isDevelopment) {
+      // Extraer la ruta y usar el proxy local
+      const url = new URL(imageUrl);
+      return `/api/proxy/media${url.pathname}`;
+    } else {
+      // En producción, usar la URL de producción
+      const mediaUrl = process.env.NEXT_PUBLIC_MEDIA_URL || process.env.NEXT_PUBLIC_SITE_URL || 'https://panamagoldenkey.com';
+      const url = new URL(imageUrl);
+      return `${mediaUrl}${url.pathname}`;
+    }
   }
   
+  // Si es una ruta relativa que empieza con /media/
+  if (imageUrl.startsWith('/media/')) {
+    if (isDevelopment) {
+      return `/api/proxy/media${imageUrl.replace('/media', '')}`;
+    } else {
+      const mediaUrl = process.env.NEXT_PUBLIC_MEDIA_URL || process.env.NEXT_PUBLIC_SITE_URL || 'https://panamagoldenkey.com';
+      return `${mediaUrl}${imageUrl}`;
+    }
+  }
+  
+  // Si es una ruta relativa normal
   if (imageUrl.startsWith('/')) {
-    return `${mediaUrl}${imageUrl}`;
+    if (isDevelopment) {
+      return `/api/proxy/media${imageUrl}`;
+    } else {
+      const mediaUrl = process.env.NEXT_PUBLIC_MEDIA_URL || process.env.NEXT_PUBLIC_SITE_URL || 'https://panamagoldenkey.com';
+      return `${mediaUrl}${imageUrl}`;
+    }
   }
   
-  return `${mediaUrl}/${imageUrl}`;
+  // Si es una ruta sin /
+  if (isDevelopment) {
+    return `/api/proxy/media/${imageUrl}`;
+  } else {
+    const mediaUrl = process.env.NEXT_PUBLIC_MEDIA_URL || process.env.NEXT_PUBLIC_SITE_URL || 'https://panamagoldenkey.com';
+    return `${mediaUrl}/${imageUrl}`;
+  }
 };
 
 // Determinar si estamos en desarrollo o producción
@@ -98,7 +123,11 @@ class PropertiesAPI {
     
     if (isUsingProxy) {
       // En desarrollo, el endpoint ya incluye la ruta completa
-      url = `${this.baseUrl}${endpoint.startsWith('/') ? endpoint.substring(1) : endpoint}`;
+      if (endpoint === '/') {
+        url = this.baseUrl;
+      } else {
+        url = `${this.baseUrl}${endpoint.startsWith('/') ? endpoint : '/' + endpoint}`;
+      }
     } else {
       // En producción, usar la API directa
       url = `${this.baseUrl}${endpoint}`;
@@ -155,11 +184,29 @@ class PropertiesAPI {
             ...property,
             image_url: normalizeImageUrl(property.image_url),
             // También normalizar URLs en media si existe
-            media: property.media ? property.media.map((mediaItem: any) => ({
-              ...mediaItem,
-              url: normalizeImageUrl(mediaItem.url),
-              thumbnail_url: normalizeImageUrl(mediaItem.thumbnail_url),
-            })) : undefined,
+            media: property.media ? {
+              ...property.media,
+              // Normalizar image_cover si existe
+              image_cover: normalizeImageUrl(property.media.image_cover),
+              // Normalizar arrays de imágenes si existen
+              gallery: property.media.gallery ?
+                property.media.gallery.map((img: string) => normalizeImageUrl(img)) : [],
+              drone_shots: property.media.drone_shots ?
+                property.media.drone_shots.map((img: string) => normalizeImageUrl(img)) : [],
+              night_photos: property.media.night_photos ?
+                property.media.night_photos.map((img: string) => normalizeImageUrl(img)) : [],
+              interior_photos: property.media.interior_photos ?
+                property.media.interior_photos.map((img: string) => normalizeImageUrl(img)) : [],
+              exterior_photos: property.media.exterior_photos ?
+                property.media.exterior_photos.map((img: string) => normalizeImageUrl(img)) : [],
+              // Normalizar URLs individuales si existen
+              video_tour_url: property.media.video_tour_url,
+              virtual_tour_url: property.media.virtual_tour_url,
+              floor_plan_pdf: property.media.floor_plan_pdf,
+              brochure_pdf: property.media.brochure_pdf,
+              neighborhood_video: property.media.neighborhood_video,
+              drone_video: property.media.drone_video,
+            } : undefined,
           }));
         }
         
@@ -169,12 +216,30 @@ class PropertiesAPI {
         }
         
         // Normalizar URLs en media si existe
-        if (data.media && Array.isArray(data.media)) {
-          data.media = data.media.map((mediaItem: any) => ({
-            ...mediaItem,
-            url: normalizeImageUrl(mediaItem.url),
-            thumbnail_url: normalizeImageUrl(mediaItem.thumbnail_url),
-          }));
+        if (data.media) {
+          data.media = {
+            ...data.media,
+            // Normalizar image_cover si existe
+            image_cover: normalizeImageUrl(data.media.image_cover),
+            // Normalizar arrays de imágenes si existen
+            gallery: data.media.gallery ?
+              data.media.gallery.map((img: string) => normalizeImageUrl(img)) : [],
+            drone_shots: data.media.drone_shots ?
+              data.media.drone_shots.map((img: string) => normalizeImageUrl(img)) : [],
+            night_photos: data.media.night_photos ?
+              data.media.night_photos.map((img: string) => normalizeImageUrl(img)) : [],
+            interior_photos: data.media.interior_photos ?
+              data.media.interior_photos.map((img: string) => normalizeImageUrl(img)) : [],
+            exterior_photos: data.media.exterior_photos ?
+              data.media.exterior_photos.map((img: string) => normalizeImageUrl(img)) : [],
+            // Normalizar URLs individuales si existen
+            video_tour_url: data.media.video_tour_url,
+            virtual_tour_url: data.media.virtual_tour_url,
+            floor_plan_pdf: data.media.floor_plan_pdf,
+            brochure_pdf: data.media.brochure_pdf,
+            neighborhood_video: data.media.neighborhood_video,
+            drone_video: data.media.drone_video,
+          };
         }
       }
       
@@ -196,8 +261,10 @@ class PropertiesAPI {
 
   // Obtener una propiedad específica
   async getProperty(id: string): Promise<Property> {
-    // Temporalmente usar la ruta de prueba hasta que el proxy dinámico funcione
-    return this.request<Property>(`/proxy/properties/test`);
+    const isUsingProxy = this.baseUrl.includes('/api/proxy');
+    // Si usamos proxy, el endpoint es solo el ID sin el prefijo "properties"
+    const endpoint = isUsingProxy ? `/${id}/` : `/properties/${id}/`;
+    return this.request<Property>(endpoint);
   }
 
   // Obtener propiedades destacadas

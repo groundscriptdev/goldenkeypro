@@ -1,9 +1,9 @@
 {
   "pages": {
-    "/[locale]/(pages)/properties/page": [
+    "/[locale]/properties/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/[locale]/(pages)/properties/page.js"
+      "static/chunks/app/[locale]/properties/page.js"
     ],
     "/[locale]/layout": [
       "static/chunks/webpack.js",
@@ -16,25 +16,10 @@
       "static/css/app/layout.css",
       "static/chunks/app/layout.js"
     ],
-    "/[locale]/page": [
+    "/_not-found/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/[locale]/page.js"
-    ],
-    "/[locale]/(pages)/medical-tourism/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/[locale]/(pages)/medical-tourism/page.js"
-    ],
-    "/[locale]/(pages)/residency/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/[locale]/(pages)/residency/page.js"
-    ],
-    "/[locale]/(pages)/test-modal/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/[locale]/(pages)/test-modal/page.js"
+      "static/chunks/app/_not-found/page.js"
     ]
   }
 }

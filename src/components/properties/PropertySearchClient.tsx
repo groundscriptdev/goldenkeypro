@@ -3,6 +3,8 @@
 import { useState, useEffect } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useProperties } from "@/hooks/useProperties";
+import { useSimplePropertiesWorking } from "@/hooks/useSimplePropertiesWorking";
+import { propertiesApi } from "@/lib/api/properties";
 import { PropertyFilters } from "@/types/properties";
 import PropertyCard from "./PropertyCard";
 import { Button } from "@/components/ui/button";
@@ -47,6 +49,9 @@ export default function PropertySearchClient({
   const [filters, setFilters] = useState<PropertyFilters>(initialFilters);
   const [viewMode, setViewMode] = useState<"grid" | "list" | "map">("grid");
   const [showFilters, setShowFilters] = useState(false);
+  const [localProperties, setLocalProperties] = useState<any[]>([]);
+  const [localLoading, setLocalLoading] = useState(false);
+  const [localError, setLocalError] = useState<string | null>(null);
 
   console.log("PropertySearchClient: initialFilters:", initialFilters);
 
@@ -55,9 +60,25 @@ export default function PropertySearchClient({
     loading,
     error,
     pagination,
-  } = useProperties({ initialFilters });
+  } = useSimplePropertiesWorking({ initialFilters });
 
   console.log("PropertySearchClient: properties:", properties, "loading:", loading, "error:", error);
+
+  // Función para forzar la carga de propiedades
+  const forceLoadProperties = () => {
+    console.log("PropertySearchClient: Forzando carga de propiedades");
+    setLocalLoading(true);
+    setLocalError(null);
+    propertiesApi.getProperties().then(response => {
+      console.log("PropertySearchClient: Respuesta forzada:", response);
+      setLocalProperties(response.results || []);
+      setLocalLoading(false);
+    }).catch(err => {
+      console.error("PropertySearchClient: Error forzado:", err);
+      setLocalError(err.message);
+      setLocalLoading(false);
+    });
+  };
 
   // Update URL when filters change
   useEffect(() => {
@@ -339,7 +360,7 @@ export default function PropertySearchClient({
                   : "grid-cols-1"
               }`}
             >
-              {properties.map((property) => (
+              {(localProperties.length > 0 ? localProperties : properties).map((property) => (
                 <PropertyCard
                   key={property.id}
                   property={property}
