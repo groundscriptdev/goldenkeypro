@@ -8,6 +8,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import PropertyModalWithTabs from "@/components/ui/PropertyModalWithTabs";
+import { PropertyModalPGK } from "@/components/groundscript/groundmodal";
 import { LogoSVG } from "@/components/ui/LogoSVG";
 import {
   Bed,
@@ -383,11 +384,10 @@ export default function PropertyCard({
       </CardContent>
 
       {/* Property Details Modal */}
-      <PropertyModalWithTabs
-        propertyId={property.id}
+      <PropertyModalPGK
+        property={property || undefined}
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
-        locale={locale}
       />
     </Card>
   );
