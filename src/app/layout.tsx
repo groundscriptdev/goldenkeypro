@@ -6,7 +6,7 @@ import ReactGrabIntegration from '@/components/ReactGrabIntegration';
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://panamagoldenkey.com'),
   title: 'Panama Golden Key - Residency & Investment for Chinese Investors',
-  description: 'Expert guidance for Chinese investors seeking Panama residency through the Qualified Investor Visa program. Real estate, medical tourism, and investment opportunities.',
+  description: 'Expert guidance for Chinese investors seeking Panama residency through Qualified Investor Visa program. Real estate, medical tourism, and investment opportunities.',
 };
 
 export default function RootLayout({

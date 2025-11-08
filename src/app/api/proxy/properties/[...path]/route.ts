@@ -16,7 +16,7 @@ export async function GET(
     // Filtrar elementos vacíos del path para evitar dobles slashes
     const path = params.path.filter(segment => segment !== '').join('/');
     const { searchParams } = new URL(request.url);
-    const externalUrl = `${API_BASE_URL}/${path}${searchParams.toString() ? '?' + searchParams.toString() : ''}`;
+    const externalUrl = `${API_BASE_URL}/properties/${path}${searchParams.toString() ? '?' + searchParams.toString() : ''}`;
     
     console.log('Proxying GET request to:', externalUrl);
     

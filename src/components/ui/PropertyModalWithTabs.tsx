@@ -66,6 +66,10 @@ export default function PropertyModalWithTabs({
     setLoading(true);
     setError(null);
     
+    console.log("🔍 PropertyModalWithTabs: Iniciando fetchPropertyData");
+    console.log("🔍 PropertyModalWithTabs: propertyId:", propertyId);
+    console.log("🔍 PropertyModalWithTabs: typeof window:", typeof window);
+    
     try {
       // Validar que el propertyId no sea nulo o vacío
       if (!propertyId || String(propertyId).trim() === '') {
@@ -73,7 +77,9 @@ export default function PropertyModalWithTabs({
       }
 
       // Llamada al endpoint que devuelve todos los datos anidados
+      console.log("🔍 PropertyModalWithTabs: Llamando a propertiesApi.getProperty");
       const propertyData = await propertiesApi.getProperty(propertyId);
+      console.log("🔍 PropertyModalWithTabs: Respuesta recibida:", propertyData);
       
       // Validar que los datos recibidos sean válidos
       if (!propertyData) {
@@ -580,6 +586,7 @@ function MediaTab({ media }: { media?: Property['media'] }) {
               alt="Imagen principal"
               className="w-full h-full object-cover"
               onError={(e) => {
+                console.log("🔍 PropertyModalWithTabs: Error cargando imagen principal:", coverImage);
                 // Ocultar imagen si falla la carga
                 e.currentTarget.style.display = 'none';
                 const parent = e.currentTarget.parentElement;
@@ -595,6 +602,9 @@ function MediaTab({ media }: { media?: Property['media'] }) {
                     </div>
                   `;
                 }
+              }}
+              onLoad={() => {
+                console.log("🔍 PropertyModalWithTabs: ✅ Imagen principal cargada exitosamente:", coverImage);
               }}
             />
           </div>

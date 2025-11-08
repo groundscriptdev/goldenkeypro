@@ -28,8 +28,9 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import PropertyCard from "@/components/properties/PropertyCard";
-import { PropertyFilters } from "@/types/properties";
-import PropertySearchClient from "@/components/properties/PropertySearchClient";
+import PropertySearchWrapper from "@/components/properties/PropertySearchWrapper";
+import { PropertyFilters, Property } from "@/types/properties";
+import { PropertiesAPI } from "@/lib/api/properties";
 
 interface PropertiesPageProps {
   params: { locale: string };
@@ -98,6 +99,39 @@ export default async function PropertiesPage({
   };
 
   console.log("PropertiesPage: initialFilters:", initialFilters);
+
+  // Cargar propiedades en servidor con filtros
+  let properties: Property[] = [];
+  let error = null;
+  
+  try {
+    const api = new PropertiesAPI();
+    
+    // Construir query string con los filtros
+    const queryParams = new URLSearchParams();
+    if (initialFilters.search) queryParams.append('search', initialFilters.search);
+    if (initialFilters.min_price) queryParams.append('min_price', initialFilters.min_price.toString());
+    if (initialFilters.max_price) queryParams.append('max_price', initialFilters.max_price.toString());
+    if (initialFilters.bedrooms) queryParams.append('bedrooms', initialFilters.bedrooms.toString());
+    if (initialFilters.bathrooms) queryParams.append('bathrooms', initialFilters.bathrooms.toString());
+    if (initialFilters.property_types && initialFilters.property_types.length > 0) {
+      initialFilters.property_types.forEach(type => queryParams.append('property_types', type));
+    }
+    if (initialFilters.city) queryParams.append('city', initialFilters.city);
+    
+    const queryString = queryParams.toString();
+    const url = queryString ? `?${queryString}` : "";
+    
+    console.log("🔍 PropertiesPage: Aplicando filtros:", initialFilters);
+    console.log("🔍 PropertiesPage: Query string:", url);
+    
+    const data = await api.getProperties(url);
+    properties = data.results || [];
+    console.log("🚀 PropertiesPage: Datos cargados en servidor:", properties.length);
+  } catch (err) {
+    error = err;
+    console.error("🚀 PropertiesPage: Error en servidor:", err);
+  }
 
   const featuredLocations = [
     {
@@ -174,13 +208,25 @@ export default async function PropertiesPage({
             defaultActiveTab="luxury"
           />
 
-          {/* Search Section */}
+          {/* Search Section with Functional Filters */}
           <section className="py-12 bg-white border-b">
             <div className="w-full px-4">
-              <PropertySearchClient
-                initialFilters={initialFilters}
-                locale={params.locale}
-              />
+              <div className="max-w-6xl mx-auto">
+                <div className="mb-6 p-4 bg-green-50 border-2 border-green-200 rounded-lg">
+                  <h3 className="text-lg font-semibold text-green-800 mb-2">
+                    🔍 Búsqueda de Propiedades
+                  </h3>
+                  <p className="text-green-600">
+                    Usa los filtros para encontrar tu propiedad ideal.
+                  </p>
+                </div>
+                
+                {/* Client-side property search with filters */}
+                <PropertySearchWrapper
+                  initialFilters={initialFilters}
+                  locale={params.locale}
+                />
+              </div>
             </div>
           </section>
 

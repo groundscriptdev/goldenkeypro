@@ -24,35 +24,23 @@ import {
   PropertyReportResponse,
 } from "@/types/properties";
 
-// Función para normalizar URLs de imágenes
+// Función para normalizar URLs de imágenes - SIMPLIFICADA SIN PROXY
 const normalizeImageUrl = (imageUrl: string | null): string | null => {
   if (!imageUrl) return null;
   
-  // En desarrollo, usar proxy para URLs relativas y localhost
-  if (process.env.NODE_ENV === 'development') {
-    // Si es localhost, usar proxy
-    if (imageUrl.includes('localhost')) {
-      const url = new URL(imageUrl);
-      return `/api/proxy/media${url.pathname}`;
-    }
-    
-    // Si es una ruta relativa, usar proxy
-    if (imageUrl.startsWith('/')) {
-      return `/api/proxy/media${imageUrl}`;
-    }
-    
-    // Si es una ruta sin / inicial
-    return `/api/proxy/media/${imageUrl}`;
-  }
+  console.log("🖼️ normalizeImageUrl: input:", imageUrl);
   
-  // En producción, devolver URLs HTTPS tal cual
+  // Si ya es una URL HTTPS completa, devolverla tal cual (sin proxy)
   if (imageUrl.startsWith('https://')) {
+    console.log("🖼️ normalizeImageUrl: HTTPS directa:", imageUrl);
     return imageUrl;
   }
   
-  // Si es una ruta relativa en producción, construir URL completa
-  const mediaUrl = process.env.NEXT_PUBLIC_MEDIA_URL || 'https://engine.panamagoldenkey.com';
-  return imageUrl.startsWith('/') ? `${mediaUrl}${imageUrl}` : `${mediaUrl}/${imageUrl}`;
+  // Si es una ruta relativa, construir URL completa
+  const mediaUrl = 'https://engine.panamagoldenkey.com';
+  const fullUrl = imageUrl.startsWith('/') ? `${mediaUrl}${imageUrl}` : `${mediaUrl}/${imageUrl}`;
+  console.log("🖼️ normalizeImageUrl: URL completa:", fullUrl);
+  return fullUrl;
 };
 
 // Función para normalizar objetos de media
@@ -103,7 +91,7 @@ const getApiBaseUrl = () => {
   
   // En producción, usar API directa
   console.log('getApiBaseUrl - Using direct API for production');
-  return process.env.NEXT_PUBLIC_PANAMA_API_URL || "https://engine.panamagoldenkey.com/api";
+  return process.env.NEXT_PUBLIC_PANAMA_API_URL || "https:///engine.panamagoldenkey.com/api";
 };
 
 const API_BASE_URL = getApiBaseUrl();
@@ -149,6 +137,11 @@ class PropertiesAPI {
         // Si el endpoint no incluye /properties/, añadirlo
         url = `${this.baseUrl}/properties${endpoint}`;
       }
+    }
+
+    // En servidor-side, necesitamos URLs absolutas para fetch
+    if (typeof window === 'undefined' && url.startsWith('/')) {
+      url = `http://localhost:3000${url}`;
     }
 
     console.log('- Final URL:', url);
@@ -283,6 +276,7 @@ class PropertiesAPI {
   async getProperties(url?: string): Promise<PropertyResponse> {
     const isUsingProxy = this.baseUrl.includes('/api/proxy');
     const endpoint = url || (isUsingProxy ? "" : "/");
+    console.log(`DEBUG getProperties: url=${url}, isUsingProxy=${isUsingProxy}, endpoint=${endpoint}`);
     return this.request<PropertyResponse>(endpoint);
   }
 
@@ -290,7 +284,11 @@ class PropertiesAPI {
   async getProperty(id: string): Promise<Property> {
     const isUsingProxy = this.baseUrl.includes('/api/proxy');
     // Si usamos proxy, el endpoint es solo el ID sin el prefijo "properties"
-    const endpoint = isUsingProxy ? `/${id}/` : `/properties/${id}/`;
+    // CORRECCIÓN: Eliminar la barra final para evitar 404s
+    const endpoint = isUsingProxy ? `/${id}` : `/properties/${id}/`;
+    console.log(`🔍 DEBUG getProperty: id=${id}, isUsingProxy=${isUsingProxy}, endpoint=${endpoint}`);
+    console.log(`🔍 DEBUG getProperty: baseUrl=${this.baseUrl}`);
+    console.log(`🔍 DEBUG getProperty: typeof window=${typeof window}`);
     return this.request<Property>(endpoint);
   }
 

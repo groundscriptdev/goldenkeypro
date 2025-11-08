@@ -41,7 +41,7 @@ export default function PropertySearchClient({
   locale,
   mapView = false,
 }: PropertySearchClientProps) {
-  console.log("PropertySearchClient: Componente renderizado");
+  console.log("🔥 PropertySearchClient: Componente renderizado - typeof window:", typeof window);
   
   const router = useRouter();
   const searchParams = useSearchParams();
@@ -52,26 +52,50 @@ export default function PropertySearchClient({
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
 
+  // Log inmediato para verificar si estamos en cliente
+  if (typeof window !== 'undefined') {
+    console.log("🔥 PropertySearchClient: ✅ Estamos en CLIENTE");
+  } else {
+    console.log("🔥 PropertySearchClient: ❌ Estamos en SERVIDOR");
+  }
+
   // Cargar propiedades directamente en el componente
   useEffect(() => {
-    console.log("PropertySearchClient: useEffect para cargar propiedades");
+    console.log("🔥 PropertySearchClient: useEffect INICIADO");
+    console.log("🔥 PropertySearchClient: typeof window:", typeof window);
+    
+    // Forzar ejecución en cliente
     if (typeof window !== 'undefined') {
+      console.log("🔥 PropertySearchClient: EJECUTANDO EN CLIENTE");
       setLoading(true);
       setError(null);
 
+      console.log("🔥 PropertySearchClient: Llamando a propertiesApi.getProperties()");
       propertiesApi
         .getProperties()
         .then((response) => {
-          console.log("PropertySearchClient: Respuesta recibida:", response);
-          console.log("PropertySearchClient: Número de propiedades:", response.results?.length || 0);
-          setProperties(response.results || []);
+          console.log("🔥 PropertySearchClient: ✅ Respuesta recibida:", response);
+          console.log("🔥 PropertySearchClient: Tipo de respuesta:", typeof response);
+          console.log("🔥 PropertySearchClient: response.results:", response.results);
+          console.log("🔥 PropertySearchClient: Número de propiedades:", response.results?.length || 0);
+          
+          if (response && response.results && Array.isArray(response.results)) {
+            console.log("🔥 PropertySearchClient: ✅ Estableciendo propiedades:", response.results.length);
+            setProperties(response.results);
+          } else {
+            console.log("🔥 PropertySearchClient: ❌ Respuesta inválida, usando array vacío");
+            setProperties([]);
+          }
           setLoading(false);
         })
         .catch((err) => {
-          console.error("PropertySearchClient: Error:", err);
+          console.error("🔥 PropertySearchClient: ❌ Error:", err);
+          console.error("🔥 PropertySearchClient: ❌ Error stack:", err.stack);
           setError(err instanceof Error ? err.message : "Error al cargar propiedades");
           setLoading(false);
         });
+    } else {
+      console.log("🔥 PropertySearchClient: ❌ No es client-side, saltando carga");
     }
   }, []);
 
