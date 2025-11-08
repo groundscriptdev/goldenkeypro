@@ -1,9 +1,9 @@
 {
   "pages": {
-    "/[locale]/page": [
+    "/[locale]/properties/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/[locale]/page.js"
+      "static/chunks/app/[locale]/properties/page.js"
     ],
     "/[locale]/layout": [
       "static/chunks/webpack.js",
@@ -16,10 +16,10 @@
       "static/css/app/layout.css",
       "static/chunks/app/layout.js"
     ],
-    "/[locale]/properties/page": [
+    "/[locale]/test-hook/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/[locale]/properties/page.js"
+      "static/chunks/app/[locale]/test-hook/page.js"
     ]
   }
 }

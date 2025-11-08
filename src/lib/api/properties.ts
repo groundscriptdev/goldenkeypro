@@ -28,75 +28,31 @@ import {
 const normalizeImageUrl = (imageUrl: string | null): string | null => {
   if (!imageUrl) return null;
   
-  // En desarrollo, usar el proxy local para imágenes
-  const isDevelopment = process.env.NODE_ENV === 'development';
+  // En desarrollo, usar proxy para URLs relativas y localhost
+  if (process.env.NODE_ENV === 'development') {
+    // Si es localhost, usar proxy
+    if (imageUrl.includes('localhost')) {
+      const url = new URL(imageUrl);
+      return `/api/proxy/media${url.pathname}`;
+    }
+    
+    // Si es una ruta relativa, usar proxy
+    if (imageUrl.startsWith('/')) {
+      return `/api/proxy/media${imageUrl}`;
+    }
+    
+    // Si es una ruta sin / inicial
+    return `/api/proxy/media/${imageUrl}`;
+  }
   
-  // Debug log
-  console.log('normalizeImageUrl - Input:', imageUrl, 'isDevelopment:', isDevelopment);
-  
-  // Si ya es una URL completa HTTPS y no es localhost, devolverla tal cual
-  if (imageUrl.startsWith('https://') && !imageUrl.includes('localhost')) {
-    console.log('normalizeImageUrl - Returning HTTPS URL as-is:', imageUrl);
+  // En producción, devolver URLs HTTPS tal cual
+  if (imageUrl.startsWith('https://')) {
     return imageUrl;
   }
   
-  // Si es HTTP o localhost, reemplazar con el proxy en desarrollo
-  if (imageUrl.startsWith('http://localhost') || imageUrl.startsWith('https://localhost')) {
-    if (isDevelopment) {
-      // Extraer la ruta y usar el proxy local
-      const url = new URL(imageUrl);
-      const result = `/api/proxy/media${url.pathname}`;
-      console.log('normalizeImageUrl - Development proxy result:', result);
-      return result;
-    } else {
-      // En producción, usar la URL de producción
-      const mediaUrl = process.env.NEXT_PUBLIC_MEDIA_URL || process.env.NEXT_PUBLIC_SITE_URL || 'https://engine.panamagoldenkey.com';
-      const url = new URL(imageUrl);
-      const result = `${mediaUrl}${url.pathname}`;
-      console.log('normalizeImageUrl - Production URL result:', result);
-      return result;
-    }
-  }
-  
-  // Si es una ruta relativa que empieza con /media/
-  if (imageUrl.startsWith('/media/')) {
-    if (isDevelopment) {
-      const result = `/api/proxy/media${imageUrl.replace('/media', '')}`;
-      console.log('normalizeImageUrl - Development /media/ result:', result);
-      return result;
-    } else {
-      const mediaUrl = process.env.NEXT_PUBLIC_MEDIA_URL || process.env.NEXT_PUBLIC_SITE_URL || 'https://engine.panamagoldenkey.com';
-      const result = `${mediaUrl}${imageUrl}`;
-      console.log('normalizeImageUrl - Production /media/ result:', result);
-      return result;
-    }
-  }
-  
-  // Si es una ruta relativa normal
-  if (imageUrl.startsWith('/')) {
-    if (isDevelopment) {
-      const result = `/api/proxy/media${imageUrl}`;
-      console.log('normalizeImageUrl - Development relative path result:', result);
-      return result;
-    } else {
-      const mediaUrl = process.env.NEXT_PUBLIC_MEDIA_URL || process.env.NEXT_PUBLIC_SITE_URL || 'https://engine.panamagoldenkey.com';
-      const result = `${mediaUrl}${imageUrl}`;
-      console.log('normalizeImageUrl - Production relative path result:', result);
-      return result;
-    }
-  }
-  
-  // Si es una ruta sin /
-  if (isDevelopment) {
-    const result = `/api/proxy/media/${imageUrl}`;
-    console.log('normalizeImageUrl - Development no slash result:', result);
-    return result;
-  } else {
-    const mediaUrl = process.env.NEXT_PUBLIC_MEDIA_URL || process.env.NEXT_PUBLIC_SITE_URL || 'https://engine.panamagoldenkey.com';
-    const result = `${mediaUrl}/${imageUrl}`;
-    console.log('normalizeImageUrl - Production no slash result:', result);
-    return result;
-  }
+  // Si es una ruta relativa en producción, construir URL completa
+  const mediaUrl = process.env.NEXT_PUBLIC_MEDIA_URL || 'https://engine.panamagoldenkey.com';
+  return imageUrl.startsWith('/') ? `${mediaUrl}${imageUrl}` : `${mediaUrl}/${imageUrl}`;
 };
 
 // Función para normalizar objetos de media
@@ -138,27 +94,15 @@ const normalizeMedia = (mediaItem: any): PropertyMedia => {
 };
 
 // Determinar si estamos en desarrollo o producción
-// Lógica mejorada para detectar correctamente el entorno
 const getApiBaseUrl = () => {
-  // En el servidor, verificar las variables de entorno
-  if (typeof window === 'undefined') {
-    // Si estamos en el servidor y es desarrollo, usar proxy
-    if (process.env.NODE_ENV === 'development') {
-      return "/api/proxy/properties";
-    }
-    // En producción en el servidor, usar API directa
-    return process.env.NEXT_PUBLIC_PANAMA_API_URL || "https://engine.panamagoldenkey.com/api";
-  }
-  
-  // En el cliente, verificar el hostname
-  const isLocalhost = window.location.hostname === 'localhost' ||
-                      window.location.hostname === '127.0.0.1' ||
-                      window.location.hostname.includes('.local');
-  
-  if (isLocalhost) {
+  // En desarrollo, siempre usar proxy
+  if (process.env.NODE_ENV === 'development') {
+    console.log('getApiBaseUrl - Using proxy for development');
     return "/api/proxy/properties";
   }
   
+  // En producción, usar API directa
+  console.log('getApiBaseUrl - Using direct API for production');
   return process.env.NEXT_PUBLIC_PANAMA_API_URL || "https://engine.panamagoldenkey.com/api";
 };
 
@@ -179,17 +123,35 @@ class PropertiesAPI {
     let url: string;
     const isUsingProxy = this.baseUrl.includes('/api/proxy');
     
+    // Debug logs
+    console.log('request method called:');
+    console.log('- Base URL:', this.baseUrl);
+    console.log('- Endpoint:', endpoint);
+    console.log('- Is using proxy:', isUsingProxy);
+    console.log('- Window hostname:', typeof window !== 'undefined' ? window.location.hostname : 'server-side');
+    
     if (isUsingProxy) {
       // En desarrollo, el endpoint ya incluye la ruta completa
       if (endpoint === '/') {
         url = this.baseUrl;
       } else {
-        url = `${this.baseUrl}${endpoint.startsWith('/') ? endpoint : '/' + endpoint}`;
+        // Para el proxy, no añadir /properties/ ya que está en la baseUrl
+        const cleanEndpoint = endpoint.replace('/properties/', '');
+        url = `${this.baseUrl}${cleanEndpoint.startsWith('/') ? cleanEndpoint : '/' + cleanEndpoint}`;
       }
     } else {
-      // En producción, usar la API directa
-      url = `${this.baseUrl}${endpoint}`;
+      // En producción, usar la API directa - CORRECCIÓN: no duplicar /properties/
+      // La baseUrl ya termina en /api, así que solo hay que añadir el endpoint
+      if (endpoint.startsWith('/properties/')) {
+        // Si el endpoint ya incluye /properties/, solo añadirlo a la baseUrl
+        url = `${this.baseUrl}${endpoint}`;
+      } else {
+        // Si el endpoint no incluye /properties/, añadirlo
+        url = `${this.baseUrl}/properties${endpoint}`;
+      }
     }
+
+    console.log('- Final URL:', url);
 
     const defaultHeaders = {
       "Content-Type": "application/json",
@@ -334,7 +296,9 @@ class PropertiesAPI {
 
   // Obtener propiedades destacadas
   async getFeaturedProperties(): Promise<PropertyResponse> {
-    return this.request<PropertyResponse>("/properties/featured/");
+    const isUsingProxy = this.baseUrl.includes('/api/proxy');
+    const endpoint = isUsingProxy ? "/featured/" : "/properties/featured/";
+    return this.request<PropertyResponse>(endpoint);
   }
 
   // Buscar propiedades
@@ -352,43 +316,56 @@ class PropertiesAPI {
     });
 
     const queryString = params.toString();
-    const endpoint = `/properties/search/${queryString ? `?${queryString}` : ""}`;
+    const isUsingProxy = this.baseUrl.includes('/api/proxy');
+    const endpoint = isUsingProxy
+      ? `/search/${queryString ? `?${queryString}` : ""}`
+      : `/properties/search/${queryString ? `?${queryString}` : ""}`;
 
     return this.request<PropertyResponse>(endpoint);
   }
 
   // Obtener propiedades similares
   async getSimilarProperties(id: string): Promise<PropertyResponse> {
-    return this.request<PropertyResponse>(`/properties/${id}/similar/`);
+    const isUsingProxy = this.baseUrl.includes('/api/proxy');
+    const endpoint = isUsingProxy ? `/${id}/similar/` : `/properties/${id}/similar/`;
+    return this.request<PropertyResponse>(endpoint);
   }
 
   // Obtener oportunidades de inversión
   async getInvestmentOpportunities(): Promise<PropertyResponse> {
-    return this.request<PropertyResponse>(
-      "/properties/investment-opportunities/"
-    );
+    const isUsingProxy = this.baseUrl.includes('/api/proxy');
+    const endpoint = isUsingProxy ? "/investment-opportunities/" : "/properties/investment-opportunities/";
+    return this.request<PropertyResponse>(endpoint);
   }
 
   // Obtener datos para mapa
   async getMapData(): Promise<PropertyResponse> {
-    return this.request<PropertyResponse>("/properties/map-data/");
+    const isUsingProxy = this.baseUrl.includes('/api/proxy');
+    const endpoint = isUsingProxy ? "/map-data/" : "/properties/map-data/";
+    return this.request<PropertyResponse>(endpoint);
   }
 
   // Obtener estadísticas de propiedades
   async getStats(): Promise<PropertyStats> {
-    return this.request<PropertyStats>("/properties/stats/");
+    const isUsingProxy = this.baseUrl.includes('/api/proxy');
+    const endpoint = isUsingProxy ? "/stats/" : "/properties/stats/";
+    return this.request<PropertyStats>(endpoint);
   }
 
   // Registrar visualización de propiedad
   async trackView(propertyId: string): Promise<void> {
-    await this.request<void>(`/properties/${propertyId}/track-view/`, {
+    const isUsingProxy = this.baseUrl.includes('/api/proxy');
+    const endpoint = isUsingProxy ? `/${propertyId}/track-view/` : `/properties/${propertyId}/track-view/`;
+    await this.request<void>(endpoint, {
       method: "POST",
     });
   }
 
   // Agregar propiedad a favoritos
   async addFavorite(propertyId: string): Promise<void> {
-    await this.request<void>(`/properties/${propertyId}/add-favorite/`, {
+    const isUsingProxy = this.baseUrl.includes('/api/proxy');
+    const endpoint = isUsingProxy ? `/${propertyId}/add-favorite/` : `/properties/${propertyId}/add-favorite/`;
+    await this.request<void>(endpoint, {
       method: "POST",
     });
   }
@@ -398,7 +375,9 @@ class PropertiesAPI {
     propertyId: string,
     formData: ContactAgentForm
   ): Promise<void> {
-    await this.request<void>(`/properties/${propertyId}/contact-agent/`, {
+    const isUsingProxy = this.baseUrl.includes('/api/proxy');
+    const endpoint = isUsingProxy ? `/${propertyId}/contact-agent/` : `/properties/${propertyId}/contact-agent/`;
+    await this.request<void>(endpoint, {
       method: "POST",
       body: JSON.stringify(formData),
     });
@@ -409,7 +388,9 @@ class PropertiesAPI {
     propertyId: string,
     formData: ScheduleTourForm
   ): Promise<void> {
-    await this.request<void>(`/properties/${propertyId}/schedule-tour/`, {
+    const isUsingProxy = this.baseUrl.includes('/api/proxy');
+    const endpoint = isUsingProxy ? `/${propertyId}/schedule-tour/` : `/properties/${propertyId}/schedule-tour/`;
+    await this.request<void>(endpoint, {
       method: "POST",
       body: JSON.stringify(formData),
     });
@@ -417,17 +398,18 @@ class PropertiesAPI {
 
   // Generar reporte de propiedad
   async generateReport(propertyId: string): Promise<PropertyReportResponse> {
-    return this.request<PropertyReportResponse>(
-      `/properties/${propertyId}/generate-report/`,
-      {
-        method: "POST",
-      }
-    );
+    const isUsingProxy = this.baseUrl.includes('/api/proxy');
+    const endpoint = isUsingProxy ? `/${propertyId}/generate-report/` : `/properties/${propertyId}/generate-report/`;
+    return this.request<PropertyReportResponse>(endpoint, {
+      method: "POST",
+    });
   }
 
   // Obtener reporte de propiedad
   async getReport(propertyId: string): Promise<PropertyReport> {
-    return this.request<PropertyReport>(`/properties/${propertyId}/report/`);
+    const isUsingProxy = this.baseUrl.includes('/api/proxy');
+    const endpoint = isUsingProxy ? `/${propertyId}/report/` : `/properties/${propertyId}/report/`;
+    return this.request<PropertyReport>(endpoint);
   }
 
   // Obtener propiedades por bounds del mapa
@@ -438,27 +420,30 @@ class PropertiesAPI {
       sw_lat: bounds.southWest.lat.toString(),
       sw_lng: bounds.southWest.lng.toString(),
     });
-
-    return this.request<PropertyResponse>(`/properties/by-bounds/?${params}`);
+    const isUsingProxy = this.baseUrl.includes('/api/proxy');
+    const endpoint = isUsingProxy ? `/by-bounds/?${params}` : `/properties/by-bounds/?${params}`;
+    return this.request<PropertyResponse>(endpoint);
   }
 
   // Obtener propiedades por agente
   async getPropertiesByAgent(agentId: string): Promise<PropertyResponse> {
-    return this.request<PropertyResponse>(`/properties/by-agent/${agentId}/`);
+    const isUsingProxy = this.baseUrl.includes('/api/proxy');
+    const endpoint = isUsingProxy ? `/by-agent/${agentId}/` : `/properties/by-agent/${agentId}/`;
+    return this.request<PropertyResponse>(endpoint);
   }
 
   // Obtener propiedades por tipo
   async getPropertiesByType(propertyType: string): Promise<PropertyResponse> {
-    return this.request<PropertyResponse>(
-      `/properties/by-type/${propertyType}/`
-    );
+    const isUsingProxy = this.baseUrl.includes('/api/proxy');
+    const endpoint = isUsingProxy ? `/by-type/${propertyType}/` : `/properties/by-type/${propertyType}/`;
+    return this.request<PropertyResponse>(endpoint);
   }
 
   // Obtener propiedades por ubicación
   async getPropertiesByLocation(location: string): Promise<PropertyResponse> {
-    return this.request<PropertyResponse>(
-      `/properties/by-location/${location}/`
-    );
+    const isUsingProxy = this.baseUrl.includes('/api/proxy');
+    const endpoint = isUsingProxy ? `/by-location/${location}/` : `/properties/by-location/${location}/`;
+    return this.request<PropertyResponse>(endpoint);
   }
 
   // Obtener propiedades por rango de precios
@@ -470,87 +455,104 @@ class PropertiesAPI {
       min_price: minPrice.toString(),
       max_price: maxPrice.toString(),
     });
-
-    return this.request<PropertyResponse>(
-      `/properties/by-price-range/?${params}`
-    );
+    const isUsingProxy = this.baseUrl.includes('/api/proxy');
+    const endpoint = isUsingProxy ? `/by-price-range/?${params}` : `/properties/by-price-range/?${params}`;
+    return this.request<PropertyResponse>(endpoint);
   }
 
   // Obtener propiedades con descuento
   async getPropertiesWithDiscount(): Promise<PropertyResponse> {
-    return this.request<PropertyResponse>("/properties/with-discount/");
+    const isUsingProxy = this.baseUrl.includes('/api/proxy');
+    const endpoint = isUsingProxy ? "/with-discount/" : "/properties/with-discount/";
+    return this.request<PropertyResponse>(endpoint);
   }
 
   // Obtener propiedades nuevas
   async getNewProperties(): Promise<PropertyResponse> {
-    return this.request<PropertyResponse>("/properties/new/");
+    const isUsingProxy = this.baseUrl.includes('/api/proxy');
+    const endpoint = isUsingProxy ? "/new/" : "/properties/new/";
+    return this.request<PropertyResponse>(endpoint);
   }
 
   // Obtener propiedades en venta
   async getPropertiesForSale(): Promise<PropertyResponse> {
-    return this.request<PropertyResponse>("/properties/for-sale/");
+    const isUsingProxy = this.baseUrl.includes('/api/proxy');
+    const endpoint = isUsingProxy ? "/for-sale/" : "/properties/for-sale/";
+    return this.request<PropertyResponse>(endpoint);
   }
 
   // Obtener propiedades en alquiler
   async getPropertiesForRent(): Promise<PropertyResponse> {
-    return this.request<PropertyResponse>("/properties/for-rent/");
+    const isUsingProxy = this.baseUrl.includes('/api/proxy');
+    const endpoint = isUsingProxy ? "/for-rent/" : "/properties/for-rent/";
+    return this.request<PropertyResponse>(endpoint);
   }
 
   // Métodos para obtener datos específicos de la arquitectura angelical
 
   // Obtener datos financieros de una propiedad
   async getPropertyFinancials(propertyId: string): Promise<PropertyFinancials> {
-    return this.request<PropertyFinancials>(
-      `/properties/${propertyId}/financials/`
-    );
+    const isUsingProxy = this.baseUrl.includes('/api/proxy');
+    const endpoint = isUsingProxy ? `/${propertyId}/financials/` : `/properties/${propertyId}/financials/`;
+    return this.request<PropertyFinancials>(endpoint);
   }
 
   // Obtener datos de ubicación de una propiedad
   async getPropertyLocation(propertyId: string): Promise<PropertyLocation> {
-    return this.request<PropertyLocation>(
-      `/properties/${propertyId}/location/`
-    );
+    const isUsingProxy = this.baseUrl.includes('/api/proxy');
+    const endpoint = isUsingProxy ? `/${propertyId}/location/` : `/properties/${propertyId}/location/`;
+    return this.request<PropertyLocation>(endpoint);
   }
 
   // Obtener medios de una propiedad
   async getPropertyMedia(propertyId: string): Promise<PropertyMedia[]> {
-    return this.request<PropertyMedia[]>(`/properties/${propertyId}/media/`);
+    const isUsingProxy = this.baseUrl.includes('/api/proxy');
+    const endpoint = isUsingProxy ? `/${propertyId}/media/` : `/properties/${propertyId}/media/`;
+    return this.request<PropertyMedia[]>(endpoint);
   }
 
   // Obtener información del agente de una propiedad
   async getPropertyAgent(propertyId: string): Promise<PropertyAgent> {
-    return this.request<PropertyAgent>(`/properties/${propertyId}/agent/`);
+    const isUsingProxy = this.baseUrl.includes('/api/proxy');
+    const endpoint = isUsingProxy ? `/${propertyId}/agent/` : `/properties/${propertyId}/agent/`;
+    return this.request<PropertyAgent>(endpoint);
   }
 
   // Obtener información legal de una propiedad
   async getPropertyLegal(propertyId: string): Promise<PropertyLegal> {
-    return this.request<PropertyLegal>(`/properties/${propertyId}/legal/`);
+    const isUsingProxy = this.baseUrl.includes('/api/proxy');
+    const endpoint = isUsingProxy ? `/${propertyId}/legal/` : `/properties/${propertyId}/legal/`;
+    return this.request<PropertyLegal>(endpoint);
   }
 
   // Obtener análisis de IA de una propiedad
   async getPropertyAI(propertyId: string): Promise<PropertyAI> {
-    return this.request<PropertyAI>(`/properties/${propertyId}/ai/`);
+    const isUsingProxy = this.baseUrl.includes('/api/proxy');
+    const endpoint = isUsingProxy ? `/${propertyId}/ai/` : `/properties/${propertyId}/ai/`;
+    return this.request<PropertyAI>(endpoint);
   }
 
   // Obtener datos de marketing de una propiedad
   async getPropertyMarketing(propertyId: string): Promise<PropertyMarketing> {
-    return this.request<PropertyMarketing>(
-      `/properties/${propertyId}/marketing/`
-    );
+    const isUsingProxy = this.baseUrl.includes('/api/proxy');
+    const endpoint = isUsingProxy ? `/${propertyId}/marketing/` : `/properties/${propertyId}/marketing/`;
+    return this.request<PropertyMarketing>(endpoint);
   }
 
   // Obtener analíticas de una propiedad
   async getPropertyAnalytics(propertyId: string): Promise<PropertyAnalytics> {
-    return this.request<PropertyAnalytics>(
-      `/properties/${propertyId}/analytics/`
-    );
+    const isUsingProxy = this.baseUrl.includes('/api/proxy');
+    const endpoint = isUsingProxy ? `/${propertyId}/analytics/` : `/properties/${propertyId}/analytics/`;
+    return this.request<PropertyAnalytics>(endpoint);
   }
 
   // Métodos de administración (requieren autenticación)
 
   // Crear propiedad
   async createProperty(propertyData: Partial<Property>): Promise<Property> {
-    return this.request<Property>("/properties/", {
+    const isUsingProxy = this.baseUrl.includes('/api/proxy');
+    const endpoint = isUsingProxy ? "/" : "/properties/";
+    return this.request<Property>(endpoint, {
       method: "POST",
       body: JSON.stringify(propertyData),
     });
@@ -561,7 +563,9 @@ class PropertiesAPI {
     id: string,
     propertyData: Partial<Property>
   ): Promise<Property> {
-    return this.request<Property>(`/properties/${id}/`, {
+    const isUsingProxy = this.baseUrl.includes('/api/proxy');
+    const endpoint = isUsingProxy ? `/${id}/` : `/properties/${id}/`;
+    return this.request<Property>(endpoint, {
       method: "PATCH",
       body: JSON.stringify(propertyData),
     });
@@ -569,7 +573,9 @@ class PropertiesAPI {
 
   // Eliminar propiedad
   async deleteProperty(id: string): Promise<void> {
-    await this.request<void>(`/properties/${id}/`, {
+    const isUsingProxy = this.baseUrl.includes('/api/proxy');
+    const endpoint = isUsingProxy ? `/${id}/` : `/properties/${id}/`;
+    await this.request<void>(endpoint, {
       method: "DELETE",
     });
   }
@@ -582,15 +588,14 @@ class PropertiesAPI {
     const formData = new FormData();
     formData.append("image", imageFile);
     formData.append("property", propertyId);
+    const isUsingProxy = this.baseUrl.includes('/api/proxy');
+    const endpoint = isUsingProxy ? `/${propertyId}/upload-image/` : `/properties/${propertyId}/upload-image/`;
 
-    return this.request<PropertyMedia>(
-      `/properties/${propertyId}/upload-image/`,
-      {
-        method: "POST",
-        body: formData,
-        headers: {}, // No Content-Type para multipart/form-data
-      }
-    );
+    return this.request<PropertyMedia>(endpoint, {
+      method: "POST",
+      body: formData,
+      headers: {}, // No Content-Type para multipart/form-data
+    });
   }
 
   // Eliminar imagen de propiedad
@@ -598,7 +603,9 @@ class PropertiesAPI {
     propertyId: string,
     imageId: string
   ): Promise<void> {
-    await this.request<void>(`/properties/${propertyId}/media/${imageId}/`, {
+    const isUsingProxy = this.baseUrl.includes('/api/proxy');
+    const endpoint = isUsingProxy ? `/${propertyId}/media/${imageId}/` : `/properties/${propertyId}/media/${imageId}/`;
+    await this.request<void>(endpoint, {
       method: "DELETE",
     });
   }
