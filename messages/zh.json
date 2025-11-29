@@ -33,8 +33,8 @@
   },
   "navigation": {
     "home": "首页",
-    "residency": "居留计划",
-    "real_estate": "房地产",
+    "golden_visa": "黄金签证",
+    "services": "服务",
     "medical_tourism": "医疗旅游",
     "properties": "房产",
     "about_panama": "关于巴拿马",
@@ -47,7 +47,7 @@
     "tagline": "您通往巴拿马居留权的黄金钥匙",
     "common": {
       "wechat": "微信",
-      "free_consultation": "免费咨询"
+      "free_consultation": "咨询"
     }
   },
   "home": {
@@ -56,7 +56,7 @@
     },
     "hero_title": "您的巴拿马投资之路从这里开始",
     "hero_subtitle": "为寻求在巴拿马获得居留权和投资机会的中国家庭提供的合格投资者签证计划",
-    "hero_cta": "免费咨询",
+    "hero_cta": "咨询",
     "value_prop_title": "为什么选择巴拿马黄金钥匙",
     "value_prop_subtitle": "为中国投资者提供巴拿马居留计划的专业指导",
     "happy_clients": "满意客户",
@@ -122,13 +122,13 @@
     "cta": {
       "title": "准备好开始您的巴拿马之旅了吗？",
       "subtitle": "联系我们的专家团队，获取免费咨询，了解如何通过投资获得巴拿马居留权",
-      "button": "立即免费咨询"
+      "button": "立即咨询"
     },
     "watch_video": "观看视频",
     "scroll_down": "向下滚动"
   },
   "residency": {
-    "title": "居留计划",
+    "title": "黄金签证",
     "subtitle": "通过战略投资获得巴拿马居留权的途径",
     "qualified_investor": {
       "title": "合格投资者签证",
@@ -402,7 +402,7 @@
     "title": "联系我们",
     "subtitle": "今天就开始您的巴拿马投资之旅",
     "consultation": {
-      "title": "免费咨询",
+      "title": "咨询",
       "description": "与我们的专家安排免费咨询",
       "form": {
         "name": "姓名",
@@ -504,5 +504,39 @@
     "meta_title": "巴拿马黄金钥匙 - 中国投资者居留与投资",
     "meta_description": "为寻求通过合格投资者签证计划获得巴拿马居留权的中国投资者提供专业指导。房地产、医疗旅游和投资机会。",
     "keywords": "巴拿马居留权，中国投资者，合格投资者签证，巴拿马房地产，巴拿马投资，巴拿马医疗旅游"
+  },
+  "services_page": {
+    "title": "我们的服务",
+    "subtitle": "为您在巴拿马的旅程提供全面的法律和金融解决方案",
+    "list": {
+      "solvency_visa": {
+        "title": "经济偿付能力签证",
+        "description": "通过定期存款或房地产投资获得居留权。"
+      },
+      "pensionado_visa": {
+        "title": "退休养老金签证",
+        "description": "为拥有终身养老金的退休人员提供的居留权。"
+      },
+      "real_estate_advisory": {
+        "title": "房地产收购咨询",
+        "description": "关于在巴拿马寻找和购买房产的专家指导。"
+      },
+      "company_formation": {
+        "title": "公司成立",
+        "description": "巴拿马股份有限公司（S.A.）的注册。"
+      },
+      "foundation_formation": {
+        "title": "私人利益基金会成立",
+        "description": "资产保护和遗产规划结构。"
+      },
+      "bank_account_opening": {
+        "title": "银行开户",
+        "description": "协助开设在岸和离岸银行账户。"
+      },
+      "accounting": {
+        "title": "会计服务",
+        "description": "专业的会计和税务合规服务。"
+      }
+    }
   }
 }

@@ -30,18 +30,18 @@
     "address": "Address",
     "website": "Website",
     "social_media": "Social Media",
-    "free_consultation": "Free Consultation",
+    "free_consultation": "Consultation",
     "wechat": "WeChat"
   },
   "navigation": {
     "tagline": "Your Gateway to Panama Residency & Investment",
     "common": {
       "wechat": "WeChat",
-      "free_consultation": "Free Consultation"
+      "free_consultation": "Consultation"
     },
     "home": "Home",
-    "residency": "Residency Programs",
-    "real_estate": "Real Estate",
+    "golden_visa": "Golden Visa",
+    "services": "Services",
     "medical_tourism": "Medical Tourism",
     "properties": "Properties",
     "about_panama": "About Panama",
@@ -58,7 +58,7 @@
     },
     "hero_title": "Your Panama Investment Journey Starts Here",
     "hero_subtitle": "Qualified Investor Visa program for Chinese families seeking residency and investment opportunities in Panama",
-    "hero_cta": "Free Consultation",
+    "hero_cta": "Consultation",
     "value_prop_title": "Why Choose Panama Golden Key",
     "value_prop_subtitle": "Expert guidance for Chinese investors in Panama residency programs",
     "features": {
@@ -126,11 +126,11 @@
     "cta": {
       "title": "Ready to Start Your Panama Journey?",
       "subtitle": "Schedule a free consultation with our experts to explore your residency and investment options",
-      "button": "Get Free Consultation"
+      "button": "Get Consultation"
     }
   },
   "residency": {
-    "title": "Residency Programs",
+    "title": "Golden Visa",
     "subtitle": "Pathway to Panama residency through strategic investment",
     "qualified_investor": {
       "title": "Qualified Investor Visa",
@@ -374,7 +374,11 @@
       "healthcare": "Quality Healthcare",
       "education": "International Education",
       "safety": "Safety and Security"
-    }
+    },
+    "medical_tourism": "Medical Tourism",
+    "real_estate_tab": "Real Estate Market",
+    "infrastructure_tab": "Megaprojects",
+    "investment_tab": "Strategic Center"
   },
   "about_us": {
     "title": "About Panama Golden Key",
@@ -403,7 +407,7 @@
   "contact": {
     "title": "Contact Us",
     "subtitle": "Start your Panama investment journey today",
-    "page_title": "Contact Panama Golden Key - Free Consultation",
+    "page_title": "Contact Panama Golden Key - Consultation",
     "page_description": "Get in touch with Panama Golden Key for expert guidance on residency programs and investment opportunities in Panama.",
     "page_keywords": "Panama contact, residency consultation, investment advice, Panama Golden Key",
     "hero_title": "Get in Touch with Panama Golden Key",
@@ -481,7 +485,7 @@
     "cta_book_button": "Book Consultation",
     "cta_call_button": "Call Us Now",
     "consultation": {
-      "title": "Free Consultation",
+      "title": "Consultation",
       "description": "Schedule a complimentary consultation with our experts",
       "form": {
         "name": "Full Name",
@@ -583,5 +587,329 @@
     "meta_title": "Panama Golden Key - Residency & Investment for Chinese Investors",
     "meta_description": "Expert guidance for Chinese investors seeking Panama residency through the Qualified Investor Visa program. Real estate, medical tourism, and investment opportunities.",
     "keywords": "Panama residency, Chinese investors, Qualified Investor Visa, Panama real estate, Panama investment, medical tourism Panama"
+  },
+  "services_page": {
+    "title": "Our Services",
+    "subtitle": "Comprehensive legal and financial solutions for your Panama journey",
+    "company_formation": {
+      "title": "COMPANY FORMATION",
+      "subtitle": "Panama: Financial and Corporate Hub for International Investors",
+      "description": "The Singapore of the Americas: A Strategic Jurisdiction in the Heart of the Continent",
+      "introduction": "Panama has established itself as one of the most attractive financial and corporate centers in Latin America, offering a robust business ecosystem that combines political stability, competitive tax advantages, and a privileged geographical location.",
+      "advantages_title": "Advantages of Incorporating a Company in Panama",
+      "territorial_tax": {
+        "title": "Territorial Tax System: Legitimate Optimization",
+        "description": "One of the most attractive features of the Panamanian system is its territorial tax regime. Companies incorporated in Panama only pay taxes on income generated within the national territory. This means that international commercial operations, services provided outside Panama, and income from foreign sources are exempt from local taxes."
+      },
+      "corporate_confidentiality": {
+        "title": "Corporate Confidentiality and Asset Protection",
+        "description": "Panamanian legislation offers significant levels of corporate privacy. Company shareholders do not necessarily appear in public records, providing discretion in ownership structure. This feature, combined with a solid tradition of respect for private property, makes Panama an attractive jurisdiction for asset protection and wealth diversification."
+      },
+      "operational_flexibility": {
+        "title": "Operational Flexibility and Remote Incorporation",
+        "description": "The business incorporation process in Panama stands out for its simplicity and efficiency. Companies can be established in approximately two weeks without directors or shareholders needing to travel to the country. Panamanian corporations offer flexibility in their structure: they can operate with a single shareholder, directors do not need to be residents of the country, and board meetings can be held anywhere in the world."
+      },
+      "currency_stability": {
+        "title": "Currency and Economic Stability",
+        "description": "Panama has used the US dollar as its official currency since 1904, eliminating exchange rate risk and facilitating international commercial transactions. This dollarization represents a distinctive advantage, eliminating operational friction and conversion costs for companies that primarily operate with North America, Europe, or markets that trade in dollars."
+      },
+      "trade_agreements": {
+        "title": "Free Trade Agreements and Global Connectivity",
+        "description": "Panama maintains free trade agreements with more than 40 countries, including the United States, European Union, Canada, Chile, Singapore, and recently China. These agreements facilitate preferential access to markets representing more than a billion consumers, making Panamanian companies ideal platforms for international trade operations."
+      }
+    },
+    "bank_account_opening": {
+      "title": "OFFSHORE AND ONSHORE BANK ACCOUNT OPENING",
+      "subtitle": "Offshore Banking in Panama",
+      "description": "First-Class International Banking Center",
+      "introduction": "The Panamanian banking system stands out for its solidity, sophistication, and international orientation. With the presence of more than 80 international financial institutions, Panama offers banking services comparable to the world's leading financial centers, combining cutting-edge technology with robust regulatory standards.",
+      "advantages_title": "Advantages of Panamanian Banking",
+      "asset_diversification": {
+        "title": "Asset Diversification and Protection",
+        "description": "Maintaining offshore bank accounts in Panama allows international investors to geographically diversify their assets, reducing exposure to political or economic risks of a single jurisdiction. This diversification strategy constitutes a globally recognized prudent wealth management practice."
+      },
+      "multi_currency": {
+        "title": "Multi-Currency and Operational Facilities",
+        "description": "Panamanian banking institutions offer accounts in multiple currencies, allowing balances to be maintained in US dollars, euros, and other major currencies. This flexibility is especially valuable for companies with international commercial operations that need to manage cash flows in different denominations."
+      },
+      "digital_banking": {
+        "title": "Digital Banking and Remote Management",
+        "description": "Panamanian banks have developed advanced digital platforms that allow complete account management from any location. International transfers, supplier payments, investments, and balance inquiries can be executed securely and efficiently without the need for physical presence."
+      },
+      "financial_services": {
+        "title": "Comprehensive Financial Services",
+        "description": "Beyond basic transactional banking, Panamanian institutions offer sophisticated wealth management services, including investment products, structured financing, internationally accepted cards, and payment gateways for e-commerce."
+      },
+      "regulatory_framework": {
+        "title": "Transparent Regulatory Framework",
+        "description": "Panama has adopted international financial transparency standards, including tax information exchange agreements and anti-money laundering regulations. Banks implement rigorous due diligence processes (Know Your Customer), ensuring only legitimate clients access banking services."
+      }
+    },
+    "comparison_table": {
+      "title": "Comparison: Panama vs. Singapore",
+      "headers": {
+        "aspect": "Aspect",
+        "panama": "Panama",
+        "singapore": "Singapore"
+      },
+      "rows": {
+        "strategic_position": {
+          "aspect": "Strategic Position",
+          "panama": "Control of Panama Canal, bridge between oceans",
+          "singapore": "Control of Malacca Strait, bridge between continents"
+        },
+        "tax_system": {
+          "aspect": "Tax System",
+          "panama": "Pure territorial (0% on foreign income)",
+          "singapore": "Territorial with exemptions (17% on local income, incentives available)"
+        },
+        "currency": {
+          "aspect": "Official Currency",
+          "panama": "US Dollar (eliminates exchange risk)",
+          "singapore": "Singapore Dollar (stable currency, but requires conversion)"
+        },
+        "annual_cost": {
+          "aspect": "Annual Operating Cost",
+          "panama": "USD $700-$1,000",
+          "singapore": "USD $3,000-$5,000+"
+        },
+        "formation_time": {
+          "aspect": "Formation Time",
+          "panama": "2 weeks, 100% remote",
+          "singapore": "1-3 weeks, more documentation"
+        },
+        "bank_deposit": {
+          "aspect": "Initial Bank Deposit",
+          "panama": "From USD $3,000 (personal) / $10,000 (business)",
+          "singapore": "From USD $20,000-$50,000+"
+        },
+        "timezone": {
+          "aspect": "Time Zone",
+          "panama": "GMT-5 (compatible with Americas and Europe)",
+          "singapore": "GMT+8 (compatible with Asia-Pacific)"
+        },
+        "markets": {
+          "aspect": "Preferential Markets",
+          "panama": "Americas, Europe, FTA with China and 40+ countries",
+          "singapore": "Asia-Pacific, ASEAN agreements"
+        },
+        "languages": {
+          "aspect": "Business Languages",
+          "panama": "Spanish, English",
+          "singapore": "English, Mandarin, Malay"
+        },
+        "cost_living": {
+          "aspect": "Cost of Living/Operation",
+          "panama": "40-50% lower than Singapore",
+          "singapore": "High (one of the most expensive cities in the world)"
+        }
+      }
+    },
+    "strategic_combination": {
+      "title": "Strategic Combination: Company + Banking",
+      "description": "The true competitive advantage emerges when combining the incorporation of a Panamanian company with local banking services. This integrated structure allows efficient commercial operations, legitimate tax optimization, international credibility, and operational flexibility to completely manage international operations remotely."
+    },
+    "chinese_investors": {
+      "title": "Considerations for Chinese Investors",
+      "description": "Specifically for the Chinese market, Panama offers additional advantages. Since the establishment of diplomatic relations in 2017, the flow of bilateral investment and trade has grown exponentially. The China-Panama Free Trade Agreement, in force since 2019, eliminates tariffs in numerous product categories and facilitates commercial exchange."
+    },
+    "strategic_decision": {
+      "title": "A Strategic Decision",
+      "description": "Incorporating a company and establishing banking services in Panama represents a strategic decision for international investors seeking to expand operations in the Americas, diversify assets, and optimize corporate structures. The combination of political stability, tax advantages, financial sophistication, and international connectivity positions Panama as the Western equivalent of Singapore."
+    },
+    "disclaimer": "This content is for general informational purposes and does not constitute specific legal, tax, or financial advice. It is recommended to schedule a consultation with our specialized professionals before making corporate or estate planning decisions.",
+    "list": {
+      "solvency_visa": {
+        "title": "Economic Solvency Visa",
+        "description": "Residency through fixed-term deposit or real estate investment."
+      },
+      "pensionado_visa": {
+        "title": "Pensionado (Retiree) Visa",
+        "description": "Residency for retirees with a lifetime pension."
+      },
+      "real_estate_advisory": {
+        "title": "Real Estate Acquisition Advisory",
+        "description": "Expert guidance on finding and purchasing property in Panama."
+      },
+      "company_formation": {
+        "title": "Company Formation",
+        "description": "Incorporation of Panamanian Corporations (S.A.)."
+      },
+      "foundation_formation": {
+        "title": "Private Interest Foundations",
+        "description": "Asset protection and estate planning structures."
+      },
+      "bank_account_opening": {
+        "title": "Bank Account Opening",
+        "description": "Assistance with onshore and offshore bank accounts."
+      },
+      "accounting": {
+        "title": "Accounting Services",
+        "description": "Professional accounting and tax compliance."
+      }
+    }
+  },
+  "contact_form": {
+    "title": "Contact Form",
+    "description": "Send us your message and we'll get back to you as soon as possible",
+    "contact": {
+      "phone": "Phone",
+      "email": "Email",
+      "wechat": "WeChat"
+    },
+    "fields": {
+      "name": "Full Name",
+      "email": "Email Address",
+      "phone": "Phone Number",
+      "country": "Country of Residence",
+      "investment_type": "Investment Type",
+      "investment_amount": "Investment Amount",
+      "timeline": "Investment Timeline",
+      "message": "Message",
+      "consent": "I accept the privacy policy and terms of service",
+      "newsletter": "I would like to receive information about special offers"
+    },
+    "placeholders": {
+      "name": "Enter your full name",
+      "email": "your.email@example.com",
+      "phone": "+507 123-45678",
+      "select_country": "Select your country",
+      "select_investment_type": "Select investment type",
+      "select_investment_amount": "Select investment amount",
+      "select_timeline": "Select timeline",
+      "message": "Tell us about your investment needs..."
+    },
+    "investment_types": {
+      "residency": "Panama Residency",
+      "real_estate": "Real Estate",
+      "medical_tourism": "Medical Tourism",
+      "infrastructure": "Infrastructure Projects",
+      "other": "Other"
+    },
+    "investment_amounts": {
+      "under_100k": "Under $100,000",
+      "100k_300k": "$100,000 - $300,000",
+      "300k_500k": "$300,000 - $500,000",
+      "500k_1m": "$500,000 - $1,000,000",
+      "over_1m": "Over $1,000,000"
+    },
+    "timelines": {
+      "immediately": "Immediately",
+      "1_3_months": "1-3 months",
+      "3_6_months": "3-6 months",
+      "6_12_months": "6-12 months",
+      "over_1_year": "Over 1 year"
+    },
+    "countries": {
+      "china": "China",
+      "hong_kong": "Hong Kong",
+      "taiwan": "Taiwan",
+      "singapore": "Singapore",
+      "malaysia": "Malaysia",
+      "other": "Other"
+    },
+    "errors": {
+      "name_required": "Name is required",
+      "email_required": "Email is required",
+      "email_invalid": "Email is invalid",
+      "phone_required": "Phone is required",
+      "country_required": "Country is required",
+      "investment_type_required": "Investment type is required",
+      "investment_amount_required": "Investment amount is required",
+      "timeline_required": "Timeline is required",
+      "message_required": "Message is required",
+      "consent_required": "You must accept the privacy policy",
+      "submission_failed": "Failed to submit form. Please try again."
+    },
+    "submit": "Send Message",
+    "submitting": "Sending...",
+    "submit_another": "Send Another Message",
+    "schedule_consultation": "Schedule Consultation",
+    "success_title": "Message Sent Successfully!",
+    "success_message": "Thank you for contacting us. We'll get back to you within 24 hours."
+  },
+  "consultation_booking": {
+    "title": "Book a Consultation",
+    "description": "Schedule a personalized meeting with our experts",
+    "minutes": "minutes",
+    "current_step": "Step {current} of {total}: {title}",
+    "steps": {
+      "consultation_type": "Consultation Type",
+      "personal_info": "Personal Information",
+      "select_datetime": "Date & Time",
+      "confirmation": "Confirmation"
+    },
+    "consultation_types": {
+      "general": {
+        "name": "General Consultation",
+        "description": "Introduction to Panama investment opportunities",
+        "price": "Free"
+      },
+      "residency": {
+        "name": "Residency Consultation",
+        "description": "Detailed advice on residency programs",
+        "price": "$150"
+      },
+      "investment": {
+        "name": "Investment Consultation",
+        "description": "Personalized investment opportunity analysis",
+        "price": "$200"
+      },
+      "comprehensive": {
+        "name": "Comprehensive Consultation",
+        "description": "Complete residency and investment evaluation",
+        "price": "$350"
+      }
+    },
+    "fields": {
+      "name": "Full Name",
+      "email": "Email Address",
+      "phone": "Phone Number",
+      "date": "Date",
+      "time": "Time",
+      "timezone": "Timezone",
+      "notes": "Additional Notes",
+      "consent": "I accept the privacy policy and terms of service"
+    },
+    "placeholders": {
+      "name": "Enter your full name",
+      "email": "your.email@example.com",
+      "phone": "+507 123-45678",
+      "select_date": "Select a date",
+      "select_timezone": "Select your timezone",
+      "notes": "Additional information you'd like to share..."
+    },
+    "select_consultation_type": "Select consultation type",
+    "consultation_type_description": "Choose the consultation type that best fits your needs",
+    "personal_information": "Personal Information",
+    "select_date_time": "Select Date & Time",
+    "confirmation": "Confirmation",
+    "consultation_type": "Consultation Type",
+    "duration": "Duration",
+    "price": "Price",
+    "booking_summary": "Booking Summary",
+    "booking_details": "Booking Details",
+    "consultation_format": "Consultation Format",
+    "consultation_format_description": "All consultations are conducted virtually via Zoom or Google Meet",
+    "errors": {
+      "name_required": "Name is required",
+      "email_required": "Email is required",
+      "email_invalid": "Email is invalid",
+      "phone_required": "Phone is required",
+      "consultation_type_required": "Consultation type is required",
+      "date_required": "Date is required",
+      "time_required": "Time is required",
+      "timezone_required": "Timezone is required",
+      "consent_required": "You must accept the privacy policy",
+      "submission_failed": "Booking failed. Please try again."
+    },
+    "previous": "Previous",
+    "next": "Next",
+    "confirm_booking": "Confirm Booking",
+    "submitting": "Processing...",
+    "book_another": "Book Another Consultation",
+    "add_to_calendar": "Add to Calendar",
+    "success_title": "Consultation Booked Successfully!",
+    "success_message": "We've sent you an email with your consultation details."
   }
 }

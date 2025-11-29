@@ -3,7 +3,7 @@
 import { useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useLocale } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import { X, Phone, Mail, Globe } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { LogoSVG } from '@/components/ui/LogoSVG';
@@ -17,6 +17,7 @@ interface MobileMenuProps {
 export function MobileMenu({ isOpen, onClose, navigation }: MobileMenuProps) {
   const pathname = usePathname();
   const locale = useLocale();
+  const t = useTranslations();
 
   useEffect(() => {
     if (isOpen) {
@@ -122,7 +123,7 @@ export function MobileMenu({ isOpen, onClose, navigation }: MobileMenuProps) {
                 onClick={onClose}
               >
                 <Link href={`/${locale}/contact`}>
-                  Free Consultation
+                  {t('common.free_consultation')}
                 </Link>
               </Button>
             </div>

@@ -57,11 +57,10 @@ export function GroundHeaderMinimal() {
 
   const navigation = [
     { name: t("home"), href: `/${locale}` },
-    { name: t("residency"), href: `/${locale}/residency` },
-   /*  { name: t("real_estate"), href: `/${locale}/real-estate` }, */
-    { name: t("medical_tourism"), href: `/${locale}/medical-tourism` },
-    { name: t("properties"), href: `/${locale}/properties` },
+    { name: t("golden_visa"), href: `/${locale}/residency` },
+    { name: t("services"), href: `/${locale}/services` },
     { name: t("about_panama"), href: `/${locale}/about-panama` },
+    { name: t("properties"), href: `/${locale}/properties` },
     { name: t("about_us"), href: `/${locale}/about-us` },
   ];
 
@@ -79,7 +78,7 @@ export function GroundHeaderMinimal() {
       >
         <div className="container-fluid mx-auto px-8">
           {/* Enhanced Top Bar */}
-          <div className="hidden lg:block border-b border-gray-100/50 py-3">
+          <div className="hidden lg:block border-b border-gray-100/50 py-3 border-gold">
             <div className="flex justify-between items-center text-sm">
               <div className="flex items-center space-x-8">
                 <a

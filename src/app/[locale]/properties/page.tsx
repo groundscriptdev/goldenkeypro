@@ -199,7 +199,7 @@ export default async function PropertiesPage({
             titleKey="title"
             descriptionKey="subtitle"
             translationNamespace="properties"
-            backgroundImage="/assets/76e5680e5d714cfac7f82b40fc5d2a3a8b70421a.png"
+            backgroundImage="/assets/one.jpg"
             tabs={[
               { id: "luxury", labelKey: "luxury_market.title" },
               { id: "mid_range", labelKey: "mid_range.title" },
@@ -231,7 +231,7 @@ export default async function PropertiesPage({
           </section>
 
           {/* Featured Locations */}
-          <section className="py-16 bg-jade-green/5">
+          {/* <section className="py-16 bg-jade-green/5">
             <div className="container mx-auto px-4">
               <div className="max-w-6xl mx-auto">
                 <div className="text-center mb-12">
@@ -281,10 +281,10 @@ export default async function PropertiesPage({
                 </div>
               </div>
             </div>
-          </section>
+          </section> */}
 
           {/* Property Types */}
-          <section className="py-16 bg-white">
+          {/* <section className="py-16 bg-white">
             <div className="container mx-auto px-4">
               <div className="max-w-6xl mx-auto">
                 <div className="text-center mb-12">
@@ -320,9 +320,9 @@ export default async function PropertiesPage({
               </div>
             </div>
           </section>
-
+ */}
           {/* Investment Highlights */}
-          <section className="py-16 bg-jade-green/5">
+        {/*   <section className="py-16 bg-jade-green/5">
             <div className="container mx-auto px-4">
               <div className="max-w-6xl mx-auto">
                 <div className="text-center mb-12">
@@ -375,10 +375,10 @@ export default async function PropertiesPage({
                 </div>
               </div>
             </div>
-          </section>
+          </section> */}
 
            {/* Market Overview */}
-                    <section className="py-16 bg-white">
+                 {/*    <section className="py-16 bg-white">
                       <div className="container mx-auto px-4">
                         <div className="max-w-6xl mx-auto">
                           <div className="text-center mb-12">
@@ -482,10 +482,10 @@ export default async function PropertiesPage({
                           </div>
                         </div>
                       </div>
-                    </section>
+                    </section> */}
 
           {/* CTA Section */}
-          <section className="py-16 bg-jade-green text-white">
+         {/*  <section className="py-16 bg-jade-green text-white">
             <div className="container mx-auto px-4">
               <div className="text-center max-w-3xl mx-auto">
                 <h2 className="text-3xl md:text-4xl font-brand text-white font-bold mb-6">
@@ -505,7 +505,7 @@ export default async function PropertiesPage({
                 </Button>
               </div>
             </div>
-          </section>
+          </section> */}
         </main>
 
         <FooterMinimal />

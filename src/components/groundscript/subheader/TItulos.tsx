@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 
 interface TabItem {
   id: string;
@@ -17,6 +17,8 @@ interface TitulosProps {
   tabs?: TabItem[]; // Array de pestañas con claves de traducción
   translationNamespace?: string; // Namespace para las traducciones (por defecto "residency")
   defaultActiveTab?: string; // ID de la pestaña activa por defecto
+  activeTab?: string; // ID de la pestaña activa (controlado)
+  onTabChange?: (id: string) => void; // Callback para cambio de pestaña
 }
 
 export function Titulos({
@@ -29,10 +31,22 @@ export function Titulos({
     { id: "investment", labelKey: "investment_options.title" }
   ],
   translationNamespace = "residency",
-  defaultActiveTab = "visa"
+  defaultActiveTab = "visa",
+  activeTab: controlledActiveTab,
+  onTabChange
 }: TitulosProps) {
-  const [activeTab, setActiveTab] = useState(defaultActiveTab);
+  const [internalActiveTab, setInternalActiveTab] = useState(defaultActiveTab);
   const t = useTranslations(translationNamespace);
+
+  const activeTab = controlledActiveTab ?? internalActiveTab;
+
+  const handleTabClick = (id: string) => {
+    if (onTabChange) {
+      onTabChange(id);
+    } else {
+      setInternalActiveTab(id);
+    }
+  };
 
   return (
     <div className="w-full bg-white overflow-hidden">
@@ -95,7 +109,7 @@ export function Titulos({
             {tabs.map((tab, index) => (
               <motion.button
                 key={tab.id}
-                onClick={() => setActiveTab(tab.id)}
+                onClick={() => handleTabClick(tab.id)}
                 className={`relative px-0 py-2 text-sm font-medium transition-all duration-200 border-b-2 ${
                   activeTab === tab.id
                     ? "text-jade-green border-jade-green"

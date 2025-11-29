@@ -81,7 +81,7 @@ const steps: Step[] = [
       ]
     }
   },
-  {
+/*   {
     id: 5,
     title: "Proceso biométrico",
     subtitle: "1 a 2 semanas",
@@ -112,7 +112,7 @@ const steps: Step[] = [
         "Confirmar beneficios y derechos"
       ]
     }
-  }
+  } */
 ];
 
 export function GroundProcess() {

@@ -611,7 +611,7 @@ export default async function RealEstatePage({ params }: RealEstatePageProps) {
                   Ready to Invest in Panama Real Estate?
                 </h2>
                 <p className="text-xl text-gold/90 mb-8">
-                  Schedule a free consultation to explore premium investment
+                  Schedule a consultation to explore premium investment
                   opportunities
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">

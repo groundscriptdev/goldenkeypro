@@ -1,6 +1,7 @@
 {
   "/api/proxy/properties/route": "app/api/proxy/properties/route.js",
-  "/[locale]/test-simple/page": "app/[locale]/test-simple/page.js",
-  "/[locale]/page": "app/[locale]/page.js",
-  "/[locale]/properties/page": "app/[locale]/properties/page.js"
+  "/[locale]/(pages)/about-panama/page": "app/[locale]/(pages)/about-panama/page.js",
+  "/[locale]/(pages)/about-us/page": "app/[locale]/(pages)/about-us/page.js",
+  "/[locale]/(pages)/residency/page": "app/[locale]/(pages)/residency/page.js",
+  "/[locale]/(pages)/services/page": "app/[locale]/(pages)/services/page.js"
 }

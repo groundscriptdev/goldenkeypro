@@ -36,9 +36,9 @@ export function FeaturedPrograms() {
         "Residencia permanente inmediata",
         "Incluye cónyuge e hijos",
         "Camino a ciudadanía en 5 años",
-        "Sin requisitos de residencia",
+        /* "Sin requisitos de residencia", */
       ],
-      link: "/es/residency",
+      link: "/es/services",
     },
     {
       icon: <Home className="w-8 h-8 text-jade-green" />,
@@ -53,7 +53,7 @@ export function FeaturedPrograms() {
       ],
       link: "/es/properties",
     },
-    {
+   /*  {
       icon: <Heart className="w-8 h-8 text-jade-green" />,
       title: t("featured_programs.medical_tourism.title"),
       description: t("featured_programs.medical_tourism.description"),
@@ -65,7 +65,7 @@ export function FeaturedPrograms() {
         "Recuperación en paraíso tropical",
       ],
       link: "/es/medical-tourism",
-    },
+    }, */
     {
       icon: <Briefcase className="w-8 h-8 text-jade-green" />,
       title: "Visa de Negocios",
@@ -78,7 +78,7 @@ export function FeaturedPrograms() {
         "Confidencialidad bancaria",
         "Acceso a mercados globales",
       ],
-      link: "/es/residency",
+      link: "/es/services",
     },
     {
       icon: <GraduationCap className="w-8 h-8 text-jade-green" />,
@@ -89,7 +89,7 @@ export function FeaturedPrograms() {
         "Colegios internacionales",
         "Universidades reconocidas",
         "Programas bilingües",
-        "Preparación para universidades EE.UU.",
+        /* "Preparación para universidades EE.UU.", */
       ],
       link: "/es/about-panama",
     },

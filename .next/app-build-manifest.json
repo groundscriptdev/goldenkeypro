@@ -1,9 +1,9 @@
 {
   "pages": {
-    "/[locale]/properties/page": [
+    "/[locale]/(pages)/about-us/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/[locale]/properties/page.js"
+      "static/chunks/app/[locale]/(pages)/about-us/page.js"
     ],
     "/[locale]/layout": [
       "static/chunks/webpack.js",
@@ -16,35 +16,25 @@
       "static/css/app/layout.css",
       "static/chunks/app/layout.js"
     ],
-    "/[locale]/test-hook/page": [
+    "/[locale]/properties/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/[locale]/test-hook/page.js"
+      "static/chunks/app/[locale]/properties/page.js"
     ],
-    "/[locale]/test-simple/page": [
+    "/[locale]/(pages)/about-panama/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/[locale]/test-simple/page.js"
+      "static/chunks/app/[locale]/(pages)/about-panama/page.js"
     ],
-    "/[locale]/test-api/page": [
+    "/[locale]/(pages)/residency/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/[locale]/test-api/page.js"
+      "static/chunks/app/[locale]/(pages)/residency/page.js"
     ],
-    "/[locale]/page": [
+    "/[locale]/(pages)/services/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/[locale]/page.js"
-    ],
-    "/[locale]/test-isolated/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/[locale]/test-isolated/page.js"
-    ],
-    "/[locale]/properties-simple/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/[locale]/properties-simple/page.js"
+      "static/chunks/app/[locale]/(pages)/services/page.js"
     ]
   }
 }

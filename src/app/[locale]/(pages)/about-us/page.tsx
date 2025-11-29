@@ -182,7 +182,7 @@ export default async function AboutUsPage({ params }: AboutUsPageProps) {
             titleKey="title"
             descriptionKey="subtitle"
             translationNamespace="about_us"
-            backgroundImage="/assets/5a562231252f57b94e54b2f16319c9a076958f96.png"
+            backgroundImage="/images/two.jpg"
             tabs={[
               { id: "expertise", labelKey: "expertise.title" },
               { id: "services", labelKey: "services.title" },

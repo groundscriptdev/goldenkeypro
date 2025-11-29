@@ -40,7 +40,7 @@ export function HeroSectionMinimal() {
           <LanguageSwitcher />
         </div> */}
 
-        <div className="ground-along ">
+        <div className="ground-along ground-magicard ">
           {/* Enhanced Headline */}
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-brand text-white font-bold mb-6 leading-tight animate-slide-up">
             {t("hero_title")}
@@ -64,7 +64,7 @@ export function HeroSectionMinimal() {
             <div className="flex items-center space-x-3 bg-white/80 backdrop-blur-sm rounded-full px-6 py-3 shadow-sm border border-gray-100">
               <CheckCircle className="w-5 h-5 text-jade-green flex-shrink-0" />
               <span className="text-gray-700 font-medium whitespace-nowrap">
-                142+ {t("stats.visa_free_countries")}
+                {t("stats.visa_free_countries")}
               </span>
             </div>
             <div className="flex items-center space-x-3 bg-white/80 backdrop-blur-sm rounded-full px-6 py-3 shadow-sm border border-gray-100">

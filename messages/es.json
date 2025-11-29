@@ -30,18 +30,18 @@
     "address": "Dirección",
     "website": "Sitio web",
     "social_media": "Redes sociales",
-    "free_consultation": "Consulta gratuita",
+    "free_consultation": "Consulta",
     "wechat": "WeChat"
   },
   "navigation": {
     "tagline": "Tu puerta de entrada a la residencia e inversión en Panamá",
     "common": {
       "wechat": "WeChat",
-      "free_consultation": "Consulta gratuita"
+      "free_consultation": "Consulta"
     },
     "home": "Inicio",
-    "residency": "Programas de residencia",
-    "real_estate": "Bienes raíces",
+    "golden_visa": "Golden Visa",
+    "services": "Servicios",
     "medical_tourism": "Turismo médico",
     "properties": "Propiedades",
     "about_panama": "Sobre Panamá",
@@ -58,7 +58,7 @@
     },
     "hero_title": "Tu viaje de inversión en Panamá comienza aquí",
     "hero_subtitle": "Programa de Visa de Inversionista Calificado para familias chinas que buscan residencia y oportunidades de inversión en Panamá",
-    "hero_cta": "Consulta gratuita",
+    "hero_cta": "Consulta",
     "value_prop_title": "Por qué elegir Panama Golden Key",
     "value_prop_subtitle": "Asesoría experta para inversionistas chinos en programas de residencia en Panamá",
     "features": {
@@ -125,12 +125,12 @@
     },
     "cta": {
       "title": "¿Listo para comenzar tu viaje a Panamá?",
-      "subtitle": "Agenda una consulta gratuita con nuestros expertos para explorar tus opciones de residencia e inversión",
-      "button": "Obtener consulta gratuita"
+      "subtitle": "Agenda una consulta  con nuestros expertos para explorar tus opciones de residencia e inversión",
+      "button": "Obtener consulta"
     }
   },
   "residency": {
-    "title": "Programas de residencia",
+    "title": "Golden Visa",
     "subtitle": "Camino a la residencia panameña mediante inversión estratégica",
     "qualified_investor": {
       "title": "Visa de Inversionista Calificado",
@@ -374,7 +374,11 @@
       "healthcare": "Salud de calidad",
       "education": "Educación internacional",
       "safety": "Seguridad y protección"
-    }
+    },
+    "medical_tourism": "Turismo médico",
+    "real_estate_tab": "Mercado Inmobiliario",
+    "infrastructure_tab": "Megaproyectos",
+    "investment_tab": "Centro Estratégico"
   },
   "about_us": {
     "title": "Sobre Panama Golden Key",
@@ -403,11 +407,11 @@
   "contact": {
     "title": "Contáctanos",
     "subtitle": "Comienza tu viaje de inversión en Panamá hoy mismo",
-    "page_title": "Contacto Panama Golden Key - Consulta gratuita",
+    "page_title": "Contacto Panama Golden Key - Consulta",
     "page_description": "Ponte en contacto con Panama Golden Key para obtener asesoría experta sobre programas de residencia y oportunidades de inversión en Panamá.",
     "page_keywords": "contacto Panamá, consulta de residencia, asesoría de inversión, Panama Golden Key",
     "hero_title": "Comunícate con Panama Golden Key",
-    "hero_subtitle": "Agenda tu consulta gratuita y comienza tu viaje de inversión en Panamá hoy mismo",
+    "hero_subtitle": "Agenda tu consulta  y comienza tu viaje de inversión en Panamá hoy mismo",
     "book_consultation": "Reservar consulta",
     "call_now": "Llamar ahora",
     "structured_data": {
@@ -477,12 +481,12 @@
     "map_placeholder": "Mapa interactivo",
     "map_address": "Ciudad de Panamá, Panamá",
     "cta_title": "¿Listo para comenzar tu viaje a Panamá?",
-    "cta_subtitle": "Agenda tu consulta gratuita hoy y da el primer paso hacia tu residencia en Panamá",
+    "cta_subtitle": "Agenda tu consulta hoy y da el primer paso hacia tu residencia en Panamá",
     "cta_book_button": "Reservar consulta",
     "cta_call_button": "Llámanos ahora",
     "consultation": {
-      "title": "Consulta gratuita",
-      "description": "Agenda una consulta gratuita con nuestros expertos",
+      "title": "Consulta",
+      "description": "Agenda una consulta con nuestros expertos",
       "form": {
         "name": "Nombre completo",
         "email": "Correo electrónico",
@@ -583,5 +587,333 @@
     "meta_title": "Panama Golden Key - Residencia e inversión para inversionistas chinos",
     "meta_description": "Asesoría experta para inversionistas chinos que buscan residencia en Panamá mediante el programa de Visa de Inversionista Calificado. Bienes raíces, turismo médico y oportunidades de inversión.",
     "keywords": "residencia en Panamá, inversionistas chinos, visa de inversionista calificado, bienes raíces Panamá, inversión Panamá, turismo médico Panamá"
+  },
+  "services_page": {
+    "title": "Nuestros Servicios",
+    "subtitle": "Soluciones legales y financieras integrales para su viaje en Panamá",
+    "company_formation": {
+      "title": "APERTURA DE EMPRESAS",
+      "subtitle": "Panamá: Hub Financiero y Corporativo para Inversionistas Internacionales",
+      "description": "El Singapur de América: Una Jurisdicción Estratégica en el Corazón del Continente",
+      "introduction": "Panamá se ha consolidado como uno de los centros financieros y corporativos más atractivos de América Latina, ofreciendo un ecosistema empresarial robusto que combina estabilidad política, ventajas fiscales competitivas y una ubicación geográfica privilegiada.",
+      "advantages_title": "Ventajas de Constituir una Empresa en Panamá",
+      "territorial_tax": {
+        "title": "Sistema Fiscal Territorial: Optimización Legítima",
+        "description": "Una de las características más atractivas del sistema panameño es su régimen fiscal territorial. Las empresas constituidas en Panamá únicamente tributan sobre ingresos generados dentro del territorio nacional. Esto significa que las operaciones comerciales internacionales, los servicios prestados fuera de Panamá y los ingresos provenientes de fuentes extranjeras están exentos de impuestos locales."
+      },
+      "corporate_confidentiality": {
+        "title": "Confidencialidad Corporativa y Protección Patrimonial",
+        "description": "La legislación panameña ofrece niveles significativos de privacidad corporativa. Los accionistas de empresas no necesariamente figuran en registros públicos, lo que proporciona discreción en la estructura de propiedad. Esta característica, combinada con una sólida tradición de respeto a la propiedad privada, convierte a Panamá en una jurisdicción atractiva para la protección y diversificación patrimonial."
+      },
+      "operational_flexibility": {
+        "title": "Flexibilidad Operativa y Constitución Remota",
+        "description": "El proceso de constitución empresarial en Panamá destaca por su simplicidad y eficiencia. Las empresas pueden establecerse en aproximadamente dos semanas sin que los directores o accionistas necesiten viajar al país. Las sociedades anónimas panameñas ofrecen flexibilidad en su estructura: pueden operar con un solo accionista, los directores no requieren ser residentes del país, y las reuniones de junta directiva pueden celebrarse en cualquier parte del mundo."
+      },
+      "currency_stability": {
+        "title": "Moneda y Estabilidad Económica",
+        "description": "Panamá utiliza el dólar estadounidense como moneda oficial desde 1904, eliminando el riesgo cambiario y facilitando transacciones comerciales internacionales. Esta dolarización representa una ventaja distintiva, eliminando fricciones operativas y costos de conversión para empresas que operan primariamente con América del Norte, Europa o mercados que cotizan en dólares."
+      },
+      "trade_agreements": {
+        "title": "Tratados de Libre Comercio y Conectividad Global",
+        "description": "Panamá mantiene tratados de libre comercio con más de 40 países, incluyendo Estados Unidos, la Unión Europea, Canadá, Chile, Singapur y recientemente China. Estos acuerdos facilitan el acceso preferencial a mercados que representan más de mil millones de consumidores, convirtiendo a las empresas panameñas en plataformas ideales para operaciones de comercio internacional."
+      }
+    },
+    "bank_account_opening": {
+      "title": "APERTURA DE CUENTA BANCARIA OFFSHORE Y ONSHORE",
+      "subtitle": "Banca Offshore en Panamá",
+      "description": "Centro Bancario Internacional de Primer Nivel",
+      "introduction": "El sistema bancario panameño se distingue por su solidez, sofisticación y orientación internacional. Con presencia de más de 80 instituciones financieras internacionales, Panamá ofrece servicios bancarios comparables a los principales centros financieros mundiales, combinando tecnología de vanguardia con estándares regulatorios robustos.",
+      "advantages_title": "Ventajas de la Banca Panameña",
+      "asset_diversification": {
+        "title": "Diversificación y Protección de Activos",
+        "description": "Mantener cuentas bancarias offshore en Panamá permite a inversionistas internacionales diversificar geográficamente sus activos, reduciendo la exposición a riesgos políticos o económicos de una única jurisdicción. Esta estrategia de diversificación constituye una práctica prudente de gestión patrimonial reconocida globalmente."
+      },
+      "multi_currency": {
+        "title": "Multi-moneda y Facilidades Operativas",
+        "description": "Las instituciones bancarias panameñas ofrecen cuentas en múltiples divisas, permitiendo mantener saldos en dólares estadounidenses, euros y otras monedas principales. Esta flexibilidad resulta especialmente valiosa para empresas con operaciones comerciales internacionales que requieren gestionar flujos de efectivo en diferentes denominaciones."
+      },
+      "digital_banking": {
+        "title": "Banca Digital y Gestión Remota",
+        "description": "Los bancos panameños han desarrollado plataformas digitales avanzadas que permiten la gestión completa de cuentas desde cualquier ubicación. Las transferencias internacionales, pagos a proveedores, inversiones y consultas de saldos pueden ejecutarse de manera segura y eficiente sin necesidad de presencia física."
+      },
+      "financial_services": {
+        "title": "Servicios Financieros Integrales",
+        "description": "Más allá de la banca transaccional básica, las instituciones panameñas ofrecen servicios sofisticados de gestión patrimonial, incluyendo productos de inversión, financiamiento estructurado, tarjetas internacionales con aceptación global y pasarelas de pago para comercio electrónico."
+      },
+      "regulatory_framework": {
+        "title": "Marco Regulatorio Transparente",
+        "description": "Panamá ha adoptado estándares internacionales de transparencia financiera, incluyendo acuerdos de intercambio de información tributaria y regulaciones contra el lavado de dinero. Los bancos implementan rigurosos procesos de debida diligencia (Know Your Customer), asegurando que solo clientes legítimos accedan a servicios bancarios."
+      }
+    },
+    "comparison_table": {
+      "title": "Comparativa: Panamá vs. Singapur",
+      "headers": {
+        "aspect": "Aspecto",
+        "panama": "Panamá",
+        "singapore": "Singapur"
+      },
+      "rows": {
+        "strategic_position": {
+          "aspect": "Posición Estratégica",
+          "panama": "Control del Canal de Panamá, puente entre océanos",
+          "singapore": "Control del Estrecho de Malaca, puente entre continentes"
+        },
+        "tax_system": {
+          "aspect": "Sistema Fiscal",
+          "panama": "Territorial puro (0% sobre rentas extranjeras)",
+          "singapore": "Territorial con exenciones (17% sobre rentas locales, incentivos disponibles)"
+        },
+        "currency": {
+          "aspect": "Moneda Oficial",
+          "panama": "Dólar estadounidense (elimina riesgo cambiario)",
+          "singapore": "Dólar singapurense (moneda estable, pero requiere conversión)"
+        },
+        "annual_cost": {
+          "aspect": "Costo Operativo Anual",
+          "panama": "USD $700-$1,000",
+          "singapore": "USD $3,000-$5,000+"
+        },
+        "formation_time": {
+          "aspect": "Tiempo de Constitución",
+          "panama": "2 semanas, 100% remoto",
+          "singapore": "1-3 semanas, mayor documentación"
+        },
+        "bank_deposit": {
+          "aspect": "Depósito Bancario Inicial",
+          "panama": "Desde USD $3,000 (personal) / $10,000 (empresarial)",
+          "singapore": "Desde USD $20,000-$50,000+"
+        },
+        "timezone": {
+          "aspect": "Zona Horaria",
+          "panama": "GMT-5 (compatible con Américas y Europa)",
+          "singapore": "GMT+8 (compatible con Asia-Pacífico)"
+        },
+        "markets": {
+          "aspect": "Mercados Preferenciales",
+          "panama": "Américas, Europa, TLC con China y 40+ países",
+          "singapore": "Asia-Pacífico, acuerdos ASEAN"
+        },
+        "languages": {
+          "aspect": "Idiomas de Negocios",
+          "panama": "Español, Inglés",
+          "singapore": "Inglés, Mandarín, Malayo"
+        },
+        "cost_living": {
+          "aspect": "Costo de Vida/Operación",
+          "panama": "40-50% menor que Singapur",
+          "singapore": "Alto (una de las ciudades más caras del mundo)"
+        }
+      }
+    },
+    "strategic_combination": {
+      "title": "Combinación Estratégica: Empresa + Banca",
+      "description": "La verdadera ventaja competitiva surge al combinar la constitución de una empresa panameña con servicios bancarios locales. Esta estructura integrada permite operaciones comerciales eficientes, optimización fiscal legítima, credibilidad internacional y flexibilidad operativa para gestionar completamente operaciones internacionales de manera remota."
+    },
+    "chinese_investors": {
+      "title": "Consideraciones para Inversionistas Chinos",
+      "description": "Para el mercado chino específicamente, Panamá ofrece ventajas adicionales. Desde el establecimiento de relaciones diplomáticas en 2017, el flujo de inversiones y comercio bilateral ha crecido exponencialmente. El Tratado de Libre Comercio China-Panamá, vigente desde 2019, elimina aranceles en numerosas categorías de productos y facilita el intercambio comercial."
+    },
+    "strategic_decision": {
+      "title": "Una Decisión Estratégica",
+      "description": "Constituir una empresa y establecer servicios bancarios en Panamá representa una decisión estratégica para inversionistas internacionales que buscan expandir operaciones en las Américas, diversificar patrimonios y optimizar estructuras corporativas. La combinación de estabilidad política, ventajas fiscales, sofisticación financiera y conectividad internacional posiciona a Panamá como el equivalente occidental de Singapur."
+    },
+    "disclaimer": "Este contenido tiene propósitos informativos generales y no constituye asesoría legal, fiscal o financiera específica. Se recomienda reservar una consultar con nuestros profesionales especializados antes de tomar decisiones corporativas o patrimoniales.",
+    "list": {
+      "solvency_visa": {
+        "title": "Visa por Solvencia Económica",
+        "description": "Residencia mediante depósito a plazo fijo o inversión inmobiliaria."
+      },
+      "pensionado_visa": {
+        "title": "Visa de Pensionado Jubilado",
+        "description": "Residencia para jubilados con pensión vitalicia."
+      },
+      "real_estate_advisory": {
+        "title": "Asesoría en Adquisiciones Inmobiliarias",
+        "description": "Guía experta en la búsqueda y compra de propiedades en Panamá."
+      },
+      "company_formation": {
+        "title": "Apertura de Empresas",
+        "description": "Constitución de Sociedades Anónimas (S.A.)."
+      },
+      "foundation_formation": {
+        "title": "Apertura de Fundaciones de Interés Privado",
+        "description": "Estructuras de protección de activos y planificación patrimonial."
+      },
+      "bank_account_opening": {
+        "title": "Apertura de Cuentas Bancarias",
+        "description": "Asistencia con cuentas bancarias onshore y offshore."
+      },
+      "accounting": {
+        "title": "Contabilidad",
+        "description": "Servicios profesionales de contabilidad y cumplimiento fiscal."
+      },
+      "visa_inversionista": {
+        "title": "Visa de Inversionista",
+        "description": "Residencia mediante inversión calificada."
+      }
+    }
+  },
+  "contact_form": {
+    "title": "Formulario de contacto",
+    "description": "Envíanos tu mensaje y te responderemos lo antes posible",
+    "contact": {
+      "phone": "Teléfono",
+      "email": "Correo electrónico",
+      "wechat": "WeChat"
+    },
+    "fields": {
+      "name": "Nombre completo",
+      "email": "Correo electrónico",
+      "phone": "Número de teléfono",
+      "country": "País de residencia",
+      "investment_type": "Tipo de inversión",
+      "investment_amount": "Monto de inversión",
+      "timeline": "Plazo de inversión",
+      "message": "Mensaje",
+      "consent": "Acepto la política de privacidad y términos de servicio",
+      "newsletter": "Deseo recibir información sobre ofertas especiales"
+    },
+    "placeholders": {
+      "name": "Ingresa tu nombre completo",
+      "email": "tu.correo@ejemplo.com",
+      "phone": "+507 123-45678",
+      "select_country": "Selecciona tu país",
+      "select_investment_type": "Selecciona tipo de inversión",
+      "select_investment_amount": "Selecciona monto de inversión",
+      "select_timeline": "Selecciona plazo",
+      "message": "Cuéntanos sobre tus necesidades de inversión..."
+    },
+    "investment_types": {
+      "residency": "Residencia panameña",
+      "real_estate": "Bienes raíces",
+      "medical_tourism": "Turismo médico",
+      "infrastructure": "Proyectos de infraestructura",
+      "other": "Otro"
+    },
+    "investment_amounts": {
+      "under_100k": "Menos de $100,000",
+      "100k_300k": "$100,000 - $300,000",
+      "300k_500k": "$300,000 - $500,000",
+      "500k_1m": "$500,000 - $1,000,000",
+      "over_1m": "Más de $1,000,000"
+    },
+    "timelines": {
+      "immediately": "Inmediatamente",
+      "1_3_months": "1-3 meses",
+      "3_6_months": "3-6 meses",
+      "6_12_months": "6-12 meses",
+      "over_1_year": "Más de 1 año"
+    },
+    "countries": {
+      "china": "China",
+      "hong_kong": "Hong Kong",
+      "taiwan": "Taiwán",
+      "singapore": "Singapur",
+      "malaysia": "Malasia",
+      "other": "Otro"
+    },
+    "errors": {
+      "name_required": "El nombre es requerido",
+      "email_required": "El correo electrónico es requerido",
+      "email_invalid": "El correo electrónico no es válido",
+      "phone_required": "El teléfono es requerido",
+      "country_required": "El país es requerido",
+      "investment_type_required": "El tipo de inversión es requerido",
+      "investment_amount_required": "El monto de inversión es requerido",
+      "timeline_required": "El plazo es requerido",
+      "message_required": "El mensaje es requerido",
+      "consent_required": "Debes aceptar la política de privacidad",
+      "submission_failed": "Error al enviar el formulario. Inténtalo nuevamente."
+    },
+    "submit": "Enviar mensaje",
+    "submitting": "Enviando...",
+    "submit_another": "Enviar otro mensaje",
+    "schedule_consultation": "Agendar consulta",
+    "success_title": "¡Mensaje enviado con éxito!",
+    "success_message": "Gracias por contactarnos. Te responderemos en las próximas 24 horas."
+  },
+  "consultation_booking": {
+    "title": "Reserva una consulta",
+    "description": "Agenda una reunión personalizada con nuestros expertos",
+    "minutes": "minutos",
+    "current_step": "Paso {current} de {total}: {title}",
+    "steps": {
+      "consultation_type": "Tipo de consulta",
+      "personal_info": "Información personal",
+      "select_datetime": "Fecha y hora",
+      "confirmation": "Confirmación"
+    },
+    "consultation_types": {
+      "general": {
+        "name": "Consulta general",
+        "description": "Introducción a oportunidades de inversión en Panamá",
+        "price": "Gratis"
+      },
+      "residency": {
+        "name": "Consulta de residencia",
+        "description": "Asesoría detallada sobre programas de residencia",
+        "price": "$150"
+      },
+      "investment": {
+        "name": "Consulta de inversión",
+        "description": "Análisis de oportunidades de inversión personalizadas",
+        "price": "$200"
+      },
+      "comprehensive": {
+        "name": "Consulta integral",
+        "description": "Evaluación completa de residencia e inversión",
+        "price": "$350"
+      }
+    },
+    "fields": {
+      "name": "Nombre completo",
+      "email": "Correo electrónico",
+      "phone": "Número de teléfono",
+      "date": "Fecha",
+      "time": "Hora",
+      "timezone": "Zona horaria",
+      "notes": "Notas adicionales",
+      "consent": "Acepto la política de privacidad y términos de servicio"
+    },
+    "placeholders": {
+      "name": "Ingresa tu nombre completo",
+      "email": "tu.correo@ejemplo.com",
+      "phone": "+507 123-45678",
+      "select_date": "Selecciona una fecha",
+      "select_timezone": "Selecciona tu zona horaria",
+      "notes": "Información adicional que quieras compartir..."
+    },
+    "select_consultation_type": "Selecciona el tipo de consulta",
+    "consultation_type_description": "Elige el tipo de consulta que mejor se adapte a tus necesidades",
+    "personal_information": "Información personal",
+    "select_date_time": "Selecciona fecha y hora",
+    "confirmation": "Confirmación",
+    "consultation_type": "Tipo de consulta",
+    "duration": "Duración",
+    "price": "Precio",
+    "booking_summary": "Resumen de la reserva",
+    "booking_details": "Detalles de la reserva",
+    "consultation_format": "Formato de consulta",
+    "consultation_format_description": "Todas las consultas se realizan virtualmente vía Zoom o Google Meet",
+    "errors": {
+      "name_required": "El nombre es requerido",
+      "email_required": "El correo electrónico es requerido",
+      "email_invalid": "El correo electrónico no es válido",
+      "phone_required": "El teléfono es requerido",
+      "consultation_type_required": "El tipo de consulta es requerido",
+      "date_required": "La fecha es requerida",
+      "time_required": "La hora es requerida",
+      "timezone_required": "La zona horaria es requerida",
+      "consent_required": "Debes aceptar la política de privacidad",
+      "submission_failed": "Error al reservar. Inténtalo nuevamente."
+    },
+    "previous": "Anterior",
+    "next": "Siguiente",
+    "confirm_booking": "Confirmar reserva",
+    "submitting": "Procesando...",
+    "book_another": "Reservar otra consulta",
+    "add_to_calendar": "Agregar al calendario",
+    "success_title": "¡Consulta reservada con éxito!",
+    "success_message": "Te hemos enviado un correo electrónico con los detalles de tu consulta."
   }
 }
