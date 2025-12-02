@@ -74,7 +74,7 @@ export default function HomePage({ params }: HomePageProps) {
           <Testimonials />
 
           {/* Call to Action */}
-          <CallToAction />
+          {/* <CallToAction /> */}
         </main>
         <FooterMinimal />
       </div>
