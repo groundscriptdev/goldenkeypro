@@ -57,141 +57,43 @@ export function AboutPanamaClient({ locale }: AboutPanamaClientProps) {
     }
   };
 
-  // About Panama Data
-  const strategicFeatures = [
-    {
-      icon: <Globe className="w-6 h-6" />,
-      title: t("strategic_location.hub_americas"),
-      description: "Strategic position connecting North and South America",
-    },
-    {
-      icon: <MapPin className="w-6 h-6" />,
-      title: t("strategic_location.canal"),
-      description: "Home to the iconic Panama Canal, a global trade route",
-    },
-    {
-      icon: <Users className="w-6 h-6" />,
-      title: t("strategic_location.connectivity"),
-      description: "Excellent air connectivity with direct flights worldwide",
-    },
-  ];
 
-  const economicBenefits = [
-    {
-      icon: <DollarSign className="w-6 h-6" />,
-      title: t("economic_benefits.dollarized_economy"),
-      description: "USD as official currency, eliminating exchange rate risk",
-    },
-    {
-      icon: <Shield className="w-6 h-6" />,
-      title: t("economic_benefits.banking_center"),
-      description: "International banking center with robust financial services",
-    },
-    {
-      icon: <Globe className="w-6 h-6" />,
-      title: t("economic_benefits.free_trade"),
-      description: "Multiple free trade zones with tax incentives",
-    },
-  ];
-
-  const taxAdvantages = [
-    {
-      title: t("tax_advantages.no_foreign_income"),
-      description: "No taxes on foreign-sourced income for residents",
-    },
-    {
-      title: t("tax_advantages.no_property_tax"),
-      description: "Property tax exemptions for 20 years on new constructions",
-    },
-    {
-      title: t("tax_advantages.no_capital_gains"),
-      description: "No capital gains tax on certain investments and property sales",
-    },
-  ];
-
-  const qualityOfLife = [
-    {
-      icon: <Heart className="w-6 h-6" />,
-      title: t("quality_of_life.healthcare"),
-      description: "World-class healthcare system with international standards",
-    },
-    {
-      icon: <Users className="w-6 h-6" />,
-      title: t("quality_of_life.education"),
-      description: "International schools and universities with English instruction",
-    },
-    {
-      icon: <Shield className="w-6 h-6" />,
-      title: t("quality_of_life.safety"),
-      description: "Safe and secure environment with stable political system",
-    },
-  ];
 
   const infrastructureProjects = [
     {
       icon: <Train className="w-8 h-8" />,
-      title: "Metro Line 3",
-      subtitle: "Panama's Mass Transit Expansion",
-      investment: "$2.5 Billion",
-      completion: "2026",
-      impact: "45-minute connectivity across metro area",
-      appreciation: "40-60% property value increase",
+      title: t("ground_infrastructure.projects.metro_line_3.title"),
+      subtitle: t("ground_infrastructure.projects.metro_line_3.subtitle"),
+      investment: t("ground_infrastructure.projects.metro_line_3.investment"),
+      completion: t("ground_infrastructure.projects.metro_line_3.completion"),
+      impact: t("ground_infrastructure.projects.metro_line_3.impact"),
+      appreciation: t("ground_infrastructure.projects.metro_line_3.appreciation"),
       color: "bg-blue-500 groundgreen-bg-blue",
-      features: [
-        "Connects Panama City to west side",
-        "Stops at key residential and commercial areas",
-        "Integration with existing metro system",
-        "Reduced traffic congestion by 30%",
-      ],
-      investmentOpportunities: [
-        "Properties near metro stations",
-        "Commercial development around stops",
-        "Residential projects in connected areas",
-        "Mixed-use developments",
-      ],
+      features: t.raw("ground_infrastructure.projects.metro_line_3.features") as string[],
+      investmentOpportunities: t.raw("ground_infrastructure.projects.metro_line_3.opportunities") as string[],
     },
     {
       icon: <Building className="w-8 h-8" />,
-      title: "Fourth Bridge",
-      subtitle: "Panama Canal Atlantic Crossing",
-      investment: "$1.8 Billion",
-      completion: "2029",
-      impact: "Spans Panama Canal at Atlantic entrance",
-      opportunities: "Reduces traffic congestion by 40%",
+      title: t("ground_infrastructure.projects.fourth_bridge.title"),
+      subtitle: t("ground_infrastructure.projects.fourth_bridge.subtitle"),
+      investment: t("ground_infrastructure.projects.fourth_bridge.investment"),
+      completion: t("ground_infrastructure.projects.fourth_bridge.completion"),
+      impact: t("ground_infrastructure.projects.fourth_bridge.impact"),
+      opportunities: t("ground_infrastructure.projects.fourth_bridge.opportunities_text"),
       color: "bg-green-500 groundgreen-bg-blue-2",
-      features: [
-        "4-lane highway with pedestrian paths",
-        "Connects Colón Province to Panama City",
-        "Improved logistics and trade flow",
-        "Enhanced regional connectivity",
-      ],
-      investmentOpportunities: [
-        "Development corridors along bridge access",
-        "Logistics and warehousing facilities",
-        "Commercial centers near bridge entrances",
-        "Residential projects in connected areas",
-      ],
+      features: t.raw("ground_infrastructure.projects.fourth_bridge.features") as string[],
+      investmentOpportunities: t.raw("ground_infrastructure.projects.fourth_bridge.opportunities") as string[],
     },
     {
       icon: <TrendingUp className="w-8 h-8" />,
-      title: "Cross-Country Railway",
-      subtitle: "Atlantic-Pacific Connection",
-      investment: "$3.7 Billion",
-      impact: "High-speed passenger and cargo transport",
-      potential: "Integration with Canal operations",
+      title: t("ground_infrastructure.projects.railway.title"),
+      subtitle: t("ground_infrastructure.projects.railway.subtitle"),
+      investment: t("ground_infrastructure.projects.railway.investment"),
+      impact: t("ground_infrastructure.projects.railway.impact"),
+      potential: t("ground_infrastructure.projects.railway.potential"),
       color: "bg-purple-500 groundgreen-bg-blue",
-      features: [
-        "Cross-country railway system",
-        "Connects Atlantic and Pacific coasts",
-        "High-speed passenger and cargo transport",
-        "Integration with Panama Canal operations",
-      ],
-      investmentOpportunities: [
-        "Properties along railway routes",
-        "Development around railway stations",
-        "Logistics and industrial parks",
-        "Commercial and residential mixed-use",
-      ],
+      features: t.raw("ground_infrastructure.projects.railway.features") as string[],
+      investmentOpportunities: t.raw("ground_infrastructure.projects.railway.opportunities") as string[],
     },
   ];
 
@@ -203,7 +105,7 @@ export function AboutPanamaClient({ locale }: AboutPanamaClientProps) {
       china: tMedical("cost_comparison.stem_cell.china"),
       panama: tMedical("cost_comparison.stem_cell.panama"),
       savings: tMedical("cost_comparison.stem_cell.savings"),
-      savingsPercent: "50-60%",
+      savingsPercent: "40-60%",
     },
     {
       procedure: tMedical("cost_comparison.anti_aging.procedure"),
@@ -211,15 +113,15 @@ export function AboutPanamaClient({ locale }: AboutPanamaClientProps) {
       china: tMedical("cost_comparison.anti_aging.china"),
       panama: tMedical("cost_comparison.anti_aging.panama"),
       savings: tMedical("cost_comparison.anti_aging.savings"),
-      savingsPercent: "70-80%",
+      savingsPercent: "50-70%",
     },
     {
-      procedure: tMedical("cost_comparison.neurological.procedure"),
-      usa: tMedical("cost_comparison.neurological.usa"),
-      china: tMedical("cost_comparison.neurological.china"),
-      panama: tMedical("cost_comparison.neurological.panama"),
-      savings: tMedical("cost_comparison.neurological.savings"),
-      savingsPercent: "60-70%",
+      procedure: tMedical("cost_comparison.cosmetic.procedure"),
+      usa: tMedical("cost_comparison.cosmetic.usa"),
+      china: tMedical("cost_comparison.cosmetic.china"),
+      panama: tMedical("cost_comparison.cosmetic.panama"),
+      savings: tMedical("cost_comparison.cosmetic.savings"),
+      savingsPercent: "35-55%",
     },
   ];
 
@@ -320,88 +222,6 @@ export function AboutPanamaClient({ locale }: AboutPanamaClientProps) {
         onTabChange={handleTabClick}
       />
 
-      {/* Strategic Location */}
-      {/* <section id="location" className="py-16 bg-white scroll-mt-24">
-        <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-brand text-jade-green font-bold mb-4">
-                {t("strategic_location.title")}
-              </h2>
-              <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-                {t("strategic_location.description")}
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {strategicFeatures.map((feature, index) => (
-                <Card
-                  key={index}
-                  className="text-center border-jade-green/10 hover:shadow-lg transition-shadow"
-                >
-                  <CardHeader>
-                    <div className="w-16 h-16 bg-jade-green/10 rounded-full flex items-center justify-center mx-auto mb-4 text-jade-green">
-                      {feature.icon}
-                    </div>
-                    <CardTitle className="text-lg">
-                      {feature.title}
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <CardDescription className="text-gray-600">
-                      {feature.description}
-                    </CardDescription>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-
-            <div className="mt-12 bg-jade-green/10 rounded-lg p-8">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-                <div>
-                  <h3 className="text-xl font-semibold text-jade-green mb-4">
-                    Why Panama's Location Matters
-                  </h3>
-                  <ul className="space-y-3">
-                    <li className="flex items-start space-x-3">
-                      <div className="w-6 h-6 bg-jade-green rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                        <span className="text-white text-xs">✓</span>
-                      </div>
-                      <span className="text-gray-700">
-                        Time zone bridge between Americas and Asia
-                      </span>
-                    </li>
-                    <li className="flex items-start space-x-3">
-                      <div className="w-6 h-6 bg-jade-green rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                        <span className="text-white text-xs">✓</span>
-                      </div>
-                      <span className="text-gray-700">
-                        Hub for international business and trade
-                      </span>
-                    </li>
-                    <li className="flex items-start space-x-3">
-                      <div className="w-6 h-6 bg-jade-green rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                        <span className="text-white text-xs">✓</span>
-                      </div>
-                      <span className="text-gray-700">
-                        Gateway to Latin American markets
-                      </span>
-                    </li>
-                  </ul>
-                </div>
-                <div className="text-center">
-                  <div className="w-32 h-32 bg-jade-green/20 rounded-full flex items-center justify-center mx-auto">
-                    <Globe className="w-16 h-16 text-jade-green" />
-                  </div>
-                  <p className="mt-4 text-sm text-gray-600">
-                    Panama connects the world through its strategic position
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section> */}
 
       {/* Real Estate Market */}
       <section id="real_estate" className="py-16 bg-jade-green/5 scroll-mt-24">
@@ -409,26 +229,26 @@ export function AboutPanamaClient({ locale }: AboutPanamaClientProps) {
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-brand text-jade-green font-bold mb-4">
-                EL MERCADO INMOBILIARIO PANAMEÑO
+                {t("ground_real_estate.title")}
               </h2>
               <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-                Una Mirada al Mercado de Lujo y Segmento Medio
+                {t("ground_real_estate.subtitle")}
               </p>
             </div>
 
             <div className="mb-12">
               <p className="text-center text-gray-700 max-w-4xl mx-auto mb-8">
-                El dinámico mercado inmobiliario de Panamá sigue presentando excelentes oportunidades para el inversionista local, con un sólido desempeño tanto en el segmento de lujo como en propiedades de rango medio. Como abogados especializados en bienes raíces, observamos tendencias positivas que benefician a compradores y vendedores panameños por igual.
+                {t("ground_real_estate.intro")}
               </p>
             </div>
 
             {/* Luxury Sector */}
             <div className="mb-16">
               <h3 className="text-2xl font-bold text-jade-green mb-6 text-center">
-                Sector de Lujo: Exclusividad con Valor Agregado
+                {t("ground_real_estate.luxury_sector.title")}
               </h3>
               <p className="text-center text-gray-700 max-w-4xl mx-auto mb-8">
-                El mercado de lujo panameño ha mostrado una notable resiliencia y continúa atrayendo a inversionistas locales sofisticados.
+                {t("ground_real_estate.luxury_sector.description")}
               </p>
               
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
@@ -437,11 +257,11 @@ export function AboutPanamaClient({ locale }: AboutPanamaClientProps) {
                     <div className="w-16 h-16 bg-jade-green/10 rounded-full flex items-center justify-center mx-auto mb-4 text-jade-green">
                       <Building className="w-8 h-8" />
                     </div>
-                    <CardTitle className="text-lg text-center">Punta Pacífica</CardTitle>
+                    <CardTitle className="text-lg text-center">{t("ground_real_estate.luxury_sector.punta_pacifica.title")}</CardTitle>
                   </CardHeader>
                   <CardContent>
                     <CardDescription className="text-gray-600 text-center">
-                      Con sus icónicos rascacielos y vistas panorámicas al océano, sigue siendo el epítome del lujo urbano.
+                      {t("ground_real_estate.luxury_sector.punta_pacifica.description")}
                     </CardDescription>
                   </CardContent>
                 </Card>
@@ -451,11 +271,11 @@ export function AboutPanamaClient({ locale }: AboutPanamaClientProps) {
                     <div className="w-16 h-16 bg-jade-green/10 rounded-full flex items-center justify-center mx-auto mb-4 text-jade-green">
                       <Home className="w-8 h-8" />
                     </div>
-                    <CardTitle className="text-lg text-center">Santa María Golf & Country Club</CardTitle>
+                    <CardTitle className="text-lg text-center">{t("ground_real_estate.luxury_sector.santa_maria.title")}</CardTitle>
                   </CardHeader>
                   <CardContent>
                     <CardDescription className="text-gray-600 text-center">
-                      Combina residencias exclusivas con amenidades de primer nivel y un estilo de vida resort.
+                      {t("ground_real_estate.luxury_sector.santa_maria.description")}
                     </CardDescription>
                   </CardContent>
                 </Card>
@@ -465,11 +285,11 @@ export function AboutPanamaClient({ locale }: AboutPanamaClientProps) {
                     <div className="w-16 h-16 bg-jade-green/10 rounded-full flex items-center justify-center mx-auto mb-4 text-jade-green">
                       <TrendingUp className="w-8 h-8" />
                     </div>
-                    <CardTitle className="text-lg text-center">Costa del Este</CardTitle>
+                    <CardTitle className="text-lg text-center">{t("ground_real_estate.luxury_sector.costa_del_este.title")}</CardTitle>
                   </CardHeader>
                   <CardContent>
                     <CardDescription className="text-gray-600 text-center">
-                      Consolida su posición como distrito financiero y residencial premium con nuevos desarrollos corporativos y residenciales.
+                      {t("ground_real_estate.luxury_sector.costa_del_este.description")}
                     </CardDescription>
                   </CardContent>
                 </Card>
@@ -478,25 +298,19 @@ export function AboutPanamaClient({ locale }: AboutPanamaClientProps) {
               <div className="bg-white rounded-lg p-6 border border-jade-green/10">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
                   <div>
-                    <h4 className="font-semibold text-jade-green mb-3">Características del Sector de Lujo</h4>
+                    <h4 className="font-semibold text-jade-green mb-3">{t("ground_real_estate.luxury_sector.features.title")}</h4>
                     <ul className="space-y-2">
-                      <li className="flex items-center space-x-2">
-                        <div className="w-1.5 h-1.5 bg-jade-green rounded-full"></div>
-                        <span className="text-sm text-gray-600">Ticket promedio: $600,000 a varios millones</span>
-                      </li>
-                      <li className="flex items-center space-x-2">
-                        <div className="w-1.5 h-1.5 bg-jade-green rounded-full"></div>
-                        <span className="text-sm text-gray-600">Rendimientos anuales superiores al 5%</span>
-                      </li>
-                      <li className="flex items-center space-x-2">
-                        <div className="w-1.5 h-1.5 bg-jade-green rounded-full"></div>
-                        <span className="text-sm text-gray-600">Valor histórico mantenido incluso en incertidumbre económica</span>
-                      </li>
+                      {(t.raw("ground_real_estate.luxury_sector.features.items") as string[]).map((item, idx) => (
+                        <li key={idx} className="flex items-center space-x-2">
+                          <div className="w-1.5 h-1.5 bg-jade-green rounded-full"></div>
+                          <span className="text-sm text-gray-600">{item}</span>
+                        </li>
+                      ))}
                     </ul>
                   </div>
                   <div className="text-center">
-                    <div className="text-3xl font-bold text-jade-green mb-2">5%+</div>
-                    <p className="text-sm text-gray-600">Rendimiento anual en alquileres de alto perfil</p>
+                    <div className="text-3xl font-bold text-jade-green mb-2">{t("ground_real_estate.luxury_sector.features.stats.returns")}</div>
+                    <p className="text-sm text-gray-600">{t("ground_real_estate.luxury_sector.features.stats.returns_desc")}</p>
                   </div>
                 </div>
               </div>
@@ -505,53 +319,53 @@ export function AboutPanamaClient({ locale }: AboutPanamaClientProps) {
             {/* Mid-Range Sector */}
             <div className="mb-16">
               <h3 className="text-2xl font-bold text-jade-green mb-6 text-center">
-                Segmento Medio: El Motor del Mercado
+                {t("ground_real_estate.mid_range_sector.title")}
               </h3>
               <p className="text-center text-gray-700 max-w-4xl mx-auto mb-8">
-                El verdadero dinamismo del mercado panameño se encuentra en el segmento medio, donde existe un equilibrio entre oferta y demanda que genera interesantes oportunidades:
+                {t("ground_real_estate.mid_range_sector.intro")}
               </p>
               
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
                 <Card className="border-jade-green/10 hover:shadow-lg transition-shadow">
                   <CardHeader>
-                    <CardTitle className="text-lg text-center">San Francisco</CardTitle>
+                    <CardTitle className="text-lg text-center">{t("ground_real_estate.mid_range_sector.san_francisco.title")}</CardTitle>
                   </CardHeader>
                   <CardContent>
                     <CardDescription className="text-gray-600 text-center">
-                      Barrios consolidados con excelente plusvalía y demanda constante.
+                      {t("ground_real_estate.mid_range_sector.san_francisco.description")}
                     </CardDescription>
                   </CardContent>
                 </Card>
 
                 <Card className="border-jade-green/10 hover:shadow-lg transition-shadow">
                   <CardHeader>
-                    <CardTitle className="text-lg text-center">Avenida Balboa</CardTitle>
+                    <CardTitle className="text-lg text-center">{t("ground_real_estate.mid_range_sector.avenida_balboa.title")}</CardTitle>
                   </CardHeader>
                   <CardContent>
                     <CardDescription className="text-gray-600 text-center">
-                      Ubicación estratégica y vistas impresionantes del mar y ciudad de Panamá.
+                      {t("ground_real_estate.mid_range_sector.avenida_balboa.description")}
                     </CardDescription>
                   </CardContent>
                 </Card>
 
                 <Card className="border-jade-green/10 hover:shadow-lg transition-shadow">
                   <CardHeader>
-                    <CardTitle className="text-lg text-center">Amador</CardTitle>
+                    <CardTitle className="text-lg text-center">{t("ground_real_estate.mid_range_sector.amador.title")}</CardTitle>
                   </CardHeader>
                   <CardContent>
                     <CardDescription className="text-gray-600 text-center">
-                      Creciente demanda por ubicación privilegiada al causeway y vistas panorámicas.
+                      {t("ground_real_estate.mid_range_sector.amador.description")}
                     </CardDescription>
                   </CardContent>
                 </Card>
 
                 <Card className="border-jade-green/10 hover:shadow-lg transition-shadow">
                   <CardHeader>
-                    <CardTitle className="text-lg text-center">Panamá Pacífico</CardTitle>
+                    <CardTitle className="text-lg text-center">{t("ground_real_estate.mid_range_sector.panama_pacifico.title")}</CardTitle>
                   </CardHeader>
                   <CardContent>
                     <CardDescription className="text-gray-600 text-center">
-                      Excelentes opciones con avances en infraestructura como la Línea 3 del Metro.
+                      {t("ground_real_estate.mid_range_sector.panama_pacifico.description")}
                     </CardDescription>
                   </CardContent>
                 </Card>
@@ -560,16 +374,16 @@ export function AboutPanamaClient({ locale }: AboutPanamaClientProps) {
               <div className="bg-jade-green/10 rounded-lg p-6">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
                   <div>
-                    <h4 className="text-2xl font-bold text-jade-green mb-2">$300K-$550K</h4>
-                    <p className="text-sm text-gray-600">Rango de precios del segmento</p>
+                    <h4 className="text-2xl font-bold text-jade-green mb-2">{t("ground_real_estate.mid_range_sector.stats.price_range")}</h4>
+                    <p className="text-sm text-gray-600">{t("ground_real_estate.mid_range_sector.stats.price_range_desc")}</p>
                   </div>
                   <div>
-                    <h4 className="text-2xl font-bold text-jade-green mb-2">Estables</h4>
-                    <p className="text-sm text-gray-600">Rendimientos para pequeños y medianos inversionistas</p>
+                    <h4 className="text-2xl font-bold text-jade-green mb-2">{t("ground_real_estate.mid_range_sector.stats.returns")}</h4>
+                    <p className="text-sm text-gray-600">{t("ground_real_estate.mid_range_sector.stats.returns_desc")}</p>
                   </div>
                   <div>
-                    <h4 className="text-2xl font-bold text-jade-green mb-2">Equilibrio</h4>
-                    <p className="text-sm text-gray-600">Balance entre oferta y demanda</p>
+                    <h4 className="text-2xl font-bold text-jade-green mb-2">{t("ground_real_estate.mid_range_sector.stats.balance")}</h4>
+                    <p className="text-sm text-gray-600">{t("ground_real_estate.mid_range_sector.stats.balance_desc")}</p>
                   </div>
                 </div>
               </div>
@@ -578,7 +392,7 @@ export function AboutPanamaClient({ locale }: AboutPanamaClientProps) {
             {/* Current Trends */}
             <div>
               <h3 className="text-2xl font-bold text-jade-green mb-6 text-center">
-                Tendencias Actuales que Favorecen al Inversionista Local
+                {t("ground_real_estate.trends.title")}
               </h3>
               
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -587,11 +401,11 @@ export function AboutPanamaClient({ locale }: AboutPanamaClientProps) {
                     <div className="w-12 h-12 bg-jade-green/10 rounded-full flex items-center justify-center mx-auto mb-4 text-jade-green">
                       <Globe className="w-6 h-6" />
                     </div>
-                    <CardTitle className="text-lg text-center">Digitalización</CardTitle>
+                    <CardTitle className="text-lg text-center">{t("ground_real_estate.trends.digitalization.title")}</CardTitle>
                   </CardHeader>
                   <CardContent>
                     <CardDescription className="text-gray-600 text-center">
-                      Las plataformas de bienes raíces y los tours virtuales han democratizado el acceso a información de calidad.
+                      {t("ground_real_estate.trends.digitalization.description")}
                     </CardDescription>
                   </CardContent>
                 </Card>
@@ -601,11 +415,11 @@ export function AboutPanamaClient({ locale }: AboutPanamaClientProps) {
                     <div className="w-12 h-12 bg-jade-green/10 rounded-full flex items-center justify-center mx-auto mb-4 text-jade-green">
                       <Building className="w-6 h-6" />
                     </div>
-                    <CardTitle className="text-lg text-center">Uso Mixto</CardTitle>
+                    <CardTitle className="text-lg text-center">{t("ground_real_estate.trends.mixed_use.title")}</CardTitle>
                   </CardHeader>
                   <CardContent>
                     <CardDescription className="text-gray-600 text-center">
-                      Proyectos que combinan espacios residenciales, comerciales y de entretenimiento ganan popularidad.
+                      {t("ground_real_estate.trends.mixed_use.description")}
                     </CardDescription>
                   </CardContent>
                 </Card>
@@ -615,11 +429,11 @@ export function AboutPanamaClient({ locale }: AboutPanamaClientProps) {
                     <div className="w-12 h-12 bg-jade-green/10 rounded-full flex items-center justify-center mx-auto mb-4 text-jade-green">
                       <Heart className="w-6 h-6" />
                     </div>
-                    <CardTitle className="text-lg text-center">Sustentabilidad</CardTitle>
+                    <CardTitle className="text-lg text-center">{t("ground_real_estate.trends.sustainability.title")}</CardTitle>
                   </CardHeader>
                   <CardContent>
                     <CardDescription className="text-gray-600 text-center">
-                      Edificios con certificaciones verdes y sistemas eficientes comienzan a comandar precios premium.
+                      {t("ground_real_estate.trends.sustainability.description")}
                     </CardDescription>
                   </CardContent>
                 </Card>
@@ -629,11 +443,11 @@ export function AboutPanamaClient({ locale }: AboutPanamaClientProps) {
                     <div className="w-12 h-12 bg-jade-green/10 rounded-full flex items-center justify-center mx-auto mb-4 text-jade-green">
                       <DollarSign className="w-6 h-6" />
                     </div>
-                    <CardTitle className="text-lg text-center">Financiamiento</CardTitle>
+                    <CardTitle className="text-lg text-center">{t("ground_real_estate.trends.financing.title")}</CardTitle>
                   </CardHeader>
                   <CardContent>
                     <CardDescription className="text-gray-600 text-center">
-                      A pesar de ajustes en programas gubernamentales, la banca privada mantiene ofertas atractivas.
+                      {t("ground_real_estate.trends.financing.description")}
                     </CardDescription>
                   </CardContent>
                 </Card>
@@ -649,16 +463,16 @@ export function AboutPanamaClient({ locale }: AboutPanamaClientProps) {
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-brand text-jade-green font-bold mb-4">
-                El Impacto de los Megaproyectos en su Inversión
+                {t("ground_infrastructure.title")}
               </h2>
               <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-                La inversión en infraestructura está transformando el panorama inmobiliario panameño
+                {t("ground_infrastructure.subtitle")}
               </p>
             </div>
 
             <div className="mb-12">
               <p className="text-center text-gray-700 max-w-4xl mx-auto mb-8">
-                Estos proyectos no solo mejoran la calidad de vida de los residentes sino que generan incrementos sustanciales en el valor de las propiedades en sus áreas de influencia, creando oportunidades únicas para inversionistas atentos.
+                {t("ground_infrastructure.intro")}
               </p>
             </div>
 
@@ -765,10 +579,10 @@ export function AboutPanamaClient({ locale }: AboutPanamaClientProps) {
 
             <div className="mt-12 bg-jade-green/10 rounded-lg p-8">
               <h3 className="text-xl font-semibold text-jade-green mb-4 text-center">
-                Panamá: El "Singapur de las Américas"
+                {t("ground_infrastructure.conclusion.title")}
               </h3>
               <p className="text-center text-gray-700 max-w-4xl mx-auto">
-                Estos proyectos transformarán a Panamá en el "Singapur de las Américas" - un centro neurálgico que conectará mercados globales con una eficiencia sin paralelos.
+                {t("ground_infrastructure.conclusion.description")}
               </p>
             </div>
           </div>
@@ -783,19 +597,19 @@ export function AboutPanamaClient({ locale }: AboutPanamaClientProps) {
             <div className="max-w-6xl mx-auto">
               <div className="text-center mb-12">
                 <h2 className="text-3xl md:text-4xl font-brand text-jade-green font-bold mb-4">
-                  TURISMO MÉDICO
+                  {t("ground_medical_tourism.title")}
                 </h2>
                 <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-                  巴拿马医疗旅游：为什么越来越多的中国家庭选择在这里治疗与康复？
+                  {t("ground_medical_tourism.subtitle")}
                 </p>
               </div>
 
               <div className="bg-jade-green/10 rounded-lg p-8 mb-8">
                 <p className="text-center text-gray-700 max-w-4xl mx-auto mb-4">
-                  En los últimos años, Panamá este pequeño país en el corazón del continente americano se ha convertido silenciosamente en un "nuevo paraíso del turismo médico" para familias de China continental, Hong Kong y Singapur.
+                  {t("ground_medical_tourism.intro_1")}
                 </p>
                 <p className="text-center text-gray-700 max-w-4xl mx-auto">
-                  Basándonos en datos comparativos recientes entre Estados Unidos, China, Canadá y Panamá, la tendencia es clara: Panamá ofrece calidad internacional con un ahorro del 40% al 70% en terapias avanzadas.
+                  {t("ground_medical_tourism.intro_2")}
                 </p>
               </div>
             </div>
@@ -808,10 +622,10 @@ export function AboutPanamaClient({ locale }: AboutPanamaClientProps) {
             <div className="max-w-6xl mx-auto">
               <div className="text-center mb-12">
                 <h2 className="text-2xl md:text-3xl font-brand text-jade-green font-bold mb-4">
-                  Comparación de Costos de Tratamientos Médicos
+                  {tMedical("cost_comparison_section.title")}
                 </h2>
                 <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-                  Ahorre significativamente en tratamientos médicos de clase mundial
+                  {tMedical("cost_comparison_section.subtitle")}
                 </p>
               </div>
 
@@ -820,83 +634,45 @@ export function AboutPanamaClient({ locale }: AboutPanamaClientProps) {
                   <thead>
                     <tr className="bg-jade-green/10">
                       <th className="text-left p-4 font-semibold text-jade-green">
-                        Tratamiento
+                        {tMedical("cost_comparison_section.table.treatment")}
                       </th>
                       <th className="text-center p-4 font-semibold text-gray-700">
-                        Estados Unidos
+                        {tMedical("cost_comparison_section.table.usa")}
                       </th>
                       <th className="text-center p-4 font-semibold text-gray-700">
-                        China
+                        {tMedical("cost_comparison_section.table.china")}
                       </th>
                       <th className="text-center p-4 font-semibold text-jade-green">
-                        Panamá
+                        {tMedical("cost_comparison_section.table.panama")}
                       </th>
                       <th className="text-center p-4 font-semibold text-gold">
-                        Ahorro
+                        {tMedical("cost_comparison_section.table.savings")}
                       </th>
                     </tr>
                   </thead>
                   <tbody>
-                    <tr className="border-b border-jade-green/10 hover:bg-jade-green/5">
-                      <td className="p-4 font-medium text-gray-900">
-                        Terapias con Células Madre
-                      </td>
-                      <td className="p-4 text-center text-gray-600">
-                        $15,000 - $50,000
-                      </td>
-                      <td className="p-4 text-center text-gray-600">
-                        $15,000 - $46,000
-                      </td>
-                      <td className="p-4 text-center font-semibold text-jade-green">
-                        $5,000 - $30,000
-                      </td>
-                      <td className="p-4 text-center">
-                        <div className="inline-flex items-center space-x-2 bg-gold/20 text-gold px-3 py-1 rounded-full">
-                          <DollarSign className="w-4 h-4" />
-                          <span className="font-semibold">40-60%</span>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr className="border-b border-jade-green/10 hover:bg-jade-green/5">
-                      <td className="p-4 font-medium text-gray-900">
-                        Tratamientos Anti-envejecimiento
-                      </td>
-                      <td className="p-4 text-center text-gray-600">
-                        $20,000 - $35,000
-                      </td>
-                      <td className="p-4 text-center text-gray-600">
-                        $15,000 - $25,000
-                      </td>
-                      <td className="p-4 text-center font-semibold text-jade-green">
-                        $4,000 - $12,000
-                      </td>
-                      <td className="p-4 text-center">
-                        <div className="inline-flex items-center space-x-2 bg-gold/20 text-gold px-3 py-1 rounded-full">
-                          <DollarSign className="w-4 h-4" />
-                          <span className="font-semibold">50-70%</span>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr className="border-b border-jade-green/10 hover:bg-jade-green/5">
-                      <td className="p-4 font-medium text-gray-900">
-                        Cirugías Estéticas
-                      </td>
-                      <td className="p-4 text-center text-gray-600">
-                        Hasta $45,000
-                      </td>
-                      <td className="p-4 text-center text-gray-600">
-                        Hasta $20,000
-                      </td>
-                      <td className="p-4 text-center font-semibold text-jade-green">
-                        $3,500 - $18,000
-                      </td>
-                      <td className="p-4 text-center">
-                        <div className="inline-flex items-center space-x-2 bg-gold/20 text-gold px-3 py-1 rounded-full">
-                          <DollarSign className="w-4 h-4" />
-                          <span className="font-semibold">35-55%</span>
-                        </div>
-                      </td>
-                    </tr>
+                    {costComparisons.map((item, index) => (
+                      <tr key={index} className="border-b border-jade-green/10 hover:bg-jade-green/5">
+                        <td className="p-4 font-medium text-gray-900">
+                          {item.procedure}
+                        </td>
+                        <td className="p-4 text-center text-gray-600">
+                          {item.usa}
+                        </td>
+                        <td className="p-4 text-center text-gray-600">
+                          {item.china}
+                        </td>
+                        <td className="p-4 text-center font-semibold text-jade-green">
+                          {item.panama}
+                        </td>
+                        <td className="p-4 text-center">
+                          <div className="inline-flex items-center space-x-2 bg-gold/20 text-gold px-3 py-1 rounded-full">
+                            <DollarSign className="w-4 h-4" />
+                            <span className="font-semibold">{item.savingsPercent}</span>
+                          </div>
+                        </td>
+                      </tr>
+                    ))}
                   </tbody>
                 </table>
               </div>
@@ -910,91 +686,91 @@ export function AboutPanamaClient({ locale }: AboutPanamaClientProps) {
             <div className="max-w-6xl mx-auto">
               <div className="text-center mb-12">
                 <h2 className="text-2xl md:text-3xl font-brand text-jade-green font-bold mb-4">
-                  ¿Por qué Panamá se ha convertido en un destino médico popular para chinos?
+                  {tMedical("why_panama.title")}
                 </h2>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <Card className="border-jade-green/10 hover:shadow-lg transition-shadow">
                   <CardHeader>
-                    <div className="w-16 h-16 bg-jade-green/10 rounded-full flex items-center justify-center mx-auto mb-4 text-jade-green">
-                      <DollarSign className="w-8 h-8" />
+                    <div className="w-12 h-12 bg-jade-green/10 rounded-full flex items-center justify-center mx-auto mb-4 text-jade-green">
+                      <DollarSign className="w-6 h-6" />
                     </div>
-                    <CardTitle className="text-lg text-center">Costos Competitivos</CardTitle>
+                    <CardTitle className="text-lg text-center">{tMedical("why_panama.cards.competitive_costs.title")}</CardTitle>
                   </CardHeader>
                   <CardContent>
                     <CardDescription className="text-gray-600 text-center">
-                      Panamá ofrece terapias médicas de calidad internacional a una fracción del precio. El costo de vida es menor, lo que permite tratamientos, estadías y recuperación accesibles.
+                      {tMedical("why_panama.cards.competitive_costs.description")}
                     </CardDescription>
                   </CardContent>
                 </Card>
 
                 <Card className="border-jade-green/10 hover:shadow-lg transition-shadow">
                   <CardHeader>
-                    <div className="w-16 h-16 bg-jade-green/10 rounded-full flex items-center justify-center mx-auto mb-4 text-jade-green">
-                      <Award className="w-8 h-8" />
+                    <div className="w-12 h-12 bg-jade-green/10 rounded-full flex items-center justify-center mx-auto mb-4 text-jade-green">
+                      <Zap className="w-6 h-6" />
                     </div>
-                    <CardTitle className="text-lg text-center">Tecnología de Nivel Internacional</CardTitle>
+                    <CardTitle className="text-lg text-center">{tMedical("why_panama.cards.tech.title")}</CardTitle>
                   </CardHeader>
                   <CardContent>
                     <CardDescription className="text-gray-600 text-center">
-                      Los hospitales panameños trabajan con equipamiento moderno y estándares médicos exportados de Estados Unidos. Varias instituciones están acreditadas por JCI.
+                      {tMedical("why_panama.cards.tech.description")}
                     </CardDescription>
                   </CardContent>
                 </Card>
 
                 <Card className="border-jade-green/10 hover:shadow-lg transition-shadow">
                   <CardHeader>
-                    <div className="w-16 h-16 bg-jade-green/10 rounded-full flex items-center justify-center mx-auto mb-4 text-jade-green">
-                      <Clock className="w-8 h-8" />
+                    <div className="w-12 h-12 bg-jade-green/10 rounded-full flex items-center justify-center mx-auto mb-4 text-jade-green">
+                      <Clock className="w-6 h-6" />
                     </div>
-                    <CardTitle className="text-lg text-center">Tiempos de Espera Casi Nulos</CardTitle>
+                    <CardTitle className="text-lg text-center">{tMedical("why_panama.cards.wait_times.title")}</CardTitle>
                   </CardHeader>
                   <CardContent>
                     <CardDescription className="text-gray-600 text-center">
-                      A diferencia de China o Canadá, donde ciertos tratamientos pueden tardar meses, en Panamá los pacientes reciben atención en cuestión de días.
+                      {tMedical("why_panama.cards.wait_times.description")}
                     </CardDescription>
                   </CardContent>
                 </Card>
 
                 <Card className="border-jade-green/10 hover:shadow-lg transition-shadow">
                   <CardHeader>
-                    <div className="w-16 h-16 bg-jade-green/10 rounded-full flex items-center justify-center mx-auto mb-4 text-jade-green">
-                      <Plane className="w-8 h-8" />
+                    <div className="w-12 h-12 bg-jade-green/10 rounded-full flex items-center justify-center mx-auto mb-4 text-jade-green">
+                      <Plane className="w-6 h-6" />
                     </div>
-                    <CardTitle className="text-lg text-center">Ubicación Estratégica</CardTitle>
+                    <CardTitle className="text-lg text-center">{tMedical("why_panama.cards.location.title")}</CardTitle>
                   </CardHeader>
                   <CardContent>
                     <CardDescription className="text-gray-600 text-center">
-                      Panamá está a solo 3 horas de Miami y es el "hub aéreo de América Latina". El Aeropuerto de Tocumen conecta con más de 80 destinos internacionales.
+                      {tMedical("why_panama.cards.location.description")}
                     </CardDescription>
                   </CardContent>
                 </Card>
 
                 <Card className="border-jade-green/10 hover:shadow-lg transition-shadow">
                   <CardHeader>
-                    <div className="w-16 h-16 bg-jade-green/10 rounded-full flex items-center justify-center mx-auto mb-4 text-jade-green">
-                      <Heart className="w-8 h-8" />
+                    <div className="w-12 h-12 bg-jade-green/10 rounded-full flex items-center justify-center mx-auto mb-4 text-jade-green">
+                      <Heart className="w-6 h-6" />
                     </div>
-                    <CardTitle className="text-lg text-center">Entorno Ideal para la Recuperación</CardTitle>
+                    <CardTitle className="text-lg text-center">{tMedical("why_panama.cards.recovery.title")}</CardTitle>
                   </CardHeader>
                   <CardContent>
                     <CardDescription className="text-gray-600 text-center">
-                      Playas tropicales, hoteles de lujo, clima cálido. Muchos pacientes combinan su tratamiento con turismo o descanso con la familia.
+                      {tMedical("why_panama.cards.recovery.description")}
                     </CardDescription>
                   </CardContent>
                 </Card>
 
                 <Card className="border-jade-green/10 hover:shadow-lg transition-shadow">
                   <CardHeader>
-                    <div className="w-16 h-16 bg-jade-green/10 rounded-full flex items-center justify-center mx-auto mb-4 text-jade-green">
-                      <Users className="w-8 h-8" />
+                    <div className="w-12 h-12 bg-jade-green/10 rounded-full flex items-center justify-center mx-auto mb-4 text-jade-green">
+                      <Users className="w-6 h-6" />
                     </div>
-                    <CardTitle className="text-lg text-center">Servicios Integrados</CardTitle>
+                    <CardTitle className="text-lg text-center">{tMedical("why_panama.cards.integrated_services.title")}</CardTitle>
                   </CardHeader>
                   <CardContent>
                     <CardDescription className="text-gray-600 text-center">
-                      Servicios integrados para familias chinas con personal bilingüe y atención personalizada adaptada a las necesidades culturales.
+                      {tMedical("why_panama.cards.integrated_services.description")}
                     </CardDescription>
                   </CardContent>
                 </Card>
@@ -1009,98 +785,83 @@ export function AboutPanamaClient({ locale }: AboutPanamaClientProps) {
             <div className="max-w-6xl mx-auto">
               <div className="text-center mb-12">
                 <h2 className="text-2xl md:text-3xl font-brand text-jade-green font-bold mb-4">
-                  Tratamientos Destacados
+                  {tMedical("featured_treatments.title")}
                 </h2>
-                <p className="text-lg text-muted-foreground">
-                  Panamá es reconocida internacionalmente en áreas médicas especializadas
+                <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+                  {tMedical("featured_treatments.subtitle")}
                 </p>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                {/* Stem Cells */}
                 <Card className="border-jade-green/10 hover:shadow-lg transition-shadow">
                   <CardHeader>
-                    <div className="w-12 h-12 bg-jade-green/10 rounded-full flex items-center justify-center mb-4 text-jade-green">
-                      <Star className="w-6 h-6" />
+                    <div className="w-16 h-16 bg-jade-green/10 rounded-full flex items-center justify-center mx-auto mb-4 text-jade-green">
+                      <Zap className="w-8 h-8" />
                     </div>
-                    <CardTitle className="text-lg">Células Madre</CardTitle>
-                    <CardDescription>
-                      Calidad global a precio razonable
+                    <CardTitle className="text-xl text-center">{tMedical("featured_treatments.stem_cell.title")}</CardTitle>
+                    <CardDescription className="text-center">
+                      {tMedical("featured_treatments.stem_cell.description")}
                     </CardDescription>
                   </CardHeader>
                   <CardContent>
-                    <div className="space-y-2">
-                      <h4 className="font-medium text-gray-900 mb-2">Ventajas:</h4>
-                      <div className="flex items-center space-x-2">
-                        <CheckCircle className="w-4 h-4 text-jade-green flex-shrink-0" />
-                        <span className="text-sm text-gray-600">Uso autorizado de células madre mesenquimales</span>
-                      </div>
-                      <div className="flex items-center space-x-2">
-                        <CheckCircle className="w-4 h-4 text-jade-green flex-shrink-0" />
-                        <span className="text-sm text-gray-600">Clínicas de renombre internacional</span>
-                      </div>
-                      <div className="flex items-center space-x-2">
-                        <CheckCircle className="w-4 h-4 text-jade-green flex-shrink-0" />
-                        <span className="text-sm text-gray-600">Protocolos certificados con altos estándares</span>
-                      </div>
-                    </div>
+                    <h4 className="font-semibold text-jade-green mb-3 text-center">{tMedical("featured_treatments.stem_cell.benefits_title")}</h4>
+                    <ul className="space-y-2">
+                      {(tMedical.raw("featured_treatments.stem_cell.benefits") as string[]).map((benefit, idx) => (
+                        <li key={idx} className="flex items-center space-x-2">
+                          <CheckCircle className="w-4 h-4 text-gold shrink-0" />
+                          <span className="text-sm text-gray-600">{benefit}</span>
+                        </li>
+                      ))}
+                    </ul>
                   </CardContent>
                 </Card>
 
+                {/* Anti-aging */}
                 <Card className="border-jade-green/10 hover:shadow-lg transition-shadow">
                   <CardHeader>
-                    <div className="w-12 h-12 bg-jade-green/10 rounded-full flex items-center justify-center mb-4 text-jade-green">
-                      <Heart className="w-6 h-6" />
+                    <div className="w-16 h-16 bg-jade-green/10 rounded-full flex items-center justify-center mx-auto mb-4 text-jade-green">
+                      <Clock className="w-8 h-8" />
                     </div>
-                    <CardTitle className="text-lg">Anti-envejecimiento</CardTitle>
-                    <CardDescription>
-                      Sector en auge para empresarios asiáticos
+                    <CardTitle className="text-xl text-center">{tMedical("featured_treatments.anti_aging.title")}</CardTitle>
+                    <CardDescription className="text-center">
+                      {tMedical("featured_treatments.anti_aging.description")}
                     </CardDescription>
                   </CardHeader>
                   <CardContent>
-                    <div className="space-y-2">
-                      <h4 className="font-medium text-gray-900 mb-2">Tratamientos:</h4>
-                      <div className="flex items-center space-x-2">
-                        <CheckCircle className="w-4 h-4 text-jade-green flex-shrink-0" />
-                        <span className="text-sm text-gray-600">Terapias antioxidantes avanzadas</span>
-                      </div>
-                      <div className="flex items-center space-x-2">
-                        <CheckCircle className="w-4 h-4 text-jade-green flex-shrink-0" />
-                        <span className="text-sm text-gray-600">Regeneración celular</span>
-                      </div>
-                      <div className="flex items-center space-x-2">
-                        <CheckCircle className="w-4 h-4 text-jade-green flex-shrink-0" />
-                        <span className="text-sm text-gray-600">Protocolos de longevidad integrados</span>
-                      </div>
-                    </div>
+                    <h4 className="font-semibold text-jade-green mb-3 text-center">{tMedical("featured_treatments.anti_aging.benefits_title")}</h4>
+                    <ul className="space-y-2">
+                      {(tMedical.raw("featured_treatments.anti_aging.benefits") as string[]).map((benefit, idx) => (
+                        <li key={idx} className="flex items-center space-x-2">
+                          <CheckCircle className="w-4 h-4 text-gold shrink-0" />
+                          <span className="text-sm text-gray-600">{benefit}</span>
+                        </li>
+                      ))}
+                    </ul>
                   </CardContent>
                 </Card>
 
+                {/* Cosmetic Surgery */}
                 <Card className="border-jade-green/10 hover:shadow-lg transition-shadow">
                   <CardHeader>
-                    <div className="w-12 h-12 bg-jade-green/10 rounded-full flex items-center justify-center mb-4 text-jade-green">
-                      <Award className="w-6 h-6" />
+                    <div className="w-16 h-16 bg-jade-green/10 rounded-full flex items-center justify-center mx-auto mb-4 text-jade-green">
+                      <Star className="w-8 h-8" />
                     </div>
-                    <CardTitle className="text-lg">Cirugías Estéticas</CardTitle>
-                    <CardDescription>
-                      Recuperaciones rápidas y seguras
+                    <CardTitle className="text-xl text-center">{tMedical("featured_treatments.cosmetic.title")}</CardTitle>
+                    <CardDescription className="text-center">
+                      {tMedical("featured_treatments.cosmetic.description")}
                     </CardDescription>
                   </CardHeader>
                   <CardContent>
-                    <div className="space-y-2">
-                      <h4 className="font-medium text-gray-900 mb-2">Características:</h4>
-                      <div className="flex items-center space-x-2">
-                        <CheckCircle className="w-4 h-4 text-jade-green flex-shrink-0" />
-                        <span className="text-sm text-gray-600">Certificaciones JCI internacionales</span>
-                      </div>
-                      <div className="flex items-center space-x-2">
-                        <CheckCircle className="w-4 h-4 text-jade-green flex-shrink-0" />
-                        <span className="text-sm text-gray-600">Cirujanos bilingües</span>
-                      </div>
-                      <div className="flex items-center space-x-2">
-                        <CheckCircle className="w-4 h-4 text-jade-green flex-shrink-0" />
-                        <span className="text-sm text-gray-600">Paquetes post-operatorios completos</span>
-                      </div>
-                    </div>
+                    <h4 className="font-semibold text-jade-green mb-3 text-center">{tMedical("featured_treatments.cosmetic.benefits_title")}</h4>
+                    <ul className="space-y-2">
+                      {(tMedical.raw("featured_treatments.cosmetic.benefits") as string[]).map((benefit, idx) => (
+                        <li key={idx} className="flex items-center space-x-2">
+                          <CheckCircle className="w-4 h-4 text-gold shrink-0" />
+                          <span className="text-sm text-gray-600">{benefit}</span>
+                        </li>
+                      ))}
+                    </ul>
                   </CardContent>
                 </Card>
               </div>
@@ -1115,17 +876,17 @@ export function AboutPanamaClient({ locale }: AboutPanamaClientProps) {
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-brand text-jade-green font-bold mb-4">
-                Un centro estratégico para sus operaciones globales
+                {t("investment_section.title")}
               </h2>
               <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-                La elección de Panamá como plataforma para sus actividades internacionales ofrece ventajas incomparables
+                {t("investment_section.subtitle")}
               </p>
             </div>
 
             {/* Financial Hub */}
             <div className="mb-16">
               <h3 className="text-2xl font-bold text-jade-green mb-6 text-center">
-                Hub financiero sofisticado
+                {t("investment_section.financial_hub.title")}
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 <Card className="border-jade-green/10 hover:shadow-lg transition-shadow">
@@ -1133,11 +894,11 @@ export function AboutPanamaClient({ locale }: AboutPanamaClientProps) {
                     <div className="w-12 h-12 bg-jade-green/10 rounded-full flex items-center justify-center mx-auto mb-4 text-jade-green">
                       <Building className="w-6 h-6" />
                     </div>
-                    <CardTitle className="text-lg text-center">Centro Bancario</CardTitle>
+                    <CardTitle className="text-lg text-center">{t("investment_section.financial_hub.banking_center.title")}</CardTitle>
                   </CardHeader>
                   <CardContent>
                     <CardDescription className="text-gray-600 text-center">
-                      Más de 80 instituciones financieras incluyendo Bank of China
+                      {t("investment_section.financial_hub.banking_center.description")}
                     </CardDescription>
                   </CardContent>
                 </Card>
@@ -1147,25 +908,11 @@ export function AboutPanamaClient({ locale }: AboutPanamaClientProps) {
                     <div className="w-12 h-12 bg-jade-green/10 rounded-full flex items-center justify-center mx-auto mb-4 text-jade-green">
                       <Shield className="w-6 h-6" />
                     </div>
-                    <CardTitle className="text-lg text-center">Regulación</CardTitle>
+                    <CardTitle className="text-lg text-center">{t("investment_section.financial_hub.regulation.title")}</CardTitle>
                   </CardHeader>
                   <CardContent>
                     <CardDescription className="text-gray-600 text-center">
-                      Basada en estándares de Basilea y GAFI
-                    </CardDescription>
-                  </CardContent>
-                </Card>
-
-                <Card className="border-jade-green/10 hover:shadow-lg transition-shadow">
-                  <CardHeader>
-                    <div className="w-12 h-12 bg-jade-green/10 rounded-full flex items-center justify-center mx-auto mb-4 text-jade-green">
-                      <DollarSign className="w-6 h-6" />
-                    </div>
-                    <CardTitle className="text-lg text-center">Servicios Avanzados</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <CardDescription className="text-gray-600 text-center">
-                      Banca privada y gestión patrimonial
+                      {t("investment_section.financial_hub.regulation.description")}
                     </CardDescription>
                   </CardContent>
                 </Card>
@@ -1175,11 +922,25 @@ export function AboutPanamaClient({ locale }: AboutPanamaClientProps) {
                     <div className="w-12 h-12 bg-jade-green/10 rounded-full flex items-center justify-center mx-auto mb-4 text-jade-green">
                       <TrendingUp className="w-6 h-6" />
                     </div>
-                    <CardTitle className="text-lg text-center">Estructuras Corporativas</CardTitle>
+                    <CardTitle className="text-lg text-center">{t("investment_section.financial_hub.advanced_services.title")}</CardTitle>
                   </CardHeader>
                   <CardContent>
                     <CardDescription className="text-gray-600 text-center">
-                      Optimizadas y fondos de inversión privados
+                      {t("investment_section.financial_hub.advanced_services.description")}
+                    </CardDescription>
+                  </CardContent>
+                </Card>
+
+                <Card className="border-jade-green/10 hover:shadow-lg transition-shadow">
+                  <CardHeader>
+                    <div className="w-12 h-12 bg-jade-green/10 rounded-full flex items-center justify-center mx-auto mb-4 text-jade-green">
+                      <Users className="w-6 h-6" />
+                    </div>
+                    <CardTitle className="text-lg text-center">{t("investment_section.financial_hub.corporate_structures.title")}</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <CardDescription className="text-gray-600 text-center">
+                      {t("investment_section.financial_hub.corporate_structures.description")}
                     </CardDescription>
                   </CardContent>
                 </Card>
@@ -1187,31 +948,31 @@ export function AboutPanamaClient({ locale }: AboutPanamaClientProps) {
             </div>
 
             {/* Connectivity */}
-            <div className="mb-16">
+            <div className="mb-16 bg-jade-green/5 rounded-lg p-8">
               <h3 className="text-2xl font-bold text-jade-green mb-6 text-center">
-                Conectividad aérea excepcional
+                {t("investment_section.connectivity.title")}
               </h3>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
-                <div className="bg-jade-green/10 rounded-lg p-6">
-                  <div className="w-16 h-16 bg-jade-green/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Plane className="w-8 h-8 text-jade-green" />
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-4 text-jade-green shadow-sm">
+                    <Globe className="w-8 h-8" />
                   </div>
-                  <h4 className="text-xl font-bold text-jade-green mb-2">Hub de las Américas</h4>
-                  <p className="text-gray-600">Conexiones directas a más de 80 destinos mundiales</p>
+                  <h4 className="font-bold text-lg mb-2">{t("investment_section.connectivity.hub_americas.title")}</h4>
+                  <p className="text-gray-600">{t("investment_section.connectivity.hub_americas.description")}</p>
                 </div>
-                <div className="bg-jade-green/10 rounded-lg p-6">
-                  <div className="w-16 h-16 bg-jade-green/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Globe className="w-8 h-8 text-jade-green" />
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-4 text-jade-green shadow-sm">
+                    <Plane className="w-8 h-8" />
                   </div>
-                  <h4 className="text-xl font-bold text-jade-green mb-2">Vuelos sin escalas</h4>
-                  <p className="text-gray-600">A las principales ciudades globales</p>
+                  <h4 className="font-bold text-lg mb-2">{t("investment_section.connectivity.non_stop_flights.title")}</h4>
+                  <p className="text-gray-600">{t("investment_section.connectivity.non_stop_flights.description")}</p>
                 </div>
-                <div className="bg-jade-green/10 rounded-lg p-6">
-                  <div className="w-16 h-16 bg-jade-green/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Zap className="w-8 h-8 text-jade-green" />
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-4 text-jade-green shadow-sm">
+                    <Building className="w-8 h-8" />
                   </div>
-                  <h4 className="text-xl font-bold text-jade-green mb-2">Expansión aeroportuaria</h4>
-                  <p className="text-gray-600">Incrementará capacidad en un 50%</p>
+                  <h4 className="font-bold text-lg mb-2">{t("investment_section.connectivity.airport_expansion.title")}</h4>
+                  <p className="text-gray-600">{t("investment_section.connectivity.airport_expansion.description")}</p>
                 </div>
               </div>
             </div>
@@ -1219,93 +980,59 @@ export function AboutPanamaClient({ locale }: AboutPanamaClientProps) {
             {/* Real Estate Benefits */}
             <div className="mb-16">
               <h3 className="text-2xl font-bold text-jade-green mb-6 text-center">
-                Mercado inmobiliario resiliente
+                {t("investment_section.real_estate_benefits.title")}
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div className="text-center">
-                  <div className="w-16 h-16 bg-jade-green/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <TrendingUp className="w-8 h-8 text-jade-green" />
-                  </div>
-                  <h4 className="text-xl font-bold text-jade-green mb-2">Valorización Sostenida</h4>
-                  <p className="text-gray-600">Incluso durante ciclos económicos adversos</p>
-                </div>
-                <div className="text-center">
-                  <div className="w-16 h-16 bg-jade-green/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <DollarSign className="w-8 h-8 text-jade-green" />
-                  </div>
-                  <h4 className="text-xl font-bold text-jade-green mb-2">Rendimientos Superiores</h4>
-                  <p className="text-gray-600">6-7% anual en alquileres</p>
-                </div>
-                <div className="text-center">
-                  <div className="w-16 h-16 bg-jade-green/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Shield className="w-8 h-8 text-jade-green" />
-                  </div>
-                  <h4 className="text-xl font-bold text-jade-green mb-2">Protección Constitucional</h4>
-                  <p className="text-gray-600">Propiedad extranjera protegida y heredable sin impuestos</p>
-                </div>
+                <Card className="border-jade-green/10 hover:shadow-lg transition-shadow">
+                  <CardHeader>
+                    <CardTitle className="text-lg text-center">{t("investment_section.real_estate_benefits.sustained_value.title")}</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <CardDescription className="text-gray-600 text-center">
+                      {t("investment_section.real_estate_benefits.sustained_value.description")}
+                    </CardDescription>
+                  </CardContent>
+                </Card>
+                <Card className="border-jade-green/10 hover:shadow-lg transition-shadow">
+                  <CardHeader>
+                    <CardTitle className="text-lg text-center">{t("investment_section.real_estate_benefits.superior_returns.title")}</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <CardDescription className="text-gray-600 text-center">
+                      {t("investment_section.real_estate_benefits.superior_returns.description")}
+                    </CardDescription>
+                  </CardContent>
+                </Card>
+                <Card className="border-jade-green/10 hover:shadow-lg transition-shadow">
+                  <CardHeader>
+                    <CardTitle className="text-lg text-center">{t("investment_section.real_estate_benefits.constitutional_protection.title")}</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <CardDescription className="text-gray-600 text-center">
+                      {t("investment_section.real_estate_benefits.constitutional_protection.description")}
+                    </CardDescription>
+                  </CardContent>
+                </Card>
               </div>
             </div>
 
             {/* Tax Advantages */}
-            <div>
+            <div className="bg-white border border-jade-green/10 rounded-lg p-8 shadow-lg">
               <h3 className="text-2xl font-bold text-jade-green mb-6 text-center">
-                Ventajas fiscales estructurales
+                {t("investment_section.tax_advantages.title")}
               </h3>
-              <div className="bg-jade-green/10 rounded-lg p-8">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="flex items-start space-x-3">
-                    <div className="w-6 h-6 bg-jade-green rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                      <span className="text-white text-xs">✓</span>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {(t.raw("investment_section.tax_advantages.list") as any[]).map((item, index) => (
+                  <div key={index} className="flex items-start space-x-4">
+                    <div className="w-8 h-8 bg-jade-green/10 rounded-full flex items-center justify-center shrink-0 mt-1">
+                      <CheckCircle className="w-5 h-5 text-jade-green" />
                     </div>
                     <div>
-                      <h4 className="font-semibold text-gray-900 mb-1">
-                        Exención de impuestos sobre ingresos de fuente extranjera
-                      </h4>
-                      <p className="text-sm text-gray-600">
-                        No tributación sobre ingresos generados fuera de Panamá
-                      </p>
+                      <h4 className="font-bold text-gray-900">{item.title}</h4>
+                      <p className="text-gray-600 text-sm">{item.description}</p>
                     </div>
                   </div>
-                  <div className="flex items-start space-x-3">
-                    <div className="w-6 h-6 bg-jade-green rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                      <span className="text-white text-xs">✓</span>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-gray-900 mb-1">
-                        Ausencia de impuestos sobre patrimonio, herencias y donaciones
-                      </h4>
-                      <p className="text-sm text-gray-600">
-                        Protección completa del patrimonio familiar
-                      </p>
-                    </div>
-                  </div>
-                  <div className="flex items-start space-x-3">
-                    <div className="w-6 h-6 bg-jade-green rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                      <span className="text-white text-xs">✓</span>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-gray-900 mb-1">
-                        Exoneración de impuestos inmobiliarios extendidos
-                      </h4>
-                      <p className="text-sm text-gray-600">
-                        Períodos extendidos para propiedades nuevas
-                      </p>
-                    </div>
-                  </div>
-                  <div className="flex items-start space-x-3">
-                    <div className="w-6 h-6 bg-jade-green rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                      <span className="text-white text-xs">✓</span>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-gray-900 mb-1">
-                        Estructuras de protección patrimonial reconocidas
-                      </h4>
-                      <p className="text-sm text-gray-600">
-                        Reconocimiento internacional de estructuras legales panameñas
-                      </p>
-                    </div>
-                  </div>
-                </div>
+                ))}
               </div>
             </div>
           </div>
@@ -1313,30 +1040,28 @@ export function AboutPanamaClient({ locale }: AboutPanamaClientProps) {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-jade-green text-white">
-        <div className="container mx-auto px-4">
-          <div className="text-center max-w-3xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-brand text-white font-bold mb-6">
-              {activeTab === "medical_tourism" 
-                ? "Ready to Start Your Medical Journey?" 
-                : "Discover Why Panama is Perfect for You"}
-            </h2>
-            <p className="text-xl text-gold/90 mb-8">
-              {activeTab === "medical_tourism"
-                ? "Get a consultation and treatment quote from our medical tourism experts"
-                : "Schedule a consultation to learn more about living and investing in Panama"}
-            </p>
-            <Button
-              asChild
-              className="bg-gold text-jade-green hover:bg-gold/90 font-brand text-lg px-8 py-3"
-            >
-              <Link href={`/${locale}/contact`}>
-                {commonT("free_consultation")}
-              </Link>
-            </Button>
-          </div>
+     {/*  <section className="py-20 bg-jade-green text-white">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-3xl md:text-4xl font-brand font-bold mb-6">
+            {activeTab === "medical_tourism" 
+              ? tMedical("cta.medical_title")
+              : tMedical("cta.general_title")
+            }
+          </h2>
+          <p className="text-xl mb-8 max-w-2xl mx-auto text-white/90">
+            {activeTab === "medical_tourism"
+              ? tMedical("cta.medical_subtitle")
+              : tMedical("cta.general_subtitle")
+            }
+          </p>
+          <Button
+            size="lg"
+            className="bg-gold hover:bg-gold/90 text-jade-green font-semibold text-lg px-8 py-6 h-auto"
+          >
+            {commonT("free_consultation")}
+          </Button>
         </div>
-      </section>
+      </section> */}
     </>
   );
 }

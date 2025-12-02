@@ -2,6 +2,7 @@
 
 import React from "react";
 import { motion } from "motion/react";
+import { useTranslations } from "next-intl";
 import {
   hola,
   imgPgkStamp1
@@ -38,9 +39,10 @@ function Icon() {
 }
 
 function SuccessRate() {
+  const t = useTranslations("components.power_card");
   return (
     <div className="absolute h-[20.963px] left-[42.77px] top-[336px] w-[121.897px]" data-name="SuccessRate">
-      <p className="absolute font-['Inter:Regular',_sans-serif] font-normal leading-[20px] left-[61px] not-italic text-[#050505] text-[14px] text-center text-nowrap top-[0.57px] tracking-[-0.1504px] translate-x-[-50%] whitespace-pre">95% tasa de éxito</p>
+      <p className="absolute font-['Inter:Regular',_sans-serif] font-normal leading-[20px] left-[61px] not-italic text-[#050505] text-[14px] text-center text-nowrap top-[0.57px] tracking-[-0.1504px] translate-x-[-50%] whitespace-pre">{t("success_rate")}</p>
     </div>
   );
 }
@@ -55,10 +57,11 @@ function SuccessGroup() {
 }
 
 function ButtonText() {
+  const t = useTranslations("components.power_card");
   return (
     <div className="h-[20.963px] relative shrink-0 w-[121.897px]" data-name="ButtonText">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid box-border h-[20.963px] relative w-[121.897px]">
-        <p className="absolute font-['Inter:Regular',_sans-serif] font-normal leading-[20px] left-[61px] not-italic text-[14px] text-center text-nowrap text-white top-[0.57px] tracking-[-0.1504px] translate-x-[-50%] whitespace-pre">Comenzar ahora</p>
+        <p className="absolute font-['Inter:Regular',_sans-serif] font-normal leading-[20px] left-[61px] not-italic text-[14px] text-center text-nowrap text-white top-[0.57px] tracking-[-0.1504px] translate-x-[-50%] whitespace-pre">{t("start_now")}</p>
       </div>
     </div>
   );
@@ -73,6 +76,7 @@ function ButtonContainer() {
 }
 
 export default function CompPowerCard() {
+  const t = useTranslations("components.power_card");
   return (
     <motion.div
       className="bg-white ground-script-bg-white shadow-lg overflow-clip relative rounded-[22px] size-full mx-auto max-w-[430px]"
@@ -81,8 +85,8 @@ export default function CompPowerCard() {
       transition={{ duration: 0.5 }}
     >
       <Frame />
-      <p className="absolute font-['Noto_Serif_SC:Bold',_sans-serif] font-bold leading-[43.114px] left-[50%] text-[30.795px] text-black text-center text-nowrap top-[280px] tracking-[-0.6917px] translate-x-[-50%] whitespace-pre">Tu llave a panama</p>
-      <p className="absolute font-['Noto_Serif_SC:Regular',_sans-serif] font-normal h-[38px] leading-[19px] left-[16px] text-[15px] text-black top-[365px] tracking-[-0.4398px] w-[335px]">{`Abriendo las puertas a tu nueva vida con inversiones seguras y rentables. `}</p>
+      <p className="absolute font-['Noto_Serif_SC:Bold',_sans-serif] font-bold leading-[43.114px] left-[50%] text-[30.795px] text-black text-center text-nowrap top-[280px] tracking-[-0.6917px] translate-x-[-50%] whitespace-pre">{t("title")}</p>
+      <p className="absolute font-['Noto_Serif_SC:Regular',_sans-serif] font-normal h-[38px] leading-[19px] left-[16px] text-[15px] text-black top-[365px] tracking-[-0.4398px] w-[335px]">{t("description")}</p>
       <SuccessGroup />
       <ButtonContainer />
       <div className="absolute flex h-[calc(1px*((var(--transform-inner-width)*0.4684106707572937)+(var(--transform-inner-height)*0.8835108876228333)))] items-center justify-center left-[90%] top-[314px] translate-x-[-50%] w-[calc(1px*((var(--transform-inner-height)*0.4684106707572937)+(var(--transform-inner-width)*0.8835108876228333)))]" style={{ "--transform-inner-width": "236.25", "--transform-inner-height": "236.25" } as React.CSSProperties}>

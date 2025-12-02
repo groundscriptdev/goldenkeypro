@@ -54,26 +54,22 @@ export default async function AboutUsPage({ params }: AboutUsPageProps) {
     {
       icon: <Globe className="w-6 h-6" />,
       title: t("expertise.transcultural"),
-      description:
-        "Deep understanding of both Panamanian and Chinese business cultures",
+      description: t("expertise.transcultural_desc"),
     },
     {
       icon: <Users className="w-6 h-6" />,
       title: t("expertise.trilingual_team"),
-      description:
-        "Fluent in Mandarin, English, and Spanish for seamless communication",
+      description: t("expertise.trilingual_team_desc"),
     },
     {
       icon: <Shield className="w-6 h-6" />,
       title: t("expertise.chinese_structures"),
-      description:
-        "Expertise in Chinese wealth structures and investment patterns",
+      description: t("expertise.chinese_structures_desc"),
     },
     {
       icon: <Award className="w-6 h-6" />,
       title: t("expertise.capital_regulations"),
-      description:
-        "Extensive experience with Chinese capital regulations and requirements",
+      description: t("expertise.capital_regulations_desc"),
     },
   ];
 
@@ -81,93 +77,119 @@ export default async function AboutUsPage({ params }: AboutUsPageProps) {
     {
       icon: <Target className="w-6 h-6" />,
       title: t("services.residency_consultation"),
-      description: "Comprehensive guidance through Panama residency programs",
+      description: t("services.residency_consultation_desc"),
       features: [
-        "Program selection",
-        "Document preparation",
-        "Application support",
-        "Follow-up services",
+        t("services.residency_consultation_features.0"),
+        t("services.residency_consultation_features.1"),
+        t("services.residency_consultation_features.2"),
+        t("services.residency_consultation_features.3"),
       ],
     },
     {
       icon: <Globe className="w-6 h-6" />,
       title: t("services.investment_advisory"),
-      description: "Strategic investment advice tailored to your goals",
+      description: t("services.investment_advisory_desc"),
       features: [
-        "Market analysis",
-        "Risk assessment",
-        "Portfolio diversification",
-        "ROI optimization",
+        t("services.investment_advisory_features.0"),
+        t("services.investment_advisory_features.1"),
+        t("services.investment_advisory_features.2"),
+        t("services.investment_advisory_features.3"),
       ],
     },
     {
       icon: <Shield className="w-6 h-6" />,
       title: t("services.legal_support"),
-      description: "Complete legal documentation and compliance support",
+      description: t("services.legal_support_desc"),
       features: [
-        "Document preparation",
-        "Legal review",
-        "Compliance checking",
-        "Government liaison",
+        t("services.legal_support_features.0"),
+        t("services.legal_support_features.1"),
+        t("services.legal_support_features.2"),
+        t("services.legal_support_features.3"),
       ],
     },
     {
       icon: <Heart className="w-6 h-6" />,
       title: t("services.property_management"),
-      description: "Professional property management services",
+      description: t("services.property_management_desc"),
       features: [
-        "Tenant screening",
-        "Rent collection",
-        "Maintenance coordination",
-        "Financial reporting",
+        t("services.property_management_features.0"),
+        t("services.property_management_features.1"),
+        t("services.property_management_features.2"),
+        t("services.property_management_features.3"),
       ],
     },
     {
       icon: <Users className="w-6 h-6" />,
       title: t("services.family_office"),
-      description: "Comprehensive family office services",
+      description: t("services.family_office_desc"),
       features: [
-        "Wealth management",
-        "Succession planning",
-        "Tax optimization",
-        "Lifestyle services",
+        t("services.family_office_features.0"),
+        t("services.family_office_features.1"),
+        t("services.family_office_features.2"),
+        t("services.family_office_features.3"),
       ],
     },
   ];
 
   const teamMembers = [
     {
-      name: "Managing Partner",
-      role: "Panama Law & Investment Specialist",
-      expertise: "15+ years in Panamanian law and investment",
-      description: "Expert in residency programs and real estate investment",
+      name: t("team.members.managing_partner.name"),
+      role: t("team.members.managing_partner.role"),
+      expertise: t("team.members.managing_partner.expertise"),
+      description: t("team.members.managing_partner.desc"),
     },
     {
-      name: "Senior Consultant",
-      role: "Chinese Market Specialist",
-      expertise: "10+ years bridging China-Panama business",
-      description:
-        "Specialized in Chinese investment patterns and requirements",
+      name: t("team.members.senior_consultant.name"),
+      role: t("team.members.senior_consultant.role"),
+      expertise: t("team.members.senior_consultant.expertise"),
+      description: t("team.members.senior_consultant.desc"),
     },
     {
-      name: "Legal Director",
-      role: "Immigration Law Expert",
-      expertise: "12+ years in immigration law",
-      description: "Specialist in Qualified Investor Visa applications",
+      name: t("team.members.legal_director.name"),
+      role: t("team.members.legal_director.role"),
+      expertise: t("team.members.legal_director.expertise"),
+      description: t("team.members.legal_director.desc"),
     },
     {
-      name: "Investment Advisor",
-      role: "Real Estate & Investment Specialist",
-      expertise: "8+ years in Panamanian real estate",
-      description: "Expert in property investment and market analysis",
+      name: t("team.members.investment_advisor.name"),
+      role: t("team.members.investment_advisor.role"),
+      expertise: t("team.members.investment_advisor.expertise"),
+      description: t("team.members.investment_advisor.desc"),
     },
   ];
 
   const achievements = [
-    { number: "500+", label: "Successful Clients" },
-    { number: "98%", label: "Success Rate" },
-    { number: "15+", label: "Years Experience" },
-    { number: "$50M+", label: "Investment Facilitated" },
+    { number: t("achievements.clients.number"), label: t("achievements.clients.label") },
+    { number: t("achievements.success_rate.number"), label: t("achievements.success_rate.label") },
+    { number: t("achievements.experience.number"), label: t("achievements.experience.label") },
+    { number: t("achievements.investment.number"), label: t("achievements.investment.label") },
+  ];
+
+  const whyChooseUs = [
+    {
+      title: t("why_choose_us.bilingual.title"),
+      description: t("why_choose_us.bilingual.desc"),
+    },
+    {
+      title: t("why_choose_us.track_record.title"),
+      description: t("why_choose_us.track_record.desc"),
+    },
+    {
+      title: t("why_choose_us.comprehensive.title"),
+      description: t("why_choose_us.comprehensive.desc"),
+    },
+    {
+      title: t("why_choose_us.local_expertise.title"),
+      description: t("why_choose_us.local_expertise.desc"),
+    },
+    {
+      title: t("why_choose_us.market_understanding.title"),
+      description: t("why_choose_us.market_understanding.desc"),
+    },
+    {
+      title: t("why_choose_us.personalized.title"),
+      description: t("why_choose_us.personalized.desc"),
+    },
   ];
 
   return (
@@ -196,7 +218,7 @@ export default async function AboutUsPage({ params }: AboutUsPageProps) {
             <div className="container mx-auto px-4">
               <div className="max-w-4xl mx-auto text-center">
                 <h2 className="text-3xl font-brand text-jade-green font-bold mb-6">
-                  Our Mission
+                  {t("mission")}
                 </h2>
                 <p className="text-xl text-gray-700 leading-relaxed">
                   {t("mission")}
@@ -214,7 +236,7 @@ export default async function AboutUsPage({ params }: AboutUsPageProps) {
                     {t("expertise.title")}
                   </h2>
                   <p className="text-lg text-muted-foreground">
-                    Our unique expertise bridges cultures and markets
+                    {t("expertise.subtitle")}
                   </p>
                 </div>
 
@@ -248,10 +270,10 @@ export default async function AboutUsPage({ params }: AboutUsPageProps) {
               <div className="max-w-6xl mx-auto">
                 <div className="text-center mb-12">
                   <h2 className="text-3xl md:text-4xl font-brand text-jade-green font-bold mb-4">
-                    Our Track Record
+                    {t("achievements.title")}
                   </h2>
                   <p className="text-lg text-muted-foreground">
-                    Proven results for Chinese investors in Panama
+                    {t("achievements.subtitle")}
                   </p>
                 </div>
 
@@ -282,7 +304,7 @@ export default async function AboutUsPage({ params }: AboutUsPageProps) {
                     {t("services.title")}
                   </h2>
                   <p className="text-lg text-muted-foreground">
-                    Comprehensive services for your Panama journey
+                    {t("services.subtitle")}
                   </p>
                 </div>
 
@@ -365,15 +387,14 @@ export default async function AboutUsPage({ params }: AboutUsPageProps) {
 
                 <div className="mt-12 text-center">
                   <p className="text-gray-600 mb-4">
-                    Our team combines local expertise with international
-                    experience
+                    {t("team.cta_text")}
                   </p>
                   <Button
                     asChild
                     className="bg-jade-green hover:bg-jade-green/90 text-white"
                   >
                     <Link href={`/${params.locale}/contact`}>
-                      Meet Our Team
+                      {t("team.cta_button")}
                     </Link>
                   </Button>
                 </div>
@@ -387,100 +408,47 @@ export default async function AboutUsPage({ params }: AboutUsPageProps) {
               <div className="max-w-6xl mx-auto">
                 <div className="text-center mb-12">
                   <h2 className="text-3xl md:text-4xl font-brand text-jade-green font-bold mb-4">
-                    Why Choose Panama Golden Key?
+                    {t("why_choose_us.title")}
                   </h2>
                   <p className="text-lg text-muted-foreground">
-                    The trusted partner for Chinese investors in Panama
+                    {t("why_choose_us.subtitle")}
                   </p>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                   <div className="space-y-6">
-                    <div className="flex items-start space-x-4">
-                      <div className="w-8 h-8 bg-jade-green rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                        <span className="text-white text-sm">✓</span>
+                    {whyChooseUs.slice(0, 3).map((item, index) => (
+                      <div key={index} className="flex items-start space-x-4">
+                        <div className="w-8 h-8 bg-jade-green rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                          <span className="text-white text-sm">✓</span>
+                        </div>
+                        <div>
+                          <h3 className="font-semibold text-gray-900 mb-2">
+                            {item.title}
+                          </h3>
+                          <p className="text-gray-600">
+                            {item.description}
+                          </p>
+                        </div>
                       </div>
-                      <div>
-                        <h3 className="font-semibold text-gray-900 mb-2">
-                          Bilingual & Bicultural Team
-                        </h3>
-                        <p className="text-gray-600">
-                          Fluent in Mandarin, English, and Spanish with deep
-                          cultural understanding
-                        </p>
-                      </div>
-                    </div>
-                    <div className="flex items-start space-x-4">
-                      <div className="w-8 h-8 bg-jade-green rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                        <span className="text-white text-sm">✓</span>
-                      </div>
-                      <div>
-                        <h3 className="font-semibold text-gray-900 mb-2">
-                          Proven Track Record
-                        </h3>
-                        <p className="text-gray-600">
-                          98% success rate with 500+ satisfied Chinese clients
-                        </p>
-                      </div>
-                    </div>
-                    <div className="flex items-start space-x-4">
-                      <div className="w-8 h-8 bg-jade-green rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                        <span className="text-white text-sm">✓</span>
-                      </div>
-                      <div>
-                        <h3 className="font-semibold text-gray-900 mb-2">
-                          Comprehensive Services
-                        </h3>
-                        <p className="text-gray-600">
-                          End-to-end support from consultation to
-                          post-investment management
-                        </p>
-                      </div>
-                    </div>
+                    ))}
                   </div>
                   <div className="space-y-6">
-                    <div className="flex items-start space-x-4">
-                      <div className="w-8 h-8 bg-jade-green rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                        <span className="text-white text-sm">✓</span>
+                    {whyChooseUs.slice(3, 6).map((item, index) => (
+                      <div key={index} className="flex items-start space-x-4">
+                        <div className="w-8 h-8 bg-jade-green rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                          <span className="text-white text-sm">✓</span>
+                        </div>
+                        <div>
+                          <h3 className="font-semibold text-gray-900 mb-2">
+                            {item.title}
+                          </h3>
+                          <p className="text-gray-600">
+                            {item.description}
+                          </p>
+                        </div>
                       </div>
-                      <div>
-                        <h3 className="font-semibold text-gray-900 mb-2">
-                          Local Expertise
-                        </h3>
-                        <p className="text-gray-600">
-                          Deep connections with Panamanian authorities and
-                          service providers
-                        </p>
-                      </div>
-                    </div>
-                    <div className="flex items-start space-x-4">
-                      <div className="w-8 h-8 bg-jade-green rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                        <span className="text-white text-sm">✓</span>
-                      </div>
-                      <div>
-                        <h3 className="font-semibold text-gray-900 mb-2">
-                          Chinese Market Understanding
-                        </h3>
-                        <p className="text-gray-600">
-                          Specialized knowledge of Chinese investment patterns
-                          and requirements
-                        </p>
-                      </div>
-                    </div>
-                    <div className="flex items-start space-x-4">
-                      <div className="w-8 h-8 bg-jade-green rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                        <span className="text-white text-sm">✓</span>
-                      </div>
-                      <div>
-                        <h3 className="font-semibold text-gray-900 mb-2">
-                          Personalized Service
-                        </h3>
-                        <p className="text-gray-600">
-                          Tailored solutions for each client's unique needs and
-                          goals
-                        </p>
-                      </div>
-                    </div>
+                    ))}
                   </div>
                 </div>
               </div>
@@ -492,18 +460,17 @@ export default async function AboutUsPage({ params }: AboutUsPageProps) {
             <div className="container mx-auto px-4">
               <div className="text-center max-w-3xl mx-auto">
                 <h2 className="text-3xl md:text-4xl font-brand text-white font-bold mb-6">
-                  Start Your Panama Journey with Us
+                  {t("cta.title")}
                 </h2>
                 <p className="text-xl text-gold/90 mb-8">
-                  Experience the difference with Panama's leading bilingual
-                  consultancy
+                  {t("cta.subtitle")}
                 </p>
                 <Button
                   asChild
                   className="bg-gold text-jade-green hover:bg-gold/90 font-brand text-lg px-8 py-3"
                 >
                   <Link href={`/${params.locale}/contact`}>
-                    {commonT("free_consultation")}
+                    {t("cta.button")}
                   </Link>
                 </Button>
               </div>

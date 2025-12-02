@@ -42,84 +42,84 @@ export default function GoldenVisa({ locale }: GoldenVisaProps) {
   const strategicAdvantages = [
     {
       icon: <MapPin className="w-6 h-6 text-jade-green" />,
-      title: "Puente Estratégico",
-      description: "Conexión natural entre dos océanos y tres continentes",
+      title: t("strategic_advantages.strategic_bridge.title"),
+      description: t("strategic_advantages.strategic_bridge.description"),
     },
     {
       icon: <Globe className="w-6 h-6 text-jade-green" />,
-      title: "Acceso Hemisférico",
-      description: "Mercado dinámico de más de 625 millones de consumidores",
+      title: t("strategic_advantages.hemispheric_access.title"),
+      description: t("strategic_advantages.hemispheric_access.description"),
     },
     {
       icon: <TrendingUp className="w-6 h-6 text-jade-green" />,
-      title: "Crecimiento Sostenido",
-      description: "Economía dolarizada con desarrollo acelerado",
+      title: t("strategic_advantages.sustained_growth.title"),
+      description: t("strategic_advantages.sustained_growth.description"),
     },
   ];
 
   const exclusivePrivileges = [
     {
       icon: <IDCard className="w-8 h-8 text-jade-green" />,
-      title: "Residencia Permanente Inmediata",
-      description: "Sin períodos probatorios ni incertidumbres temporales",
+      title: t("exclusive_privileges.immediate_permanent_residency.title"),
+      description: t("exclusive_privileges.immediate_permanent_residency.description"),
     },
     {
       icon: <Clock className="w-8 h-8 text-jade-green" />,
-      title: "Vía Expedita hacia la Ciudadanía",
-      description: "Naturalización garantizada en 5 años con pasaporte que ofrece acceso libre de visa a 142 destinos globales",
+      title: t("exclusive_privileges.expedited_citizenship_path.title"),
+      description: t("exclusive_privileges.expedited_citizenship_path.description"),
     },
     {
       icon: <Users className="w-8 h-8 text-jade-green" />,
-      title: "Inclusión Familiar Integral",
-      description: "Cobertura completa para cónyuge, hijos dependientes y padres bajo tutela",
+      title: t("exclusive_privileges.comprehensive_family_inclusion.title"),
+      description: t("exclusive_privileges.comprehensive_family_inclusion.description"),
     },
     {
       icon: <Plane className="w-8 h-8 text-jade-green" />,
-      title: "Flexibilidad de Residencia Física",
-      description: "Diseñado para empresarios que mantienen operaciones asiáticas mientras expanden su presencia americana",
+      title: t("exclusive_privileges.flexible_physical_residency.title"),
+      description: t("exclusive_privileges.flexible_physical_residency.description"),
     },
     {
       icon: <Shield className="w-8 h-8 text-jade-green" />,
-      title: "Sin Restricciones de Nacionalidad",
-      description: "Programa completamente abierto para ciudadanos chinos de cualquier provincia",
+      title: t("exclusive_privileges.no_nationality_restrictions.title"),
+      description: t("exclusive_privileges.no_nationality_restrictions.description"),
     },
   ];
 
   const investmentOptions = [
     {
       icon: <Building className="w-8 h-8 text-jade-green" />,
-      title: "Inmobiliaria Premium",
-      amount: "USD $300,000",
-      description: "En propiedades de alta valorización",
+      title: t("investment_options.premium_real_estate.title"),
+      amount: t("investment_options.premium_real_estate.amount"),
+      description: t("investment_options.premium_real_estate.description"),
       features: [
-        "Propiedades con potencial de plusvalía",
-        "Ubicaciones estratégicas en zonas de desarrollo",
-        "Opciones residenciales y comerciales",
-        "Gestión profesional incluida",
+        t("investment_options.premium_real_estate.features.0"),
+        t("investment_options.premium_real_estate.features.1"),
+        t("investment_options.premium_real_estate.features.2"),
+        t("investment_options.premium_real_estate.features.3"),
       ],
     },
     {
       icon: <Banknote className="w-8 h-8 text-jade-green" />,
-      title: "Depósito Bancario Estratégico",
-      amount: "USD $700,000",
-      description: "Por 3 años en instituciones Tier 1",
+      title: t("investment_options.strategic_bank_deposit.title"),
+      amount: t("investment_options.strategic_bank_deposit.amount"),
+      description: t("investment_options.strategic_bank_deposit.description"),
       features: [
-        "Instituciones bancarias de primer nivel",
-        "Tasas competitivas garantizadas",
-        "Capital seguro y protegido",
-        "Liquidez al vencimiento",
+        t("investment_options.strategic_bank_deposit.features.0"),
+        t("investment_options.strategic_bank_deposit.features.1"),
+        t("investment_options.strategic_bank_deposit.features.2"),
+        t("investment_options.strategic_bank_deposit.features.3"),
       ],
     },
     {
       icon: <PieChart className="w-8 h-8 text-jade-green" />,
-      title: "Portafolio de Valores",
-      amount: "USD $500,000",
-      description: "En instrumentos bursátiles panameños",
+      title: t("investment_options.securities_portfolio.title"),
+      amount: t("investment_options.securities_portfolio.amount"),
+      description: t("investment_options.securities_portfolio.description"),
       features: [
-        "Diversificación automática",
-        "Gestión profesional de activos",
-        "Potencial de rendimiento superior",
-        "Liquidez y flexibilidad",
+        t("investment_options.securities_portfolio.features.0"),
+        t("investment_options.securities_portfolio.features.1"),
+        t("investment_options.securities_portfolio.features.2"),
+        t("investment_options.securities_portfolio.features.3"),
       ],
     },
   ];
@@ -127,44 +127,44 @@ export default function GoldenVisa({ locale }: GoldenVisaProps) {
   const processSteps = [
     {
       step: "1",
-      title: "Consulta estratégica inicial",
-      description: "Evaluación personalizada y diseño de estrategia",
+      title: t("process.steps.0.title"),
+      description: t("process.steps.0.description"),
       icon: <Lightbulb className="w-6 h-6 text-jade-green" />,
     },
     {
       step: "2",
-      title: "Estructuración óptima de la inversión",
-      description: "Identificación de la alternativa ideal según sus objetivos",
+      title: t("process.steps.1.title"),
+      description: t("process.steps.1.description"),
       icon: <Target className="w-6 h-6 text-jade-green" />,
     },
     {
       step: "3",
-      title: "Preparación documental",
-      description: "Asistencia completa en la recopilación y legalización de documentos",
+      title: t("process.steps.2.title"),
+      description: t("process.steps.2.description"),
       icon: <FileText className="w-6 h-6 text-jade-green" />,
     },
     {
       step: "4",
-      title: "Transacción segura",
-      description: "Supervisión legal de la inversión calificada",
+      title: t("process.steps.3.title"),
+      description: t("process.steps.3.description"),
       icon: <Shield className="w-6 h-6 text-jade-green" />,
     },
     {
       step: "5",
-      title: "Presentación migratoria",
-      description: "Gestión directa ante el Servicio Nacional de Migración",
+      title: t("process.steps.4.title"),
+      description: t("process.steps.4.description"),
       icon: <Briefcase className="w-6 h-6 text-jade-green" />,
     },
     {
       step: "6",
-      title: "Obtención de residencia temporal",
-      description: "Mientras se procesa la permanente",
+      title: t("process.steps.5.title"),
+      description: t("process.steps.5.description"),
       icon: <Calendar className="w-6 h-6 text-jade-green" />,
     },
     {
       step: "7",
-      title: "Seguimiento hasta carné definitivo",
-      description: "Generalmente en 3-4 meses",
+      title: t("process.steps.6.title"),
+      description: t("process.steps.6.description"),
       icon: <Award className="w-6 h-6 text-jade-green" />,
     },
   ];
@@ -172,66 +172,66 @@ export default function GoldenVisa({ locale }: GoldenVisaProps) {
   const requiredDocumentation = [
     {
       icon: <IDCard className="w-5 h-5 text-jade-green" />,
-      title: "Pasaporte vigente",
-      description: "Con mínimo 6 meses de validez",
+      title: t("required_documentation.documents.0.title"),
+      description: t("required_documentation.documents.0.description"),
     },
     {
       icon: <Scale className="w-5 h-5 text-jade-green" />,
-      title: "Certificación de antecedentes penales",
-      description: "De su país de origen (apostillada)",
+      title: t("required_documentation.documents.1.title"),
+      description: t("required_documentation.documents.1.description"),
     },
     {
       icon: <FileText className="w-5 h-5 text-jade-green" />,
-      title: "Documentación de inversión",
-      description: "Comprobante de la inversión calificada",
+      title: t("required_documentation.documents.2.title"),
+      description: t("required_documentation.documents.2.description"),
     },
     {
       icon: <Heart className="w-5 h-5 text-jade-green" />,
-      title: "Certificado médico",
-      description: "Emitido por médico panameño",
+      title: t("required_documentation.documents.3.title"),
+      description: t("required_documentation.documents.3.description"),
     },
     {
       icon: <DollarSign className="w-5 h-5 text-jade-green" />,
-      title: "Declaración jurada",
-      description: "De medios económicos",
+      title: t("required_documentation.documents.4.title"),
+      description: t("required_documentation.documents.4.description"),
     },
     {
       icon: <UserCheck className="w-5 h-5 text-jade-green" />,
-      title: "Fotografías",
-      description: "Cinco fotografías tamaño carné",
+      title: t("required_documentation.documents.5.title"),
+      description: t("required_documentation.documents.5.description"),
     },
     {
       icon: <Handshake className="w-5 h-5 text-jade-green" />,
-      title: "Poder legal",
-      description: "A favor de nuestro despacho",
+      title: t("required_documentation.documents.6.title"),
+      description: t("required_documentation.documents.6.description"),
     },
   ];
 
   const differentialValue = [
     {
       icon: <Target className="w-6 h-6 text-jade-green" />,
-      title: "Análisis pre-calificatorio",
-      description: "Evaluamos su elegibilidad antes de iniciar el proceso",
+      title: t("differential_value.values.0.title"),
+      description: t("differential_value.values.0.description"),
     },
     {
       icon: <Shield className="w-6 h-6 text-jade-green" />,
-      title: "Diligencia debida en inversiones",
-      description: "Verificación exhaustiva de oportunidades de inversión",
+      title: t("differential_value.values.1.title"),
+      description: t("differential_value.values.1.description"),
     },
     {
       icon: <Users className="w-6 h-6 text-jade-green" />,
-      title: "Coordinación multidisciplinaria",
-      description: "Colaboración con asesores fiscales, inmobiliarios y financieros",
+      title: t("differential_value.values.2.title"),
+      description: t("differential_value.values.2.description"),
     },
     {
       icon: <Home className="w-6 h-6 text-jade-green" />,
-      title: "Gestión integral post-residencia",
-      description: "Desde apertura bancaria hasta educación internacional",
+      title: t("differential_value.values.3.title"),
+      description: t("differential_value.values.3.description"),
     },
     {
       icon: <Award className="w-6 h-6 text-jade-green" />,
-      title: "Seguimiento para ciudadanía",
-      description: "Planificación estratégica para naturalización",
+      title: t("differential_value.values.4.title"),
+      description: t("differential_value.values.4.description"),
     },
   ];
 
@@ -245,16 +245,16 @@ export default function GoldenVisa({ locale }: GoldenVisaProps) {
               <Globe className="w-16 h-16 text-amber-200 mx-auto mb-4" />
             </div>
             <h1 className="text-4xl md:text-5xl font-bold mb-4 text-white">
-              GOLDEN VISA
+              {t("hero.title")}
             </h1>
             <h2 className="text-2xl md:text-3xl font-light mb-4 text-white">
-              La Llave Dorada hacia la Libertad Global
+              {t("hero.subtitle")}
             </h2>
             <p className="text-xl md:text-2xl mb-4 text-amber-100">
-              Panamá como Puerta de Entrada Estratégica a las Américas
+              {t("hero.description")}
             </p>
             <p className="text-lg font-medium text-amber-200">
-              Para Familias Chinas Visionarias que Redefinen el Éxito Generacional
+              {t("hero.target_audience")}
             </p>
           </div>
         </div>
@@ -266,19 +266,19 @@ export default function GoldenVisa({ locale }: GoldenVisaProps) {
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-jade-green mb-8">
-                La Nueva Ruta de la Seda Patrimonial: Del Pacífico Asiático al Corazón de las Américas
+                {t("strategic_advantages.title")}
               </h2>
             </div>
             
             <div className="max-w-4xl mx-auto space-y-6 mb-12">
               <p className="text-lg text-gray-700 leading-relaxed">
-                En la era dorada de la diversificación patrimonial global, las familias empresariales más sofisticadas de China han comprendido una verdad fundamental: la verdadera riqueza trasciende las fronteras geográficas. Para estos visionarios, una segunda o tercera residencia no representa simplemente un activo inmobiliario, sino la llave maestra que abre las puertas de todo un hemisferio de oportunidades.
+                {t("introduction.paragraph_1")}
               </p>
               <p className="text-lg text-gray-700 leading-relaxed">
-                Panama Golden Key comprende íntimamente las aspiraciones de las familias de alto patrimonio chinas: ustedes no buscan meramente un refugio fiscal, sino una plataforma de expansión continental que posicione a sus herederos en el epicentro del crecimiento hemisférico. Panamá, el puente natural entre dos océanos y tres continentes, emerge como la jurisdicción que sus asesores patrimoniales han estado buscando.
+                {t("introduction.paragraph_2")}
               </p>
               <p className="text-lg text-gray-700 leading-relaxed">
-                Desde esta posición estratégica, su familia obtendrá acceso privilegiado a un mercado dinámico de más de 625 millones de consumidores, desde las economías avanzadas de Norteamérica hasta los mercados emergentes de Sudamérica, pasando por el vibrante ecosistema centroamericano y caribeño.
+                {t("introduction.paragraph_3")}
               </p>
             </div>
 
@@ -302,15 +302,15 @@ export default function GoldenVisa({ locale }: GoldenVisaProps) {
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-jade-green mb-12 text-center">
-              La Visa de Inversionista Calificado: Un camino privilegiado
+              {t("exclusive_privileges.title")}
             </h2>
             
             <div className="max-w-4xl mx-auto space-y-6 mb-12">
               <p className="text-lg text-gray-700 leading-relaxed">
-                A diferencia de otros programas migratorios, la Visa de Inversionista Calificado ofrece una ruta acelerada y directa hacia la residencia permanente mediante una inversión significativa en el país. Este programa, diseñado para atraer capital productivo y talento internacional, coloca al solicitante en una posición privilegiada desde el primer día.
+                {t("introduction.paragraph_4")}
               </p>
               <p className="text-lg text-gray-700 leading-relaxed">
-                Lo más destacable es que este programa está abierto a nacionales de cualquier país del mundo, sin restricciones por nacionalidad, ofreciendo una alternativa poderosa para quienes no califican bajo el programa de Países Amigos.
+                {t("introduction.paragraph_5")}
               </p>
             </div>
           </div>
@@ -322,15 +322,15 @@ export default function GoldenVisa({ locale }: GoldenVisaProps) {
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-jade-green mb-6 text-center">
-              Ciudadanía Global para la Élite Empresarial
+              {t("investment_options.title")}
             </h2>
             <h3 className="text-2xl font-semibold text-center mb-12 text-gray-700">
-              Más Allá de la Residencia Convencional: Una Estrategia Hemisférica
+              {t("process.title")}
             </h3>
             
             <div className="max-w-4xl mx-auto mb-12">
               <p className="text-lg text-gray-700 leading-relaxed">
-                A diferencia de los programas tradicionales del Caribe o Europa, el programa panameño ofrece a las familias chinas algo verdaderamente excepcional: acceso inmediato y privilegiado a tres continentes desde una sola inversión estratégica. Con un capital mínimo de USD $300,000, usted no adquiere simplemente una residencia; obtiene las credenciales para operar como ciudadano global en el hemisferio más dinámico del mundo.
+                {t("introduction.paragraph_6")}
               </p>
             </div>
 
@@ -362,7 +362,7 @@ export default function GoldenVisa({ locale }: GoldenVisaProps) {
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-jade-green mb-12 text-center">
-              Opciones de Inversión Calificada
+              {t("required_documentation.title")}
             </h2>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -400,10 +400,10 @@ export default function GoldenVisa({ locale }: GoldenVisaProps) {
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-jade-green mb-6 text-center">
-              El proceso: precisión y eficiencia
+              {t("differential_value.title")}
             </h2>
             <p className="text-xl text-center mb-12 text-gray-700">
-              Nuestro despacho ha perfeccionado un proceso que maximiza probabilidades de éxito:
+              {t("differential_value.subtitle")}
             </p>
             
             <div className="space-y-6">
@@ -433,10 +433,10 @@ export default function GoldenVisa({ locale }: GoldenVisaProps) {
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-jade-green mb-6 text-center">
-              Documentación esencial para el proceso
+              {t("process.subtitle")}
             </h2>
             <p className="text-xl text-center mb-12 text-gray-700">
-              Para un trámite exitoso se requiere:
+              {t("required_documentation.subtitle")}
             </p>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -463,10 +463,10 @@ export default function GoldenVisa({ locale }: GoldenVisaProps) {
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-jade-green mb-6 text-center">
-              Nuestro valor diferencial: Experiencia transformada en resultados
+              {t("differential_value.title")}
             </h2>
             <p className="text-xl text-center mb-12 text-gray-700">
-              Como firma especializada en migración por inversión, ofrecemos:
+              {t("differential_value.subtitle")}
             </p>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -497,18 +497,18 @@ export default function GoldenVisa({ locale }: GoldenVisaProps) {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-12 text-white">
-              Una invitación personal
+              {t("personal_invitation.title")}
             </h2>
             <div className="space-y-6 mb-8">
               <p className="text-lg leading-relaxed text-gray-200">
-                Las extraordinarias transformaciones que Panamá está experimentando representan una ventana de oportunidad histórica. Los inversionistas que actúan hoy no solo aseguran condiciones migratorias privilegiadas, sino que posicionan su capital estratégicamente para capturar el valor generado por el desarrollo acelerado del país.
+                {t("personal_invitation.description")}
               </p>
               <p className="text-lg leading-relaxed text-gray-200">
-                Le invitamos a una conversación personalizada donde exploraremos cómo el programa de Inversionista Calificado puede convertirse en la piedra angular de su estrategia de internacionalización personal y patrimonial.
+                {t("personal_invitation.invitation")}
               </p>
             </div>
             <p className="text-sm text-gray-400 italic">
-              Este artículo tiene propósitos informativos y no constituye asesoramiento legal. Cada situación requiere análisis individualizado según circunstancias particulares y normativa vigente.
+              {t("personal_invitation.disclaimer")}
             </p>
           </div>
         </div>

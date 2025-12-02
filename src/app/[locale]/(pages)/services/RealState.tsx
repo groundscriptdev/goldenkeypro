@@ -27,109 +27,109 @@ interface RealStateProps {
 }
 
 export default function RealState({ locale }: RealStateProps) {
-  const t = useTranslations("services_page");
+  const t = useTranslations("real_state_service");
 
   const luxuryAreas = [
     {
-      name: "Punta Pacífica",
-      description: "Torres exclusivas frente al mar con rentas elevadas y constante plusvalía",
+      name: t("market_opportunities.luxury_segment.luxury_areas.punta_pacifica"),
+      description: t("market_opportunities.luxury_segment.luxury_areas.punta_pacifica_desc"),
       icon: <Star className="w-5 h-5 text-jade-green" />,
     },
     {
-      name: "Santa María Golf & Country Club",
-      description: "Villas y condominios de lujo con campo de golf, alta demanda de ejecutivos",
+      name: t("market_opportunities.luxury_segment.luxury_areas.santa_maria"),
+      description: t("market_opportunities.luxury_segment.luxury_areas.santa_maria_desc"),
       icon: <Globe className="w-5 h-5 text-jade-green" />,
     },
     {
-      name: "Costa del Este",
-      description: "Sede regional de multinacionales, excelente opción para inversión con alquiler continuo",
+      name: t("market_opportunities.luxury_segment.luxury_areas.costa_este"),
+      description: t("market_opportunities.luxury_segment.luxury_areas.costa_este_desc"),
       icon: <Building className="w-5 h-5 text-jade-green" />,
     },
   ];
 
   const midRangeAreas = [
     {
-      name: "San Francisco",
-      description: "Plusvalía comprobada y excelente ubicación",
+      name: t("market_opportunities.mid_range_segment.mid_range_areas.san_francisco"),
+      description: t("market_opportunities.mid_range_segment.mid_range_areas.san_francisco_desc"),
       icon: <TrendingUp className="w-5 h-5 text-jade-green" />,
     },
     {
-      name: "Avenida Balboa",
-      description: "Vistas y ubicación inmejorable en el corazón de la ciudad",
+      name: t("market_opportunities.mid_range_segment.mid_range_areas.avenida_balboa"),
+      description: t("market_opportunities.mid_range_segment.mid_range_areas.avenida_balboa_desc"),
       icon: <MapPin className="w-5 h-5 text-jade-green" />,
     },
     {
-      name: "Amador Causeway",
-      description: "Potencial turístico y residencial con vistas impresionantes",
+      name: t("market_opportunities.mid_range_segment.mid_range_areas.amador"),
+      description: t("market_opportunities.mid_range_segment.mid_range_areas.amador_desc"),
       icon: <Home className="w-5 h-5 text-jade-green" />,
     },
     {
-      name: "Panamá Oeste",
-      description: "Nuevas infraestructuras y comunidades planificadas en crecimiento",
+      name: t("market_opportunities.mid_range_segment.mid_range_areas.panama_oeste"),
+      description: t("market_opportunities.mid_range_segment.mid_range_areas.panama_oeste_desc"),
       icon: <Building className="w-5 h-5 text-jade-green" />,
     },
   ];
 
   const megaProjects = [
     {
-      name: "Línea 3 del Metro",
-      description: "Conexión directa con Panamá Oeste, aumentando el valor de propiedades en la zona",
+      name: t("mega_projects.metro_line_3.title"),
+      description: t("mega_projects.metro_line_3.description"),
       icon: <Target className="w-6 h-6 text-jade-green" />,
     },
     {
-      name: "Cuarto Puente sobre el Canal",
-      description: "Nueva conexión que mejorará la accesibilidad y valor del suelo",
+      name: t("mega_projects.fourth_bridge.title"),
+      description: t("mega_projects.fourth_bridge.description"),
       icon: <Bridge className="w-6 h-6 text-jade-green" />,
     },
     {
-      name: "Nuevas carreteras y ampliación costera",
-      description: "Mejora de infraestructura que impulsará el desarrollo inmobiliario",
+      name: t("mega_projects.new_roads.title"),
+      description: t("mega_projects.new_roads.description"),
       icon: <ArrowRight className="w-6 h-6 text-jade-green" />,
     },
     {
-      name: "Proyecto nacional de tren",
-      description: "Planificado para conectar todo el país, generando nuevas oportunidades",
+      name: t("mega_projects.train_project.title"),
+      description: t("mega_projects.train_project.description"),
       icon: <Train className="w-6 h-6 text-jade-green" />,
     },
   ];
 
   const legalAdvantages = [
     {
-      title: "Seguridad Jurídica",
-      description: "El Registro Público protege la propiedad de forma transparente",
+      title: t("legal_advantages.legal_security.title"),
+      description: t("legal_advantages.legal_security.description"),
       icon: <Shield className="w-6 h-6 text-jade-green" />,
     },
     {
-      title: "Beneficios Fiscales",
-      description: "Exoneración del impuesto de inmueble para nuevas construcciones",
+      title: t("legal_advantages.tax_benefits.title"),
+      description: t("legal_advantages.tax_benefits.description"),
       icon: <DollarSign className="w-6 h-6 text-jade-green" />,
     },
     {
-      title: "Contratos claros",
-      description: "Cumplimiento garantizado ideal para inversionistas extranjeros",
+      title: t("legal_advantages.clear_contracts.title"),
+      description: t("legal_advantages.clear_contracts.description"),
       icon: <FileText className="w-6 h-6 text-jade-green" />,
     },
   ];
 
   const companyAdvantages = [
     {
-      title: "Equipo Trilingüe Especializado",
-      description: "Coordinadores nativos en mandarín que facilitan la comunicación en cada etapa",
+      title: t("company_advantages.trilingual_team.title"),
+      description: t("company_advantages.trilingual_team.description"),
       icon: <Users className="w-6 h-6 text-jade-green" />,
     },
     {
-      title: "Comprensión profunda del cliente chino",
-      description: "Conocimiento de regulaciones sobre salida de capital y estructuración patrimonial",
+      title: t("company_advantages.chinese_client_understanding.title"),
+      description: t("company_advantages.chinese_client_understanding.description"),
       icon: <Lightbulb className="w-6 h-6 text-jade-green" />,
     },
     {
-      title: "Acceso a oportunidades únicas",
-      description: "Proyectos exclusivos antes de lanzamiento y propiedades aptas para programas migratorios",
+      title: t("company_advantages.unique_opportunities.title"),
+      description: t("company_advantages.unique_opportunities.description"),
       icon: <Star className="w-6 h-6 text-jade-green" />,
     },
     {
-      title: "Acompañamiento integral llave en mano",
-      description: "Desde el análisis hasta la integración a comunidades locales",
+      title: t("company_advantages.comprehensive_support.title"),
+      description: t("company_advantages.comprehensive_support.description"),
       icon: <Handshake className="w-6 h-6 text-jade-green" />,
     },
   ];
@@ -143,13 +143,13 @@ export default function RealState({ locale }: RealStateProps) {
               <Building className="w-16 h-16 text-jade-green mx-auto mb-4" />
             </div>
             <h1 className="text-4xl md:text-5xl font-bold text-jade-green mb-6">
-              BIENES RAÍCES
+              {t("title")}
             </h1>
             <h2 className="text-2xl md:text-3xl font-semibold text-gray-800 mb-4">
-              Panama Golden Key | Guía Definitiva para Inversionistas Chinos
+              {t("subtitle")}
             </h2>
             <p className="text-lg text-gray-600 mb-6">
-              Residencia a través de inversión inmobiliaria | Asesoría para ciudadanos chinos | Compra de propiedades en Panamá
+              {t("description")}
             </p>
           </div>
         </div>
@@ -161,21 +161,21 @@ export default function RealState({ locale }: RealStateProps) {
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-jade-green mb-6">
-                ¿Por qué Panamá es la nueva tendencia entre inversionistas chinos?
+                {t("why_panama.title")}
               </h2>
               <p className="text-lg text-gray-600 max-w-4xl mx-auto">
-                En los últimos años, Panamá se ha consolidado como uno de los destinos más atractivos para la inversión internacional, especialmente entre inversionistas y familias de origen chino que buscan:
+                {t("why_panama.description")}
               </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
               {[
-                { icon: <TrendingUp className="w-8 h-8" />, text: "Diversificación de activos" },
-                { icon: <Home className="w-8 h-8" />, text: "Propiedades estables con buena rentabilidad" },
-                { icon: <Shield className="w-8 h-8" />, text: "Un segundo hogar en un país seguro" },
-                { icon: <FileText className="w-8 h-8" />, text: "Residencia a través de inversión" },
-                { icon: <Globe className="w-8 h-8" />, text: "Acceso futuro a ciudadanía panameña" },
-                { icon: <Award className="w-8 h-8" />, text: "Calidad de vida excepcional" },
+                { icon: <TrendingUp className="w-8 h-8" />, text: t("why_panama.features.diversification") },
+                { icon: <Home className="w-8 h-8" />, text: t("why_panama.features.properties") },
+                { icon: <Shield className="w-8 h-8" />, text: t("why_panama.features.home") },
+                { icon: <FileText className="w-8 h-8" />, text: t("why_panama.features.residence") },
+                { icon: <Globe className="w-8 h-8" />, text: t("why_panama.features.citizenship") },
+                { icon: <Award className="w-8 h-8" />, text: t("why_panama.features.quality") },
               ].map((item, index) => (
                 <div key={index} className="flex items-center space-x-4 p-6 bg-jade-green/5 rounded-lg hover:bg-jade-green/10 transition-colors">
                   <div className="flex-shrink-0 text-jade-green">
@@ -188,18 +188,13 @@ export default function RealState({ locale }: RealStateProps) {
 
             <div className="bg-gray-50 rounded-lg p-8">
               <h3 className="text-2xl font-bold text-jade-green mb-4 text-center">
-                Panama Golden Key
+                {t("company_description.title")}
               </h3>
               <p className="text-center text-gray-700 mb-6">
-                Líder en Panamá especializada en movilidad internacional, reubicación y adquisición de bienes raíces para inversionistas chinos. Nuestro servicio combina:
+                {t("company_description.description")}
               </p>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                {[
-                  "Asesoría inmobiliaria profesional",
-                  "Consultoría migratoria estratégica",
-                  "Equipo trilingüe (mandarín – inglés – español)",
-                  "Acompañamiento de principio a fin",
-                ].map((service, index) => (
+                {(t.raw("company_description.services") as string[]).map((service: string, index: number) => (
                   <div key={index} className="flex items-center space-x-2">
                     <CheckCircle className="w-5 h-5 text-jade-green flex-shrink-0" />
                     <span className="text-gray-700">{service}</span>
@@ -216,16 +211,16 @@ export default function RealState({ locale }: RealStateProps) {
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-jade-green mb-12 text-center">
-              1. Oportunidades en el Mercado Inmobiliario de Panamá
+              {t("market_opportunities.title")}
             </h2>
 
             {/* Luxury Segment */}
             <div className="mb-16">
               <h3 className="text-2xl font-bold text-gray-800 mb-6">
-                A. Segmento de Lujo: Panamá como centro residencial premium en América Latina
+                {t("market_opportunities.luxury_segment.title")}
               </h3>
               <p className="text-gray-600 mb-8">
-                Áreas que destacan por su alta demanda y valor sostenible:
+                {t("market_opportunities.luxury_segment.description")}
               </p>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
                 {luxuryAreas.map((area, index) => (
@@ -240,13 +235,9 @@ export default function RealState({ locale }: RealStateProps) {
               </div>
 
               <div className="bg-jade-green/10 p-6 rounded-lg">
-                <h4 className="font-semibold text-jade-green mb-3">Ventajas para el inversionista chino:</h4>
+                <h4 className="font-semibold text-jade-green mb-3">{t("market_opportunities.luxury_segment.advantages.title")}</h4>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
-                  {[
-                    "Rentabilidad anual superior al 5%",
-                    "Estabilidad del dólar estadounidense",
-                    "Propiedades ideales para programas migratorios",
-                  ].map((advantage, index) => (
+                  {(t.raw("market_opportunities.luxury_segment.advantages.features") as string[]).map((advantage: string, index: number) => (
                     <div key={index} className="flex items-center space-x-2">
                       <CheckCircle className="w-4 h-4 text-jade-green flex-shrink-0" />
                       <span className="text-gray-700 text-sm">{advantage}</span>
@@ -259,10 +250,10 @@ export default function RealState({ locale }: RealStateProps) {
             {/* Mid Range Segment */}
             <div>
               <h3 className="text-2xl font-bold text-gray-800 mb-6">
-                B. Segmento Medio: El motor del mercado panameño
+                {t("market_opportunities.mid_range_segment.title")}
               </h3>
               <p className="text-gray-600 mb-8">
-                Zonas estratégicas con fuerte crecimiento:
+                {t("market_opportunities.mid_range_segment.description")}
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
                 {midRangeAreas.map((area, index) => (
@@ -278,7 +269,7 @@ export default function RealState({ locale }: RealStateProps) {
 
               <div className="bg-blue-50 p-6 rounded-lg">
                 <p className="text-gray-700">
-                  <strong>Rango de inversión típico:</strong> entre $150,000 y $350,000, ideal para inversionistas jóvenes y familias que buscan combinar vivienda e inversión.
+                  {t("market_opportunities.mid_range_segment.investment_range")}
                 </p>
               </div>
             </div>
@@ -291,26 +282,21 @@ export default function RealState({ locale }: RealStateProps) {
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-jade-green mb-12 text-center">
-              2. Cómo la inversión inmobiliaria permite obtener la residencia panameña
+              {t("residency_investment.title")}
             </h2>
 
             <p className="text-gray-600 mb-8 text-center max-w-4xl mx-auto">
-              Panamá ofrece diversos programas migratorios para quienes invierten en bienes raíces, siendo los más utilizados por ciudadanos chinos:
+              {t("residency_investment.description")}
             </p>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
               <div className="bg-gradient-to-br from-jade-green/10 to-white p-8 rounded-lg">
                 <h3 className="text-xl font-bold text-jade-green mb-4">
-                  A. Visa de Inversionista Calificado (Qualified Investor Program)
+                  {t("residency_investment.qualified_investor.title")}
                 </h3>
-                <p className="text-gray-600 mb-4">El camino más rápido hacia la residencia panameña.</p>
+                <p className="text-gray-600 mb-4">{t("residency_investment.qualified_investor.description")}</p>
                 <div className="space-y-3">
-                  {[
-                    "Inversión mínima: USD 300,000 en bienes raíces",
-                    "Aprobación rápida entre 30 y 90 días",
-                    "Obtención de residencia permanente desde el primer momento",
-                    "Posibilidad de incluir a dependientes (esposa/o, hijos, padres)",
-                  ].map((item, index) => (
+                  {(t.raw("residency_investment.qualified_investor.requirements") as string[]).map((item: string, index: number) => (
                     <div key={index} className="flex items-start space-x-2">
                       <CheckCircle className="w-5 h-5 text-jade-green flex-shrink-0 mt-0.5" />
                       <span className="text-gray-700 text-sm">{item}</span>
@@ -321,16 +307,10 @@ export default function RealState({ locale }: RealStateProps) {
 
               <div className="bg-gradient-to-br from-blue-50 to-white p-8 rounded-lg">
                 <h3 className="text-xl font-bold text-blue-800 mb-4">
-                  B. Ventajas de obtener residencia en Panamá para ciudadanos chinos
+                  {t("residency_investment.advantages.title")}
                 </h3>
                 <div className="space-y-3">
-                  {[
-                    "Estabilidad económica en USD",
-                    "Entorno seguro para mudanza familiar",
-                    "Acceso a escuelas internacionales",
-                    "Facilita viajes globales",
-                    "Plataforma ideal para negocios en América Latina",
-                  ].map((advantage, index) => (
+                  {(t.raw("residency_investment.advantages.features") as string[]).map((advantage: string, index: number) => (
                     <div key={index} className="flex items-start space-x-2">
                       <Star className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
                       <span className="text-gray-700 text-sm">{advantage}</span>
@@ -348,11 +328,11 @@ export default function RealState({ locale }: RealStateProps) {
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-jade-green mb-12 text-center">
-              3. Megaproyectos que impulsan el incremento del valor inmobiliario
+              {t("mega_projects.title")}
             </h2>
 
             <p className="text-gray-600 mb-8 text-center max-w-4xl mx-auto">
-              Panamá está ejecutando obras que transformarán el país y elevarán el valor de las propiedades, especialmente en zonas estratégicas:
+              {t("mega_projects.description")}
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -373,7 +353,7 @@ export default function RealState({ locale }: RealStateProps) {
 
             <div className="mt-8 bg-yellow-50 p-6 rounded-lg">
               <p className="text-gray-700 text-center">
-                <strong>Estos desarrollos generan incrementos significativos en la plusvalía, un punto clave para los inversionistas chinos que buscan retornos seguros.</strong>
+                <strong>{t("mega_projects.impact_note")}</strong>
               </p>
             </div>
           </div>
@@ -385,11 +365,11 @@ export default function RealState({ locale }: RealStateProps) {
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-jade-green mb-12 text-center">
-              4. Ventajas legales y fiscales para inversionistas extranjeros
+              {t("legal_advantages.title")}
             </h2>
 
             <p className="text-gray-600 mb-8 text-center max-w-4xl mx-auto">
-              Panamá ofrece un marco jurídico seguro y atractivo:
+              {t("legal_advantages.description")}
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -406,7 +386,7 @@ export default function RealState({ locale }: RealStateProps) {
 
             <div className="mt-8 bg-green-50 p-6 rounded-lg">
               <p className="text-gray-700 text-center">
-                <strong>Ideal para inversionistas extranjeros que requieren seguridad total.</strong>
+                <strong>{t("legal_advantages.note")}</strong>
               </p>
             </div>
           </div>
@@ -418,11 +398,11 @@ export default function RealState({ locale }: RealStateProps) {
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-jade-green mb-12 text-center">
-              5. Por qué los inversionistas chinos eligen Panama Golden Key
+              {t("company_advantages.title")}
             </h2>
 
             <p className="text-gray-600 mb-8 text-center max-w-4xl mx-auto">
-              Somos una firma especializada en atender exclusivamente al mercado chino de alto y medio patrimonio. Nuestro enfoque:
+              {t("company_advantages.description")}
             </p>
 
             <div className="space-y-8">
@@ -449,36 +429,15 @@ export default function RealState({ locale }: RealStateProps) {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-jade-green mb-12 text-center">
-              6. Estrategia de inversión recomendada para ciudadanos chinos
+              {t("investment_strategy.title")}
             </h2>
 
             <p className="text-gray-600 mb-8 text-center">
-              Panama Golden Key recomienda seguir una estrategia profesional basada en el análisis del mercado panameño:
+              {t("investment_strategy.description")}
             </p>
 
             <div className="space-y-6">
-              {[
-                {
-                  step: "1",
-                  title: "Identificar el objetivo principal",
-                  description: "residencia, rentabilidad, segunda vivienda, o diversificación.",
-                },
-                {
-                  step: "2",
-                  title: "Seleccionar la zona adecuada",
-                  description: "lujo, medio, o zonas emergentes impulsadas por infraestructura.",
-                },
-                {
-                  step: "3",
-                  title: "Realizar due diligence completo",
-                  description: "títulos, impuestos, gravámenes, historial del proyecto.",
-                },
-                {
-                  step: "4",
-                  title: "Gestión poscompra",
-                  description: "administración, alquiler, mantenimiento y revalorización.",
-                },
-              ].map((step, index) => (
+              {(t.raw("investment_strategy.steps") as any[]).map((step: any, index: number) => (
                 <div key={index} className="flex items-start space-x-4 p-6 bg-jade-green/5 rounded-lg">
                   <div className="flex-shrink-0 w-8 h-8 bg-jade-green text-white rounded-full flex items-center justify-center font-bold">
                     {step.step}
@@ -499,20 +458,13 @@ export default function RealState({ locale }: RealStateProps) {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Panamá es el próximo destino estratégico para el inversionista chino moderno
+              {t("final_cta.title")}
             </h2>
             <p className="text-xl mb-8">
-              Panamá combina:
+              {t("final_cta.description")}
             </p>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-              {[
-                "Estabilidad política",
-                "Economía dolarizada",
-                "Mercado inmobiliario sólido",
-                "Programas migratorios rápidos",
-                "Excelente calidad de vida",
-                "Seguridad para familias",
-              ].map((feature, index) => (
+              {(t.raw("final_cta.features") as string[]).map((feature: string, index: number) => (
                 <div key={index} className="flex items-center justify-center space-x-2">
                   <CheckCircle className="w-5 h-5" />
                   <span className="text-sm text-jade-green-800">{feature}</span>
@@ -521,10 +473,10 @@ export default function RealState({ locale }: RealStateProps) {
             </div>
             <div className="bg-white/10 p-8 rounded-lg">
               <h3 className="text-2xl font-bold mb-4">
-                Panama Golden Key es su socio de confianza
+                {t("final_cta.company_note")}
               </h3>
               <p className="text-lg">
-                Para acompañarlo en cada etapa del proceso, desde la selección del inmueble hasta la obtención de su residencia panameña.
+                {t("final_cta.company_description")}
               </p>
             </div>
           </div>

@@ -1,6 +1,6 @@
 "use client";
 
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 import {
   Card,
   CardContent,
@@ -25,6 +25,11 @@ import Link from "next/link";
 
 export function FeaturedPrograms() {
   const t = useTranslations("home");
+  const locale = useLocale();
+
+  const getFeatures = (key: string) => {
+    return (t.raw(`featured_programs.${key}.features`) as string[]) || [];
+  };
 
   const programs = [
     {
@@ -32,80 +37,40 @@ export function FeaturedPrograms() {
       title: t("featured_programs.qualified_investor.title"),
       description: t("featured_programs.qualified_investor.description"),
       investmentMin: t("featured_programs.qualified_investor.investment_min"),
-      features: [
-        "Residencia permanente inmediata",
-        "Incluye cónyuge e hijos",
-        "Camino a ciudadanía en 5 años",
-        /* "Sin requisitos de residencia", */
-      ],
-      link: "/es/services",
+      features: getFeatures("qualified_investor"),
+      link: `/${locale}/services`,
     },
     {
       icon: <Home className="w-8 h-8 text-jade-green" />,
       title: t("featured_programs.real_estate.title"),
       description: t("featured_programs.real_estate.description"),
       investmentMin: t("featured_programs.real_estate.investment_min"),
-      features: [
-        "Propiedades premium en Panama",
-        "ROI del 5-7% anual",
-        "Gestión profesional incluida",
-        "Valorización garantizada",
-      ],
-      link: "/es/properties",
+      features: getFeatures("real_estate"),
+      link: `/${locale}/properties`,
     },
-   /*  {
-      icon: <Heart className="w-8 h-8 text-jade-green" />,
-      title: t("featured_programs.medical_tourism.title"),
-      description: t("featured_programs.medical_tourism.description"),
-      investmentMin: t("featured_programs.medical_tourism.savings"),
-      features: [
-        "Hospitales JCI acreditados",
-        "Médicos bilingües",
-        "Ahorro del 40-70%",
-        "Recuperación en paraíso tropical",
-      ],
-      link: "/es/medical-tourism",
-    }, */
     {
       icon: <Briefcase className="w-8 h-8 text-jade-green" />,
-      title: "Visa de Negocios",
-      description:
-        "Establezca su empresa en paraíso fiscal con ventajas únicas",
-      investmentMin: "Desde $25,000",
-      features: [
-        "Sociedad anónima panameña",
-        "Sin impuestos sobre ganancias",
-        "Confidencialidad bancaria",
-        "Acceso a mercados globales",
-      ],
-      link: "/es/services",
+      title: t("featured_programs.business_visa.title"),
+      description: t("featured_programs.business_visa.description"),
+      investmentMin: t("featured_programs.business_visa.investment_min"),
+      features: getFeatures("business_visa"),
+      link: `/${locale}/services`,
     },
     {
       icon: <GraduationCap className="w-8 h-8 text-jade-green" />,
-      title: "Programa Educativo",
-      description: "Educación de clase mundial para sus hijos en bilingüe",
-      investmentMin: "Inversión educativa",
-      features: [
-        "Colegios internacionales",
-        "Universidades reconocidas",
-        "Programas bilingües",
-        /* "Preparación para universidades EE.UU.", */
-      ],
-      link: "/es/about-panama",
+      title: t("featured_programs.educational_program.title"),
+      description: t("featured_programs.educational_program.description"),
+      investmentMin: t("featured_programs.educational_program.investment_min"),
+      features: getFeatures("educational_program"),
+      link: `/${locale}/about-panama`,
     },
     {
       icon: <Plane className="w-8 h-8 text-jade-green" />,
-      title: "Retiro Jubilado",
-      description:
-        "Disfrute de su jubilación en paraíso tropical con beneficios",
-      investmentMin: "Pensión mínima $1,000",
-      features: [
-        "Descuentos del 15-25%",
-        "Exención de impuestos",
-        "Residencia permanente",
-        "Calidad de vida superior",
-      ],
-      link: "/es/residency",
+      title: t("featured_programs.retirement_visa.title"),
+      description: t("featured_programs.retirement_visa.description"),
+      investmentMin: t("featured_programs.retirement_visa.investment_min"),
+      features: getFeatures("retirement_visa"),
+      link: `/${locale}/residency`,
     },
   ];
 
@@ -200,7 +165,7 @@ export function FeaturedPrograms() {
             size="lg"
             className="bg-gold text-jade-green hover:bg-gold/90 font-semibold px-8"
           >
-            <Link href="/es/residency">Ver Todos los Programas</Link>
+            {/* <Link href={`/${locale}/residency`}>Ver Todos los Programas</Link> */}
           </Button>
         </div>
       </div>

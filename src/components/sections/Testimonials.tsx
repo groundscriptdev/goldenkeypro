@@ -8,88 +8,26 @@ import { Star, Quote } from "lucide-react";
 export function Testimonials() {
   const t = useTranslations("home");
 
-  const testimonials = [
-    {
-      name: "Zhang Wei",
-      location: "Shanghai, China",
-      company: "Tech Entrepreneur",
-      quote:
-        "Panama Golden Key hizo que nuestro proceso de residencia fuera fluido y eficiente. Su experiencia en regulaciones panameñas y requisitos chinos fue invaluable. Hoy mi familia y yo disfrutamos de una calidad de vida excepcional.",
-      rating: 5,
-      avatar: "/images/avatars/zhang-wei.jpg",
-      program: "Qualified Investor Visa",
-    },
-    {
-      name: "Li Mei",
-      location: "Beijing, China",
-      company: "Investment Banker",
-      quote:
-        "El servicio personalizado que recibí fue excepcional. Me ayudaron a encontrar la propiedad perfecta en Panama Pacifico y gestionaron todo el proceso de inversión. El ROI ha sido mejor de lo esperado.",
-      rating: 5,
-      avatar: "/images/avatars/li-mei.jpg",
-      program: "Real Estate Investment",
-    },
-    {
-      name: "Wang Jian",
-      location: "Guangzhou, China",
-      company: "Manufacturing CEO",
-      quote:
-        "Como empresario, valoro la eficiencia y profesionalidad. Panama Golden Key entregó exactamente eso. Ahora tengo mi empresa establecida en Panamá con beneficios fiscales increíbles.",
-      rating: 5,
-      avatar: "/images/avatars/wang-jian.jpg",
-      program: "Business Visa",
-    },
-    {
-      name: "Chen Yu",
-      location: "Shenzhen, China",
-      company: "Medical Professional",
-      quote:
-        "El programa de turismo médico superó mis expectativas. Atención de clase mundial a una fracción del costo,加上 recuperación en un paraíso tropical. Recomendado 100%.",
-      rating: 5,
-      avatar: "/images/avatars/chen-yu.jpg",
-      program: "Medical Tourism",
-    },
-    {
-      name: "Liu Xiaoming",
-      location: "Hangzhou, China",
-      company: "Real Estate Developer",
-      quote:
-        "He invertido en propiedades en múltiples países, pero Panamá ofrece el mejor retorno. El equipo de Panama Golden Key conoce el mercado local y me conectó con las mejores oportunidades.",
-      rating: 5,
-      avatar: "/images/avatars/liu-xiaoming.jpg",
-      program: "Property Investment",
-    },
-    {
-      name: "Sun Wei",
-      location: "Nanjing, China",
-      company: "Retired Executive",
-      quote:
-        "Mi jubilación en Panamá ha sido un sueño hecho realidad. El programa de retiro con descuentos y beneficios fiscales me permite disfrutar de una vida cómoda y activa.",
-      rating: 5,
-      avatar: "/images/avatars/sun-wei.jpg",
-      program: "Retirement Visa",
-    },
-    {
-      name: "Huang Li",
-      location: "Chengdu, China",
-      company: "Education Consultant",
-      quote:
-        "La educación de mis hijos en Panamá ha sido excepcional. Colegios bilingües de primer nivel y preparación para universidades estadounidenses. Vale cada centavo invertido.",
-      rating: 5,
-      avatar: "/images/avatars/huang-li.jpg",
-      program: "Educational Program",
-    },
-    {
-      name: "Zhao Min",
-      location: "Xi'an, China",
-      company: "E-commerce Owner",
-      quote:
-        "Establecer mi negocio de e-commerce en Panamá fue la mejor decisión. Acceso a mercados globales, logística eficiente y ventajas fiscales que no encuentro en ningún otro lugar.",
-      rating: 5,
-      avatar: "/images/avatars/zhao-min.jpg",
-      program: "Business Setup",
-    },
-  ];
+  const testimonialKeys = [0, 1, 2, 3, 4, 5, 6, 7];
+
+  const testimonials = testimonialKeys.map((key) => ({
+    name: t(`testimonials.items.${key}.name`),
+    location: t(`testimonials.items.${key}.location`),
+    company: t(`testimonials.items.${key}.company`),
+    quote: t(`testimonials.items.${key}.quote`),
+    rating: 5,
+    avatar: [
+      "/images/avatars/zhang-wei.jpg",
+      "/images/avatars/li-mei.jpg",
+      "/images/avatars/wang-jian.jpg",
+      "/images/avatars/chen-yu.jpg",
+      "/images/avatars/liu-xiaoming.jpg",
+      "/images/avatars/sun-wei.jpg",
+      "/images/avatars/huang-li.jpg",
+      "/images/avatars/zhao-min.jpg",
+    ][key],
+    program: t(`testimonials.items.${key}.program`),
+  }));
 
   const TestimonialCard = ({
     testimonial,

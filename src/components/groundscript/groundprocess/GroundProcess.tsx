@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Check, FileText, Building2, Send, ThumbsUp, CreditCard, User } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 interface Step {
   id: number;
@@ -16,109 +17,78 @@ interface Step {
   };
 }
 
-const steps: Step[] = [
-  {
-    id: 1,
-    title: "Consulta inicial",
-    subtitle: "Menos de 1 semana",
-    icon: <FileText className="w-5 h-5" />,
-    duration: "Menos de 1 semana",
-    details: {
-      title: "Consulta inicial",
-      duration: "Menos de 1 semana",
-      checklist: [
-        "Consultar con un abogado",
-        "Evaluar opciones de residencia",
-        "Determinar elegibilidad"
-      ]
-    }
-  },
-  {
-    id: 2,
-    title: "Inversión calificada",
-    subtitle: "2 a 3 semanas",
-    icon: <Building2 className="w-5 h-5" />,
-    duration: "2 a 3 semanas",
-    details: {
-      title: "Realizar inversión calificada",
-      duration: "2 a 3 semanas",
-      checklist: [
-        "Seleccionar tipo de inversión",
-        "Preparar documentación financiera",
-        "Completar transferencia de fondos"
-      ]
-    }
-  },
-  {
-    id: 3,
-    title: "Enviar solicitud",
-    subtitle: "1 mes",
-    icon: <Send className="w-5 h-5" />,
-    duration: "1 mes",
-    details: {
-      title: "Enviar solicitud",
-      duration: "1 mes",
-      checklist: [
-        "Completar formularios oficiales",
-        "Recopilar documentos requeridos",
-        "Enviar aplicación completa"
-      ]
-    }
-  },
-  {
-    id: 4,
-    title: "Recibir aprobación",
-    subtitle: "1 a 2 meses",
-    icon: <ThumbsUp className="w-5 h-5" />,
-    duration: "1 a 2 meses",
-    details: {
-      title: "Recibir aprobación",
-      duration: "1 a 2 meses",
-      checklist: [
-        "Esperar revisión de autoridades",
-        "Responder a solicitudes adicionales",
-        "Recibir notificación de aprobación"
-      ]
-    }
-  },
-/*   {
-    id: 5,
-    title: "Proceso biométrico",
-    subtitle: "1 a 2 semanas",
-    icon: <CreditCard className="w-5 h-5" />,
-    duration: "1 a 2 semanas",
-    details: {
-      title: "Proceso biométrico",
-      duration: "1 a 2 semanas",
-      checklist: [
-        "Agendar cita biométrica",
-        "Tomar fotografía y huellas",
-        "Completar registro"
-      ]
-    }
-  },
-  {
-    id: 6,
-    title: "Recibir residencia",
-    subtitle: "1 a 2 semanas",
-    icon: <User className="w-5 h-5" />,
-    duration: "1 a 2 semanas",
-    details: {
-      title: "Recibir tarjeta de residencia",
-      duration: "1 a 2 semanas",
-      checklist: [
-        "Activar tarjeta de residencia",
-        "Registrar dirección permanente",
-        "Confirmar beneficios y derechos"
-      ]
-    }
-  } */
-];
-
 export function GroundProcess() {
+  const t = useTranslations('ground_process');
   const [currentStep, setCurrentStep] = useState(1);
   const [hoveredStep, setHoveredStep] = useState<number | null>(null);
   const [hoveredButton, setHoveredButton] = useState<'primary' | 'secondary' | null>(null);
+
+  const steps: Step[] = [
+    {
+      id: 1,
+      title: t('steps.1.title'),
+      subtitle: t('steps.1.subtitle'),
+      icon: <FileText className="w-5 h-5" />,
+      duration: t('steps.1.duration'),
+      details: {
+        title: t('steps.1.details_title'),
+        duration: t('steps.1.duration'),
+        checklist: [
+          t('steps.1.checklist.0'),
+          t('steps.1.checklist.1'),
+          t('steps.1.checklist.2')
+        ]
+      }
+    },
+    {
+      id: 2,
+      title: t('steps.2.title'),
+      subtitle: t('steps.2.subtitle'),
+      icon: <Building2 className="w-5 h-5" />,
+      duration: t('steps.2.duration'),
+      details: {
+        title: t('steps.2.details_title'),
+        duration: t('steps.2.duration'),
+        checklist: [
+          t('steps.2.checklist.0'),
+          t('steps.2.checklist.1'),
+          t('steps.2.checklist.2')
+        ]
+      }
+    },
+    {
+      id: 3,
+      title: t('steps.3.title'),
+      subtitle: t('steps.3.subtitle'),
+      icon: <Send className="w-5 h-5" />,
+      duration: t('steps.3.duration'),
+      details: {
+        title: t('steps.3.details_title'),
+        duration: t('steps.3.duration'),
+        checklist: [
+          t('steps.3.checklist.0'),
+          t('steps.3.checklist.1'),
+          t('steps.3.checklist.2')
+        ]
+      }
+    },
+    {
+      id: 4,
+      title: t('steps.4.title'),
+      subtitle: t('steps.4.subtitle'),
+      icon: <ThumbsUp className="w-5 h-5" />,
+      duration: t('steps.4.duration'),
+      details: {
+        title: t('steps.4.details_title'),
+        duration: t('steps.4.duration'),
+        checklist: [
+          t('steps.4.checklist.0'),
+          t('steps.4.checklist.1'),
+          t('steps.4.checklist.2')
+        ]
+      }
+    }
+  ];
 
   return (
     <section className="py-20 bg-gradient-to-br from-gray-50 to-white ">
@@ -126,10 +96,10 @@ export function GroundProcess() {
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-jade-green mb-4 font-brand">
-            Proceso de Residencia
+            {t('title')}
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Te guiamos paso a paso en tu camino hacia la residencia permanente en Panamá
+            {t('subtitle')}
           </p>
         </div>
 
@@ -223,19 +193,19 @@ export function GroundProcess() {
             <div className="ground-box-fix groundgreen-bg bg-white rounded-xl p-6 shadow-lg sticky top-6">
               <div className="mb-6">
                 <div className="inline-block px-3 py-1 bg-jade-green/10 rounded-full text-xs font-semibold text-jade-green mb-4">
-                  Paso {currentStep} de {steps.length}
+                  {t('step_counter', { current: currentStep, total: steps.length })}
                 </div>
                 <h3 className="text-2xl font-bold text-gray-900 mb-3 leading-tight">
                   {steps[currentStep - 1].details?.title}
                 </h3>
                 <p className="text-sm text-gray-600 opacity-70">
-                  Duración estimada: {steps[currentStep - 1].details?.duration}
+                  {t('estimated_duration', { duration: steps[currentStep - 1].details?.duration })}
                 </p>
               </div>
               
               <div className="border-t border-gray-100 pt-5 mb-6">
                 <p className="text-xs font-semibold text-gray-600 opacity-60 uppercase tracking-wider mb-4">
-                  Checklist
+                  {t('checklist_title')}
                 </p>
                 <div className="flex flex-col gap-3">
                   {steps[currentStep - 1].details?.checklist.map((item, index) => (
@@ -252,19 +222,6 @@ export function GroundProcess() {
               </div>
 
               <div className="flex flex-col gap-2">
-                {/* <button
-                  className={`
-                    w-full font-semibold py-2.5 px-4 rounded-lg transition-all duration-200
-                    ${hoveredButton === 'primary' 
-                      ? 'bg-jade-green/90' 
-                      : 'bg-jade-green'
-                    } text-white
-                  `}
-                  onMouseEnter={() => setHoveredButton('primary')}
-                  onMouseLeave={() => setHoveredButton(null)}
-                >
-                  Agendar consulta
-                </button> */}
                 <button
                   className={`
                     w-full font-medium py-2.5 px-4 rounded-lg border transition-all duration-200
@@ -276,7 +233,7 @@ export function GroundProcess() {
                   onMouseEnter={() => setHoveredButton('secondary')}
                   onMouseLeave={() => setHoveredButton(null)}
                 >
-                  Más información
+                  {t('more_info')}
                 </button>
               </div>
             </div>

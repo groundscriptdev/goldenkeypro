@@ -50,8 +50,8 @@ export function FooterMinimal() {
       },
     ],
     resources: [
-      { name: t("navigation.blog"), href: `/${locale}/blog` },
-      { name: t("navigation.faq"), href: `/${locale}/faq` },
+      /* { name: t("navigation.blog"), href: `/${locale}/blog` },
+      { name: t("navigation.faq"), href: `/${locale}/faq` }, */
       { name: t("navigation.testimonials"), href: `/${locale}/testimonials` },
       { name: t("navigation.calculator"), href: `/${locale}/calculator` },
     ],

@@ -33,76 +33,51 @@ export default function AllServices({ locale, showFullServices = false }: AllSer
   const services = [
     {
       id: "open-acc-client",
-      title: "Apertura de Empresas y Cuentas",
-      subtitle: "Constitución de sociedades y apertura bancaria",
-      description: "Servicios integrales para la formación de empresas en Panamá con ventajas fiscales y apertura de cuentas bancarias multinivel.",
+      title: t("services_grid.open_acc_client.title"),
+      subtitle: t("services_grid.open_acc_client.subtitle"),
+      description: t("services_grid.open_acc_client.description"),
       icon: <Building className="w-8 h-8 text-jade-green" />,
-      features: [
-        "Sociedades anónimas con privacidad",
-        "Cuentas bancarias multi-divisa",
-        "Sistema fiscal territorial",
-        "Protección de activos internacionales"
-      ],
+      features: t.raw("services_grid.open_acc_client.features") as string[],
       component: <OpenAccClient locale={locale} />,
       color: "from-blue-50 to-white"
     },
     {
       id: "real-state",
-      title: "Bienes Raíces",
-      subtitle: "Inversión inmobiliaria y residencia",
-      description: "Asesoría completa para inversión inmobiliaria en Panamá, incluyendo propiedades de lujo y opciones para obtener residencia.",
+      title: t("services_grid.real_state.title"),
+      subtitle: t("services_grid.real_state.subtitle"),
+      description: t("services_grid.real_state.description"),
       icon: <Home className="w-8 h-8 text-jade-green" />,
-      features: [
-        "Propiedades en zonas premium",
-        "Inversión desde USD 300,000",
-        "Residencia mediante inmuebles",
-        "Plusvalía garantizada"
-      ],
+      features: t.raw("services_grid.real_state.features") as string[],
       component: <RealState locale={locale} />,
       color: "from-green-50 to-white"
     },
     {
       id: "accounting",
-      title: "Contabilidad y Sociedades",
-      subtitle: "Gestión contable para empresas",
-      description: "Servicios contables especializados para sociedades panameñas con estándares internacionales y optimización fiscal.",
+      title: t("services_grid.accounting.title"),
+      subtitle: t("services_grid.accounting.subtitle"),
+      description: t("services_grid.accounting.description"),
       icon: <Calculator className="w-8 h-8 text-jade-green" />,
-      features: [
-        "Contabilidad bajo NIIF",
-        "Declaraciones anuales",
-        "Gestión fiscal territorial",
-        "Reportes corporativos"
-      ],
+      features: t.raw("services_grid.accounting.features") as string[],
       component: <Accounting locale={locale} />,
       color: "from-purple-50 to-white"
     },
     {
       id: "visa-pensionado",
-      title: "Visa de Pensionado",
-      subtitle: "Residencia para jubilados",
-      description: "Programa especial para jubilados con beneficios exclusivos, descuentos y ventajas fiscales en Panamá.",
+      title: t("services_grid.visa_pensionado.title"),
+      subtitle: t("services_grid.visa_pensionado.subtitle"),
+      description: t("services_grid.visa_pensionado.description"),
       icon: <Award className="w-8 h-8 text-jade-green" />,
-      features: [
-        "Pensión mínima de $1,000",
-        "Descuentos del 15-50%",
-        "Exención de impuestos",
-        "Servicios médicos preferenciales"
-      ],
+      features: t.raw("services_grid.visa_pensionado.features") as string[],
       component: <VisaPensionado locale={locale} />,
       color: "from-yellow-50 to-white"
     },
     {
       id: "visa-inversionista",
-      title: "Visa de Inversionista",
-      subtitle: "Residencia por inversión",
-      description: "Obtenga residencia panameña mediante inversión inmobiliaria o depósitos bancarios con camino a la ciudadanía.",
+      title: t("services_grid.visa_inversionista.title"),
+      subtitle: t("services_grid.visa_inversionista.subtitle"),
+      description: t("services_grid.visa_inversionista.description"),
       icon: <Globe className="w-8 h-8 text-jade-green" />,
-      features: [
-        "Inversión desde USD 300,000",
-        "Residencia permanente",
-        "Camino a la ciudadanía",
-        "Incluir familia dependiente"
-      ],
+      features: t.raw("services_grid.visa_inversionista.features") as string[],
       component: <VisaInversionista locale={locale} />,
       color: "from-red-50 to-white"
     }
@@ -127,13 +102,13 @@ export default function AllServices({ locale, showFullServices = false }: AllSer
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-bold text-jade-green mb-6">
-              Nuestros Servicios
+              {t("hero.title")}
             </h1>
             <h2 className="text-2xl md:text-3xl font-semibold text-gray-800 mb-4">
-              Soluciones integrales para su inversión y residencia en Panamá
+              {t("hero.subtitle")}
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Panama Golden Key ofrece servicios especializados para inversionistas internacionales que buscan establecerse en Panamá, desde la constitución de empresas hasta la obtención de residencia.
+              {t("hero.description")}
             </p>
           </div>
         </div>
@@ -186,7 +161,7 @@ export default function AllServices({ locale, showFullServices = false }: AllSer
                     
                     {/* CTA Button */}
                     <button className="flex items-center justify-center space-x-2 w-full py-3 px-4 bg-jade-green text-white rounded-lg hover:bg-jade-green/90 transition-colors group-hover:scale-105 transform duration-300">
-                      <span className="font-medium">Conocer más</span>
+                      <span className="font-medium">{t("cta_button")}</span>
                       <ArrowRight className="w-4 h-4" />
                     </button>
                   </div>
@@ -202,32 +177,11 @@ export default function AllServices({ locale, showFullServices = false }: AllSer
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-jade-green mb-12 text-center">
-              ¿Por qué elegir Panama Golden Key?
+              {t("benefits.title")}
             </h2>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {[
-                {
-                  icon: <Users className="w-6 h-6 text-jade-green" />,
-                  title: "Equipo Trilingüe",
-                  description: "Atención en español, inglés y mandarín"
-                },
-                {
-                  icon: <Shield className="w-6 h-6 text-jade-green" />,
-                  title: "Seguridad Jurídica",
-                  description: "Protección total de sus inversiones"
-                },
-                {
-                  icon: <TrendingUp className="w-6 h-6 text-jade-green" />,
-                  title: "Resultados Comprobados",
-                  description: "Más de 10 años de experiencia"
-                },
-                {
-                  icon: <Star className="w-6 h-6 text-jade-green" />,
-                  title: "Servicio Premium",
-                  description: "Atención personalizada y exclusiva"
-                }
-              ].map((benefit, index) => (
+              {(t.raw("benefits.items") as any[]).map((benefit: any, index: number) => (
                 <div key={index} className="text-center p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow">
                   <div className="flex justify-center mb-4">
                     {benefit.icon}

@@ -33,6 +33,14 @@
     "free_consultation": "Consultation",
     "wechat": "WeChat"
   },
+  "components": {
+    "power_card": {
+      "success_rate": "95% Success Rate",
+      "start_now": "Start Now",
+      "title": "Your Key to Panama",
+      "description": "Opening doors to your new life with safe and profitable investments."
+    }
+  },
   "navigation": {
     "tagline": "Your Gateway to Panama Residency & Investment",
     "common": {
@@ -98,12 +106,55 @@
       "qualified_investor": {
         "title": "Qualified Investor Visa",
         "description": "Direct residency through $300,000+ investment",
-        "investment_min": "From $300,000"
+        "investment_min": "From $300,000",
+        "features": [
+          "Immediate permanent residency",
+          "Include spouse and children",
+          "Path to citizenship in 5 years"
+        ]
       },
       "real_estate": {
         "title": "Real Estate Investment",
         "description": "Premium properties in Panama's best locations",
-        "investment_min": "From $150,000"
+        "investment_min": "From $150,000",
+        "features": [
+          "Premium properties in Panama",
+          "5-7% annual ROI",
+          "Professional management included",
+          "Guaranteed appreciation"
+        ]
+      },
+      "business_visa": {
+        "title": "Business Visa",
+        "description": "Establish your company in a fiscal paradise with unique advantages",
+        "investment_min": "From $25,000",
+        "features": [
+          "Panamanian corporation",
+          "No tax on foreign income",
+          "Bank confidentiality",
+          "Access to global markets"
+        ]
+      },
+      "educational_program": {
+        "title": "Educational Program",
+        "description": "World-class bilingual education for your children",
+        "investment_min": "Educational Investment",
+        "features": [
+          "International schools",
+          "Recognized universities",
+          "Bilingual programs"
+        ]
+      },
+      "retirement_visa": {
+        "title": "Retirement Visa",
+        "description": "Enjoy your retirement in a tropical paradise with benefits",
+        "investment_min": "Minimum pension $1,000",
+        "features": [
+          "15-25% discounts",
+          "Tax exemption",
+          "Permanent residency",
+          "Superior quality of life"
+        ]
       },
       "medical_tourism": {
         "title": "Medical Tourism",
@@ -119,9 +170,64 @@
     "testimonials": {
       "title": "What Our Clients Say",
       "subtitle": "Success stories from Chinese investors who chose Panama",
-      "sample_quote": "Panama Golden Key made our residency process smooth and efficient. Their expertise in both Panamanian regulations and Chinese requirements was invaluable.",
-      "sample_name": "Zhang Wei",
-      "sample_location": "Shanghai, China"
+      "items": [
+        {
+          "name": "Zhang Wei",
+          "location": "Shanghai, China",
+          "company": "Tech Entrepreneur",
+          "quote": "Panama Golden Key made our residency process smooth and efficient. Their expertise in Panamanian regulations and Chinese requirements was invaluable. Today my family and I enjoy an exceptional quality of life.",
+          "program": "Qualified Investor Visa"
+        },
+        {
+          "name": "Li Mei",
+          "location": "Beijing, China",
+          "company": "Investment Banker",
+          "quote": "The personalized service I received was exceptional. They helped me find the perfect property in Panama Pacifico and managed the entire investment process. The ROI has been better than expected.",
+          "program": "Real Estate Investment"
+        },
+        {
+          "name": "Wang Jian",
+          "location": "Guangzhou, China",
+          "company": "Manufacturing CEO",
+          "quote": "As a businessman, I value efficiency and professionalism. Panama Golden Key delivered exactly that. Now I have my company established in Panama with incredible tax benefits.",
+          "program": "Business Visa"
+        },
+        {
+          "name": "Chen Yu",
+          "location": "Shenzhen, China",
+          "company": "Medical Professional",
+          "quote": "The medical tourism program exceeded my expectations. World-class care at a fraction of the cost, plus recovery in a tropical paradise. 100% recommended.",
+          "program": "Medical Tourism"
+        },
+        {
+          "name": "Liu Xiaoming",
+          "location": "Hangzhou, China",
+          "company": "Real Estate Developer",
+          "quote": "I have invested in properties in multiple countries, but Panama offers the best return. The Panama Golden Key team knows the local market and connected me with the best opportunities.",
+          "program": "Property Investment"
+        },
+        {
+          "name": "Sun Wei",
+          "location": "Nanjing, China",
+          "company": "Retired Executive",
+          "quote": "My retirement in Panama has been a dream come true. The retirement program with discounts and tax benefits allows me to enjoy a comfortable and active life.",
+          "program": "Retirement Visa"
+        },
+        {
+          "name": "Huang Li",
+          "location": "Chengdu, China",
+          "company": "Education Consultant",
+          "quote": "My children's education in Panama has been exceptional. Top-tier bilingual schools and preparation for US universities. Worth every penny invested.",
+          "program": "Educational Program"
+        },
+        {
+          "name": "Zhao Min",
+          "location": "Xi'an, China",
+          "company": "E-commerce Owner",
+          "quote": "Establishing my e-commerce business in Panama was the best decision. Access to global markets, efficient logistics, and tax advantages I can't find anywhere else.",
+          "program": "Business Setup"
+        }
+      ]
     },
     "cta": {
       "title": "Ready to Start Your Panama Journey?",
@@ -290,6 +396,13 @@
         "china": "$20,000 - $30,000",
         "panama": "$12,000 - $28,000",
         "savings": "40-65% savings"
+      },
+      "cosmetic": {
+        "procedure": "Cosmetic Surgery",
+        "usa": "Up to $45,000",
+        "china": "Up to $20,000",
+        "panama": "$3,500 - $18,000",
+        "savings": "35-55% savings"
       }
     },
     "quality_care": {
@@ -308,6 +421,86 @@
       "orthopedic": "Orthopedic Surgery",
       "cardiac": "Cardiac Procedures",
       "cosmetic": "Cosmetic Surgery"
+    },
+    "cost_comparison_section": {
+      "title": "Medical Treatment Cost Comparison",
+      "subtitle": "Save significantly on world-class medical treatments",
+      "table": {
+        "treatment": "Treatment",
+        "usa": "United States",
+        "china": "China",
+        "panama": "Panama",
+        "savings": "Savings"
+      }
+    },
+    "why_panama": {
+      "title": "Why has Panama become a popular medical destination for Chinese?",
+      "cards": {
+        "competitive_costs": {
+          "title": "Competitive Costs",
+          "description": "Panama offers international quality medical therapies at a fraction of the price. Lower cost of living allows for accessible treatments, stays, and recovery."
+        },
+        "tech": {
+          "title": "International Level Technology",
+          "description": "Panamanian hospitals work with modern equipment and medical standards exported from the US. Several institutions are JCI accredited."
+        },
+        "wait_times": {
+          "title": "Almost Zero Wait Times",
+          "description": "Unlike China or Canada where certain treatments can take months, in Panama patients receive care in a matter of days."
+        },
+        "location": {
+          "title": "Strategic Location",
+          "description": "Panama is only 3 hours from Miami and is the 'Air Hub of Latin America'. Tocumen Airport connects with over 80 international destinations."
+        },
+        "recovery": {
+          "title": "Ideal Recovery Environment",
+          "description": "Tropical beaches, luxury hotels, warm climate. Many patients combine their treatment with tourism or rest with family."
+        },
+        "integrated_services": {
+          "title": "Integrated Services",
+          "description": "Integrated services for Chinese families with bilingual staff and personalized attention adapted to cultural needs."
+        }
+      }
+    },
+    "featured_treatments": {
+      "title": "Featured Treatments",
+      "subtitle": "Panama is internationally recognized in specialized medical areas",
+      "stem_cell": {
+        "title": "Stem Cells",
+        "description": "Global quality at reasonable price",
+        "benefits_title": "Advantages:",
+        "benefits": [
+          "Authorized use of mesenchymal stem cells",
+          "Internationally renowned clinics",
+          "Certified protocols with high standards"
+        ]
+      },
+      "anti_aging": {
+        "title": "Anti-aging",
+        "description": "Booming sector for Asian entrepreneurs",
+        "benefits_title": "Treatments:",
+        "benefits": [
+          "Advanced antioxidant therapies",
+          "Cellular regeneration",
+          "Integrated longevity protocols"
+        ]
+      },
+      "cosmetic": {
+        "title": "Cosmetic Surgeries",
+        "description": "Quick and safe recoveries",
+        "benefits_title": "Features:",
+        "benefits": [
+          "International JCI certifications",
+          "Bilingual surgeons",
+          "Complete post-operative packages"
+        ]
+      }
+    },
+    "cta": {
+      "medical_title": "Ready to Start Your Medical Journey?",
+      "medical_subtitle": "Get a consultation and treatment quote from our medical tourism experts",
+      "general_title": "Discover Why Panama is Perfect for You",
+      "general_subtitle": "Schedule a consultation to learn more about living and investing in Panama"
     }
   },
   "infrastructure": {
@@ -378,7 +571,237 @@
     "medical_tourism": "Medical Tourism",
     "real_estate_tab": "Real Estate Market",
     "infrastructure_tab": "Megaprojects",
-    "investment_tab": "Strategic Center"
+    "investment_tab": "Strategic Center",
+    "ground_real_estate": {
+      "title": "THE PANAMANIAN REAL ESTATE MARKET",
+      "subtitle": "A Look at the Luxury and Mid-Range Segments",
+      "intro": "Panama's dynamic real estate market continues to present excellent opportunities for the local investor, with solid performance in both the luxury and mid-range segments. As lawyers specializing in real estate, we observe positive trends benefiting Panamanian buyers and sellers alike.",
+      "luxury_sector": {
+        "title": "Luxury Sector: Exclusivity with Added Value",
+        "description": "The Panamanian luxury market has shown remarkable resilience and continues to attract sophisticated local investors.",
+        "punta_pacifica": {
+          "title": "Punta Pacifica",
+          "description": "With its iconic skyscrapers and panoramic ocean views, it remains the epitome of urban luxury."
+        },
+        "santa_maria": {
+          "title": "Santa Maria Golf & Country Club",
+          "description": "Combines exclusive residences with top-tier amenities and a resort lifestyle."
+        },
+        "costa_del_este": {
+          "title": "Costa del Este",
+          "description": "Consolidates its position as a premium financial and residential district with new corporate and residential developments."
+        },
+        "features": {
+          "title": "Luxury Sector Features",
+          "items": [
+            "Average ticket: $600,000 to several millions",
+            "Annual returns exceeding 5%",
+            "Historical value maintained even in economic uncertainty"
+          ],
+          "stats": {
+            "returns": "5%+",
+            "returns_desc": "Annual return on high-profile rentals"
+          }
+        }
+      },
+      "mid_range_sector": {
+        "title": "Mid-Range Segment: The Market Engine",
+        "intro": "The true dynamism of the Panamanian market is found in the mid-range segment, where a balance between supply and demand generates interesting opportunities:",
+        "san_francisco": {
+          "title": "San Francisco",
+          "description": "Consolidated neighborhoods with excellent appreciation and constant demand."
+        },
+        "avenida_balboa": {
+          "title": "Avenida Balboa",
+          "description": "Strategic location and impressive views of the sea and Panama City."
+        },
+        "amador": {
+          "title": "Amador",
+          "description": "Growing demand for privileged location on the causeway and panoramic views."
+        },
+        "panama_pacifico": {
+          "title": "Panama Pacifico",
+          "description": "Excellent options with infrastructure advances like Metro Line 3."
+        },
+        "stats": {
+          "price_range": "$300K-$550K",
+          "price_range_desc": "Segment price range",
+          "returns": "Stable",
+          "returns_desc": "Returns for small and medium investors",
+          "balance": "Equilibrium",
+          "balance_desc": "Balance between supply and demand"
+        }
+      },
+      "trends": {
+        "title": "Current Trends Favoring the Local Investor",
+        "digitalization": {
+          "title": "Digitalization",
+          "description": "Real estate platforms and virtual tours have democratized access to quality information."
+        },
+        "mixed_use": {
+          "title": "Mixed Use",
+          "description": "Projects combining residential, commercial, and entertainment spaces are gaining popularity."
+        },
+        "sustainability": {
+          "title": "Sustainability",
+          "description": "Buildings with green certifications and efficient systems are beginning to command premium prices."
+        },
+        "financing": {
+          "title": "Financing",
+          "description": "Despite adjustments in government programs, private banking maintains attractive offers."
+        }
+      }
+    },
+    "ground_infrastructure": {
+      "title": "The Impact of Megaprojects on Your Investment",
+      "subtitle": "Infrastructure investment is transforming the Panamanian real estate landscape",
+      "intro": "These projects not only improve residents' quality of life but generate substantial increases in property values in their areas of influence, creating unique opportunities for attentive investors.",
+      "projects": {
+        "metro_line_3": {
+          "title": "Metro Line 3",
+          "subtitle": "Panama's Mass Transit Expansion",
+          "investment": "$2.5 Billion",
+          "completion": "2026",
+          "impact": "45-minute connectivity across metro area",
+          "appreciation": "40-60% property value increase",
+          "features": [
+            "Connects Panama City to west side",
+            "Stops at key residential and commercial areas",
+            "Integration with existing metro system",
+            "Reduced traffic congestion by 30%"
+          ],
+          "opportunities": [
+            "Properties near metro stations",
+            "Commercial development around stops",
+            "Residential projects in connected areas",
+            "Mixed-use developments"
+          ]
+        },
+        "fourth_bridge": {
+          "title": "Fourth Bridge",
+          "subtitle": "Panama Canal Atlantic Crossing",
+          "investment": "$1.8 Billion",
+          "completion": "2029",
+          "impact": "Spans Panama Canal at Atlantic entrance",
+          "opportunities_text": "Reduces traffic congestion by 40%",
+          "features": [
+            "4-lane highway with pedestrian paths",
+            "Connects Colón Province to Panama City",
+            "Improved logistics and trade flow",
+            "Enhanced regional connectivity"
+          ],
+          "opportunities": [
+            "Development corridors along bridge access",
+            "Logistics and warehousing facilities",
+            "Commercial centers near bridge entrances",
+            "Residential projects in connected areas"
+          ]
+        },
+        "railway": {
+          "title": "Cross-Country Railway",
+          "subtitle": "Atlantic-Pacific Connection",
+          "investment": "$3.7 Billion",
+          "impact": "High-speed passenger and cargo transport",
+          "potential": "Integration with Canal operations",
+          "features": [
+            "Cross-country railway system",
+            "Connects Atlantic and Pacific coasts",
+            "High-speed passenger and cargo transport",
+            "Integration with Panama Canal operations"
+          ],
+          "opportunities": [
+            "Properties along railway routes",
+            "Development around railway stations",
+            "Logistics and industrial parks",
+            "Commercial and residential mixed-use"
+          ]
+        }
+      },
+      "conclusion": {
+        "title": "Panama: The \"Singapore of the Americas\"",
+        "description": "These projects will transform Panama into the \"Singapore of the Americas\" - a nerve center connecting global markets with unparalleled efficiency."
+      }
+    },
+    "ground_medical_tourism": {
+      "title": "MEDICAL TOURISM",
+      "subtitle": "Panama Medical Tourism: Why more Chinese families choose here for treatment and recovery?",
+      "intro_1": "In recent years, Panama, this small country in the heart of the American continent, has quietly become a \"new medical tourism paradise\" for families from mainland China, Hong Kong, and Singapore.",
+      "intro_2": "Based on recent comparative data between the United States, China, Canada, and Panama, the trend is clear: Panama offers international quality with savings of 40% to 70% on advanced therapies."
+    },
+    "investment_section": {
+      "title": "A strategic center for your global operations",
+      "subtitle": "Choosing Panama as a platform for your international activities offers incomparable advantages",
+      "financial_hub": {
+        "title": "Sophisticated Financial Hub",
+        "banking_center": {
+          "title": "Banking Center",
+          "description": "Over 80 financial institutions including Bank of China"
+        },
+        "regulation": {
+          "title": "Regulation",
+          "description": "Based on Basel and FATF standards"
+        },
+        "advanced_services": {
+          "title": "Advanced Services",
+          "description": "Private banking and wealth management"
+        },
+        "corporate_structures": {
+          "title": "Corporate Structures",
+          "description": "Optimized and private investment funds"
+        }
+      },
+      "connectivity": {
+        "title": "Exceptional Air Connectivity",
+        "hub_americas": {
+          "title": "Hub of the Americas",
+          "description": "Direct connections to over 80 global destinations"
+        },
+        "non_stop_flights": {
+          "title": "Non-stop Flights",
+          "description": "To major global cities"
+        },
+        "airport_expansion": {
+          "title": "Airport Expansion",
+          "description": "Will increase capacity by 50%"
+        }
+      },
+      "real_estate_benefits": {
+        "title": "Resilient Real Estate Market",
+        "sustained_value": {
+          "title": "Sustained Value",
+          "description": "Even during adverse economic cycles"
+        },
+        "superior_returns": {
+          "title": "Superior Returns",
+          "description": "6-7% annual rental yields"
+        },
+        "constitutional_protection": {
+          "title": "Constitutional Protection",
+          "description": "Foreign property ownership protected and inheritable tax-free"
+        }
+      },
+      "tax_advantages": {
+        "title": "Structural Tax Advantages",
+        "list": [
+          {
+            "title": "Exemption on foreign-sourced income",
+            "description": "No taxation on income generated outside Panama"
+          },
+          {
+            "title": "No inheritance, estate, or gift taxes",
+            "description": "Complete protection of family wealth"
+          },
+          {
+            "title": "Extended property tax exemptions",
+            "description": "Extended periods for new properties"
+          },
+          {
+            "title": "Recognized asset protection structures",
+            "description": "International recognition of Panamanian legal structures"
+          }
+        ]
+      }
+    }
   },
   "about_us": {
     "title": "About Panama Golden Key",
@@ -386,22 +809,107 @@
     "mission": "To provide expert guidance and personalized service for Chinese investors seeking residency and investment opportunities in Panama",
     "expertise": {
       "title": "Our Expertise",
+      "subtitle": "Our unique expertise bridges cultures and markets",
       "transcultural": "Transcultural Expertise",
+      "transcultural_desc": "Deep understanding of both Panamanian and Chinese business cultures",
       "trilingual_team": "Trilingual Executive Team",
+      "trilingual_team_desc": "Fluent in Mandarin, English, and Spanish for seamless communication",
       "chinese_structures": "Understanding of Chinese Wealth Structures",
-      "capital_regulations": "Experience with Chinese Capital Regulations"
+      "chinese_structures_desc": "Expertise in Chinese wealth structures and investment patterns",
+      "capital_regulations": "Experience with Chinese Capital Regulations",
+      "capital_regulations_desc": "Extensive experience with Chinese capital regulations and requirements"
+    },
+    "achievements": {
+      "title": "Our Track Record",
+      "subtitle": "Proven results for Chinese investors in Panama",
+      "clients": { "number": "500+", "label": "Successful Clients" },
+      "success_rate": { "number": "98%", "label": "Success Rate" },
+      "experience": { "number": "15+", "label": "Years Experience" },
+      "investment": { "number": "$50M+", "label": "Investment Facilitated" }
     },
     "services": {
       "title": "Our Services",
+      "subtitle": "Comprehensive services for your Panama journey",
       "residency_consultation": "Residency Program Consultation",
+      "residency_consultation_desc": "Comprehensive guidance through Panama residency programs",
+      "residency_consultation_features": ["Program selection", "Document preparation", "Application support", "Follow-up services"],
       "investment_advisory": "Investment Advisory Services",
+      "investment_advisory_desc": "Strategic investment advice tailored to your goals",
+      "investment_advisory_features": ["Market analysis", "Risk assessment", "Portfolio diversification", "ROI optimization"],
       "legal_support": "Legal Documentation Support",
+      "legal_support_desc": "Complete legal documentation and compliance support",
+      "legal_support_features": ["Document preparation", "Legal review", "Compliance checking", "Government liaison"],
       "property_management": "Property Management",
-      "family_office": "Family Office Services"
+      "property_management_desc": "Professional property management services",
+      "property_management_features": ["Tenant screening", "Rent collection", "Maintenance coordination", "Financial reporting"],
+      "family_office": "Family Office Services",
+      "family_office_desc": "Comprehensive family office services",
+      "family_office_features": ["Wealth management", "Succession planning", "Tax optimization", "Lifestyle services"]
     },
     "team": {
       "title": "Our Team",
-      "description": "Experienced professionals dedicated to your success"
+      "description": "Experienced professionals dedicated to your success",
+      "cta_text": "Our team combines local expertise with international experience",
+      "cta_button": "Meet Our Team",
+      "members": {
+        "managing_partner": { 
+          "name": "Managing Partner", 
+          "role": "Panama Law & Investment Specialist", 
+          "expertise": "15+ years in Panamanian law and investment", 
+          "desc": "Expert in residency programs and real estate investment" 
+        },
+        "senior_consultant": { 
+          "name": "Senior Consultant", 
+          "role": "Chinese Market Specialist", 
+          "expertise": "10+ years bridging China-Panama business", 
+          "desc": "Specialized in Chinese investment patterns and requirements" 
+        },
+        "legal_director": { 
+          "name": "Legal Director", 
+          "role": "Immigration Law Expert", 
+          "expertise": "12+ years in immigration law", 
+          "desc": "Specialist in Qualified Investor Visa applications" 
+        },
+        "investment_advisor": { 
+          "name": "Investment Advisor", 
+          "role": "Real Estate & Investment Specialist", 
+          "expertise": "8+ years in Panamanian real estate", 
+          "desc": "Expert in property investment and market analysis" 
+        }
+      }
+    },
+    "why_choose_us": {
+      "title": "Why Choose Panama Golden Key?",
+      "subtitle": "The trusted partner for Chinese investors in Panama",
+      "bilingual": { 
+        "title": "Bilingual & Bicultural Team", 
+        "desc": "Fluent in Mandarin, English, and Spanish with deep cultural understanding" 
+      },
+      "track_record": { 
+        "title": "Proven Track Record", 
+        "desc": "98% success rate with 500+ satisfied Chinese clients" 
+      },
+      "comprehensive": { 
+        "title": "Comprehensive Services", 
+        "desc": "End-to-end support from consultation to post-investment management" 
+      },
+      "local_expertise": { 
+        "title": "Local Expertise", 
+        "desc": "Deep connections with Panamanian authorities and service providers" 
+      },
+      "market_understanding": { 
+        "title": "Chinese Market Understanding", 
+        "desc": "Specialized knowledge of Chinese investment patterns and requirements" 
+      },
+      "personalized": { 
+        "title": "Personalized Service", 
+        "desc": "Tailored solutions for each client's unique needs and goals" 
+      }
+    },
+    "cta": {
+      "title": "Start Your Panama Journey with Us",
+      "subtitle": "Experience the difference with Panama's leading bilingual consultancy",
+      "button": "Consultation"
     }
   },
   "contact": {
@@ -538,7 +1046,7 @@
     "privacy_policy": "Privacy Policy",
     "terms_of_service": "Terms of Service",
     "disclaimer": "Disclaimer",
-    "copyright": "© 2024 Panama Golden Key. All rights reserved."
+    "copyright": "© 2026 Panama Golden Key. All rights reserved."
   },
   "properties": {
     "title": "Properties in Panama",
@@ -591,6 +1099,90 @@
   "services_page": {
     "title": "Our Services",
     "subtitle": "Comprehensive legal and financial solutions for your Panama journey",
+    "hero": {
+      "title": "Our Comprehensive Services",
+      "subtitle": "Complete solutions for your investment and residency in Panama",
+      "description": "Panama Golden Key offers specialized services for international investors seeking to establish in Panama, from company formation to obtaining residency."
+    },
+    "services_grid": {
+      "open_acc_client": {
+        "title": "Company Formation and Banking",
+        "subtitle": "Incorporation and banking services",
+        "description": "Comprehensive services for company formation in Panama with tax advantages and multi-level banking account opening.",
+        "features": [
+          "Anonymous corporations with privacy",
+          "Multi-currency bank accounts",
+          "Territorial tax system",
+          "International asset protection"
+        ]
+      },
+      "real_state": {
+        "title": "Real Estate",
+        "subtitle": "Real estate investment and residency",
+        "description": "Complete advisory for real estate investment in Panama, including luxury properties and options to obtain residency.",
+        "features": [
+          "Properties in premium areas",
+          "Investment from USD 300,000",
+          "Residency through properties",
+          "Guaranteed added value"
+        ]
+      },
+      "accounting": {
+        "title": "Accounting and Corporations",
+        "subtitle": "Accounting management for companies",
+        "description": "Specialized accounting services for Panamanian corporations with international standards and tax optimization.",
+        "features": [
+          "Accounting under IFRS",
+          "Annual returns",
+          "Territorial tax management",
+          "Corporate reports"
+        ]
+      },
+      "visa_pensionado": {
+        "title": "Pensionado Visa",
+        "subtitle": "Residency for retirees",
+        "description": "Special program for retirees with exclusive benefits, discounts and tax advantages in Panama.",
+        "features": [
+          "Minimum pension of $1,000",
+          "Discounts of 15-50%",
+          "Tax exemption",
+          "Preferential medical services"
+        ]
+      },
+      "visa_inversionista": {
+        "title": "Investor Visa",
+        "subtitle": "Residency through investment",
+        "description": "Obtain Panamanian residency through real estate investment or bank deposits with path to citizenship.",
+        "features": [
+          "Investment from USD 300,000",
+          "Permanent residency",
+          "Path to citizenship",
+          "Include dependent family"
+        ]
+      }
+    },
+    "cta_button": "Learn More",
+    "benefits": {
+      "title": "Why choose Panama Golden Key?",
+      "items": [
+        {
+          "title": "Trilingual Team",
+          "description": "Service in Spanish, English and Mandarin"
+        },
+        {
+          "title": "Legal Security",
+          "description": "Complete protection of your investments"
+        },
+        {
+          "title": "Proven Results",
+          "description": "More than 10 years of experience"
+        },
+        {
+          "title": "Premium Service",
+          "description": "Personalized and exclusive attention"
+        }
+      ]
+    },
     "company_formation": {
       "title": "COMPANY FORMATION",
       "subtitle": "Panama: Financial and Corporate Hub for International Investors",
@@ -911,5 +1503,1090 @@
     "add_to_calendar": "Add to Calendar",
     "success_title": "Consultation Booked Successfully!",
     "success_message": "We've sent you an email with your consultation details."
+  },
+  "accounting": {
+    "title": "Accounting Services for Panamanian Corporations",
+    "subtitle": "Strategic Guide for Foreign Investors, Entrepreneurs and Business Owners",
+    "introduction_1": "In the dynamic international business landscape, Panama stands out not only for its iconic canal but for offering a business ecosystem that combines regulatory flexibility with global standards compliance. For those who have taken the strategic step of incorporating a Panamanian corporation, accounting management represents not just a formal obligation, but a fundamental piece in optimizing your investment.",
+    "introduction_2": "As a firm specialized in corporate law and complementary services, we share this essential guide on accounting services for Panamanian corporations, designed especially for international investors, entrepreneurs and business owners.",
+    "framework_title": "Accounting in Panama: A Balance Between Flexibility and Compliance",
+    "framework_subtitle": "The Panamanian accounting framework offers distinctive features that position it favorably compared to other jurisdictions:",
+    "features": {
+      "territoriality": {
+        "title": "Fiscal Territoriality Principle",
+        "description": "Only income generated within Panamanian territory is taxed, allowing efficient planning for international operations."
+      },
+      "standards": {
+        "title": "Adoption of International Standards",
+        "description": "Panamanian accounting standards follow IFRS (International Financial Reporting Standards) principles, facilitating consolidation with global structures."
+      },
+      "requirements": {
+        "title": "Differentiated Requirements",
+        "description": "The intensity of accounting obligations varies according to the company's operational profile, being lighter for holding entities or passive investment."
+      },
+      "substance": {
+        "title": "Focus on Economic Substance",
+        "description": "The system privileges the economic reality of transactions over their legal form, allowing efficient yet solid structures."
+      }
+    },
+    "obligations_title": "Accounting Obligations According to Your Company Profile",
+    "operational_title": "For operational companies in Panama:",
+    "holding_title": "For holding or international investment companies:",
+    "operational_requirements": {
+      "full_accounting": "Full accounting according to IFRS",
+      "annual_return": "Annual income tax return",
+      "tax_refund": "Tax refunds",
+      "dividends_report": "Dividend and profit participation reports",
+      "payroll_records": "Payroll records and labor obligations",
+      "municipal_reports": "Reports for municipal taxes and commercial patents"
+    },
+    "holding_requirements": {
+      "basic_records": "Basic accounting records of assets and transactions",
+      "corporate_minutes": "Corporate minutes of significant operations",
+      "substance_reports": "Economic substance reports (for jurisdictions that require it)",
+      "informational_returns": "Informational returns (without necessarily generating tax)"
+    },
+    "process_title": "The Practical Process: Simplicity and Efficiency",
+    "process_subtitle": "We have refined our process to minimize administrative burden for you:",
+    "steps": {
+      "evaluation": {
+        "title": "Initial Evaluation",
+        "description": "Analysis of your company's structure and operations to determine specific requirements."
+      },
+      "design": {
+        "title": "Accounting System Design",
+        "description": "Configuration of chart of accounts and processes adapted to your activity."
+      },
+      "collection": {
+        "title": "Periodic Document Collection",
+        "description": "Secure systems for transmission of vouchers and relevant documentation."
+      },
+      "processing": {
+        "title": "Processing and Classification",
+        "description": "Accounting registration with optimized fiscal criteria."
+      },
+      "reporting": {
+        "title": "Report Generation",
+        "description": "Monthly, quarterly or annual financial statements according to needs."
+      },
+      "preparation": {
+        "title": "Declaration Preparation",
+        "description": "Management of applicable territorial and municipal tax obligations."
+      },
+      "review": {
+        "title": "Review Meetings",
+        "description": "Periodic sessions to analyze results and plan strategies."
+      }
+    },
+    "documentation_title": "Documentation Required for Efficient Accounting Management",
+    "documentation_subtitle": "To maintain optimal records, we will need:",
+    "required_documents": {
+      "bank_statements": "Bank statements from corporate accounts",
+      "expense_invoices": "Operational expense invoices",
+      "service_contracts": "Service provision or purchase-sale contracts",
+      "board_minutes": "Board of directors minutes for significant decisions",
+      "related_party_transfers": "Documentation of transfers between related parties",
+      "asset_valuations": "Asset valuation reports when applicable"
+    },
+    "next_steps_title": "Next Steps: Towards Optimized Accounting Management",
+    "next_steps_description": "We invite you to an initial consultation where we will evaluate the specific needs of your Panamanian company and design a customized accounting program that maximizes benefits and minimizes administrative burdens.",
+    "cta_title": "Your Panamanian company's accounting can and should be more than a cost center",
+    "cta_description": "A strategic tool to enhance your international investment. Let us show you how.",
+    "consult_experts": "Consult with our experts today",
+    "disclaimer": "This article is for informational purposes and does not constitute professional advice. Each situation requires individualized analysis considering particular circumstances and current regulations."
+  },
+  "real_state_service": {
+    "title": "REAL ESTATE",
+    "subtitle": "Panama Golden Key | Definitive Guide for Chinese Investors",
+    "description": "Residency through real estate investment | Advisory for Chinese citizens | Property purchase in Panama",
+    "why_panama": {
+      "title": "Why Panama is the new trend among Chinese investors?",
+      "description": "In recent years, Panama has established itself as one of the most attractive destinations for international investment, especially among investors and families of Chinese origin seeking:",
+      "features": {
+        "diversification": "Asset diversification",
+        "properties": "Stable properties with good profitability",
+        "home": "A second home in a safe country",
+        "residence": "Residence through investment",
+        "citizenship": "Future access to Panamanian citizenship",
+        "quality": "Exceptional quality of life"
+      }
+    },
+    "company_description": {
+      "title": "Panama Golden Key",
+      "description": "Leader in Panama specialized in international mobility, relocation and acquisition of real estate for Chinese investors. Our service combines:",
+      "services": [
+        "Professional real estate advisory",
+        "Strategic migration consulting",
+        "Trilingual team (Mandarin - English - Spanish)",
+        "End-to-end accompaniment"
+      ]
+    },
+    "market_opportunities": {
+      "title": "1. Opportunities in Panama's Real Estate Market",
+      "luxury_segment": {
+        "title": "A. Luxury Segment: Panama as a premium residential center in Latin America",
+        "description": "Areas that stand out for their high demand and sustainable value:",
+        "luxury_areas": {
+          "punta_pacifica": "Punta Pacífica",
+          "punta_pacifica_desc": "Iconic skyscrapers with panoramic ocean views",
+          "santa_maria": "Santa María",
+          "santa_maria_desc": "Exclusive residences with world-class amenities",
+          "costa_este": "Costa del Este",
+          "costa_este_desc": "Premium financial and residential district"
+        },
+        "advantages": {
+          "title": "Advantages for the Chinese investor:",
+          "features": [
+            "Annual profitability above 5%",
+            "Stability of the US dollar",
+            "Properties ideal for migration programs"
+          ]
+        }
+      },
+      "mid_range_segment": {
+        "title": "B. Mid-Range Segment: The engine of the Panamanian market",
+        "description": "Strategic areas with strong growth:",
+        "mid_range_areas": {
+          "san_francisco": "San Francisco",
+          "san_francisco_desc": "Established neighborhood with excellent appreciation",
+          "avenida_balboa": "Avenida Balboa",
+          "avenida_balboa_desc": "Strategic location with stunning views",
+          "amador": "Amador",
+          "amador_desc": "Growing area with canal views",
+          "panama_oeste": "Panama Oeste",
+          "panama_oeste_desc": "Emerging area with high growth potential near Metro Line 3"
+        },
+        "investment_range": "Typical investment range: between $150,000 and $350,000, ideal for young investors and families looking to combine housing and investment."
+      }
+    },
+    "residency_investment": {
+      "title": "2. How real estate investment allows obtaining Panamanian residency",
+      "description": "Panama offers various migration programs for those who invest in real estate, being the most used by Chinese citizens:",
+      "qualified_investor": {
+        "title": "A. Qualified Investor Visa (Qualified Investor Program)",
+        "description": "The fastest path to Panamanian residency.",
+        "requirements": [
+          "Minimum investment: USD 300,000 in real estate",
+          "Quick approval between 30 and 90 days",
+          "Obtaining permanent residency from the first moment",
+          "Possibility of including dependents (spouse, children, parents)"
+        ]
+      },
+      "advantages": {
+        "title": "B. Advantages of obtaining residency in Panama for Chinese citizens",
+        "features": [
+          "Economic stability in USD",
+          "Safe environment for family relocation",
+          "Access to international schools",
+          "Facilitates global travel",
+          "Ideal platform for businesses in Latin America"
+        ]
+      }
+    },
+    "mega_projects": {
+      "title": "3. Megaprojects that drive the increase in real estate value",
+      "description": "Panama is executing works that will transform the country and raise the value of properties, especially in strategic areas:",
+      "metro_line_3": {
+        "title": "Metro Line 3",
+        "description": "Direct connection with Panamá Oeste, increasing the value of properties in the area"
+      },
+      "fourth_bridge": {
+        "title": "Fourth Bridge over the Canal",
+        "description": "New connection that will improve accessibility and land value"
+      },
+      "new_roads": {
+        "title": "New roads and coastal expansion",
+        "description": "Infrastructure improvement that will boost real estate development"
+      },
+      "train_project": {
+        "title": "National train project",
+        "description": "Planned to connect the entire country, generating new opportunities"
+      },
+      "impact_note": "These developments generate significant increases in capital gains, a key point for Chinese investors seeking safe returns."
+    },
+    "legal_advantages": {
+      "title": "4. Legal and tax advantages for foreign investors",
+      "description": "Panama offers a safe and attractive legal framework:",
+      "legal_security": {
+        "title": "Legal Security",
+        "description": "The Public Registry protects property transparently"
+      },
+      "tax_benefits": {
+        "title": "Tax Benefits",
+        "description": "Exemption from property tax for new constructions"
+      },
+      "clear_contracts": {
+        "title": "Clear contracts",
+        "description": "Guaranteed compliance ideal for foreign investors"
+      },
+      "note": "Ideal for foreign investors who require total security."
+    },
+    "company_advantages": {
+      "title": "5. Why Chinese investors choose Panama Golden Key",
+      "description": "We are a firm specialized in exclusively serving the high and medium net worth Chinese market. Our approach:",
+      "trilingual_team": {
+        "title": "Specialized Trilingual Team",
+        "description": "Native coordinators in Mandarin who facilitate communication at every stage"
+      },
+      "chinese_client_understanding": {
+        "title": "Deep understanding of the Chinese client",
+        "description": "Knowledge of regulations on capital outflow and wealth structuring"
+      },
+      "unique_opportunities": {
+        "title": "Access to unique opportunities",
+        "description": "Exclusive projects before launch and properties suitable for migration programs"
+      },
+      "comprehensive_support": {
+        "title": "Comprehensive turnkey support",
+        "description": "From analysis to integration into local communities"
+      }
+    },
+    "investment_strategy": {
+      "title": "6. Recommended investment strategy for Chinese citizens",
+      "description": "Panama Golden Key recommends following a professional strategy based on the analysis of the Panamanian market:",
+      "steps": [
+        {
+          "step": "1",
+          "title": "Identify the main objective",
+          "description": "residency, profitability, second home, or diversification."
+        },
+        {
+          "step": "2",
+          "title": "Select the appropriate area",
+          "description": "luxury, mid-range, or emerging areas driven by infrastructure."
+        },
+        {
+          "step": "3",
+          "title": "Perform complete due diligence",
+          "description": "titles, taxes, liens, project history."
+        },
+        {
+          "step": "4",
+          "title": "Post-purchase management",
+          "description": "administration, rental, maintenance and revaluation."
+        }
+      ]
+    },
+    "final_cta": {
+      "title": "Panama is the next strategic destination for the modern Chinese investor",
+      "description": "Panama combines:",
+      "features": [
+        "Political stability",
+        "Dollarized economy",
+        "Solid real estate market",
+        "Fast migration programs",
+        "Excellent quality of life",
+        "Security for families"
+      ],
+      "company_note": "Panama Golden Key is your trusted partner",
+      "company_description": "To accompany you at every stage of the process, from property selection to obtaining your Panamanian residency."
+    }
+  },
+  "visa_inversionista": {
+    "hero": {
+      "title": "Economic Solvency Visa in Panama",
+      "subtitle": "Complete Guide for Chinese Citizens",
+      "description": "Panama Economic Solvency Visa"
+    },
+    "introduction": {
+      "paragraph_1": "In recent years, Panama has become one of the most attractive destinations for Chinese citizens who wish to live, invest or establish a second residence in Latin America. Its strategic position, economic stability and friendly immigration policies make it an excellent option for those seeking a new beginning outside of Asia.",
+      "paragraph_2": "Among all the options, one of the most popular is the Economic Solvency Visa, known by many Chinese investors as the 经济实力签证. Today I explain in a simple way how it works, what requirements it has and why it is one of the safest ways to obtain residence in Panama."
+    },
+    "what_is_visa": {
+      "title": "What is the Economic Solvency Visa?",
+      "subtitle": "Detailed explanation of the Economic Solvency Visa",
+      "description_1": "It is a type of Panamanian residence designed for people who can demonstrate economic capacity through an investment.",
+      "description_2": "The most attractive thing is that you don't need to get a job, it doesn't require specific nationalities and doesn't impose limited quotas. That is, Chinese citizens qualify without restrictions.",
+      "description_3": "This visa first grants you a provisional residence for 2 years, and then you can apply for permanent residence. After five more years of continuous residence, it is possible to access Panamanian citizenship and obtain the Panamanian passport that allows visa-free travel to more than 142 countries including all of Europe."
+    },
+    "panama_advantages": {
+      "strategic_location": {
+        "title": "Strategic Location",
+        "description": "Natural bridge between North and South America"
+      },
+      "economic_stability": {
+        "title": "Economic Stability",
+        "description": "Dollarized economy with sustained growth"
+      },
+      "friendly_immigration": {
+        "title": "Friendly Immigration Policies",
+        "description": "System designed to attract investors"
+      }
+    },
+    "investment_options": {
+      "title": "Investment Methods",
+      "description": "The Economic Solvency Visa offers three very flexible paths, depending on your preference as an investor.",
+      "fixed_term": {
+        "title": "Fixed-Term Deposit",
+        "subtitle": "Fixed-Term Deposit",
+        "description": "Open a bank account in a Panamanian bank with a minimum 3-year term deposit.",
+        "requirements": {
+          "bank_account": "Bank account in Panamanian bank",
+          "deposit_amount": "USD 300,000 fixed-term deposit",
+          "minimum_term": "Minimum term of 3 years",
+          "personal_funds": "Personal funds (not company funds)"
+        }
+      },
+      "real_estate": {
+        "title": "Real Estate Investment",
+        "subtitle": "Real Estate Investment",
+        "description": "Acquire a property in Panama with a minimum value of USD 300,000.",
+        "requirements": {
+          "property_value": "Property with minimum value of USD 300,000",
+          "registration": "Registered in your name or company/foundation",
+          "ideal_use": "Ideal for living, renting or appreciation",
+          "diversification": "Asset diversification"
+        }
+      },
+      "mixed": {
+        "title": "Mixed Option",
+        "subtitle": "Mixed Option",
+        "description": "Combine property plus bank term deposit, as long as the total sum is at least USD 300,000.",
+        "requirements": {
+          "combinación": "Combination of property and deposit",
+          "total_amount": "Total minimum amount of USD 300,000",
+          "diversification": "Flexibility to diversify investment",
+          "customized": "Customized option according to preferences"
+        }
+      }
+    },
+    "requirements": {
+      "title": "Main Requirements for Chinese Citizens",
+      "description": "Although the process is quite simple, Panama requires certain basic documents:",
+      "valid_passport": {
+        "title": "Valid Chinese Passport",
+        "description": "With minimum validity of 6 months"
+      },
+      "criminal_records": {
+        "title": "Criminal Records issued in China",
+        "description": "Official criminal record certificate"
+      },
+      "funds_origin": {
+        "title": "Proof of Legal Origin of Funds",
+        "description": "Documentation proving legality of funds"
+      },
+      "financial_documents": {
+        "title": "Financial Documents of Investment",
+        "description": "Property or bank deposit"
+      },
+      "passport_photos": {
+        "title": "Passport-sized Photographs",
+        "description": "Recent and in good condition"
+      },
+      "immigration_form": {
+        "title": "Signed Immigration Form",
+        "description": "Complete official documentation"
+      },
+      "important_note": {
+        "prefix": "Important note:",
+        "text": "All Chinese documents must be apostilled or authenticated by the Panamanian Consulate."
+      }
+    },
+    "residency_path": {
+      "title": "Path to Permanent Residence and Citizenship",
+      "provisional": {
+        "title": "Provisional Residence",
+        "duration": "2 years",
+        "description": "First stage of the immigration process"
+      },
+      "permanent": {
+        "title": "Permanent Residence",
+        "duration": "At the end of 2 years",
+        "description": "Transition to definitive residence"
+      },
+      "citizenship": {
+        "title": "Panamanian Citizenship",
+        "duration": "Several years later",
+        "description": "Possible access to Panamanian passport"
+      },
+      "children_citizenship": {
+        "title": "Automatic Citizenship for Children",
+        "duration": "When born in Panama",
+        "description": "Children born in Panama obtain citizenship"
+      },
+      "special_note": "For Chinese families who want an 'open door' to the American continent, this path is particularly attractive."
+    },
+    "visa_advantages": {
+      "title": "Advantages of the Economic Solvency Visa",
+      "available_chinese": {
+        "title": "Available for Chinese citizens without restrictions"
+      },
+      "no_employment": {
+        "title": "No need for employment in Panama"
+      },
+      "no_sponsor": {
+        "title": "No sponsor or employer required"
+      },
+      "safe_investment": {
+        "title": "Safe, flexible and controlled investment"
+      },
+      "family_inclusion": {
+        "title": "Allows bringing immediate family (spouse and children)"
+      },
+      "realistic_path": {
+        "title": "Realistic path to permanent residence and eventually citizenship"
+      },
+      "comparison": "Compared to other Panamanian visas, this offers lower government costs compared to the Golden Visa (Qualified Investor Visa), but the path to the passport is longer due to the initial 2 years of provisional residence versus the direct residence granted by the Golden Visa."
+    },
+    "practical_tips": {
+      "title": "Practical Tips Before Starting",
+      "work_with_us": {
+        "title": "Work with Panama Golden Key",
+        "description": "We have experience with Chinese citizen cases. Professionals who speak English, Mandarin and Cantonese."
+      },
+      "prepare_docs": {
+        "title": "Prepare documentation in advance",
+        "description": "Have all your Chinese documents apostilled in advance (this step takes time in China)."
+      },
+      "plan_trip": {
+        "title": "Plan your trip to Panama",
+        "description": "Get the tourist visa and prepare to sign documents and carry out in-person procedures (we accompany you in this process)."
+      }
+    },
+    "panama_benefits": {
+      "friendly_system": {
+        "title": "Friendly immigration system"
+      },
+      "stable_economy": {
+        "title": "Stable economic environment"
+      },
+      "chinese_community": {
+        "title": "Large and well-established Chinese community"
+      },
+      "proximity": {
+        "title": "Proximity to United States and South America"
+      },
+      "clear_path": {
+        "title": "Clear path to permanent residence and citizenship"
+      }
+    },
+    "final_section": {
+      "title": "Panama is an excellent option for Chinese citizens",
+      "paragraph_1": "The Economic Solvency Visa is an open door for those seeking stability, international mobility, investment opportunities and a safe path to permanent residence in Latin America.",
+      "paragraph_2": "If you are looking for a strategic immigration plan, Panama offers:",
+      "cta": {
+        "title": "Perfect for Chinese families, investors, entrepreneurs and professionals",
+        "description": "who wish to expand their options abroad.",
+        "button": "Start your process today"
+      }
+    }
+  },
+  "visa_pensionado": {
+    "hero": {
+      "title": "Pensionado Visa in Panama",
+      "subtitle": "Your Gateway to Retirement Paradise"
+    },
+    "introduction": {
+      "paragraph_1": "As you contemplate the next chapter of your life, a fundamental question emerges: where to fully enjoy those golden years you've worked so hard for? If you're reading this from your home in the United States, Canada or China, let me present you an option that thousands of your compatriots have already discovered: Panama, a country that has perfected the art of welcoming international retirees.",
+      "paragraph_2": "At Panama Golden Key we specialize in Panamanian immigration, accompanying people like you in their transition to a new life. We can affirm that Panama's Pensionado Visa Program remains the most attractive in the Western Hemisphere. More than a simple residence permit, it's a welcome embrace to your new community."
+    },
+    "why_panama_section": {
+      "title": "Why Panama is the ideal destination for your retirement?",
+      "description": "Before delving into the technical aspects, allow me to share why so many North Americans choose our country:"
+    },
+    "panama_advantages": {
+      "polital_stability": {
+        "title": "Political and economic stability",
+        "description": "A consolidated democracy with more than 30 years of continuous growth."
+      },
+      "dollarized_currency": {
+        "title": "Dollarized currency",
+        "description": "No exchange rate risk for those receiving pensions in dollars."
+      },
+      "infrastructure": {
+        "title": "First-class infrastructure",
+        "description": "Hospitals affiliated with Johns Hopkins and Cleveland Clinic; high-speed internet; modern shopping centers."
+      },
+      "privileged_climate": {
+        "title": "Privileged climate",
+        "description": "From the eternal summer of the beaches to the perpetual cool of the highlands of Boquete."
+      },
+      "expatriate_communities": {
+        "title": "Established expatriate communities",
+        "description": "You will find thousands of compatriots who have made the same decision."
+      },
+      "geographic_proximity": {
+        "title": "Geographic proximity",
+        "description": "Direct flights of 3-5 hours to major North American cities."
+      }
+    },
+    "tax_benefits_section": {
+      "title": "The Pensionado Visa Program: Exceptional Benefits",
+      "description": "What truly distinguishes Panama is its Pensionado Visa Program, designed specifically to attract international retirees through tangible benefits:",
+      "subtitle": "Tax benefits:"
+    },
+    "tax_benefits": {
+      "foreign_income_exemption": {
+        "title": "Exemption from taxes on foreign income",
+        "description": "Your pensions, investments and other income generated outside Panama are 100% tax-free."
+      },
+      "household_import_exemption": {
+        "title": "Exemption from taxes on household goods import",
+        "description": "Bring your personal belongings duty-free (up to $10,000)."
+      },
+      "vehicle_import_exemption": {
+        "title": "Tax-free vehicle import",
+        "description": "Every two years you can import a new vehicle without paying duties."
+      },
+      "property_tax_exemption": {
+        "title": "Property tax exemption",
+        "description": "For the first 15-20 years for new constructions."
+      }
+    },
+    "discount_benefits_section": {
+      "title": "Retiree Discount Program (\"Discount Law\"):",
+      "description": "These benefits are legally guaranteed and widely respected throughout the country, with no need for special negotiations."
+    },
+    "discount_benefits": {
+      "public_services": {
+        "category": "public services",
+        "examples": "Electricity, water, telephone"
+      },
+      "restaurants": {
+        "category": "restaurants",
+        "examples": "Including international chains"
+      },
+      "weekday_hotels": {
+        "category": "hotels during weekdays",
+        "examples": "Better accommodation rates"
+      },
+      "airline_tickets": {
+        "category": "airline tickets",
+        "examples": "Airlines with offices in Panama"
+      },
+      "mortgage_loans": {
+        "category": "mortgage loans",
+        "examples": "For primary residence"
+      },
+      "medical_services": {
+        "category": "medical services",
+        "examples": "10% additional on prescription medications"
+      },
+      "entertainment": {
+        "discount": "Variable",
+        "category": "entertainment",
+        "examples": "Cinemas, theaters, sporting events"
+      }
+    },
+    "process_section": {
+      "title": "The step-by-step process: Simplicity and certainty",
+      "description": "Our firm has refined a process that minimizes complexities:"
+    },
+    "process_steps": {
+      "preliminary_evaluation": {
+        "title": "Preliminary evaluation",
+        "description": "We verify that you meet the basic requirements before initiating any procedure."
+      },
+      "document_collection": {
+        "title": "Document collection",
+        "description": "We guide you in obtaining each necessary document, both in your country of origin and in Panama."
+      },
+      "document_authentication": {
+        "title": "Document authentication",
+        "description": "We supervise the apostille or consular legalization process, ensuring everything meets Panamanian standards."
+      },
+      "file_preparation": {
+        "title": "File preparation",
+        "description": "We meticulously organize your documentation for optimal presentation."
+      },
+      "immigration_submission": {
+        "title": "Submission to Immigration",
+        "description": "Our lawyers personally present your application to the authorities."
+      },
+      "residency_card_processing": {
+        "title": "Residency card processing",
+        "description": "Once the application is approved, we process your permanent identity document."
+      },
+      "post_approval_services": {
+        "title": "Post-approval services",
+        "description": "From opening bank accounts to finding housing, we facilitate your transition to Panamanian life."
+      }
+    },
+    "requirements_section": {
+      "title": "Documentary requirements: Clarity and precision",
+      "description": "To qualify for the Pensionado Visa Program you will need:",
+      "note_prefix": "Important note:",
+      "note": "If your pension is less than $1,000 but exceeds $750, you may qualify by combining it with a real estate investment in Panama."
+    },
+    "requirements": {
+      "minimum_pension": {
+        "title": "Minimum lifetime pension of $1,000 monthly",
+        "description": "From governmental or recognized private source."
+      },
+      "valid_passport": {
+        "title": "Passport with at least 6 months validity",
+        "description": "Valid travel document."
+      },
+      "criminal_record": {
+        "title": "Apostilled criminal record certificate",
+        "description": "From the last 5 years."
+      },
+      "medical_certificate": {
+        "title": "Medical certificate issued by Panamanian doctor",
+        "description": "Current health status."
+      },
+      "proof_of_address": {
+        "title": "Proof of address in your country of origin",
+        "description": "Verifiable residential address."
+      },
+      "passport_photos": {
+        "title": "Six passport-sized photos with white background",
+        "description": "Recent and in good condition."
+      },
+      "power_of_attorney": {
+        "title": "Notarized power of attorney in favor of our firm",
+        "description": "To represent you legally."
+      }
+    },
+    "company_approach_section": {
+      "title": "Our Approach: Client-centered experience",
+      "description": "Our firm understands that this decision transcends the legal; it's a life change. That's why we offer:"
+    },
+    "company_approach": {
+      "initial_consultations": {
+        "title": "Initial consultations",
+        "description": "We explore your specific needs without commitment."
+      },
+      "constant_communication": {
+        "title": "Constant communication",
+        "description": "Weekly updates on the progress of your procedure."
+      },
+      "comprehensive_packages": {
+        "title": "Comprehensive packages",
+        "description": "From initial guidance to complete installation."
+      },
+      "bilingual_service": {
+        "title": "Bilingual service",
+        "description": "Our entire team is perfectly bilingual."
+      },
+      "community_connections": {
+        "title": "Community connections",
+        "description": "Connection with expatriate groups and local resources."
+      },
+      "post_residency_support": {
+        "title": "Post-residency support",
+        "description": "We remain available after obtaining your visa."
+      }
+    },
+    "post_visa_services_section": {
+      "title": "Beyond the visa: Building your new life",
+      "description": "Once you obtain your residency, we support you in practical aspects such as:"
+    },
+    "post_visa_services": {
+      "bank_account_opening": {
+        "title": "Opening bank accounts"
+      },
+      "property_acquisition": {
+        "title": "Property acquisition"
+      },
+      "domestic_hiring": {
+        "title": "Domestic staff hiring"
+      },
+      "healthcare_registration": {
+        "title": "Registration in health systems"
+      },
+      "community_orientation": {
+        "title": "Guidance on expatriate communities and clubs"
+      }
+    },
+    "cta_section": {
+      "title": "The time to act is now",
+      "paragraph": "In an increasingly uncertain world, Panama offers a haven of stability and quality of life. Thousands of North American retirees have already discovered this secret. As our clients frequently comment: \"My only regret is not having come before.\"",
+      "invitation_title": "We invite you to contact us for a personalized consultation",
+      "invitation_description": "Where we will evaluate your specific situation and answer all your questions about this fascinating immigration program.",
+      "button_text": "Start your new life today"
+    },
+    "disclaimer_section": {
+      "text": "This article is for informational purposes and does not constitute legal advice. Each situation requires individualized evaluation according to particular circumstances."
+    }
+  },
+  "golden_visa": {
+    "introduction": {
+      "paragraph_1": "In the golden age of global wealth diversification, the most sophisticated business families from China have understood a fundamental truth: true wealth transcends geographical boundaries. For these visionaries, a second or third residence represents not simply a real estate asset, but the master key that opens the doors to an entire hemisphere of opportunities.",
+      "paragraph_2": "Panama Golden Key intimately understands the aspirations of high-net-worth Chinese families: you are not merely seeking a tax haven, but a platform for continental expansion that positions your heirs at the epicenter of hemispheric growth.",
+      "paragraph_3": "From this strategic position, your family will gain privileged access to a dynamic market of more than 625 million consumers, from the advanced economies of North America to the emerging markets of South America, passing through the vibrant Central American and Caribbean ecosystem.",
+      "paragraph_4": "Unlike other immigration programs, the Qualified Investor Visa offers an accelerated and direct path to permanent residency through significant investment in the country. This program, designed to attract productive capital and international talent, places the applicant in a privileged position from day one.",
+      "paragraph_5": "Most notably, this program is open to nationals of any country in the world, without nationality restrictions, offering a powerful alternative for those who do not qualify under the Friends Countries program.",
+      "paragraph_6": "Unlike traditional Caribbean or European programs, the Panamanian program offers Chinese families something truly exceptional: immediate and privileged access to three continents from a single strategic investment. With a minimum capital of USD $300,000, you acquire not just a residence; you obtain the credentials to operate as a global citizen in the world's most dynamic hemisphere."
+    },
+    "hero": {
+      "title": "GOLDEN VISA",
+      "subtitle": "The Golden Key to Global Freedom",
+      "description": "Panama as Strategic Gateway to the Americas",
+      "target_audience": "For Visionary Chinese Families Redefining Generational Success"
+    },
+    "strategic_advantages": {
+      "title": "The New Heritage Silk Road: From the Asian Pacific to the Heart of the Americas",
+      "strategic_bridge": {
+        "title": "Strategic Bridge",
+        "description": "Natural connection between two oceans and three continents"
+      },
+      "hemispheric_access": {
+        "title": "Hemispheric Access",
+        "description": "Dynamic market of more than 625 million consumers"
+      },
+      "sustained_growth": {
+        "title": "Sustained Growth",
+        "description": "Dollarized economy with accelerated development"
+      }
+    },
+    "exclusive_privileges": {
+      "title": "The Qualified Investor Visa: A privileged path",
+      "immediate_permanent_residency": {
+        "title": "Immediate Permanent Residency",
+        "description": "Without probationary periods or temporary uncertainties"
+      },
+      "expedited_citizenship_path": {
+        "title": "Expedited Path to Citizenship",
+        "description": "Guaranteed naturalization in 5 years with passport offering visa-free access to 142 global destinations"
+      },
+      "comprehensive_family_inclusion": {
+        "title": "Comprehensive Family Inclusion",
+        "description": "Complete coverage for spouse, dependent children and parents under custody"
+      },
+      "flexible_physical_residency": {
+        "title": "Flexible Physical Residency",
+        "description": "Designed for entrepreneurs maintaining Asian operations while expanding their American presence"
+      },
+      "no_nationality_restrictions": {
+        "title": "No Nationality Restrictions",
+        "description": "Program completely open to Chinese citizens from any province"
+      }
+    },
+    "investment_options": {
+      "title": "Investment Options",
+      "premium_real_estate": {
+        "title": "Premium Real Estate",
+        "amount": "USD $300,000",
+        "description": "In high-value properties",
+        "features": [
+          "Properties with appreciation potential",
+          "Strategic locations in development zones",
+          "Residential and commercial options",
+          "Professional management included"
+        ]
+      },
+      "strategic_bank_deposit": {
+        "title": "Strategic Bank Deposit",
+        "amount": "USD $700,000",
+        "description": "For 3 years in Tier 1 institutions",
+        "features": [
+          "Tier 1 banking institutions",
+          "Competitive guaranteed rates",
+          "Secure and protected capital",
+          "Liquidity at maturity"
+        ]
+      },
+      "securities_portfolio": {
+        "title": "Securities Portfolio",
+        "amount": "USD $500,000",
+        "description": "In Panamanian securities instruments",
+        "features": [
+          "Automatic diversification",
+          "Professional asset management",
+          "Superior return potential",
+          "Liquidity and flexibility"
+        ]
+      }
+    },
+    "process": {
+      "title": "The Process: Precision and Efficiency",
+      "subtitle": "Our firm has perfected a process that maximizes success probabilities",
+      "steps": [
+        {
+          "step": "1",
+          "title": "Initial strategic consultation",
+          "description": "Personalized evaluation and strategy design"
+        },
+        {
+          "step": "2",
+          "title": "Optimal investment structuring",
+          "description": "Identifying the ideal alternative according to your objectives"
+        },
+        {
+          "step": "3",
+          "title": "Document preparation",
+          "description": "Complete assistance in document collection and legalization"
+        },
+        {
+          "step": "4",
+          "title": "Secure transaction",
+          "description": "Legal supervision of qualified investment"
+        },
+        {
+          "step": "5",
+          "title": "Immigration submission",
+          "description": "Direct management before the National Migration Service"
+        },
+        {
+          "step": "6",
+          "title": "Temporary residency obtention",
+          "description": "While permanent residency is processed"
+        },
+        {
+          "step": "7",
+          "title": "Follow-up until definitive card",
+          "description": "Generally in 3-4 months"
+        }
+      ]
+    },
+    "required_documentation": {
+      "title": "Essential Documentation",
+      "subtitle": "For a successful process requires:",
+      "documents": [
+        {
+          "title": "Valid passport",
+          "description": "With minimum 6 months validity"
+        },
+        {
+          "title": "Criminal record certification",
+          "description": "From your country of origin (apostilled)"
+        },
+        {
+          "title": "Investment documentation",
+          "description": "Proof of qualified investment"
+        },
+        {
+          "title": "Medical certificate",
+          "description": "Issued by Panamanian doctor"
+        },
+        {
+          "title": "Sworn statement",
+          "description": "Of economic means"
+        },
+        {
+          "title": "Photographs",
+          "description": "Five card-sized photographs"
+        },
+        {
+          "title": "Legal power",
+          "description": "In favor of our firm"
+        }
+      ]
+    },
+    "differential_value": {
+      "title": "Our Differential Value: Experience Transformed into Results",
+      "subtitle": "As a firm specialized in investment migration, we offer:",
+      "values": [
+        {
+          "title": "Pre-qualification analysis",
+          "description": "We evaluate your eligibility before starting the process"
+        },
+        {
+          "title": "Due diligence in investments",
+          "description": "Exhaustive verification of investment opportunities"
+        },
+        {
+          "title": "Multidisciplinary coordination",
+          "description": "Collaboration with tax, real estate and financial advisors"
+        },
+        {
+          "title": "Comprehensive post-residency management",
+          "description": "From banking opening to international education"
+        },
+        {
+          "title": "Follow-up for citizenship",
+          "description": "Strategic planning for naturalization"
+        }
+      ]
+    },
+    "personal_invitation": {
+      "title": "A Personal Invitation",
+      "description": "The extraordinary transformations that Panama is experiencing represent a historic window of opportunity. Investors who act today not only secure privileged migratory conditions, but position their capital strategically to capture the value generated by the country's accelerated development.",
+      "invitation": "We invite you to a personalized conversation where we will explore how the Qualified Investor Program can become the cornerstone of your personal and patrimonial internationalization strategy.",
+      "disclaimer": "This article has informational purposes and does not constitute legal advice. Each situation requires individualized analysis according to particular circumstances and current regulations."
+    }
+  },
+  "ground_investment": {
+    "title": "A Strategic Center for Your Global Operations",
+    "subtitle": "Choosing Panama as a platform for your international activities offers unparalleled advantages",
+    "financial_hub": {
+      "title": "Sophisticated Financial Hub",
+      "banking": {
+        "title": "Banking Center",
+        "description": "Over 80 financial institutions including Bank of China"
+      },
+      "regulation": {
+        "title": "Regulation",
+        "description": "Based on Basel and FATF standards"
+      },
+      "services": {
+        "title": "Advanced Services",
+        "description": "Private banking and wealth management"
+      },
+      "structures": {
+        "title": "Corporate Structures",
+        "description": "Optimized and private investment funds"
+      }
+    },
+    "connectivity": {
+      "title": "Exceptional Air Connectivity",
+      "hub": {
+        "title": "Hub of the Americas",
+        "description": "Direct connections to over 80 global destinations"
+      },
+      "flights": {
+        "title": "Non-stop Flights",
+        "description": "To major global cities"
+      },
+      "expansion": {
+        "title": "Airport Expansion",
+        "description": "Will increase capacity by 50%"
+      }
+    },
+    "real_estate": {
+      "title": "Resilient Real Estate Market",
+      "appreciation": {
+        "title": "Sustained Appreciation",
+        "description": "Even during adverse economic cycles"
+      },
+      "returns": {
+        "title": "Superior Returns",
+        "description": "6-7% annual rental yields"
+      },
+      "protection": {
+        "title": "Constitutional Protection",
+        "description": "Foreign property protected and inheritable without taxes"
+      }
+    },
+    "tax_advantages": {
+      "title": "Structural Tax Advantages",
+      "foreign_income": {
+        "title": "Foreign Source Income Exemption",
+        "description": "No taxation on income generated outside Panama"
+      },
+      "inheritance": {
+        "title": "No Wealth, Inheritance or Gift Taxes",
+        "description": "Complete protection of family wealth"
+      },
+      "property_tax": {
+        "title": "Extended Property Tax Exemption",
+        "description": "Extended periods for new properties"
+      },
+      "asset_protection": {
+        "title": "Recognized Asset Protection Structures",
+        "description": "International recognition of Panamanian legal structures"
+      }
+    }
+  },
+  "cta": {
+    "medical_title": "Ready to Start Your Medical Journey?",
+    "medical_description": "Get a consultation and treatment quote from our medical tourism experts",
+    "general_title": "Discover Why Panama is Perfect for You",
+    "general_description": "Schedule a consultation to learn more about living and investing in Panama"
+  },
+  "ground_medical_tourism_benefits": {
+    "why_panama": {
+      "title": "Why has Panama become a popular medical destination for Chinese?",
+      "cost": {
+        "title": "Competitive Costs",
+        "description": "Panama offers international quality medical therapies at a fraction of the price. Lower cost of living allows for accessible treatments, stays, and recovery."
+      },
+      "technology": {
+        "title": "International Level Technology",
+        "description": "Panamanian hospitals work with modern equipment and medical standards exported from the US. Several institutions are JCI accredited."
+      },
+      "wait_times": {
+        "title": "Near Zero Wait Times",
+        "description": "Unlike China or Canada, where certain treatments can take months, in Panama patients receive care in a matter of days."
+      },
+      "location": {
+        "title": "Strategic Location",
+        "description": "Panama is only 3 hours from Miami and is the 'Air Hub of Latin America'. Tocumen Airport connects with over 80 international destinations."
+      },
+      "recovery": {
+        "title": "Ideal Recovery Environment",
+        "description": "Tropical beaches, luxury hotels, warm climate. Many patients combine their treatment with tourism or rest with family."
+      },
+      "services": {
+        "title": "Integrated Services",
+        "description": "Integrated services for Chinese families with bilingual staff and personalized attention adapted to cultural needs."
+      }
+    },
+    "featured_treatments": {
+      "title": "Featured Treatments",
+      "subtitle": "Panama is internationally recognized in specialized medical areas",
+      "stem_cell": {
+        "title": "Stem Cells",
+        "description": "Global quality at a reasonable price",
+        "benefits": [
+          "Authorized use of mesenchymal stem cells",
+          "Internationally renowned clinics",
+          "Certified protocols with high standards"
+        ]
+      },
+      "anti_aging": {
+        "title": "Anti-Aging",
+        "description": "Booming sector for Asian entrepreneurs",
+        "benefits": [
+          "Advanced antioxidant therapies",
+          "Cellular regeneration",
+          "Integrated longevity protocols"
+        ]
+      },
+      "cosmetic": {
+        "title": "Cosmetic Surgeries",
+        "description": "Fast and safe recoveries",
+        "benefits": [
+          "International JCI certifications",
+          "Bilingual surgeons",
+          "Complete post-operative packages"
+        ]
+      }
+    }
+  },
+  "residency_process_section": {
+    "title": "Residency Process",
+    "subtitle": "We guide you step by step on your path to permanent residency in Panama",
+    "steps": {
+      "1": {
+        "title": "Initial Consultation",
+        "subtitle": "Less than 1 week",
+        "duration": "Less than 1 week",
+        "details_title": "Initial Consultation",
+        "checklist": [
+          "Consult with a lawyer",
+          "Evaluate residency options",
+          "Determine eligibility"
+        ]
+      },
+      "2": {
+        "title": "Qualified Investment",
+        "subtitle": "2 to 3 weeks",
+        "duration": "2 to 3 weeks",
+        "details_title": "Make Qualified Investment",
+        "checklist": [
+          "Select investment type",
+          "Prepare financial documentation",
+          "Complete funds transfer"
+        ]
+      },
+      "3": {
+        "title": "Submit Application",
+        "subtitle": "1 month",
+        "duration": "1 month",
+        "details_title": "Submit Application",
+        "checklist": [
+          "Complete official forms",
+          "Gather required documents",
+          "Submit complete application"
+        ]
+      },
+      "4": {
+        "title": "Receive Approval",
+        "subtitle": "1 to 2 months",
+        "duration": "1 to 2 months",
+        "details_title": "Receive Approval",
+        "checklist": [
+          "Await authority review",
+          "Respond to additional requests",
+          "Receive approval notification"
+        ]
+      }
+    },
+    "step_counter": "Step {current} of {total}",
+    "estimated_duration": "Estimated duration: {duration}",
+    "checklist_title": "CHECKLIST",
+    "more_info": "More Information"
   }
 }

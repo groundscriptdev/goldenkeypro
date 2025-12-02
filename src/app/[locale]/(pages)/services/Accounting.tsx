@@ -36,118 +36,118 @@ interface AccountingProps {
 }
 
 export default function Accounting({ locale }: AccountingProps) {
-  const t = useTranslations("services_page");
+  const t = useTranslations("accounting");
 
   const accountingFeatures = [
     {
       icon: <Globe className="w-6 h-6 text-jade-green" />,
-      title: "Principio de territorialidad fiscal",
-      description: "Solo se grava la renta generada dentro del territorio panameño, permitiendo una planificación eficiente para operaciones internacionales.",
+      title: t("features.territoriality.title"),
+      description: t("features.territoriality.description"),
     },
     {
       icon: <Scale className="w-6 h-6 text-jade-green" />,
-      title: "Adopción de estándares internacionales",
-      description: "Las normas contables panameñas siguen los principios de las NIIF (Normas Internacionales de Información Financiera), facilitando la consolidación con estructuras globales.",
+      title: t("features.standards.title"),
+      description: t("features.standards.description"),
     },
     {
       icon: <Target className="w-6 h-6 text-jade-green" />,
-      title: "Requisitos diferenciados",
-      description: "La intensidad de las obligaciones contables varía según el perfil operativo de la sociedad, siendo más ligeras para entidades holding o de inversión pasiva.",
+      title: t("features.requirements.title"),
+      description: t("features.requirements.description"),
     },
     {
       icon: <TrendingUp className="w-6 h-6 text-jade-green" />,
-      title: "Enfoque en sustancia económica",
-      description: "El sistema privilegia la realidad económica de las transacciones sobre su forma jurídica, permitiendo estructuras eficientes pero sólidas.",
+      title: t("features.substance.title"),
+      description: t("features.substance.description"),
     },
   ];
 
   const operationalRequirements = [
     {
       icon: <FileText className="w-5 h-5 text-jade-green" />,
-      title: "Contabilidad completa según NIIF",
+      title: t("operational_requirements.full_accounting"),
     },
     {
       icon: <Receipt className="w-5 h-5 text-jade-green" />,
-      title: "Declaración anual de rentas",
+      title: t("operational_requirements.annual_return"),
     },
     {
       icon: <DollarSign className="w-5 h-5 text-jade-green" />,
-      title: "Devolución de impuestos",
+      title: t("operational_requirements.tax_refund"),
     },
     {
       icon: <PieChart className="w-5 h-5 text-jade-green" />,
-      title: "Informes de dividendos y participación de utilidades",
+      title: t("operational_requirements.dividends_report"),
     },
     {
       icon: <Users className="w-5 h-5 text-jade-green" />,
-      title: "Registros de nómina (planilla) y obligaciones laborales",
+      title: t("operational_requirements.payroll_records"),
     },
     {
       icon: <Building className="w-5 h-5 text-jade-green" />,
-      title: "Informes para tasas municipales y patentes comerciales",
+      title: t("operational_requirements.municipal_reports"),
     },
   ];
 
   const holdingRequirements = [
     {
       icon: <BookOpen className="w-5 h-5 text-jade-green" />,
-      title: "Registros contables básicos de activos y transacciones",
+      title: t("holding_requirements.basic_records"),
     },
     {
       icon: <FileCheck className="w-5 h-5 text-jade-green" />,
-      title: "Actas corporativas de operaciones significativas",
+      title: t("holding_requirements.corporate_minutes"),
     },
     {
       icon: <BarChart3 className="w-5 h-5 text-jade-green" />,
-      title: "Informes de sustancia económica (para jurisdicciones que lo requieran)",
+      title: t("holding_requirements.substance_reports"),
     },
     {
       icon: <ClipboardList className="w-5 h-5 text-jade-green" />,
-      title: "Declaraciones informativas (sin necesariamente generar impuesto)",
+      title: t("holding_requirements.informational_returns"),
     },
   ];
 
   const processSteps = [
     {
       step: "1",
-      title: "Evaluación inicial",
-      description: "Análisis de la estructura y operaciones de su sociedad para determinar requisitos específicos.",
+      title: t("steps.evaluation.title"),
+      description: t("steps.evaluation.description"),
       icon: <Target className="w-6 h-6 text-jade-green" />,
     },
     {
       step: "2",
-      title: "Diseño del sistema contable",
-      description: "Configuración de catálogo de cuentas y procesos adaptados a su actividad.",
+      title: t("steps.design.title"),
+      description: t("steps.design.description"),
       icon: <Calculator className="w-6 h-6 text-jade-green" />,
     },
     {
       step: "3",
-      title: "Recolección documental periódica",
-      description: "Sistemas seguros para transmisión de comprobantes y documentación relevante.",
+      title: t("steps.collection.title"),
+      description: t("steps.collection.description"),
       icon: <FileText className="w-6 h-6 text-jade-green" />,
     },
     {
       step: "4",
-      title: "Procesamiento y clasificación",
-      description: "Registro contable con criterios fiscales optimizados.",
+      title: t("steps.processing.title"),
+      description: t("steps.processing.description"),
       icon: <BarChart3 className="w-6 h-6 text-jade-green" />,
     },
     {
       step: "5",
-      title: "Generación de reportes",
-      description: "Estados financieros mensuales, trimestrales o anuales según necesidades.",
+      title: t("steps.reporting.title"),
+      description: t("steps.reporting.description"),
       icon: <TrendingUp className="w-6 h-6 text-jade-green" />,
     },
     {
       step: "6",
-      title: "Preparación de declaraciones",
-      description: "Gestión de obligaciones fiscales territoriales y municipales aplicables.",
+      title: t("steps.preparation.title"),
+      description: t("steps.preparation.description"),
       icon: <Receipt className="w-6 h-6 text-jade-green" />,
     },
     {
       step: "7",
-      title: "Reuniones de revisión",
-      description: "Sesiones periódicas para analizar resultados y planificar estrategias.",
+      title: t("steps.review.title"),
+      description: t("steps.review.description"),
       icon: <Users className="w-6 h-6 text-jade-green" />,
     },
   ];
@@ -155,27 +155,27 @@ export default function Accounting({ locale }: AccountingProps) {
   const requiredDocumentation = [
     {
       icon: <CreditCard className="w-5 h-5 text-jade-green" />,
-      title: "Extractos bancarios de cuentas corporativas",
+      title: t("required_documents.bank_statements"),
     },
     {
       icon: <Receipt className="w-5 h-5 text-jade-green" />,
-      title: "Facturas de gastos operativos",
+      title: t("required_documents.expense_invoices"),
     },
     {
       icon: <FileText className="w-5 h-5 text-jade-green" />,
-      title: "Contratos de prestación de servicios o compraventa",
+      title: t("required_documents.service_contracts"),
     },
     {
       icon: <Briefcase className="w-5 h-5 text-jade-green" />,
-      title: "Actas de junta directiva para decisiones significativas",
+      title: t("required_documents.board_minutes"),
     },
     {
       icon: <ArrowRight className="w-5 h-5 text-jade-green" />,
-      title: "Documentación de transferencias entre partes relacionadas",
+      title: t("required_documents.related_party_transfers"),
     },
     {
       icon: <BarChart3 className="w-5 h-5 text-jade-green" />,
-      title: "Informes de valoración de activos cuando aplique",
+      title: t("required_documents.asset_valuations"),
     },
   ];
 
@@ -188,10 +188,10 @@ export default function Accounting({ locale }: AccountingProps) {
               <Calculator className="w-16 h-16 text-jade-green mx-auto mb-4" />
             </div>
             <h1 className="text-4xl md:text-5xl font-bold text-jade-green mb-6">
-              Servicios de Contabilidad para Sociedades Anónimas en Panamá
+              {t("title")}
             </h1>
             <h2 className="text-2xl md:text-3xl font-semibold text-gray-800 mb-4">
-              Guía Estratégica para Inversionistas, Empresarios y Emprendedores Extranjeros
+              {t("subtitle")}
             </h2>
           </div>
         </div>
@@ -203,10 +203,10 @@ export default function Accounting({ locale }: AccountingProps) {
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
               <p className="text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed">
-                En el dinámico panorama empresarial internacional, Panamá destaca no solo por su canal emblemático, sino por ofrecer un ecosistema de negocios que combina flexibilidad regulatoria con cumplimiento de estándares globales. Para quienes han dado el paso estratégico de constituir una sociedad anónima panameña, el manejo contable no representa una simple obligación formal, sino una pieza fundamental en la optimización de su inversión.
+                {t("introduction_1")}
               </p>
               <p className="text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed mt-4">
-                Como firma especializada en derecho corporativo y servicios complementarios, compartimos esta guía esencial sobre los servicios contables para sociedades anónimas en Panamá, diseñada especialmente para inversionistas, empresarios y emprendedores internacionales.
+                {t("introduction_2")}
               </p>
             </div>
           </div>
@@ -218,10 +218,10 @@ export default function Accounting({ locale }: AccountingProps) {
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-jade-green mb-12 text-center">
-              La contabilidad en Panamá: Un equilibrio entre flexibilidad y cumplimiento
+              {t("framework_title")}
             </h2>
             <p className="text-gray-600 mb-8 text-center max-w-4xl mx-auto">
-              El marco contable panameño ofrece características distintivas que lo posicionan favorablemente en comparación con otras jurisdicciones:
+              {t("framework_subtitle")}
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -248,7 +248,7 @@ export default function Accounting({ locale }: AccountingProps) {
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-jade-green mb-12 text-center">
-              Obligaciones contables según el perfil de su sociedad
+              {t("obligations_title")}
             </h2>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -257,7 +257,7 @@ export default function Accounting({ locale }: AccountingProps) {
                 <div className="flex items-center mb-6">
                   <Building className="w-8 h-8 text-jade-green mr-3" />
                   <h3 className="text-xl font-bold text-gray-800">
-                    Para sociedades operativas en Panamá:
+                    {t("operational_title")}
                   </h3>
                 </div>
                 <div className="space-y-4">
@@ -277,7 +277,7 @@ export default function Accounting({ locale }: AccountingProps) {
                 <div className="flex items-center mb-6">
                   <Globe className="w-8 h-8 text-blue-600 mr-3" />
                   <h3 className="text-xl font-bold text-gray-800">
-                    Para sociedades holding o de inversión internacional:
+                    {t("holding_title")}
                   </h3>
                 </div>
                 <div className="space-y-4">
@@ -301,10 +301,10 @@ export default function Accounting({ locale }: AccountingProps) {
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-jade-green mb-12 text-center">
-              El proceso práctico: Simplicidad y eficiencia
+              {t("process_title")}
             </h2>
             <p className="text-gray-600 mb-8 text-center max-w-4xl mx-auto">
-              Hemos refinado nuestro proceso para minimizar la carga administrativa para usted:
+              {t("process_subtitle")}
             </p>
 
             <div className="space-y-6">
@@ -336,10 +336,10 @@ export default function Accounting({ locale }: AccountingProps) {
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-jade-green mb-12 text-center">
-              Documentación requerida para gestión contable eficiente
+              {t("documentation_title")}
             </h2>
             <p className="text-gray-600 mb-8 text-center max-w-4xl mx-auto">
-              Para mantener registros óptimos, necesitaremos:
+              {t("documentation_subtitle")}
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -361,22 +361,22 @@ export default function Accounting({ locale }: AccountingProps) {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-jade-green mb-6">
-              Próximos pasos: Hacia una gestión contable optimizada
+              {t("next_steps_title")}
             </h2>
             <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-              Le invitamos a una consulta inicial donde evaluaremos las necesidades específicas de su sociedad panameña y diseñaremos un programa contable a medida que maximice beneficios y minimice cargas administrativas.
+              {t("next_steps_description")}
             </p>
             
             <div className="bg-gradient-to-r from-jade-green to-jade-green/90 p-8 rounded-lg text-white">
               <h3 className="text-2xl font-bold mb-4">
-                La contabilidad de su sociedad panameña puede y debe ser más que un centro de costos
+                {t("cta_title")}
               </h3>
               <p className="text-lg mb-6">
-                Una herramienta estratégica para potenciar su inversión internacional. Permítanos mostrarle cómo.
+                {t("cta_description")}
               </p>
               <div className="flex items-center justify-center space-x-2">
                 <Handshake className="w-6 h-6" />
-                <span className="font-semibold">Consulte con nuestros expertos hoy</span>
+                <span className="font-semibold">{t("consult_experts")}</span>
               </div>
             </div>
           </div>
@@ -388,7 +388,7 @@ export default function Accounting({ locale }: AccountingProps) {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <p className="text-sm text-gray-600 italic">
-              Este artículo tiene carácter informativo y no constituye asesoramiento profesional. Cada situación requiere análisis individualizado considerando circunstancias particulares y normativa vigente.
+              {t("disclaimer")}
             </p>
           </div>
         </div>

@@ -39,63 +39,64 @@ interface VisaInversionistaProps {
 
 export default function VisaInversionista({ locale }: VisaInversionistaProps) {
   const t = useTranslations("services_page");
+  const tVisa = useTranslations("visa_inversionista");
 
   const panamaAdvantages = [
     {
       icon: <MapPin className="w-6 h-6 text-jade-green" />,
-      title: "Posición estratégica",
-      description: "Puente natural entre América del Norte y del Sur",
+      title: tVisa("panama_advantages.strategic_location.title"),
+      description: tVisa("panama_advantages.strategic_location.description"),
     },
     {
       icon: <TrendingUp className="w-6 h-6 text-jade-green" />,
-      title: "Estabilidad económica",
-      description: "Economía dolarizada con crecimiento sostenido",
+      title: tVisa("panama_advantages.economic_stability.title"),
+      description: tVisa("panama_advantages.economic_stability.description"),
     },
     {
       icon: <Shield className="w-6 h-6 text-jade-green" />,
-      title: "Políticas migratorias amigables",
-      description: "Sistema diseñado para atraer inversionistas",
+      title: tVisa("panama_advantages.friendly_immigration.title"),
+      description: tVisa("panama_advantages.friendly_immigration.description"),
     },
   ];
 
   const investmentOptions = [
     {
       icon: <Banknote className="w-8 h-8 text-jade-green" />,
-      title: "Depósito a Plazo Fijo",
-      subtitle: "定期存款",
+      title: tVisa("investment_options.fixed_term.title"),
+      subtitle: tVisa("investment_options.fixed_term.subtitle"),
       amount: "USD 300,000",
-      description: "Abrir una cuenta bancaria en un banco panameño con un plazo fijo mínimo de 3 años.",
+      description: tVisa("investment_options.fixed_term.description"),
       requirements: [
-        "Cuenta bancaria en banco panameño",
-        "Plazo fijo de USD 300,000",
-        "Plazo mínimo de 3 años",
-        "Fondos de propiedad personal (no de empresa)",
+        tVisa("investment_options.fixed_term.requirements.bank_account"),
+        tVisa("investment_options.fixed_term.requirements.deposit_amount"),
+        tVisa("investment_options.fixed_term.requirements.minimum_term"),
+        tVisa("investment_options.fixed_term.requirements.personal_funds"),
       ],
     },
     {
       icon: <Building className="w-8 h-8 text-jade-green" />,
-      title: "Inversión en Bienes Raíces",
-      subtitle: "房产投资",
+      title: tVisa("investment_options.real_estate.title"),
+      subtitle: tVisa("investment_options.real_estate.subtitle"),
       amount: "USD 300,000",
-      description: "Adquirir una propiedad en Panamá con valor mínimo de USD 300,000.",
+      description: tVisa("investment_options.real_estate.description"),
       requirements: [
-        "Propiedad con valor mínimo de USD 300,000",
-        "Registrada a tu nombre o sociedad/fundación",
-        "Ideal para vivir, rentar o plusvalía",
-        "Diversificación patrimonial",
+        tVisa("investment_options.real_estate.requirements.property_value"),
+        tVisa("investment_options.real_estate.requirements.registration"),
+        tVisa("investment_options.real_estate.requirements.ideal_use"),
+        tVisa("investment_options.real_estate.requirements.diversification"),
       ],
     },
     {
       icon: <PieChart className="w-8 h-8 text-jade-green" />,
-      title: "Opción Mixta",
-      subtitle: "混合方式",
+      title: tVisa("investment_options.mixed.title"),
+      subtitle: tVisa("investment_options.mixed.subtitle"),
       amount: "USD 300,000",
-      description: "Combinar propiedad más plazo fijo bancario, siempre que la suma total sea mínimo USD 300,000.",
+      description: tVisa("investment_options.mixed.description"),
       requirements: [
-        "Combinación de propiedad y depósito",
-        "Suma total mínima de USD 300,000",
-        "Flexibilidad para diversificar inversión",
-        "Opción personalizada según preferencias",
+        tVisa("investment_options.mixed.requirements.combination"),
+        tVisa("investment_options.mixed.requirements.total_amount"),
+        tVisa("investment_options.mixed.requirements.diversification"),
+        tVisa("investment_options.mixed.requirements.customized"),
       ],
     },
   ];
@@ -103,63 +104,63 @@ export default function VisaInversionista({ locale }: VisaInversionistaProps) {
   const requirements = [
     {
       icon: <IDCard className="w-5 h-5 text-jade-green" />,
-      title: "Pasaporte chino vigente",
-      description: "Con vigencia mínima de 6 meses",
+      title: tVisa("requirements.valid_passport.title"),
+      description: tVisa("requirements.valid_passport.description"),
     },
     {
       icon: <Scale className="w-5 h-5 text-jade-green" />,
-      title: "Antecedentes penales emitidos en China",
-      description: "Certificado oficial de antecedentes",
+      title: tVisa("requirements.criminal_records.title"),
+      description: tVisa("requirements.criminal_records.description"),
     },
     {
       icon: <Shield className="w-5 h-5 text-jade-green" />,
-      title: "Prueba del origen lícito del dinero",
-      description: "Documentación que demuestre legalidad de fondos",
+      title: tVisa("requirements.funds_origin.title"),
+      description: tVisa("requirements.funds_origin.description"),
     },
     {
       icon: <FileText className="w-5 h-5 text-jade-green" />,
-      title: "Documentos financieros de la inversión",
-      description: "Propiedad o depósito bancario",
+      title: tVisa("requirements.financial_documents.title"),
+      description: tVisa("requirements.financial_documents.description"),
     },
     {
       icon: <UserCheck className="w-5 h-5 text-jade-green" />,
-      title: "Fotografías tamaño pasaporte",
-      description: "Recientes y en buen estado",
+      title: tVisa("requirements.passport_photos.title"),
+      description: tVisa("requirements.passport_photos.description"),
     },
     {
       icon: <FileText className="w-5 h-5 text-jade-green" />,
-      title: "Formulario migratorio firmado",
-      description: "Documentación oficial completa",
+      title: tVisa("requirements.immigration_form.title"),
+      description: tVisa("requirements.immigration_form.description"),
     },
   ];
 
   const residencyPath = [
     {
       step: "1",
-      title: "Residencia provisional",
-      duration: "2 años",
-      description: "Primera etapa del proceso migratorio",
+      title: tVisa("residency_path.provisional.title"),
+      duration: tVisa("residency_path.provisional.duration"),
+      description: tVisa("residency_path.provisional.description"),
       icon: <Clock className="w-6 h-6 text-jade-green" />,
     },
     {
       step: "2",
-      title: "Residencia permanente",
-      duration: "Al finalizar 2 años",
-      description: "Transición a residencia definitiva",
+      title: tVisa("residency_path.permanent.title"),
+      duration: tVisa("residency_path.permanent.duration"),
+      description: tVisa("residency_path.permanent.description"),
       icon: <Award className="w-6 h-6 text-jade-green" />,
     },
     {
       step: "3",
-      title: "Ciudadanía panameña",
-      duration: "Varios años después",
-      description: "Posible acceso al pasaporte panameño",
+      title: tVisa("residency_path.citizenship.title"),
+      duration: tVisa("residency_path.citizenship.duration"),
+      description: tVisa("residency_path.citizenship.description"),
       icon: <IDCard className="w-6 h-6 text-jade-green" />,
     },
     {
       step: "4",
-      title: "Ciudadanía automática para hijos",
-      duration: "Al nacer en Panamá",
-      description: "Hijos nacidos en Panamá obtienen ciudadanía",
+      title: tVisa("residency_path.children_citizenship.title"),
+      duration: tVisa("residency_path.children_citizenship.duration"),
+      description: tVisa("residency_path.children_citizenship.description"),
       icon: <Baby className="w-6 h-6 text-jade-green" />,
     },
   ];
@@ -167,68 +168,68 @@ export default function VisaInversionista({ locale }: VisaInversionistaProps) {
   const visaAdvantages = [
     {
       icon: <Users className="w-5 h-5 text-jade-green" />,
-      title: "Disponible para ciudadanos chinos sin restricciones",
+      title: tVisa("visa_advantages.available_chinese.title"),
     },
     {
       icon: <Briefcase className="w-5 h-5 text-jade-green" />,
-      title: "No necesitas empleo en Panamá",
+      title: tVisa("visa_advantages.no_employment.title"),
     },
     {
       icon: <Shield className="w-5 h-5 text-jade-green" />,
-      title: "No requiere patrocinador ni empresa empleadora",
+      title: tVisa("visa_advantages.no_sponsor.title"),
     },
     {
       icon: <DollarSign className="w-5 h-5 text-jade-green" />,
-      title: "Inversión segura, flexible y en tu control",
+      title: tVisa("visa_advantages.safe_investment.title"),
     },
     {
       icon: <Heart className="w-5 h-5 text-jade-green" />,
-      title: "Permite traer a tu familia inmediata (cónyuge e hijos)",
+      title: tVisa("visa_advantages.family_inclusion.title"),
     },
     {
       icon: <Target className="w-5 h-5 text-jade-green" />,
-      title: "Es una vía realista para obtener residencia permanente y eventualmente ciudadanía",
+      title: tVisa("visa_advantages.realistic_path.title"),
     },
   ];
 
   const practicalTips = [
     {
       icon: <Handshake className="w-6 h-6 text-jade-green" />,
-      title: "Trabaja con Panama Golden Key",
-      description: "Tenemos experiencia con casos de ciudadanos chinos. Profesionales que hablan inglés, mandarín y cantones.",
+      title: tVisa("practical_tips.work_with_us.title"),
+      description: tVisa("practical_tips.work_with_us.description"),
     },
     {
       icon: <FileText className="w-6 h-6 text-jade-green" />,
-      title: "Prepara documentación con anticipación",
-      description: "Ten toda tu documentación china apostillada con anticipación (este paso toma tiempo en China).",
+      title: tVisa("practical_tips.prepare_docs.title"),
+      description: tVisa("practical_tips.prepare_docs.description"),
     },
     {
       icon: <Plane className="w-6 h-6 text-jade-green" />,
-      title: "Planifica tu viaje a Panamá",
-      description: "Obtén la visa de turista y prepárate para firmar documentos y realizar trámites presenciales (te acompañamos en ese proceso).",
+      title: tVisa("practical_tips.plan_trip.title"),
+      description: tVisa("practical_tips.plan_trip.description"),
     },
   ];
 
   const panamaBenefits = [
     {
       icon: <Shield className="w-6 h-6 text-jade-green" />,
-      title: "Sistema migratorio amigable",
+      title: tVisa("panama_benefits.friendly_system.title"),
     },
     {
       icon: <TrendingUp className="w-6 h-6 text-jade-green" />,
-      title: "Entorno económico estable",
+      title: tVisa("panama_benefits.stable_economy.title"),
     },
     {
       icon: <Users className="w-6 h-6 text-jade-green" />,
-      title: "Comunidad china grande y bien establecida",
+      title: tVisa("panama_benefits.chinese_community.title"),
     },
     {
       icon: <MapPin className="w-6 h-6 text-jade-green" />,
-      title: "Cercanía con Estados Unidos y América del Sur",
+      title: tVisa("panama_benefits.proximity.title"),
     },
     {
       icon: <Target className="w-6 h-6 text-jade-green" />,
-      title: "Camino claro hacia la residencia definitiva y ciudadanía",
+      title: tVisa("panama_benefits.clear_path.title"),
     },
   ];
 
@@ -241,13 +242,13 @@ export default function VisaInversionista({ locale }: VisaInversionistaProps) {
               <Globe className="w-16 h-16 text-jade-green mx-auto mb-4" />
             </div>
             <h1 className="text-4xl md:text-5xl font-bold text-jade-green mb-6">
-              Visa por Solvencia Económica en Panamá
+              {tVisa("hero.title")}
             </h1>
             <h2 className="text-2xl md:text-3xl font-semibold text-gray-800 mb-4">
-              Guía Completa para Ciudadanos Chinos
+              {tVisa("hero.subtitle")}
             </h2>
             <p className="text-xl text-gray-600 mb-4">
-              巴拿马经济实力签证
+              {tVisa("hero.description")}
             </p>
           </div>
         </div>
@@ -259,10 +260,10 @@ export default function VisaInversionista({ locale }: VisaInversionistaProps) {
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
               <p className="text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed">
-                En los últimos años, Panamá se ha convertido en uno de los destinos más atractivos para ciudadanos chinos que desean vivir, invertir o establecer una segunda residencia en América Latina. Su posición estratégica, estabilidad económica y políticas migratorias amigables lo convierten en una excelente opción para quienes buscan un nuevo comienzo fuera de Asia.
+                {tVisa("introduction.paragraph_1")}
               </p>
               <p className="text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed mt-4">
-                Entre todas las opciones, una de las más populares es la Visa por Solvencia Económica, conocida por muchos inversionistas chinos como la 经济实力签证. Hoy te explico de manera sencilla cómo funciona, qué requisitos tiene y por qué es una de las vías más seguras para obtener residencia en Panamá.
+                {tVisa("introduction.paragraph_2")}
               </p>
             </div>
 
@@ -286,20 +287,20 @@ export default function VisaInversionista({ locale }: VisaInversionistaProps) {
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-jade-green mb-12 text-center">
-              ¿Qué es la Visa por Solvencia Económica？
+              {tVisa("what_is_visa.title")}
             </h2>
             <p className="text-xl text-gray-600 mb-4 text-center">
-              经济实力签证详解
+              {tVisa("what_is_visa.subtitle")}
             </p>
             <div className="bg-white p-8 rounded-lg shadow-md">
               <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-                Es un tipo de residencia panameña diseñada para personas que pueden demostrar capacidad económica mediante una inversión.
+                {tVisa("what_is_visa.description_1")}
               </p>
               <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-                Lo más atractivo es que no necesitas conseguir un trabajo, no requiere nacionalidades específicas y no impone cupos limitados. Es decir, los ciudadanos chinos califican sin restricciones.
+                {tVisa("what_is_visa.description_2")}
               </p>
               <p className="text-lg text-gray-600 leading-relaxed">
-                Esta visa te otorga primero una residencia provisional por 2 años, y luego puedes solicitar la residencia permanente. Tras cinco años más de residencia continua, es posible acceder a la ciudadanía panameña y obtener el pasaporte panameño que permite viajar sin visa a más de 142 incluyendo toda Europa.
+                {tVisa("what_is_visa.description_3")}
               </p>
             </div>
           </div>
@@ -311,10 +312,10 @@ export default function VisaInversionista({ locale }: VisaInversionistaProps) {
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-jade-green mb-12 text-center">
-              Modalidades de Inversión（投资方式）
+              {tVisa("investment_options.title")}
             </h2>
             <p className="text-gray-600 mb-8 text-center max-w-4xl mx-auto">
-              La Visa por Solvencia Económica ofrece tres caminos, muy flexibles, dependiendo de tu preferencia como inversor.
+              {tVisa("investment_options.description")}
             </p>
 
             <div className="space-y-8">
@@ -355,10 +356,10 @@ export default function VisaInversionista({ locale }: VisaInversionistaProps) {
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-jade-green mb-12 text-center">
-              Requisitos principales para ciudadanos chinos（中国公民需要的主要文件）
+              {tVisa("requirements.title")}
             </h2>
             <p className="text-gray-600 mb-8 text-center max-w-4xl mx-auto">
-              Aunque el proceso es bastante sencillo, Panamá exige ciertos documentos básicos:
+              {tVisa("requirements.description")}
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -379,7 +380,7 @@ export default function VisaInversionista({ locale }: VisaInversionistaProps) {
 
             <div className="mt-8 bg-blue-50 p-6 rounded-lg">
               <p className="text-gray-700 text-center">
-                <strong>Nota importante:</strong> Todos los documentos chinos deben venir apostillados o autenticados por el Consulado panameño.
+                <strong>{tVisa("requirements.important_note.prefix")}</strong> {tVisa("requirements.important_note.text")}
               </p>
             </div>
           </div>
@@ -391,7 +392,7 @@ export default function VisaInversionista({ locale }: VisaInversionistaProps) {
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-jade-green mb-12 text-center">
-              Camino hacia la Residencia Permanente y la Ciudadanía（获得永久居留与国籍的途径）
+              {tVisa("residency_path.title")}
             </h2>
 
             <div className="space-y-6">
@@ -416,7 +417,7 @@ export default function VisaInversionista({ locale }: VisaInversionistaProps) {
 
             <div className="mt-8 bg-gradient-to-r from-jade-green/10 to-blue-50 p-6 rounded-lg">
               <p className="text-gray-700 text-center">
-                <strong>Para familias chinas que desean una "puerta abierta" al continente americano, este camino es particularmente atractivo.</strong>
+                <strong>{tVisa("residency_path.special_note")}</strong>
               </p>
             </div>
           </div>
@@ -428,7 +429,7 @@ export default function VisaInversionista({ locale }: VisaInversionistaProps) {
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-jade-green mb-12 text-center">
-              Ventajas de la Visa por Solvencia Económica（签证优势）
+              {tVisa("visa_advantages.title")}
             </h2>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -447,7 +448,7 @@ export default function VisaInversionista({ locale }: VisaInversionistaProps) {
 
             <div className="mt-8 bg-blue-50 p-6 rounded-lg">
               <p className="text-gray-700 text-sm leading-relaxed">
-                En comparación con otras visas panameñas, esta ofrece menos costes gubernamentales en comparación con la Golden Visa (Visa de Inversionista Calificado), pero el camino al pasaporte es más largo por los 2 años de residencia provisional iniciales versus la residencia directa que otorga la Golden Visa.
+                {tVisa("visa_advantages.comparison")}
               </p>
             </div>
           </div>
@@ -459,7 +460,7 @@ export default function VisaInversionista({ locale }: VisaInversionistaProps) {
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-jade-green mb-12 text-center">
-              Consejos Prácticos antes de Iniciar（申请前建议）
+              {tVisa("practical_tips.title")}
             </h2>
 
             <div className="space-y-6">
@@ -486,13 +487,13 @@ export default function VisaInversionista({ locale }: VisaInversionistaProps) {
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-jade-green mb-12 text-center">
-              Panamá es una excelente opción para ciudadanos chinos
+              {tVisa("final_section.title")}
             </h2>
             <p className="text-lg text-gray-600 mb-8 text-center max-w-4xl mx-auto leading-relaxed">
-              La Visa por Solvencia Económica es una puerta abierta para quienes buscan estabilidad, movilidad internacional, oportunidades de inversión y una vía segura hacia la residencia permanente en América Latina.
+              {tVisa("final_section.paragraph_1")}
             </p>
             <p className="text-lg text-gray-600 mb-8 text-center max-w-4xl mx-auto leading-relaxed">
-              Si estás buscando un plan de emigración estratégico, Panamá ofrece:
+              {tVisa("final_section.paragraph_2")}
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
@@ -508,14 +509,14 @@ export default function VisaInversionista({ locale }: VisaInversionistaProps) {
 
             <div className="bg-gradient-to-r from-jade-green to-jade-green/90 p-8 rounded-lg text-white text-center">
               <h3 className="text-2xl font-bold mb-4">
-                Perfecto para familias, inversionistas, empresarios y profesionales chinos
+                {tVisa("final_section.cta.title")}
               </h3>
               <p className="text-lg mb-6">
-                que desean expandir sus opciones en el exterior.
+                {tVisa("final_section.cta.description")}
               </p>
               <div className="flex items-center justify-center space-x-2">
                 <Handshake className="w-6 h-6" />
-                <span className="font-semibold">Comienza tu proceso hoy</span>
+                <span className="font-semibold">{tVisa("final_section.cta.button")}</span>
               </div>
             </div>
           </div>
