@@ -39,6 +39,65 @@
       "start_now": "Comenzar ahora",
       "title": "Tu llave a Panamá",
       "description": "Abriendo las puertas a tu nueva vida con inversiones seguras y rentables."
+    },
+    "investor_visa_card": {
+      "title": "Visa de Inversionista",
+      "subtitle": "Ruta a residencia permanente",
+      "benefits": {
+        "residency": "Acceso directo a residencia permanente",
+        "routes": "Múltiples rutas de inversión verificadas",
+        "family": "Beneficios para grupo familiar",
+        "more": "Y más beneficios..."
+      },
+      "requirements": {
+        "real_estate": {
+          "title": "Bienes raíces",
+          "description": "Inversión mínima en bienes raíces"
+        },
+        "bank_deposit": {
+          "title": "Depósito bancario",
+          "description": "Por 3 años en banco panameño"
+        },
+        "securities": {
+          "title": "Valores",
+          "description": "Acciones o valores registrados"
+        }
+      },
+      "cta": {
+        "start_evaluation": "Iniciar pre-evaluación",
+        "view_more": "Ver más",
+        "view_less": "Ver menos"
+      }
+    },
+    "golden_key_compact": {
+      "title": "Panama Golden Key",
+      "subtitle": "Cuatro pilares para tu éxito",
+      "card_title": "Tu llave a Panamá",
+      "card_description": "Inversiones seguras y rentables.",
+      "success_rate": "95% tasa de éxito",
+      "cta": "Comenzar ahora",
+      "pillars": {
+        "residency": {
+          "title": "Residencia Permanente",
+          "description": "Ruta directa hacia la residencia en Panamá mediante inversión calificada"
+        },
+        "family": {
+          "title": "Beneficios Familiares",
+          "description": "Incluye a tu cónyuge, hijos y padres en tu solicitud de residencia"
+        },
+        "investment": {
+          "title": "Inversiones de Alto Retorno",
+          "description": "Rendimientos anuales del 5-7% en oportunidades inmobiliarias premium"
+        },
+        "citizenship": {
+          "title": "Camino a la Ciudadanía",
+          "description": "Naturalización en 5 años con pasaporte panameño"
+        }
+      },
+      "toggle": {
+        "view_less": "Ver menos pilares",
+        "view_all": "Ver todos los pilares"
+      }
     }
   },
   "navigation": {
@@ -58,7 +117,14 @@
     "blog": "Blog",
     "faq": "Preguntas frecuentes",
     "testimonials": "Testimonios",
-    "calculator": "Calculadora de inversión"
+    "calculator": "Calculadora de inversión",
+    "header_dropdown": {
+      "investor_visa_tab": "Visa de Inversionista",
+      "golden_key_tab": "Panama Golden Key",
+      "discover_options": "Descubre tus opciones",
+      "need_help": "¿Necesitas ayuda?",
+      "contact_advisor": "Contacta a un asesor"
+    }
   },
   "home": {
     "common": {

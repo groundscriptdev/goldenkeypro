@@ -2,34 +2,36 @@
 
 import { CheckCircle2, Home, Landmark, TrendingUp, ChevronRight } from 'lucide-react';
 import { useState } from 'react';
+import { useTranslations } from 'next-intl';
 
 export function InvestorVisaCardCompact() {
+  const t = useTranslations('components.investor_visa_card');
   const [isExpanded, setIsExpanded] = useState(false);
   
   const benefits = [
-    "Acceso directo a residencia permanente",
-    "Múltiples rutas de inversión verificadas",
-    "Beneficios para grupo familiar"
+    t('benefits.residency'),
+    t('benefits.routes'),
+    t('benefits.family')
   ];
 
   const requirements = [
     {
       icon: Home,
-      title: "Bienes raíces",
+      title: t('requirements.real_estate.title'),
       value: "$300,000",
-      description: "Inversión mínima en bienes raíces"
+      description: t('requirements.real_estate.description')
     },
     {
       icon: Landmark,
-      title: "Depósito bancario",
+      title: t('requirements.bank_deposit.title'),
       value: "$700,000",
-      description: "Por 3 años en banco panameño"
+      description: t('requirements.bank_deposit.description')
     },
     {
       icon: TrendingUp,
-      title: "Valores",
+      title: t('requirements.securities.title'),
       value: "$500,000",
-      description: "Acciones o valores registrados"
+      description: t('requirements.securities.description')
     }
   ];
 
@@ -58,7 +60,7 @@ export function InvestorVisaCardCompact() {
                 color: '#FAFAF8',
               }}
             >
-              Visa de Inversionista
+              {t('title')}
             </h1>
             
             <p 
@@ -68,7 +70,7 @@ export function InvestorVisaCardCompact() {
                 color: '#D9E3DF',
               }}
             >
-              Ruta a residencia permanente
+              {t('subtitle')}
             </p>
           </div>
           
@@ -118,7 +120,7 @@ export function InvestorVisaCardCompact() {
                   color: '#B9C7C1'
                 }}
               >
-                Y más beneficios...
+                {t('benefits.more')}
               </span>
             </div>
           )}
@@ -205,7 +207,7 @@ export function InvestorVisaCardCompact() {
               color: '#1A1A1A'
             }}
           >
-            Iniciar pre-evaluación
+            {t('cta.start_evaluation')}
           </button>
           
           <button
@@ -217,7 +219,7 @@ export function InvestorVisaCardCompact() {
               color: '#FAFAF8'
             }}
           >
-            {isExpanded ? 'Ver menos' : 'Ver más'}
+            {isExpanded ? t('cta.view_less') : t('cta.view_more')}
           </button>
         </div>
       </div>

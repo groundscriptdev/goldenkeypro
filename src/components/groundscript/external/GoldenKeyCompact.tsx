@@ -3,30 +3,32 @@
 import { motion, Easing } from "motion/react";
 import { CheckCircle, Home, TrendingUp, Users, ChevronRight, Plus } from 'lucide-react';
 import { useState } from 'react';
+import { useTranslations } from 'next-intl';
 
 export function GoldenKeyCompact() {
+  const t = useTranslations('components.golden_key_compact');
   const [isExpanded, setIsExpanded] = useState(false);
   
   const pillars = [
     {
       icon: Home,
-      title: "Residencia Permanente",
-      description: "Ruta directa hacia la residencia en Panamá mediante inversión calificada"
+      title: t('pillars.residency.title'),
+      description: t('pillars.residency.description')
     },
     {
       icon: Users,
-      title: "Beneficios Familiares",
-      description: "Incluye a tu cónyuge, hijos y padres en tu solicitud de residencia"
+      title: t('pillars.family.title'),
+      description: t('pillars.family.description')
     },
     {
       icon: TrendingUp,
-      title: "Inversiones de Alto Retorno",
-      description: "Rendimientos anuales del 5-7% en oportunidades inmobiliarias premium"
+      title: t('pillars.investment.title'),
+      description: t('pillars.investment.description')
     },
     {
       icon: CheckCircle,
-      title: "Camino a la Ciudadanía",
-      description: "Naturalización en 5 años con pasaporte panameño"
+      title: t('pillars.citizenship.title'),
+      description: t('pillars.citizenship.description')
     }
   ];
 
@@ -74,7 +76,7 @@ export function GoldenKeyCompact() {
                 color: '#0f172b'
               }}
             >
-              Panama Golden Key
+              {t('title')}
             </h2>
             
             <p 
@@ -83,7 +85,7 @@ export function GoldenKeyCompact() {
                 fontFamily: "'Inter', sans-serif"
               }}
             >
-              Cuatro pilares para tu éxito
+              {t('subtitle')}
             </p>
           </div>
           
@@ -116,7 +118,7 @@ export function GoldenKeyCompact() {
               color: '#0f172b'
             }}
           >
-            Tu llave a panama
+            {t('card_title')}
           </h3>
           
           <p 
@@ -125,7 +127,7 @@ export function GoldenKeyCompact() {
               fontFamily: "'Inter', sans-serif"
             }}
           >
-            Inversiones seguras y rentables.
+            {t('card_description')}
           </p>
 
           <div className="flex items-center justify-center mb-3">
@@ -138,7 +140,7 @@ export function GoldenKeyCompact() {
                   color: '#0f172b'
                 }}
               >
-                95% tasa de éxito
+                {t('success_rate')}
               </span>
             </div>
           </div>
@@ -153,7 +155,7 @@ export function GoldenKeyCompact() {
               color: '#ffffff'
             }}
           >
-            Comenzar ahora
+            {t('cta')}
             <ChevronRight size={16} strokeWidth={2.5} />
           </button>
         </div>
@@ -262,12 +264,12 @@ export function GoldenKeyCompact() {
         >
           {isExpanded ? (
             <>
-              Ver menos pilares
+              {t('toggle.view_less')}
               <ChevronRight size={16} strokeWidth={2} className="rotate-90" />
             </>
           ) : (
             <>
-              Ver todos los pilares
+              {t('toggle.view_all')}
               <Plus size={16} strokeWidth={2} />
             </>
           )}

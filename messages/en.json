@@ -39,6 +39,65 @@
       "start_now": "Start Now",
       "title": "Your Key to Panama",
       "description": "Opening doors to your new life with safe and profitable investments."
+    },
+    "investor_visa_card": {
+      "title": "Qualified Investor Visa",
+      "subtitle": "Path to permanent residency",
+      "benefits": {
+        "residency": "Direct access to permanent residency",
+        "routes": "Multiple verified investment routes",
+        "family": "Benefits for family group",
+        "more": "And more benefits..."
+      },
+      "requirements": {
+        "real_estate": {
+          "title": "Real Estate",
+          "description": "Minimum real estate investment"
+        },
+        "bank_deposit": {
+          "title": "Bank Deposit",
+          "description": "For 3 years in Panamanian bank"
+        },
+        "securities": {
+          "title": "Securities",
+          "description": "Registered shares or securities"
+        }
+      },
+      "cta": {
+        "start_evaluation": "Start pre-evaluation",
+        "view_more": "View more",
+        "view_less": "View less"
+      }
+    },
+    "golden_key_compact": {
+      "title": "Panama Golden Key",
+      "subtitle": "Four pillars for your success",
+      "card_title": "Your Key to Panama",
+      "card_description": "Safe and profitable investments.",
+      "success_rate": "95% Success Rate",
+      "cta": "Start Now",
+      "pillars": {
+        "residency": {
+          "title": "Permanent Residency",
+          "description": "Direct path to Panama residency through qualified investment"
+        },
+        "family": {
+          "title": "Family Benefits",
+          "description": "Include your spouse, children, and parents in your residency application"
+        },
+        "investment": {
+          "title": "High Return Investments",
+          "description": "5-7% annual returns on premium real estate opportunities"
+        },
+        "citizenship": {
+          "title": "Path to Citizenship",
+          "description": "Naturalization in 5 years with Panamanian passport"
+        }
+      },
+      "toggle": {
+        "view_less": "View less pillars",
+        "view_all": "View all pillars"
+      }
     }
   },
   "navigation": {
@@ -58,7 +117,14 @@
     "blog": "Blog",
     "faq": "FAQ",
     "testimonials": "Testimonials",
-    "calculator": "Investment Calculator"
+    "calculator": "Investment Calculator",
+    "header_dropdown": {
+      "investor_visa_tab": "Investor Visa",
+      "golden_key_tab": "Panama Golden Key",
+      "discover_options": "Discover your options",
+      "need_help": "Need help?",
+      "contact_advisor": "Contact an advisor"
+    }
   },
   "home": {
     "common": {

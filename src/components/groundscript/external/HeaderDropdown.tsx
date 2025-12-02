@@ -13,8 +13,8 @@ export function HeaderDropdown() {
   const t = useTranslations("navigation");
   
   const tabs = [
-    { id: 0, title: "Visa de Inversionista", component: <InvestorVisaCardCompact /> },
-    { id: 1, title: "Panama Golden Key", component: <GoldenKeyCompact /> }
+    { id: 0, title: t("header_dropdown.investor_visa_tab"), component: <InvestorVisaCardCompact /> },
+    { id: 1, title: t("header_dropdown.golden_key_tab"), component: <GoldenKeyCompact /> }
   ];
 
   useEffect(() => {
@@ -67,7 +67,7 @@ export function HeaderDropdown() {
                 color: '#0f172b'
               }}
             >
-              Descubre tus opciones
+              {t("header_dropdown.discover_options")}
             </h3>
             <button
               onClick={() => setIsOpen(false)}
@@ -110,7 +110,7 @@ export function HeaderDropdown() {
                 fontFamily: "'Inter', sans-serif"
               }}
             >
-              ¿Necesitas ayuda? <a href="#" className="text-jade-green hover:underline font-medium">Contacta a un asesor</a>
+              {t("header_dropdown.need_help")} <a href="#" className="text-jade-green hover:underline font-medium">{t("header_dropdown.contact_advisor")}</a>
             </p>
           </div>
         </div>

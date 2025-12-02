@@ -48,6 +48,13 @@
     "common": {
       "wechat": "微信",
       "free_consultation": "咨询"
+    },
+    "header_dropdown": {
+      "investor_visa_tab": "投资者签证",
+      "golden_key_tab": "巴拿马金钥匙",
+      "discover_options": "探索您的选择",
+      "need_help": "需要帮助？",
+      "contact_advisor": "联系顾问"
     }
   },
   "components": {
@@ -56,6 +63,65 @@
       "start_now": "立即开始",
       "title": "开启巴拿马的钥匙",
       "description": "通过安全且有利可图的投资开启您的新生活。"
+    },
+    "investor_visa_card": {
+      "title": "投资者签证",
+      "subtitle": "通往永久居留权的途径",
+      "benefits": {
+        "residency": "直接获得永久居留权",
+        "routes": "多种经过验证的投资途径",
+        "family": "家庭成员福利",
+        "more": "更多福利..."
+      },
+      "requirements": {
+        "real_estate": {
+          "title": "房地产",
+          "description": "最低房地产投资"
+        },
+        "bank_deposit": {
+          "title": "银行存款",
+          "description": "在巴拿马银行存款3年"
+        },
+        "securities": {
+          "title": "证券",
+          "description": "注册股票或证券"
+        }
+      },
+      "cta": {
+        "start_evaluation": "开始预评估",
+        "view_more": "查看更多",
+        "view_less": "收起"
+      }
+    },
+    "golden_key_compact": {
+      "title": "巴拿马金钥匙",
+      "subtitle": "您成功的四大支柱",
+      "card_title": "开启巴拿马的钥匙",
+      "card_description": "安全且有利可图的投资。",
+      "success_rate": "95% 成功率",
+      "cta": "立即开始",
+      "pillars": {
+        "residency": {
+          "title": "永久居留权",
+          "description": "通过合格投资直接获得巴拿马居留权"
+        },
+        "family": {
+          "title": "家庭福利",
+          "description": "居留申请可包括您的配偶、子女和父母"
+        },
+        "investment": {
+          "title": "高回报投资",
+          "description": "优质房地产投资机会，年回报率5-7%"
+        },
+        "citizenship": {
+          "title": "公民身份路径",
+          "description": "5年内可获得巴拿马护照"
+        }
+      },
+      "toggle": {
+        "view_less": "查看较少支柱",
+        "view_all": "查看所有支柱"
+      }
     }
   },
   "home": {
