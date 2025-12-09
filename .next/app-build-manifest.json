@@ -16,10 +16,10 @@
       "static/css/app/layout.css",
       "static/chunks/app/layout.js"
     ],
-    "/[locale]/(pages)/contact/page": [
+    "/[locale]/(pages)/services/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/[locale]/(pages)/contact/page.js"
+      "static/chunks/app/[locale]/(pages)/services/page.js"
     ]
   }
 }

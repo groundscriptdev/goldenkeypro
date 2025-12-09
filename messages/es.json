@@ -1170,7 +1170,7 @@
       "subtitle": "Soluciones integrales para su inversión y residencia en Panamá",
       "description": "Panama Golden Key ofrece servicios especializados para inversionistas internacionales que buscan establecerse en Panamá, desde la constitución de empresas hasta la obtención de residencia."
     },
-    "services": {
+    "services_grid": {
       "open_acc_client": {
         "title": "Apertura de Empresas y Cuentas",
         "subtitle": "Constitución de sociedades y apertura bancaria",
