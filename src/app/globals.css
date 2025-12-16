@@ -392,7 +392,12 @@ main {
   background:  rgb(227, 196, 109)  !important;
   text-decoration: none !important;
 }
-
+.logomov{
+  max-width:200px;
+}
+.ground-bu{
+  backdrop-filter: blur(30px);
+}
 @media screen and (min-width:0px) and (max-width: 992px) {
   .ground-box-fix {
     margin: 0 auto !important;

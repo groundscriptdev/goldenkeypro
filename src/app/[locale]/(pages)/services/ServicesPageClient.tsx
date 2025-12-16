@@ -85,13 +85,13 @@ export default function ServicesPageClient({ locale }: ServicesPageClientProps) 
         onTabChange={handleTabClick}
       />
 
-      <AllServices/>
+      <AllServices locale={locale}/>
 
-      <OpenAccClient/>
-      <RealState/>
-      <Accounting/>
-      <VisaPensionado/>
-      <VisaInversionista/>
+      <OpenAccClient locale={locale}/>
+      <RealState locale={locale}/>
+      <Accounting locale={locale}/>
+      <VisaPensionado locale={locale}/>
+      <VisaInversionista locale={locale}/>
     </>
   );
 }

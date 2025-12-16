@@ -25,7 +25,7 @@ export default function PropertySearchWrapper({
   if (!isClient) {
     console.log("PropertySearchWrapper: Mostrando skeleton");
     return (
-      <div className="animate-pulse">
+      <div className="animate-pulse ">
         <div className="h-8 bg-gray-200 rounded mb-4"></div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {[...Array(6)].map((_, i) => (

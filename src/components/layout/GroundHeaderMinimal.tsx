@@ -123,14 +123,14 @@ export function GroundHeaderMinimal() {
                 <h1 className="text-xl font-brand text-jade-green font-semibold">
                   Panama Golden Key
                 </h1>
-                <p className="text-xs text-gray-600 ground-text-sha font-medium">
+                <p className="text-xs text-gray-600 ground-text-sha font-medium logomov">
                   {t("tagline")}
                 </p>
               </div>
             </Link>
 
             {/* Enhanced Desktop Navigation */}
-            <nav className="hidden lg:flex items-center space-x-10">
+            <nav className="hidden lg:flex items-center space-x-6">
               {navigation.map((item) => (
                 <Link
                   key={item.name}
@@ -150,21 +150,15 @@ export function GroundHeaderMinimal() {
             </nav>
 
             {/* Enhanced Mobile & CTA */}
-            <div className="flex items-center space-x-4">
+            <div className="flex items-center ">
               {/* Mobile Language Switcher */}
               <div className="lg:hidden">
                 <LanguageSwitcher />
               </div>
 
               {/* Enhanced CTA Button */}
-              <div className="hidden md:inline-flex">
-                <div className="bg-jade-green hover:bg-jade-green/90 text-white rounded-xl px-6 py-2 font-medium transition-all duration-200 hover:shadow-lg">
-
-                  
-                 
-
-                  <HeaderDropdown/>
-                </div>
+              <div className="hidden lg:inline-flex">
+               <HeaderDropdown/>
               </div>
 
               {/* Enhanced Mobile Menu Toggle */}

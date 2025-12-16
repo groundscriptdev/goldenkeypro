@@ -57,14 +57,6 @@ export function FeaturedPrograms() {
       link: `/${locale}/services`,
     },
     {
-      icon: <GraduationCap className="w-8 h-8 text-jade-green" />,
-      title: t("featured_programs.educational_program.title"),
-      description: t("featured_programs.educational_program.description"),
-      investmentMin: t("featured_programs.educational_program.investment_min"),
-      features: getFeatures("educational_program"),
-      link: `/${locale}/about-panama`,
-    },
-    {
       icon: <Plane className="w-8 h-8 text-jade-green" />,
       title: t("featured_programs.retirement_visa.title"),
       description: t("featured_programs.retirement_visa.description"),

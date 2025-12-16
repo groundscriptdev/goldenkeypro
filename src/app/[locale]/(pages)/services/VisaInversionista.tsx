@@ -330,7 +330,7 @@ export default function VisaInversionista({ locale }: VisaInversionistaProps) {
                         <h3 className="text-2xl font-bold text-gray-800 mr-4">{option.title}</h3>
                         <span className="text-lg text-gray-600 font-medium">{option.subtitle}</span>
                       </div>
-                      <div className="bg-jade-green text-white px-4 py-2 rounded-lg inline-block mb-4">
+                      <div className="bg-jade-green text-gold-700 px-4 py-2 rounded-lg inline-block mb-4">
                         <span className="text-xl font-bold">{option.amount}</span>
                       </div>
                       <p className="text-gray-600 mb-6 leading-relaxed">{option.description}</p>

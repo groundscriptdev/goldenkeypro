@@ -16,6 +16,7 @@ import {
 import { Users, Award, Target, Globe, Heart, Shield } from "lucide-react";
 import Link from "next/link";
 
+
 // Suppress dynamic render warnings for static export
 
 interface AboutUsPageProps {
@@ -107,7 +108,7 @@ export default async function AboutUsPage({ params }: AboutUsPageProps) {
         t("services.legal_support_features.3"),
       ],
     },
-    {
+/*     {
       icon: <Heart className="w-6 h-6" />,
       title: t("services.property_management"),
       description: t("services.property_management_desc"),
@@ -117,7 +118,7 @@ export default async function AboutUsPage({ params }: AboutUsPageProps) {
         t("services.property_management_features.2"),
         t("services.property_management_features.3"),
       ],
-    },
+    }, */
     {
       icon: <Users className="w-6 h-6" />,
       title: t("services.family_office"),

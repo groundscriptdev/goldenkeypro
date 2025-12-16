@@ -8,6 +8,7 @@ import {
   Car, Wifi, Dumbbell, Waves, Trees, Shield, CheckCircle, ChevronLeft, 
   ChevronRight, Maximize2, User
 } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 
 // Importar tipos completos
 import { 
@@ -524,6 +525,7 @@ const PropertyModalPGK: React.FC<PropertyModalPGKProps> = ({
     message: "",
   });
   const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const t = useTranslations("property_modal");
 
   const images = property.media?.gallery || [];
   const currentImage = images[currentImageIndex];
@@ -645,12 +647,12 @@ const PropertyModalPGK: React.FC<PropertyModalPGKProps> = ({
   };
 
   const sections = [
-    { id: 'overview', label: 'Overview', icon: Home },
-    { id: 'financials', label: 'Financials', icon: DollarSign },
-    { id: 'location', label: 'Location', icon: MapPin },
+    { id: 'overview', label: t("nav.overview"), icon: Home },
+    { id: 'financials', label: t("nav.financials"), icon: DollarSign },
+    { id: 'location', label: t("nav.location"), icon: MapPin },
    /*  { id: 'agent', label: 'Agent', icon: User }, */
-    { id: 'media', label: 'Media', icon: Camera },
-    { id: 'legal', label: 'Legal', icon: Scale }
+    { id: 'media', label: t("nav.media"), icon: Camera },
+    { id: 'legal', label: t("nav.legal"), icon: Scale }
   ];
 
   if (!isOpen) return null;
@@ -823,11 +825,11 @@ const PropertyModalPGK: React.FC<PropertyModalPGKProps> = ({
                 {/* Overview Section */}
                 <section data-section="overview" className="space-y-4">
                   <div className="flex items-center justify-between">
-                    <h3 className="text-xl font-bold text-gray-900">Descripción</h3>
+                    <h3 className="text-xl font-bold text-gray-900">{t("overview.description")}</h3>
                     <div className="flex gap-2">
                       {property.status && (
                         <span className="px-3 py-1 bg-jade text-white rounded-full text-sm font-semibold">
-                          {property.status === "VENTA" ? "En Venta" : "Alquiler"}
+                          {property.status === "VENTA" || property.status === "for_sale" ? t("facts.status") : property.status}
                         </span>
                       )}
                       <span className="px-3 py-1 border border-jade text-jade rounded-full text-sm font-semibold">
@@ -840,19 +842,19 @@ const PropertyModalPGK: React.FC<PropertyModalPGKProps> = ({
                   
                   {/* Quick Stats */}
                   <div className="grid grid-cols-4 gap-4 p-4 bg-gray-50 rounded-lg">
-                    <div className="text-center">
-                      <div className="flex items-center justify-center gap-1 text-gray-700 mb-1">
-                        <Bed className="w-4 h-4" />
-                        <span className="font-semibold text-lg">{property.bedrooms}</span>
+                      <div className="text-center">
+                        <div className="flex items-center justify-center gap-1 text-gray-700 mb-1">
+                          <Bed className="w-4 h-4" />
+                          <span className="font-semibold text-lg">{property.bedrooms}</span>
+                        </div>
+                        <span className="text-sm text-gray-600">{t("overview.bedrooms")}</span>
                       </div>
-                      <span className="text-sm text-gray-600">Habitaciones</span>
-                    </div>
                     <div className="text-center">
                       <div className="flex items-center justify-center gap-1 text-gray-700 mb-1">
                         <Bath className="w-4 h-4" />
                         <span className="font-semibold text-lg">{property.bathrooms}</span>
                       </div>
-                      <span className="text-sm text-gray-600">Baños</span>
+                      <span className="text-sm text-gray-600">{t("overview.bathrooms")}</span>
                     </div>
                     <div className="text-center">
                       <div className="flex items-center justify-center gap-1 text-gray-700 mb-1">
@@ -866,13 +868,13 @@ const PropertyModalPGK: React.FC<PropertyModalPGKProps> = ({
                         <Car className="w-4 h-4" />
                         <span className="font-semibold text-lg">{property.parking_spaces}</span>
                       </div>
-                      <span className="text-sm text-gray-600">Estacionamiento</span>
+                      <span className="text-sm text-gray-600">{t("amenities.parking")}</span>
                     </div>
                   </div>
 
                   {/* Features */}
                   <div>
-                    <h4 className="text-lg font-semibold text-gray-900 mb-3">Características</h4>
+                    <h4 className="text-lg font-semibold text-gray-900 mb-3">{t("overview.features")}</h4>
                     <div className="grid grid-cols-2 gap-3">
                       {property.features?.map((feature, index) => (
                         <div key={index} className="flex items-center space-x-2">
@@ -885,7 +887,7 @@ const PropertyModalPGK: React.FC<PropertyModalPGKProps> = ({
 
                   {/* Tags */}
                   <div>
-                    <h4 className="text-lg font-semibold text-gray-900 mb-3">Etiquetas</h4>
+                    <h4 className="text-lg font-semibold text-gray-900 mb-3">{t("overview.tags")}</h4>
                     <div className="flex flex-wrap gap-2">
                       {property.tags?.map((tag, index) => (
                         <span key={index} className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm">
@@ -898,12 +900,12 @@ const PropertyModalPGK: React.FC<PropertyModalPGKProps> = ({
 
                 {/* Financials Section */}
                 <section data-section="financials" className="space-y-4">
-                  <h3 className="text-xl font-bold text-gray-900">Información Financiera</h3>
+                  <h3 className="text-xl font-bold text-gray-900">{t("financials.title")}</h3>
                   
                   <div className="bg-gradient-to-r from-jade to-jade/80 p-6 rounded-xl text-white">
                     <div className="grid grid-cols-2 gap-4">
                       <div>
-                        <p className="text-sm opacity-90">Precio</p>
+                        <p className="text-sm opacity-90">{t("financials.price")}</p>
                         <p className="text-2xl font-bold">
                           {formatPrice(property.financials?.price || property.price || 0)}
                         </p>
@@ -914,19 +916,19 @@ const PropertyModalPGK: React.FC<PropertyModalPGKProps> = ({
                         )}
                       </div>
                       <div>
-                        <p className="text-sm opacity-90">Rendimiento de alquiler</p>
+                        <p className="text-sm opacity-90">{t("financials.rental_yield")}</p>
                         <p className="text-2xl font-bold">
                           {property.financials?.rental_yield_gross || property.roi}%
                         </p>
                       </div>
                       <div>
-                        <p className="text-sm opacity-90">ROI Proyectado</p>
+                        <p className="text-sm opacity-90">{t("financials.projected_roi")}</p>
                         <p className="text-xl font-bold">
                           {property.financials?.roi_range || "8-12%"}
                         </p>
                       </div>
                       <div>
-                        <p className="text-sm opacity-90">Cap Rate</p>
+                        <p className="text-sm opacity-90">{t("financials.cap_rate")}</p>
                         <p className="text-xl font-bold">
                           {property.financials?.cap_rate || 7.2}%
                         </p>
@@ -936,16 +938,16 @@ const PropertyModalPGK: React.FC<PropertyModalPGKProps> = ({
 
                   {property.financials?.tokenized_investment_available && (
                     <div className="bg-gray-50 p-6 rounded-xl">
-                      <h4 className="text-lg font-semibold text-gray-900 mb-3">Inversión Tokenizada</h4>
+                      <h4 className="text-lg font-semibold text-gray-900 mb-3">{t("financials.tokenized_investment")}</h4>
                       <div className="grid grid-cols-2 gap-4">
                         <div>
-                          <p className="text-sm text-gray-600">Precio por token</p>
+                          <p className="text-sm text-gray-600">{t("financials.token_price")}</p>
                           <p className="text-xl font-bold text-jade">
                             ${property.financials.token_price_usd}
                           </p>
                         </div>
                         <div>
-                          <p className="text-sm text-gray-600">Inversión mínima</p>
+                          <p className="text-sm text-gray-600">{t("financials.min_investment")}</p>
                           <p className="text-xl font-bold text-jade">
                             ${property.financials.min_investment_usd}
                           </p>
@@ -957,7 +959,7 @@ const PropertyModalPGK: React.FC<PropertyModalPGKProps> = ({
 
                 {/* Location Section */}
                 <section data-section="location" className="space-y-4">
-                  <h3 className="text-xl font-bold text-gray-900">Ubicación</h3>
+                  <h3 className="text-xl font-bold text-gray-900">{t("location.title")}</h3>
                   <div className="bg-gray-50 p-6 rounded-xl">
                     <div className="flex items-center gap-2 mb-4">
                       <MapPin className="w-5 h-5 text-jade" />
@@ -968,33 +970,33 @@ const PropertyModalPGK: React.FC<PropertyModalPGKProps> = ({
                     
                     <div className="grid grid-cols-2 gap-4 mb-4">
                       <div>
-                        <p className="text-sm text-gray-600">Barrio</p>
+                        <p className="text-sm text-gray-600">{t("location.neighborhood")}</p>
                         <p className="font-semibold">{property.location?.neighborhood}</p>
                       </div>
                       <div>
-                        <p className="text-sm text-gray-600">Distrito</p>
+                        <p className="text-sm text-gray-600">{t("location.district")}</p>
                         <p className="font-semibold">{property.location?.district}</p>
                       </div>
                       <div>
-                        <p className="text-sm text-gray-600">Provincia</p>
+                        <p className="text-sm text-gray-600">{t("location.province")}</p>
                         <p className="font-semibold">{property.location?.province}</p>
                       </div>
                       <div>
-                        <p className="text-sm text-gray-600">Walk Score</p>
+                        <p className="text-sm text-gray-600">{t("location.walk_score")}</p>
                         <p className="font-semibold">{property.location?.walk_score}/100</p>
                       </div>
                     </div>
 
                     <div className="aspect-video bg-gray-200 rounded-lg flex items-center justify-center">
                       <MapPin className="w-8 h-8 text-gray-400" />
-                      <span className="ml-2 text-gray-500">Mapa interactivo</span>
+                      <span className="ml-2 text-gray-500">{t("location.interactive_map")}</span>
                     </div>
                   </div>
                 </section>
 
                 {/* Media Section */}
                 <section data-section="media" className="space-y-4">
-                  <h3 className="text-xl font-bold text-gray-900">Galería Completa</h3>
+                  <h3 className="text-xl font-bold text-gray-900">{t("media.gallery_title")}</h3>
                   <div className="grid grid-cols-3 gap-3">
                     {images.map((image, index) => (
                       <motion.div
@@ -1033,25 +1035,25 @@ const PropertyModalPGK: React.FC<PropertyModalPGKProps> = ({
 
                 {/* Legal Section */}
                 <section data-section="legal" className="space-y-4">
-                  <h3 className="text-xl font-bold text-gray-900">Información Legal</h3>
+                  <h3 className="text-xl font-bold text-gray-900">{t("legal.title")}</h3>
                   <div className="bg-gray-50 p-6 rounded-xl">
                     <div className="space-y-3">
                       <div>
-                        <p className="text-sm text-gray-600">Número de escritura</p>
+                        <p className="text-sm text-gray-600">{t("legal.deed_number")}</p>
                         <p className="font-semibold">{property.legal?.title_deed_number}</p>
                       </div>
                       <div>
-                        <p className="text-sm text-gray-600">Propietario legal</p>
+                        <p className="text-sm text-gray-600">{t("legal.legal_owner")}</p>
                         <p className="font-semibold">{property.legal?.legal_owner_name}</p>
                       </div>
                       <div>
-                        <p className="text-sm text-gray-600">Estado del título</p>
+                        <p className="text-sm text-gray-600">{t("legal.title_status")}</p>
                         <p className="font-semibold text-green-600">
-                          {property.legal?.has_clear_title ? "Libre de gravámenes" : "Con restricciones"}
+                          {property.legal?.has_clear_title ? t("legal.clear_title") : t("legal.restricted")}
                         </p>
                       </div>
                       <div>
-                        <p className="text-sm text-gray-600">Nivel de riesgo</p>
+                        <p className="text-sm text-gray-600">{t("legal.risk_level")}</p>
                         <p className="font-semibold">{property.legal?.risk_level}</p>
                       </div>
                     </div>
@@ -1065,7 +1067,7 @@ const PropertyModalPGK: React.FC<PropertyModalPGKProps> = ({
                 <div className="sticky top-6 space-y-6">
                 {/* Contact Card */}
                 <div className="bg-gray-50 rounded-lg p-6">
-                  <h3 className="text-lg font-bold text-gray-900 mb-4">Contactar Agente</h3>
+                  <h3 className="text-lg font-bold text-gray-900 mb-4">{t("contact.title")}</h3>
                   <div className="flex items-center gap-4 mb-4">
                     <div className="w-16 h-16 bg-jade rounded-full flex items-center justify-center">
                       {property.agent?.agent_photo ? (
@@ -1080,7 +1082,7 @@ const PropertyModalPGK: React.FC<PropertyModalPGKProps> = ({
                     </div>
                     <div>
                       <div className="font-semibold text-gray-900">
-                        {property.agent?.agent_name || "Agente Inmobiliario"}
+                        {property.agent?.agent_name || t("contact.default_agent")}
                       </div>
                       <div className="text-sm text-gray-600">
                         {property.agent?.agency_name || "Panama Golden Key Realty"}
@@ -1088,7 +1090,7 @@ const PropertyModalPGK: React.FC<PropertyModalPGKProps> = ({
                       <div className="flex items-center gap-1 mt-1">
                         <Star className="w-4 h-4 text-yellow-500 fill-current" />
                         <span className="text-sm text-gray-600">
-                          {property.agent?.client_satisfaction_score || 4.8} ({property.agent?.properties_sold || 156} ventas)
+                          {property.agent?.client_satisfaction_score || 4.8} ({property.agent?.properties_sold || 156} {t("contact.sales")})
                         </span>
                       </div>
                     </div>
@@ -1101,7 +1103,7 @@ const PropertyModalPGK: React.FC<PropertyModalPGKProps> = ({
                         onClick={() => setShowContactForm(true)}
                       >
                         <Mail className="w-4 h-4 mr-2 inline" />
-                        Contactar Agente
+                        {t("contact.title")}
                       </button>
                       <button
                         className="w-full border border-jade text-jade py-3 px-6 rounded-xl font-semibold hover:bg-jade hover:text-white transition-colors"
@@ -1167,24 +1169,24 @@ const PropertyModalPGK: React.FC<PropertyModalPGKProps> = ({
 
                 {/* Property Facts */}
                 <div className="bg-gray-50 rounded-lg p-6">
-                  <h3 className="text-lg font-bold text-gray-900 mb-4">Información de la Propiedad</h3>
+                  <h3 className="text-lg font-bold text-gray-900 mb-4">{t("facts.title")}</h3>
                   <div className="space-y-3">
                     <div className="flex justify-between">
-                      <span className="text-gray-600">Tipo de propiedad</span>
+                      <span className="text-gray-600">{t("facts.property_type")}</span>
                       <span className="font-medium text-gray-900">{property.type}</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-gray-600">Año de construcción</span>
-                      <span className="font-medium text-gray-900">{property.construction_year || "N/A"}</span>
+                      <span className="text-gray-600">{t("facts.year_built")}</span>
+                      <span className="font-medium text-gray-900">{property.construction_year || t("facts.na")}</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-gray-600">Estado</span>
+                      <span className="text-gray-600">{t("facts.status")}</span>
                       <span className="font-medium text-gray-900">
-                        {property.status === "VENTA" ? "En Venta" : "Alquiler"}
+                        {property.status === "VENTA" || property.status === "for_sale" ? t("status.for_sale") : t("status.for_rent")}
                       </span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-gray-600">Listado</span>
+                      <span className="text-gray-600">{t("facts.listed")}</span>
                       <span className="font-medium text-gray-900">
                         {new Date(property.created_at).toLocaleDateString("es-ES", {
                           year: "numeric",
@@ -1194,9 +1196,9 @@ const PropertyModalPGK: React.FC<PropertyModalPGKProps> = ({
                       </span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-gray-600">Precio por m²</span>
+                      <span className="text-gray-600">{t("facts.price_sqm")}</span>
                       <span className="font-medium text-gray-900">
-                        ${property.price_per_sqmt?.toLocaleString() || "N/A"}
+                        ${property.price_per_sqmt?.toLocaleString() || t("facts.na")}
                       </span>
                     </div>
                   </div>
@@ -1204,15 +1206,15 @@ const PropertyModalPGK: React.FC<PropertyModalPGKProps> = ({
 
                 {/* Amenities */}
                 <div className="bg-gray-50 rounded-lg p-6">
-                  <h3 className="text-lg font-bold text-gray-900 mb-4">Amenidades</h3>
+                  <h3 className="text-lg font-bold text-gray-900 mb-4">{t("amenities.title")}</h3>
                   <div className="grid grid-cols-2 gap-3">
                     {[
-                      { icon: <Car className="w-5 h-5" />, label: "Estacionamiento" },
-                      { icon: <Wifi className="w-5 h-5" />, label: "Internet alta velocidad" },
-                      { icon: <Dumbbell className="w-5 h-5" />, label: "Gimnasio" },
-                      { icon: <Waves className="w-5 h-5" />, label: "Piscina" },
-                      { icon: <Trees className="w-5 h-5" />, label: "Áreas verdes" },
-                      { icon: <Shield className="w-5 h-5" />, label: "Seguridad 24/7" },
+                      { icon: <Car className="w-5 h-5" />, label: t("amenities.parking") },
+                      { icon: <Wifi className="w-5 h-5" />, label: t("amenities.internet") },
+                      { icon: <Dumbbell className="w-5 h-5" />, label: t("amenities.gym") },
+                      { icon: <Waves className="w-5 h-5" />, label: t("amenities.pool") },
+                      { icon: <Trees className="w-5 h-5" />, label: t("amenities.green_areas") },
+                      { icon: <Shield className="w-5 h-5" />, label: t("amenities.security") },
                     ].map((amenity, index) => (
                       <div key={index} className="flex items-center gap-2">
                         <div className="text-jade">{amenity.icon}</div>
@@ -1232,7 +1234,7 @@ const PropertyModalPGK: React.FC<PropertyModalPGKProps> = ({
                   onClick={() => setIsFavorite(!isFavorite)}
                 >
                   <Heart className={`w-4 h-4 mr-2 inline ${isFavorite ? 'fill-current' : ''}`} />
-                  {isFavorite ? "Propiedad Guardada" : "Guardar Propiedad"}
+                  {isFavorite ? t("actions.property_saved") : t("actions.save_property")}
                 </button>
                 </div>
               </div>
@@ -1241,7 +1243,7 @@ const PropertyModalPGK: React.FC<PropertyModalPGKProps> = ({
               <div className="md:hidden space-y-6">
                 {/* Contact Card */}
                 <div className="bg-gray-50 rounded-lg p-6">
-                  <h3 className="text-lg font-bold text-gray-900 mb-4">Contactar Agente</h3>
+                  <h3 className="text-lg font-bold text-gray-900 mb-4">{t("contact.title")}</h3>
                   <div className="flex items-center gap-4 mb-4">
                     <div className="w-16 h-16 bg-jade rounded-full flex items-center justify-center">
                       {property.agent?.agent_photo ? (
@@ -1256,7 +1258,7 @@ const PropertyModalPGK: React.FC<PropertyModalPGKProps> = ({
                     </div>
                     <div>
                       <div className="font-semibold text-gray-900">
-                        {property.agent?.agent_name || "Agente Inmobiliario"}
+                        {property.agent?.agent_name || t("contact.default_agent")}
                       </div>
                       <div className="text-sm text-gray-600">
                         {property.agent?.agency_name || "Panama Golden Key Realty"}
@@ -1264,7 +1266,7 @@ const PropertyModalPGK: React.FC<PropertyModalPGKProps> = ({
                       <div className="flex items-center gap-1 mt-1">
                         <Star className="w-4 h-4 text-yellow-500 fill-current" />
                         <span className="text-sm text-gray-600">
-                          {property.agent?.client_satisfaction_score || 4.8} ({property.agent?.properties_sold || 156} ventas)
+                          {property.agent?.client_satisfaction_score || 4.8} ({property.agent?.properties_sold || 156} {t("contact.sales")})
                         </span>
                       </div>
                     </div>
@@ -1277,7 +1279,7 @@ const PropertyModalPGK: React.FC<PropertyModalPGKProps> = ({
                         onClick={() => setShowContactForm(true)}
                       >
                         <Mail className="w-4 h-4 mr-2 inline" />
-                        Contactar Agente
+                        {t("contact.title")}
                       </button>
                       <button
                         className="w-full border border-jade text-jade py-3 px-6 rounded-xl font-semibold hover:bg-jade hover:text-white transition-colors"
@@ -1343,24 +1345,24 @@ const PropertyModalPGK: React.FC<PropertyModalPGKProps> = ({
 
                 {/* Property Facts */}
                 <div className="bg-gray-50 rounded-lg p-6">
-                  <h3 className="text-lg font-bold text-gray-900 mb-4">Información de la Propiedad</h3>
+                  <h3 className="text-lg font-bold text-gray-900 mb-4">{t("facts.title")}</h3>
                   <div className="space-y-3">
                     <div className="flex justify-between">
-                      <span className="text-gray-600">Tipo de propiedad</span>
+                      <span className="text-gray-600">{t("facts.property_type")}</span>
                       <span className="font-medium text-gray-900">{property.type}</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-gray-600">Año de construcción</span>
-                      <span className="font-medium text-gray-900">{property.construction_year || "N/A"}</span>
+                      <span className="text-gray-600">{t("facts.year_built")}</span>
+                      <span className="font-medium text-gray-900">{property.construction_year || t("facts.na")}</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-gray-600">Estado</span>
+                      <span className="text-gray-600">{t("facts.status")}</span>
                       <span className="font-medium text-gray-900">
-                        {property.status === "VENTA" ? "En Venta" : "Alquiler"}
+                        {property.status === "VENTA" || property.status === "for_sale" ? t("status.for_sale") : t("status.for_rent")}
                       </span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-gray-600">Listado</span>
+                      <span className="text-gray-600">{t("facts.listed")}</span>
                       <span className="font-medium text-gray-900">
                         {new Date(property.created_at).toLocaleDateString("es-ES", {
                           year: "numeric",
@@ -1370,9 +1372,9 @@ const PropertyModalPGK: React.FC<PropertyModalPGKProps> = ({
                       </span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-gray-600">Precio por m²</span>
+                      <span className="text-gray-600">{t("facts.price_sqm")}</span>
                       <span className="font-medium text-gray-900">
-                        ${property.price_per_sqmt?.toLocaleString() || "N/A"}
+                        ${property.price_per_sqmt?.toLocaleString() || t("facts.na")}
                       </span>
                     </div>
                   </div>
@@ -1380,15 +1382,15 @@ const PropertyModalPGK: React.FC<PropertyModalPGKProps> = ({
 
                 {/* Amenities */}
                 <div className="bg-gray-50 rounded-lg p-6">
-                  <h3 className="text-lg font-bold text-gray-900 mb-4">Amenidades</h3>
+                  <h3 className="text-lg font-bold text-gray-900 mb-4">{t("amenities.title")}</h3>
                   <div className="grid grid-cols-2 gap-3">
                     {[
-                      { icon: <Car className="w-5 h-5" />, label: "Estacionamiento" },
-                      { icon: <Wifi className="w-5 h-5" />, label: "Internet alta velocidad" },
-                      { icon: <Dumbbell className="w-5 h-5" />, label: "Gimnasio" },
-                      { icon: <Waves className="w-5 h-5" />, label: "Piscina" },
-                      { icon: <Trees className="w-5 h-5" />, label: "Áreas verdes" },
-                      { icon: <Shield className="w-5 h-5" />, label: "Seguridad 24/7" },
+                      { icon: <Car className="w-5 h-5" />, label: t("amenities.parking") },
+                      { icon: <Wifi className="w-5 h-5" />, label: t("amenities.internet") },
+                      { icon: <Dumbbell className="w-5 h-5" />, label: t("amenities.gym") },
+                      { icon: <Waves className="w-5 h-5" />, label: t("amenities.pool") },
+                      { icon: <Trees className="w-5 h-5" />, label: t("amenities.green_areas") },
+                      { icon: <Shield className="w-5 h-5" />, label: t("amenities.security") },
                     ].map((amenity, index) => (
                       <div key={index} className="flex items-center gap-2">
                         <div className="text-jade">{amenity.icon}</div>
@@ -1408,7 +1410,7 @@ const PropertyModalPGK: React.FC<PropertyModalPGKProps> = ({
                   onClick={() => setIsFavorite(!isFavorite)}
                 >
                   <Heart className={`w-4 h-4 mr-2 inline ${isFavorite ? 'fill-current' : ''}`} />
-                  {isFavorite ? "Propiedad Guardada" : "Guardar Propiedad"}
+                  {isFavorite ? t("actions.property_saved") : t("actions.save_property")}
                 </button>
               </div>
             </div>

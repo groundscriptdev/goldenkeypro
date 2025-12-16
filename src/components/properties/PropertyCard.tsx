@@ -25,6 +25,8 @@ import {
   X,
 } from "lucide-react";
 
+import { useTranslations } from "next-intl";
+
 interface PropertyCardProps {
   property: Property;
   className?: string;
@@ -36,6 +38,7 @@ export default function PropertyCard({
   className = "",
   locale,
 }: PropertyCardProps) {
+  const t = useTranslations("property_card");
   const [isSaved, setIsSaved] = useState(false);
   const [imageError, setImageError] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -87,25 +90,25 @@ export default function PropertyCard({
       case "single_family":
       case "casa":
       case "CASA":
-        return "Casa";
+        return t("type.house");
       case "condo":
       case "condominio":
       case "CONDO":
       case "CONDOMINIO":
-        return "Condominio";
+        return t("type.condo");
       case "apartment":
       case "apartamento":
       case "APARTMENT":
-        return "Apartamento";
+        return t("type.apartment");
       case "commercial":
       case "comercial":
       case "COMERCIAL":
-        return "Comercial";
+        return t("type.commercial");
       case "land":
       case "terreno":
       case "TERRENO":
       case "LAND":
-        return "Terreno";
+        return t("type.land");
       default:
         return type;
     }
@@ -120,7 +123,7 @@ export default function PropertyCard({
     if (property.location?.neighborhood && property.location?.province) {
       return `${property.location.neighborhood}, ${property.location.province}`;
     }
-    return "Ubicación no disponible";
+    return t("location_unavailable");
   };
 
   // Función para obtener imagen principal - compatible con nueva arquitectura
@@ -169,7 +172,7 @@ export default function PropertyCard({
     if (navigator.share) {
       navigator.share({
         title: property.title || getFullAddress(),
-        text: `Mira esta propiedad en ${property.location?.province || "Panamá"}: ${getFullAddress()}`,
+        text: `${t("share")} ${property.location?.province || "Panamá"}: ${getFullAddress()}`,
         url: window.location.href,
       });
     }
@@ -200,7 +203,7 @@ export default function PropertyCard({
                   className="w-16 h-16 text-jade-green/30 mx-auto mb-2"
                 />
                 <p className="text-jade-green/60 text-sm">
-                  Imagen no disponible
+                  {t("image_unavailable")}
                 </p>
               </div>
             </div>
@@ -210,13 +213,13 @@ export default function PropertyCard({
           <div className="absolute top-4 left-4">
             <Badge className="bg-jade-green text-white border-0">
               {property.status === "for_sale" || property.status === "VENTA"
-                ? "En Venta"
+                ? t("status.for_sale")
                 : property.status === "for_rent" || property.status === "RENTA"
-                  ? "Alquiler"
+                  ? t("status.for_rent")
                   : property.status === "sold" || property.status === "VENDIDO"
-                    ? "Vendida"
+                    ? t("status.sold")
                     : property.status === "RESERVADO"
-                      ? "Reservado"
+                      ? t("status.reserved")
                       : property.status}
             </Badge>
           </div>
@@ -315,15 +318,15 @@ export default function PropertyCard({
           <div className="grid grid-cols-2 gap-3 mb-4">
             <div className="flex items-center gap-2 text-sm text-gray-600">
               <Bed className="w-4 h-4 text-jade-green" />
-              <span>{property.bedrooms} Habitaciones</span>
+              <span>{property.bedrooms} {t("beds_short")}</span>
             </div>
             <div className="flex items-center gap-2 text-sm text-gray-600">
               <Bath className="w-4 h-4 text-jade-green" />
-              <span>{property.bathrooms} Baños</span>
+              <span>{property.bathrooms} {t("baths_short")}</span>
             </div>
             <div className="flex items-center gap-2 text-sm text-gray-600">
               <Square className="w-4 h-4 text-jade-green" />
-              <span>{property.area_built} m²</span>
+              <span>{property.area_built} {t("sqm")}</span>
             </div>
             <div className="flex items-center gap-2 text-sm text-gray-600">
               <Building className="w-4 h-4 text-jade-green" />
@@ -348,7 +351,7 @@ export default function PropertyCard({
               }}
             >
               <Eye className="w-4 h-4 mr-2" />
-              Ver Detalles
+              {t("view_details")}
             </Button>
             <Button
               variant="outline"
@@ -358,7 +361,7 @@ export default function PropertyCard({
               <Heart
                 className={`w-4 h-4 mr-2 ${isSaved ? "fill-current" : ""}`}
               />
-              {isSaved ? "Guardada" : "Guardar"}
+              {isSaved ? t("saved") : t("save")}
             </Button>
           </div>
 
@@ -366,7 +369,7 @@ export default function PropertyCard({
           <div className="flex items-center justify-between pt-4 border-t border-gray-100">
             <div className="flex items-center text-sm text-gray-500">
               <Calendar className="w-4 h-4 mr-1" />
-              Listado:{" "}
+              {t("listed")}:{" "}
               {new Date(
                 property.published_at || property.created_at
               ).toLocaleDateString("es-ES", {
@@ -377,7 +380,7 @@ export default function PropertyCard({
             </div>
             <div className="flex items-center text-sm font-medium text-jade-green">
               <DollarSign className="w-4 h-4 mr-1" />
-              ROI estimado: {getROI()}
+              {t("estimated_roi")}: {getROI()}
             </div>
           </div>
         </div>

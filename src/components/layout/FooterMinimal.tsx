@@ -29,10 +29,10 @@ export function FooterMinimal() {
       { name: t("navigation.home"), href: `/${locale}` },
       { name: t("navigation.residency"), href: `/${locale}/residency` },
       { name: t("navigation.real_estate"), href: `/${locale}/real-estate` },
-      {
+     /*  {
         name: t("navigation.medical_tourism"),
         href: `/${locale}/medical-tourism`,
-      },
+      }, */
     ],
     services: [
       {
@@ -44,16 +44,16 @@ export function FooterMinimal() {
         href: `/${locale}/real-estate`,
       },
       { name: t("services_list.legal_support"), href: `/${locale}/about-us` },
-      {
+    /*   {
         name: t("services_list.property_management"),
         href: `/${locale}/real-estate`,
-      },
+      }, */
     ],
     resources: [
       /* { name: t("navigation.blog"), href: `/${locale}/blog` },
       { name: t("navigation.faq"), href: `/${locale}/faq` }, */
-      { name: t("navigation.testimonials"), href: `/${locale}/testimonials` },
-      { name: t("navigation.calculator"), href: `/${locale}/calculator` },
+      { name: t("navigation.testimonials"), href: `/${locale}#testimonials` },
+      /* { name: t("navigation.calculator"), href: `/${locale}/calculator` }, */
     ],
     legal: [
       { name: t("privacy_policy"), href: `/${locale}/privacy` },
@@ -212,7 +212,7 @@ export function FooterMinimal() {
               ))}
             </ul>
 
-            <h4 className="text-xl font-brand text-gold font-semibold mb-8">
+            {/* <h4 className="text-xl font-brand text-gold font-semibold mb-8">
               {t("legal")}
             </h4>
             <ul className="space-y-4">
@@ -226,7 +226,7 @@ export function FooterMinimal() {
                   </Link>
                 </li>
               ))}
-            </ul>
+            </ul> */}
           </div>
         </div>
       </div>

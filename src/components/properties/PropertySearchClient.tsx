@@ -5,6 +5,7 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { propertiesApi } from "@/lib/api/properties";
 import { PropertyFilters } from "@/types/properties";
 import { useSimplePropertiesWorking } from "@/hooks/useSimplePropertiesWorking";
+import { useTranslations } from "next-intl";
 import PropertyCard from "./PropertyCard";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -41,11 +42,13 @@ export default function PropertySearchClient({
   locale,
   mapView = false,
 }: PropertySearchClientProps) {
+  const t = useTranslations("property_search");
   console.log("🔥 PropertySearchClient: Componente renderizado - typeof window:", typeof window);
   
   const router = useRouter();
   const searchParams = useSearchParams();
   const [filters, setFilters] = useState<PropertyFilters>(initialFilters);
+  const [searchInput, setSearchInput] = useState(initialFilters.search || "");
   const [viewMode, setViewMode] = useState<"grid" | "list" | "map">("grid");
   const [showFilters, setShowFilters] = useState(false);
   const [properties, setProperties] = useState<any[]>([]);
@@ -59,50 +62,41 @@ export default function PropertySearchClient({
     console.log("🔥 PropertySearchClient: ❌ Estamos en SERVIDOR");
   }
 
-  // Cargar propiedades directamente en el componente
+  // Cargar propiedades con filtros
   useEffect(() => {
-    console.log("🔥 PropertySearchClient: useEffect INICIADO");
-    console.log("🔥 PropertySearchClient: typeof window:", typeof window);
+    /* console.log("🔥 PropertySearchClient: useEffect INICIADO");
+    console.log("🔥 PropertySearchClient: Filtros actuales:", filters); */
     
     // Forzar ejecución en cliente
     if (typeof window !== 'undefined') {
-      console.log("🔥 PropertySearchClient: EJECUTANDO EN CLIENTE");
       setLoading(true);
       setError(null);
 
-      console.log("🔥 PropertySearchClient: Llamando a propertiesApi.getProperties()");
+      console.log("🔥 PropertySearchClient: Llamando a propertiesApi.searchProperties()");
       propertiesApi
-        .getProperties()
+        .searchProperties(filters)
         .then((response) => {
           console.log("🔥 PropertySearchClient: ✅ Respuesta recibida:", response);
-          console.log("🔥 PropertySearchClient: Tipo de respuesta:", typeof response);
-          console.log("🔥 PropertySearchClient: response.results:", response.results);
-          console.log("🔥 PropertySearchClient: Número de propiedades:", response.results?.length || 0);
           
           if (response && response.results && Array.isArray(response.results)) {
-            console.log("🔥 PropertySearchClient: ✅ Estableciendo propiedades:", response.results.length);
             setProperties(response.results);
           } else {
-            console.log("🔥 PropertySearchClient: ❌ Respuesta inválida, usando array vacío");
             setProperties([]);
           }
           setLoading(false);
         })
         .catch((err) => {
           console.error("🔥 PropertySearchClient: ❌ Error:", err);
-          console.error("🔥 PropertySearchClient: ❌ Error stack:", err.stack);
           setError(err instanceof Error ? err.message : "Error al cargar propiedades");
           setLoading(false);
         });
-    } else {
-      console.log("🔥 PropertySearchClient: ❌ No es client-side, saltando carga");
     }
-  }, []);
-
+  }, [filters]);
+/* 
   console.log("PropertySearchClient: Componente renderizado");
   console.log("PropertySearchClient: initialFilters:", initialFilters);
   console.log("PropertySearchClient: properties:", properties, "loading:", loading, "error:", error);
-
+ */
   // Update URL when filters change
   useEffect(() => {
     const params = new URLSearchParams();
@@ -125,7 +119,7 @@ export default function PropertySearchClient({
       ? `/${locale}/properties?${queryString}`
       : `/${locale}/properties`;
 
-    router.replace(newPath);
+    router.replace(newPath, { scroll: false });
   }, [filters, locale, router]);
 
   const handleFilterChange = (key: keyof PropertyFilters, value: any) => {
@@ -134,7 +128,7 @@ export default function PropertySearchClient({
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
-    // Search is already triggered by filter changes
+    handleFilterChange("search", searchInput);
   };
 
   const clearFilters = () => {
@@ -154,11 +148,9 @@ export default function PropertySearchClient({
                   <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
                   <Input
                     type="text"
-                    placeholder="Search by location, property name, or keyword..."
-                    value={filters.search || ""}
-                    onChange={(e) =>
-                      handleFilterChange("search", e.target.value)
-                    }
+                    placeholder={t("search_placeholder")}
+                    value={searchInput}
+                    onChange={(e) => setSearchInput(e.target.value)}
                     className="pl-10 h-12"
                   />
                 </div>
@@ -169,13 +161,13 @@ export default function PropertySearchClient({
                   className="flex items-center gap-2"
                 >
                   <Filter className="w-4 h-4" />
-                  Filters
+                  {t("filters_button")}
                 </Button>
                 <Button
                   type="submit"
                   className=" ground-jade bg-jade-green hover:bg-jade-green/90"
                 >
-                  Search Properties
+                  {t("search_button")}
                 </Button>
               </form>
             </CardHeader>
@@ -186,7 +178,7 @@ export default function PropertySearchClient({
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
                   <div>
                     <label className="block text-sm font-medium mb-2">
-                      Property Type
+                       {t("labels.property_type")}
                     </label>
                     <Select
                       value={filters.property_types?.[0] || "all"}
@@ -198,27 +190,27 @@ export default function PropertySearchClient({
                       }
                     >
                       <SelectTrigger>
-                        <SelectValue placeholder="All Types" />
+                        <SelectValue placeholder={t("placeholders.all_types")} />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="all">All Types</SelectItem>
-                        <SelectItem value="apartment">Apartment</SelectItem>
-                        <SelectItem value="house">House</SelectItem>
-                        <SelectItem value="condo">Condo</SelectItem>
-                        <SelectItem value="townhouse">Townhouse</SelectItem>
-                        <SelectItem value="land">Land</SelectItem>
-                        <SelectItem value="commercial">Commercial</SelectItem>
+                        <SelectItem value="all">{t("placeholders.all_types")}</SelectItem>
+                        <SelectItem value="apartment">{t("types.apartment")}</SelectItem>
+                        <SelectItem value="house">{t("types.house")}</SelectItem>
+                        <SelectItem value="condo">{t("types.condo")}</SelectItem>
+                        <SelectItem value="townhouse">{t("types.townhouse")}</SelectItem>
+                        <SelectItem value="land">{t("types.land")}</SelectItem>
+                        <SelectItem value="commercial">{t("types.commercial")}</SelectItem>
                       </SelectContent>
                     </Select>
                   </div>
 
                   <div>
                     <label className="block text-sm font-medium mb-2">
-                      Min Price
+                      {t("labels.min_price")}
                     </label>
                     <Input
                       type="number"
-                      placeholder="No minimum"
+                      placeholder={t("placeholders.no_minimum")}
                       value={filters.min_price || ""}
                       onChange={(e) =>
                         handleFilterChange(
@@ -231,11 +223,11 @@ export default function PropertySearchClient({
 
                   <div>
                     <label className="block text-sm font-medium mb-2">
-                      Max Price
+                      {t("labels.max_price")}
                     </label>
                     <Input
                       type="number"
-                      placeholder="No maximum"
+                      placeholder={t("placeholders.no_maximum")}
                       value={filters.max_price || ""}
                       onChange={(e) =>
                         handleFilterChange(
@@ -248,7 +240,7 @@ export default function PropertySearchClient({
 
                   <div>
                     <label className="block text-sm font-medium mb-2">
-                      Bedrooms
+                      {t("labels.bedrooms")}
                     </label>
                     <Select
                       value={filters.bedrooms?.toString() || "any"}
@@ -260,10 +252,10 @@ export default function PropertySearchClient({
                       }
                     >
                       <SelectTrigger>
-                        <SelectValue placeholder="Any" />
+                        <SelectValue placeholder={t("placeholders.any")} />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="any">Any</SelectItem>
+                        <SelectItem value="any">{t("placeholders.any")}</SelectItem>
                         <SelectItem value="1">1+</SelectItem>
                         <SelectItem value="2">2+</SelectItem>
                         <SelectItem value="3">3+</SelectItem>
@@ -275,11 +267,11 @@ export default function PropertySearchClient({
 
                   <div>
                     <label className="block text-sm font-medium mb-2">
-                      City
+                      {t("labels.city")}
                     </label>
                     <Input
                       type="text"
-                      placeholder="Enter city"
+                      placeholder={t("placeholders.enter_city")}
                       value={filters.city || ""}
                       onChange={(e) =>
                         handleFilterChange("city", e.target.value)
@@ -293,7 +285,7 @@ export default function PropertySearchClient({
                       onClick={clearFilters}
                       className="w-full"
                     >
-                      Clear Filters
+                      {t("labels.clear_filters")}
                     </Button>
                   </div>
                 </div>
@@ -310,12 +302,12 @@ export default function PropertySearchClient({
             <div>
               <h2 className="text-2xl font-bold text-gray-900">
                 {loading
-                  ? "Searching..."
-                  : `${properties.length} Properties Found`}
+                  ? t("results.searching")
+                  : t("results.found", { count: properties.length })}
               </h2>
               <p className="text-gray-600">
-                {filters.search && `Searching for "${filters.search}"`}
-                {filters.city && ` in ${filters.city}`}
+                {filters.search && t("results.searching_for", { query: filters.search })}
+                {filters.city && t("results.in_city", { city: filters.city })}
               </p>
             </div>
             <div className="flex items-center gap-2">
@@ -405,7 +397,7 @@ export default function PropertySearchClient({
             variant="outline"
             className="border-jade-green text-jade-green hover:bg-jade-green hover:text-white"
           >
-            {loading ? "Loading..." : "Load More Properties"}
+            {loading ? t("results.loading") : t("results.load_more")}
           </Button>
         </div>
       )}
@@ -416,14 +408,13 @@ export default function PropertySearchClient({
           <CardContent className="text-center py-12">
             <MapPin className="w-16 h-16 text-gray-300 mx-auto mb-4" />
             <h3 className="text-xl font-semibold text-gray-900 mb-2">
-              No properties found
+              {t("results.no_results_title")}
             </h3>
             <p className="text-gray-600 mb-4">
-              Try adjusting your search criteria or browse our featured
-              locations.
+              {t("results.no_results_desc")}
             </p>
             <Button onClick={clearFilters} variant="outline">
-              Clear Search Filters
+              {t("results.clear_search_filters")}
             </Button>
           </CardContent>
         </Card>

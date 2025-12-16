@@ -30,6 +30,8 @@ import {
   Award,
   Star,
 } from "lucide-react";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
 
 interface AccountingProps {
   locale?: string;
@@ -367,6 +369,15 @@ export default function Accounting({ locale }: AccountingProps) {
               {t("next_steps_description")}
             </p>
             
+              <Button
+                    asChild
+                    className="bg-green-950 hover:bg-jade-green/90 text-white"
+                  >
+                    <Link href={`/${locale}/contact`}>
+                      <Handshake className="w-6 h-6" />
+                <span className="font-semibold ">{t("consult_experts")}</span>
+                    </Link>
+                  </Button>
             <div className="bg-gradient-to-r from-jade-green to-jade-green/90 p-8 rounded-lg text-white">
               <h3 className="text-2xl font-bold mb-4">
                 {t("cta_title")}
@@ -374,10 +385,7 @@ export default function Accounting({ locale }: AccountingProps) {
               <p className="text-lg mb-6">
                 {t("cta_description")}
               </p>
-              <div className="flex items-center justify-center space-x-2">
-                <Handshake className="w-6 h-6" />
-                <span className="font-semibold">{t("consult_experts")}</span>
-              </div>
+        
             </div>
           </div>
         </div>

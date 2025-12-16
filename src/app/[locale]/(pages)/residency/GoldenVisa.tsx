@@ -376,7 +376,7 @@ export default function GoldenVisa({ locale }: GoldenVisaProps) {
                   <h3 className="text-xl font-semibold text-gray-800 mb-3">
                     {option.title}
                   </h3>
-                  <div className="bg-jade-green text-white px-4 py-2 rounded-lg inline-block mb-4">
+                  <div className="bg-jade-green text-primary px-4 py-2 rounded-lg inline-block mb-4">
                     <span className="text-lg font-bold">{option.amount}</span>
                   </div>
                   <p className="text-gray-600 mb-6">{option.description}</p>

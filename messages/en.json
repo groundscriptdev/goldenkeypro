@@ -79,7 +79,7 @@
       "pillars": {
         "residency": {
           "title": "Permanent Residency",
-          "description": "Direct path to Panama residency through qualified investment"
+          "description": "Direct path to residency in Panama through real estate investment"
         },
         "family": {
           "title": "Family Benefits",
@@ -138,7 +138,7 @@
     "features": {
       "residency": {
         "title": "Permanent Residency",
-        "description": "Direct path to Panama residency through qualified investment"
+        "description": "Direct path to residency in Panama through real estate investment"
       },
       "investment": {
         "title": "High ROI Investments",
@@ -182,7 +182,7 @@
       "real_estate": {
         "title": "Real Estate Investment",
         "description": "Premium properties in Panama's best locations",
-        "investment_min": "From $150,000",
+        "investment_min": "From $300,000",
         "features": [
           "Premium properties in Panama",
           "5-7% annual ROI",
@@ -191,24 +191,14 @@
         ]
       },
       "business_visa": {
-        "title": "Business Visa",
+        "title": "Economic Solvency Visa",
         "description": "Establish your company in a fiscal paradise with unique advantages",
         "investment_min": "From $25,000",
         "features": [
-          "Panamanian corporation",
-          "No tax on foreign income",
-          "Bank confidentiality",
-          "Access to global markets"
-        ]
-      },
-      "educational_program": {
-        "title": "Educational Program",
-        "description": "World-class bilingual education for your children",
-        "investment_min": "Educational Investment",
-        "features": [
-          "International schools",
-          "Recognized universities",
-          "Bilingual programs"
+          "Temporary residency for two years",
+          "Includes spouse and children",
+          "Mixed investment: real estate and fixed-term deposit",
+          "Pathway to permanent residency"
         ]
       },
       "retirement_visa": {
@@ -376,19 +366,37 @@
         "title": "Punta Pacífica",
         "description": "Iconic skyscrapers with panoramic ocean views",
         "price_range": "$500,000 - $5M+",
-        "avg_roi": "6-8% annually"
+        "avg_roi": "6-8% annually",
+        "features": [
+          "Ocean views",
+          "Luxury amenities",
+          "Premium location",
+          "High appreciation"
+        ]
       },
       "santa_maria": {
         "title": "Santa María Golf & Country Club",
         "description": "Exclusive residences with world-class amenities",
         "price_range": "$600,000 - $3M+",
-        "avg_roi": "5-7% annually"
+        "avg_roi": "5-7% annually",
+        "features": [
+          "Golf course",
+          "Country club",
+          "Exclusive community",
+          "World-class amenities"
+        ]
       },
       "costa_este": {
         "title": "Costa del Este",
         "description": "Premium financial and residential district",
         "price_range": "$400,000 - $2M+",
-        "avg_roi": "6-8% annually"
+        "avg_roi": "6-8% annually",
+        "features": [
+          "Financial district",
+          "Modern infrastructure",
+          "Business center",
+          "High-end shopping"
+        ]
       }
     },
     "mid_range": {
@@ -398,19 +406,37 @@
         "title": "San Francisco",
         "description": "Established neighborhood with excellent appreciation",
         "price_range": "$150,000 - $400,000",
-        "avg_roi": "5-6% annually"
+        "avg_roi": "5-6% annually",
+        "features": [
+          "Established neighborhood",
+          "Good appreciation",
+          "Family-friendly",
+          "Convenient location"
+        ]
       },
       "avenida_balboa": {
         "title": "Avenida Balboa",
         "description": "Strategic location with stunning views",
         "price_range": "$200,000 - $500,000",
-        "avg_roi": "6-7% annually"
+        "avg_roi": "6-7% annually",
+        "features": [
+          "Strategic location",
+          "Canal views",
+          "Tourist area",
+          "High rental demand"
+        ]
       },
       "amador": {
         "title": "Amador",
         "description": "Growing area with canal views",
         "price_range": "$180,000 - $450,000",
-        "avg_roi": "7-9% annually"
+        "avg_roi": "7-9% annually",
+        "features": [
+          "Canal views",
+          "Growing area",
+          "Tourism potential",
+          "New developments"
+        ]
       }
     },
     "emerging_areas": {
@@ -420,21 +446,83 @@
         "title": "Panamá Pacífico",
         "description": "Special economic zone with Metro Line 3",
         "price_range": "$120,000 - $300,000",
-        "growth_potential": "40-60% projected growth"
+        "growth_potential": "40-60% projected growth",
+        "features": [
+          "Special economic zone",
+          "Metro Line 3",
+          "Tax benefits",
+          "Industrial hub"
+        ]
       },
-      "costa_verde": {
-        "title": "Costa Verde",
-        "description": "New coastal development area",
-        "price_range": "$100,000 - $250,000",
-        "growth_potential": "50-70% projected growth"
+      "beach_zone_mid": {
+        "title": "Beach Zone (Pacific Beaches)",
+        "description": "Mid-range segment opportunities",
+        "price_range": "From $200,000 - $600,000",
+        "growth_potential": "High appreciation potential",
+        "features": [
+          "Mid-range segment",
+          "New coastal road project",
+          "Beach projects with heliports"
+        ]
+      },
+      "beach_zone_premium": {
+        "title": "Beach Zone (Pacific Beaches)",
+        "description": "Exclusive luxury projects",
+        "price_range": "From $900,000 - $5M+",
+        "growth_potential": "Maximum exclusivity and ROI",
+        "features": [
+          "Premium segment",
+          "New coastal road project",
+          "Beach projects with heliports"
+        ]
       }
     },
     "investment_analysis": {
       "title": "Investment Analysis",
       "market_trends": "Current Market Trends",
+      "market_trends_desc": "Detailed market analysis and trend forecasting",
       "infrastructure_impact": "Infrastructure Impact",
+      "infrastructure_impact_desc": "Infrastructure development impact on property values",
       "roi_projections": "ROI Projections",
-      "legal_framework": "Legal Framework"
+      "roi_projections_desc": "ROI projections for different property types",
+      "legal_framework": "Legal Framework",
+      "legal_framework_desc": "Legal framework and property rights overview"
+    },
+    "market_overview": {
+      "title": "Panama Real Estate Market Overview",
+      "subtitle": "Discover why Panama's real estate market offers exceptional opportunities for investors",
+      "why_invest_title": "Why Invest in Panama Real Estate?",
+      "cards": {
+        "economic_growth": {
+          "title": "Strong Economic Growth",
+          "description": "Panama's economy continues to grow at 5-6% annually"
+        },
+        "dollarized_economy": {
+          "title": "Dollarized Economy",
+          "description": "No currency risk with USD as official currency"
+        },
+        "tax_benefits": {
+          "title": "Tax Benefits",
+          "description": "Favorable tax regime for foreign investors"
+        },
+        "strategic_location": {
+          "title": "Strategic Location",
+          "description": "Hub of the Americas with excellent connectivity"
+        }
+      }
+    },
+    "labels": {
+      "price_range": "Price Range:",
+      "avg_roi": "Avg ROI:",
+      "growth_potential": "Growth Potential:",
+      "key_features": "Key Features:"
+    },
+    "cta": {
+      "title": "Ready to Invest in Panama Real Estate?",
+      "description": "Schedule a consultation to explore premium investment opportunities"
+    },
+    "seo": {
+      "service_name": "Panama Real Estate Investment"
     }
   },
   "medical_tourism": {
@@ -899,7 +987,7 @@
       "residency_consultation": "Residency Program Consultation",
       "residency_consultation_desc": "Comprehensive guidance through Panama residency programs",
       "residency_consultation_features": ["Program selection", "Document preparation", "Application support", "Follow-up services"],
-      "investment_advisory": "Investment Advisory Services",
+      "investment_advisory": "Real Estate Investment Advisory Services",
       "investment_advisory_desc": "Strategic investment advice tailored to your goals",
       "investment_advisory_features": ["Market analysis", "Risk assessment", "Portfolio diversification", "ROI optimization"],
       "legal_support": "Legal Documentation Support",
@@ -1147,6 +1235,8 @@
     "bocas_del_toro": "Bocas del Toro",
     "all_types": "All Types",
     "all_cities": "All Cities",
+    "beach_zone":"Beach Zone",
+    "all_prop":"All Properties",
     "luxury_market": {
       "title": "Luxury Market"
     },
@@ -1719,7 +1809,7 @@
           "avenida_balboa_desc": "Strategic location with stunning views",
           "amador": "Amador",
           "amador_desc": "Growing area with canal views",
-          "panama_oeste": "Panama Oeste",
+          "panama_oeste": "Panamá Pacífico",
           "panama_oeste_desc": "Emerging area with high growth potential near Metro Line 3"
         },
         "investment_range": "Typical investment range: between $150,000 and $350,000, ideal for young investors and families looking to combine housing and investment."
@@ -1909,7 +1999,7 @@
         "subtitle": "Mixed Option",
         "description": "Combine property plus bank term deposit, as long as the total sum is at least USD 300,000.",
         "requirements": {
-          "combinación": "Combination of property and deposit",
+          "combination": "Combination of property and deposit",
           "total_amount": "Total minimum amount of USD 300,000",
           "diversification": "Flexibility to diversify investment",
           "customized": "Customized option according to preferences"
@@ -2654,5 +2744,164 @@
     "estimated_duration": "Estimated duration: {duration}",
     "checklist_title": "CHECKLIST",
     "more_info": "More Information"
+  },
+  "property_search": {
+    "search_placeholder": "Search by location, property name, or keyword...",
+    "filters_button": "Filters",
+    "search_button": "Search Properties",
+    "labels": {
+      "property_type": "Property Type",
+      "min_price": "Min Price",
+      "max_price": "Max Price",
+      "bedrooms": "Bedrooms",
+      "city": "City",
+      "clear_filters": "Clear Filters"
+    },
+    "placeholders": {
+      "all_types": "All Types",
+      "no_minimum": "No minimum",
+      "no_maximum": "No maximum",
+      "any": "Any",
+      "enter_city": "Enter city"
+    },
+    "types": {
+      "apartment": "Apartment",
+      "house": "House",
+      "condo": "Condo",
+      "townhouse": "Townhouse",
+      "land": "Land",
+      "commercial": "Commercial"
+    },
+    "results": {
+      "searching": "Searching...",
+      "found": "{count} Properties Found",
+      "searching_for": "Searching for \"{query}\"",
+      "in_city": " in {city}",
+      "no_results_title": "No properties found",
+      "no_results_desc": "Try adjusting your search criteria or browse our featured locations.",
+      "clear_search_filters": "Clear Search Filters",
+      "load_more": "Load More Properties",
+      "loading": "Loading..."
+    },
+    "view_mode": {
+      "grid": "Grid View",
+      "list": "List View",
+      "map": "Map View"
+    }
+  },
+  "property_card": {
+    "status": {
+      "for_sale": "For Sale",
+      "for_rent": "For Rent",
+      "sold": "Sold",
+      "reserved": "Reserved"
+    },
+    "type": {
+      "house": "House",
+      "condo": "Condo",
+      "apartment": "Apartment",
+      "commercial": "Commercial",
+      "land": "Land",
+      "single_family": "House"
+    },
+    "location_unavailable": "Location unavailable",
+    "image_unavailable": "Image unavailable",
+    "view_details": "View Details",
+    "save": "Save",
+    "saved": "Saved",
+    "share": "Share",
+    "listed": "Listed",
+    "estimated_roi": "Est. ROI",
+    "beds_short": "beds",
+    "baths_short": "baths",
+    "sqm": "sqm"
+  },
+  "property_modal": {
+    "nav": {
+      "overview": "Overview",
+      "financials": "Financials",
+      "location": "Location",
+      "media": "Media",
+      "legal": "Legal"
+    },
+    "overview": {
+      "description": "Description",
+      "bedrooms": "Bedrooms",
+      "bathrooms": "Bathrooms",
+      "parking": "Parking",
+      "features": "Features",
+      "tags": "Tags"
+    },
+    "financials": {
+      "title": "Financial Information",
+      "price": "Price",
+      "rental_yield": "Rental Yield",
+      "projected_roi": "Projected ROI",
+      "cap_rate": "Cap Rate",
+      "tokenized_investment": "Tokenized Investment",
+      "token_price": "Price per token",
+      "min_investment": "Min investment"
+    },
+    "location": {
+      "title": "Location",
+      "neighborhood": "Neighborhood",
+      "district": "District",
+      "province": "Province",
+      "walk_score": "Walk Score",
+      "interactive_map": "Interactive Map"
+    },
+    "media": {
+      "gallery_title": "Full Gallery"
+    },
+    "legal": {
+      "title": "Legal Information",
+      "deed_number": "Deed Number",
+      "legal_owner": "Legal Owner",
+      "title_status": "Title Status",
+      "risk_level": "Risk Level",
+      "clear_title": "Clear Title",
+      "restricted": "Restricted"
+    },
+    "contact": {
+      "title": "Contact Agent",
+      "default_agent": "Real Estate Agent",
+      "send_message": "Send Message",
+      "cancel": "Cancel",
+      "placeholders": {
+        "name": "Your name",
+        "email": "Your email",
+        "phone": "Your phone",
+        "message": "Message (optional)"
+      },
+      "sales": "sales"
+    },
+    "facts": {
+      "title": "Property Facts",
+      "property_type": "Property Type",
+      "year_built": "Year Built",
+      "status": "Status",
+      "listed": "Listed",
+      "price_sqm": "Price per sqm",
+      "na": "N/A"
+    },
+    "amenities": {
+      "title": "Amenities",
+      "parking": "Parking",
+      "internet": "High-Speed Internet",
+      "gym": "Gym",
+      "pool": "Pool",
+      "green_areas": "Green Areas",
+      "security": "24/7 Security"
+    },
+    "actions": {
+      "save_property": "Save Property",
+      "property_saved": "Property Saved"
+    },
+    "status": {
+      "for_sale": "For Sale",
+      "for_rent": "For Rent",
+      "sold": "Sold",
+      "reserved": "Reserved"
+    }
   }
 }

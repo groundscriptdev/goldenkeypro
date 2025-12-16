@@ -203,7 +203,9 @@ export default async function PropertiesPage({
             tabs={[
               { id: "luxury", labelKey: "luxury_market.title" },
               { id: "mid_range", labelKey: "mid_range.title" },
-              { id: "emerging", labelKey: "emerging_areas.title" }
+              { id: "emerging", labelKey: "emerging_areas.title" },
+              { id:"beach_zone", labelKey: "beach_zone"},
+              { id:"all_prop", labelKey: "all_prop"}
             ]}
             defaultActiveTab="luxury"
           />
@@ -212,14 +214,14 @@ export default async function PropertiesPage({
           <section className="py-12 bg-white border-b">
             <div className="w-full px-4">
               <div className="max-w-6xl mx-auto">
-                <div className="mb-6 p-4 bg-green-50 border-2 border-green-200 rounded-lg">
+               {/*  <div className="mb-6 p-4 bg-green-50 border-2 border-green-200 rounded-lg">
                   <h3 className="text-lg font-semibold text-green-800 mb-2">
                     🔍 Búsqueda de Propiedades
                   </h3>
                   <p className="text-green-600">
                     Usa los filtros para encontrar tu propiedad ideal.
                   </p>
-                </div>
+                </div> */}
                 
                 {/* Client-side property search with filters */}
                 <PropertySearchWrapper

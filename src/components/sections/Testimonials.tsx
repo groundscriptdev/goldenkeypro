@@ -75,7 +75,7 @@ export function Testimonials() {
   );
 
   return (
-    <section className="py-20 bg-gradient-to-br from-jade-green/5 to-white">
+    <section id="testimonials" className="py-20 bg-gradient-to-br from-jade-green/5 to-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-brand text-jade-green font-bold mb-4">

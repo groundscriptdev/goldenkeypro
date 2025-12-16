@@ -4,6 +4,7 @@ import { useTranslations } from 'next-intl';
 import { Home, TrendingUp, Users, CreditCard } from 'lucide-react';
 import { GroundContainerBg } from "@/components/groundscript/GroundContainerBg";
 import CompPowerCard from "@/components/groundscript/amalgama/CompPowerCard";
+import CompPowerCardOptimized from '../groundscript/amalgama/CompPowerCardOptimized';
 
 export function GroundValuePropositionMinimal() {
   const t = useTranslations('home');
@@ -23,7 +24,7 @@ export function GroundValuePropositionMinimal() {
 
   const features_ = [
     {
-      icon: <Users className="w-8 h-8" />,
+      icon: <Users className="w-8 h-8" /> ,
       title: t('features.family.title'),
       description: t('features.family.description'),
     },
@@ -83,7 +84,7 @@ export function GroundValuePropositionMinimal() {
 
         <div className="relative flex justify-center items-center mb-4 ">
           <div className="relative h-[500px] w-full flex justify-center items-center">
-            <CompPowerCard />
+            <CompPowerCardOptimized />
           </div>
         </div>
 

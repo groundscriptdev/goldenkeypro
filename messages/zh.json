@@ -29,7 +29,9 @@
     "phone": "电话",
     "address": "地址",
     "website": "网站",
-    "social_media": "社交媒体"
+    "social_media": "社交媒体",
+    "free_consultation": "咨询",
+    "wechat": "微信"
   },
   "navigation": {
     "home": "首页",
@@ -103,7 +105,7 @@
       "pillars": {
         "residency": {
           "title": "永久居留权",
-          "description": "通过合格投资直接获得巴拿马居留权"
+          "description": "通过房地产投资直接获得巴拿马居留权的途径"
         },
         "family": {
           "title": "家庭福利",
@@ -138,7 +140,7 @@
     "features": {
       "residency": {
         "title": "永久居留权",
-        "description": "通过合格投资直接获得巴拿马居留权"
+        "description": "通过房地产投资直接获得巴拿马居留权的途径"
       },
       "investment": {
         "title": "高回报投资",
@@ -183,7 +185,7 @@
       "real_estate": {
         "title": "房地产投资",
         "description": "巴拿马最佳位置的优质房产",
-        "investment_min": "起投15万美元",
+        "investment_min": "起投30万美元",
         "features": [
           "巴拿马优质房产",
           "年投资回报率 5-7%",
@@ -192,24 +194,14 @@
         ]
       },
       "business_visa": {
-        "title": "商务签证",
+        "title": "经济能力签证",
         "description": "在具有独特优势的避税天堂建立您的公司",
         "investment_min": "起投25,000美元",
         "features": [
-          "巴拿马股份有限公司",
-          "无境外收入税",
-          "银行保密",
-          "进入全球市场"
-        ]
-      },
-      "educational_program": {
-        "title": "教育计划",
-        "description": "为您的孩子提供世界一流的双语教育",
-        "investment_min": "教育投资",
-        "features": [
-          "国际学校",
-          "认可的大学",
-          "双语课程"
+          "两年期临时居留",
+          "包含配偶和子女",
+          "混合投资：房地产 + 定期存款",
+          "通往永久居留的途径"
         ]
       },
       "retirement_visa": {
@@ -374,19 +366,37 @@
         "title": "太平洋区",
         "description": "标志性摩天大楼，享有全景海景",
         "price_range": "50万 - 500万美元+",
-        "avg_roi": "年化6-8%"
+        "avg_roi": "年化6-8%",
+        "features": [
+          "海景",
+          "豪华设施",
+          "黄金地段",
+          "高升值潜力"
+        ]
       },
       "santa_maria": {
         "title": "圣玛丽亚高尔夫乡村俱乐部",
         "description": "配备世界级设施的独家住宅",
         "price_range": "60万 - 300万美元+",
-        "avg_roi": "年化5-7%"
+        "avg_roi": "年化5-7%",
+        "features": [
+          "高尔夫球场",
+          "乡村俱乐部",
+          "独家社区",
+          "世界级设施"
+        ]
       },
       "costa_este": {
         "title": "东海岸",
         "description": "高级金融和住宅区",
         "price_range": "40万 - 200万美元+",
-        "avg_roi": "年化6-8%"
+        "avg_roi": "年化6-8%",
+        "features": [
+          "金融区",
+          "现代化基础设施",
+          "商业中心",
+          "高端购物"
+        ]
       }
     },
     "mid_range": {
@@ -396,19 +406,37 @@
         "title": "旧金山区",
         "description": "成熟的社区，升值潜力优秀",
         "price_range": "15万 - 40万美元",
-        "avg_roi": "年化5-6%"
+        "avg_roi": "年化5-6%",
+        "features": [
+          "成熟社区",
+          "良好升值",
+          "适合家庭",
+          "位置便利"
+        ]
       },
       "avenida_balboa": {
         "title": "巴尔博亚大道",
         "description": "战略位置，景色壮丽",
         "price_range": "20万 - 50万美元",
-        "avg_roi": "年化6-7%"
+        "avg_roi": "年化6-7%",
+        "features": [
+          "战略位置",
+          "运河景观",
+          "旅游区",
+          "高租赁需求"
+        ]
       },
       "amador": {
         "title": "阿马多尔",
         "description": "增长中区域，运河景观",
         "price_range": "18万 - 45万美元",
-        "avg_roi": "年化7-9%"
+        "avg_roi": "年化7-9%",
+        "features": [
+          "运河景观",
+          "增长区域",
+          "旅游潜力",
+          "新开发项目"
+        ]
       }
     },
     "emerging_areas": {
@@ -418,21 +446,83 @@
         "title": "巴拿马太平洋区",
         "description": "拥有地铁3号线的特殊经济区",
         "price_range": "12万 - 30万美元",
-        "growth_potential": "预计增长40-60%"
+        "growth_potential": "预计增长40-60%",
+        "features": [
+          "特殊经济区",
+          "地铁3号线",
+          "税收优惠",
+          "工业中心"
+        ]
       },
-      "costa_verde": {
-        "title": "绿海岸",
-        "description": "新的沿海开发区",
-        "price_range": "10万 - 25万美元",
-        "growth_potential": "预计增长50-70%"
+      "beach_zone_mid": {
+        "title": "海滩区（太平洋海滩）",
+        "description": "中端市场机会",
+        "price_range": "20万 - 60万美元",
+        "growth_potential": "高升值潜力",
+        "features": [
+          "中端细分市场",
+          "新沿海公路项目",
+          "配备直升机停机坪的海滩项目"
+        ]
+      },
+      "beach_zone_premium": {
+        "title": "海滩区（太平洋海滩）",
+        "description": "独家豪华项目",
+        "price_range": "90万 - 500万美元+",
+        "growth_potential": "最大的排他性和投资回报率",
+        "features": [
+          "高端细分市场",
+          "新沿海公路项目",
+          "配备直升机停机坪的海滩项目"
+        ]
       }
     },
     "investment_analysis": {
       "title": "投资分析",
       "market_trends": "当前市场趋势",
+      "market_trends_desc": "详细的市场分析和趋势预测",
       "infrastructure_impact": "基础设施影响",
+      "infrastructure_impact_desc": "基础设施发展对房产价值的影响",
       "roi_projections": "回报率预测",
-      "legal_framework": "法律框架"
+      "roi_projections_desc": "不同物业类型的回报率预测",
+      "legal_framework": "法律框架",
+      "legal_framework_desc": "法律框架和财产权概览"
+    },
+    "market_overview": {
+      "title": "巴拿马房地产市场概览",
+      "subtitle": "探索为什么巴拿马的房地产市场为投资者提供卓越的机会",
+      "why_invest_title": "为什么投资巴拿马房地产？",
+      "cards": {
+        "economic_growth": {
+          "title": "强劲的经济增长",
+          "description": "巴拿马经济持续以每年 5-6% 的速度增长"
+        },
+        "dollarized_economy": {
+          "title": "美元化经济",
+          "description": "美元作为官方货币，无汇率风险"
+        },
+        "tax_benefits": {
+          "title": "税收优惠",
+          "description": "为外国投资者提供优惠的税收制度"
+        },
+        "strategic_location": {
+          "title": "战略位置",
+          "description": "美洲枢纽，连接性极佳"
+        }
+      }
+    },
+    "labels": {
+      "price_range": "价格范围：",
+      "avg_roi": "平均回报率：",
+      "growth_potential": "增长潜力：",
+      "key_features": "主要特点："
+    },
+    "cta": {
+      "title": "准备好投资巴拿马房地产了吗？",
+      "description": "预约咨询，探索优质投资机会"
+    },
+    "seo": {
+      "service_name": "巴拿马房地产投资"
     }
   },
   "medical_tourism": {
@@ -893,7 +983,7 @@
       "residency_consultation": "居留计划咨询",
       "residency_consultation_desc": "巴拿马居留计划的全面指导",
       "residency_consultation_features": ["项目选择", "文件准备", "申请支持", "后续服务"],
-      "investment_advisory": "投资顾问服务",
+      "investment_advisory": "房地产投资咨询服务",
       "investment_advisory_desc": "为您目标量身定制的战略投资建议",
       "investment_advisory_features": ["市场分析", "风险评估", "投资组合多样化", "投资回报率优化"],
       "legal_support": "法律文件支持",
@@ -1042,6 +1132,8 @@
     "bocas_del_toro": "博卡斯德尔托罗",
     "all_types": "所有类型",
     "all_cities": "所有城市",
+    "beach_zone":"海滨区域",
+    "all_prop":"所有房产",
     "luxury_market": {
       "title": "豪华市场"
     },
@@ -2276,5 +2368,327 @@
     "estimated_duration": "预计时长：{duration}",
     "checklist_title": "清单",
     "more_info": "更多信息"
+  },
+  "contact_form": {
+    "title": "联系表单",
+    "description": "发送您的信息，我们会尽快回复您",
+    "contact": {
+      "phone": "电话",
+      "email": "电子邮箱",
+      "wechat": "微信"
+    },
+    "fields": {
+      "name": "全名",
+      "email": "电子邮箱",
+      "phone": "电话号码",
+      "country": "居住国家",
+      "investment_type": "投资类型",
+      "investment_amount": "投资金额",
+      "timeline": "投资时间线",
+      "message": "留言",
+      "consent": "我接受隐私政策和服务条款",
+      "newsletter": "我希望接收有关特别优惠的信息"
+    },
+    "placeholders": {
+      "name": "输入您的全名",
+      "email": "your.email@example.com",
+      "phone": "+507 123-45678",
+      "select_country": "选择您的国家",
+      "select_investment_type": "选择投资类型",
+      "select_investment_amount": "选择投资金额",
+      "select_timeline": "选择时间线",
+      "message": "告诉我们您的投资需求..."
+    },
+    "investment_types": {
+      "residency": "巴拿马居留权",
+      "real_estate": "房地产",
+      "medical_tourism": "医疗旅游",
+      "infrastructure": "基础设施项目",
+      "other": "其他"
+    },
+    "investment_amounts": {
+      "under_100k": "10万美元以下",
+      "100k_300k": "10万 - 30万美元",
+      "300k_500k": "30万 - 50万美元",
+      "500k_1m": "50万 - 100万美元",
+      "over_1m": "100万美元以上"
+    },
+    "timelines": {
+      "immediately": "立即",
+      "1_3_months": "1-3个月",
+      "3_6_months": "3-6个月",
+      "6_12_months": "6-12个月",
+      "over_1_year": "1年以上"
+    },
+    "countries": {
+      "china": "中国",
+      "hong_kong": "香港",
+      "taiwan": "台湾",
+      "singapore": "新加坡",
+      "malaysia": "马来西亚",
+      "other": "其他"
+    },
+    "errors": {
+      "name_required": "必填姓名",
+      "email_required": "必填邮箱",
+      "email_invalid": "邮箱格式无效",
+      "phone_required": "必填电话",
+      "country_required": "必填国家",
+      "investment_type_required": "必填投资类型",
+      "investment_amount_required": "必填投资金额",
+      "timeline_required": "必填时间线",
+      "message_required": "必填留言",
+      "consent_required": "您必须接受隐私政策",
+      "submission_failed": "提交失败，请重试。"
+    },
+    "submit": "发送信息",
+    "submitting": "发送中...",
+    "submit_another": "发送另一条信息",
+    "schedule_consultation": "预约咨询",
+    "success_title": "信息发送成功！",
+    "success_message": "感谢您联系我们。我们将在24小时内回复您。"
+  },
+  "consultation_booking": {
+    "title": "预约咨询",
+    "description": "预约与我们专家的个性化会议",
+    "minutes": "分钟",
+    "current_step": "第 {current} 步，共 {total} 步：{title}",
+    "steps": {
+      "consultation_type": "咨询类型",
+      "personal_info": "个人信息",
+      "select_datetime": "日期和时间",
+      "confirmation": "确认"
+    },
+    "consultation_types": {
+      "general": {
+        "name": "一般咨询",
+        "description": "巴拿马投资机会介绍",
+        "price": "免费"
+      },
+      "residency": {
+        "name": "居留咨询",
+        "description": "居留计划详细建议",
+        "price": "$150"
+      },
+      "investment": {
+        "name": "投资咨询",
+        "description": "个性化投资机会分析",
+        "price": "$200"
+      },
+      "comprehensive": {
+        "name": "综合咨询",
+        "description": "完整的居留和投资评估",
+        "price": "$350"
+      }
+    },
+    "fields": {
+      "name": "全名",
+      "email": "电子邮箱",
+      "phone": "电话号码",
+      "date": "日期",
+      "time": "时间",
+      "timezone": "时区",
+      "notes": "附加说明",
+      "consent": "我接受隐私政策和服务条款"
+    },
+    "placeholders": {
+      "name": "输入您的全名",
+      "email": "your.email@example.com",
+      "phone": "+507 123-45678",
+      "select_date": "选择一个日期",
+      "select_timezone": "选择您的时区",
+      "notes": "您想分享的其他信息..."
+    },
+    "select_consultation_type": "选择咨询类型",
+    "consultation_type_description": "选择最适合您需求的咨询类型",
+    "personal_information": "个人信息",
+    "select_date_time": "选择日期和时间",
+    "confirmation": "确认",
+    "consultation_type": "咨询类型",
+    "duration": "时长",
+    "price": "价格",
+    "booking_summary": "预约摘要",
+    "booking_details": "预约详情",
+    "consultation_format": "咨询形式",
+    "consultation_format_description": "所有咨询均通过Zoom或Google Meet进行",
+    "errors": {
+      "name_required": "必填姓名",
+      "email_required": "必填邮箱",
+      "email_invalid": "邮箱格式无效",
+      "phone_required": "必填电话",
+      "consultation_type_required": "必填咨询类型",
+      "date_required": "必填日期",
+      "time_required": "必填时间",
+      "timezone_required": "必填时区",
+      "consent_required": "您必须接受隐私政策",
+      "submission_failed": "预约失败，请重试。"
+    },
+    "previous": "上一步",
+    "next": "下一步",
+    "confirm_booking": "确认预约",
+    "submitting": "处理中...",
+    "book_another": "预约另一个咨询",
+    "add_to_calendar": "添加到日历",
+    "success_title": "咨询预约成功！",
+    "success_message": "我们已发送一封包含您的咨询详情的电子邮件。"
+  },
+  "property_search": {
+    "search_placeholder": "按位置、房产名称或关键字搜索...",
+    "filters_button": "筛选",
+    "search_button": "搜索房产",
+    "labels": {
+      "property_type": "房产类型",
+      "min_price": "最低价格",
+      "max_price": "最高价格",
+      "bedrooms": "卧室",
+      "city": "城市",
+      "clear_filters": "清除筛选"
+    },
+    "placeholders": {
+      "all_types": "所有类型",
+      "no_minimum": "无最低",
+      "no_maximum": "无最高",
+      "any": "任意",
+      "enter_city": "输入城市"
+    },
+    "types": {
+      "apartment": "公寓",
+      "house": "独栋房屋",
+      "condo": "共管公寓",
+      "townhouse": "联排别墅",
+      "land": "土地",
+      "commercial": "商业地产"
+    },
+    "results": {
+      "searching": "搜索中...",
+      "found": "找到 {count} 处房产",
+      "searching_for": "正在搜索 \"{query}\"",
+      "in_city": " 位于 {city}",
+      "no_results_title": "未找到房产",
+      "no_results_desc": "请尝试调整您的搜索条件或浏览我们的精选位置。",
+      "clear_search_filters": "清除搜索筛选",
+      "load_more": "加载更多房产",
+      "loading": "加载中..."
+    },
+    "view_mode": {
+      "grid": "网格视图",
+      "list": "列表视图",
+      "map": "地图视图"
+    }
+  },
+  "property_card": {
+    "status": {
+      "for_sale": "出售",
+      "for_rent": "出租",
+      "sold": "已售",
+      "reserved": "已预订"
+    },
+    "type": {
+      "house": "别墅",
+      "condo": "共管公寓",
+      "apartment": "公寓",
+      "commercial": "商业地产",
+      "land": "土地",
+      "single_family": "独栋别墅"
+    },
+    "location_unavailable": "位置不可用",
+    "image_unavailable": "图片不可用",
+    "view_details": "查看详情",
+    "save": "收藏",
+    "saved": "已收藏",
+    "share": "分享",
+    "listed": "上市日期",
+    "estimated_roi": "预计回报率",
+    "beds_short": "卧",
+    "baths_short": "卫",
+    "sqm": "平米"
+  },
+  "property_modal": {
+    "nav": {
+      "overview": "概览",
+      "financials": "财务",
+      "location": "位置",
+      "media": "媒体",
+      "legal": "法律"
+    },
+    "overview": {
+      "description": "描述",
+      "bedrooms": "卧室",
+      "bathrooms": "浴室",
+      "parking": "停车位",
+      "features": "特点",
+      "tags": "标签"
+    },
+    "financials": {
+      "title": "财务信息",
+      "price": "价格",
+      "rental_yield": "租金收益率",
+      "projected_roi": "预计回报率",
+      "cap_rate": "资本化率",
+      "tokenized_investment": "代币化投资",
+      "token_price": "代币价格",
+      "min_investment": "最低投资"
+    },
+    "location": {
+      "title": "位置",
+      "neighborhood": "社区",
+      "district": "区",
+      "province": "省",
+      "walk_score": "步行指数",
+      "interactive_map": "交互式地图"
+    },
+    "media": {
+      "gallery_title": "完整图库"
+    },
+    "legal": {
+      "title": "法律信息",
+      "deed_number": "地契编号",
+      "legal_owner": "法定所有人",
+      "title_status": "产权状态",
+      "risk_level": "风险等级",
+      "clear_title": "产权清晰",
+      "restricted": "受限"
+    },
+    "contact": {
+      "title": "联系经纪人",
+      "default_agent": "房地产经纪人",
+      "send_message": "发送消息",
+      "cancel": "取消",
+      "placeholders": {
+        "name": "您的姓名",
+        "email": "您的邮箱",
+        "phone": "您的电话",
+        "message": "留言（可选）"
+      },
+      "sales": "销售"
+    },
+    "facts": {
+      "title": "房产概况",
+      "property_type": "房产类型",
+      "year_built": "建成年份",
+      "status": "状态",
+      "listed": "上市日期",
+      "price_sqm": "单价/平米",
+      "na": "暂无"
+    },
+    "amenities": {
+      "title": "设施",
+      "parking": "停车位",
+      "internet": "高速互联网",
+      "gym": "健身房",
+      "pool": "游泳池",
+      "green_areas": "绿化区域",
+      "security": "24/7 安保"
+    },
+    "actions": {
+      "save_property": "收藏房产",
+      "property_saved": "已收藏"
+    },
+    "status": {
+      "for_sale": "出售",
+      "for_rent": "出租",
+      "sold": "已售",
+      "reserved": "已预订"
+    }
   }
 }
