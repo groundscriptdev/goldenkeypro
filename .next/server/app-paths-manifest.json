@@ -1,8 +1,0 @@
-{
-  "/api/proxy/properties/route": "app/api/proxy/properties/route.js",
-  "/[locale]/properties/page": "app/[locale]/properties/page.js",
-  "/[locale]/(pages)/residency/page": "app/[locale]/(pages)/residency/page.js",
-  "/[locale]/page": "app/[locale]/page.js",
-  "/[locale]/(pages)/real-estate/page": "app/[locale]/(pages)/real-estate/page.js",
-  "/[locale]/(pages)/services/page": "app/[locale]/(pages)/services/page.js"
-}

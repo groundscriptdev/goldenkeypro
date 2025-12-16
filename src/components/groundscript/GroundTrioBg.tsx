@@ -6,7 +6,7 @@ import { motion, AnimatePresence, Easing } from "motion/react";
 // Define las imágenes para cada columna
 const leftImages = ["/images/Isquierda.jpg", "/images/4.jpg", "/images/10.jpg"];
 const centerImages = ["/images/Centro.jpg", "/images/5.jpg", "/images/11.jpg"];
-const rightImages = ["/images/Derecha.jpg", "/images/9.jpg", "/images/12.jpg"];
+const rightImages = ["/images/Derecha.jpg", "/images/9.jpg", "/images/13.jpg"];
 
 // Variables configurables para efectos
 const transitionConfig = {
