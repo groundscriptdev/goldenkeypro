@@ -987,9 +987,27 @@ const PropertyModalPGK: React.FC<PropertyModalPGKProps> = ({
                       </div>
                     </div>
 
-                    <div className="aspect-video bg-gray-200 rounded-lg flex items-center justify-center">
-                      <MapPin className="w-8 h-8 text-gray-400" />
-                      <span className="ml-2 text-gray-500">{t("location.interactive_map")}</span>
+                    <div className="aspect-video bg-gray-200 rounded-lg overflow-hidden relative">
+                      {(() => {
+                        const lat = property.location?.latitude;
+                        const lng = property.location?.longitude;
+                        const address = property.location?.address_full || property.location?.neighborhood || "Panama City";
+                        
+                        const mapUrl = (lat && lng) 
+                          ? `https://maps.google.com/maps?q=${lat},${lng}&z=15&output=embed`
+                          : `https://maps.google.com/maps?q=${encodeURIComponent(address)}&z=15&output=embed`;
+                          
+                        return (
+                          <iframe
+                            width="100%"
+                            height="100%"
+                            style={{ border: 0 }}
+                            loading="lazy"
+                            allowFullScreen
+                            src={mapUrl}
+                          ></iframe>
+                        );
+                      })()}
                     </div>
                   </div>
                 </section>
